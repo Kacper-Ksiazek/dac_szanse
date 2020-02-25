@@ -1,0 +1,87 @@
+$menuAnimationDuration: 0.2s
+
+li.ds-menu-item
+    position: relative
+    margin-right: 5px
+    height: 30px
+    overflow: hidden
+
+    &:hover
+        overflow: visible
+
+        span.ds-menu-header
+            border-radius: 10px
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75)
+
+            span.content
+                color: white
+
+            &::before
+                width: 100%
+                height: 100%
+                bottom: 0px
+                right: 0px
+                transform: rotate(0deg)
+
+        div.ds-menu-dropdown
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75)
+            
+    // END HOVER
+    span.ds-menu-header
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        overflow: hidden
+        font-size: 1.1rem
+        padding: 10px 20px
+        font-family: Comic Sans MS
+        cursor: pointer
+        height: 30px
+        z-index: 1
+
+        &::before
+            content: ''
+            position: absolute
+            bottom: -9px
+            right: -9px
+            width: 20px
+            height: 20px
+            background-color: $deafultGreen
+            transform: rotate(45deg)
+            transition: all linear $menuAnimationDuration
+            z-index: 1
+
+        span.content
+            position: relative
+            z-index: 2
+            transition: all linear $menuAnimationDuration
+
+    div.ds-menu-dropdown
+        position: absolute
+        width: 200px
+        background: white
+        list-style-type: none
+        border-radius: 5px
+        overflow: hidden
+
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 7px
+            height: 100%
+            background: $deafultGreen
+        div
+            margin-top: 10px
+            padding: 5px
+            transition: all $menuAnimationDuration linear
+            cursor: default
+            font-family: Comic Sans MS
+
+            &:hover
+                background-color: $deafultGreen
+                color: white
+                
+
