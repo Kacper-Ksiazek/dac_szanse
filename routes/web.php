@@ -16,5 +16,14 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+//Home
 Route::get('/home', 'HomeController@index')->name('home');
+//
+//OUR OBJECTS
+//
+//index
+Route::get('/nasze-placowki','OurObjectsController@index');
+//Niepubliczny Ośrodek Rewalidacyjno-Wychowawczy
+Route::get('/nasze-placowki/niepubliczny-osrodek-rewalidacyjno-wychowawczy','OurObjectsController@getItem1');
+//Świetlica Terapeutyczno-Integracyjna "Szansa
+Route::get('/nasze-placowki/swietlica-terapeutyczno-integracyjna-szansa','OurObjectsController@getItem2');

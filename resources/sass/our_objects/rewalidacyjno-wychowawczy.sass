@@ -1,0 +1,36 @@
+section.ds-rw-content
+    padding: 50px 10vw
+    div.ds-rw-text-wrapper
+        position: relative
+        padding: 50px 10vw
+        //max-width: 1200px
+        font-size: 1.2rem
+        &::before
+            content: ''
+            position: absolute
+            top: 50px
+            left: 10%
+            height: calc(100% - 100px)
+            width: 5px
+            background-color: $deafultGreen
+        p
+            text-indent: 20px
+            margin-bottom: 20px
+//RWD
+@media screen and (max-width: 767px)
+    section.ds-rw-content
+        padding: 30px
+        div.ds-rw-text-wrapper
+            padding: 20px
+            &::before
+                display: none
+                content: ''
+                position: absolute
+                top: 50px
+                left: 10%
+                height: calc(100% - 100px)
+                width: 5px
+                background-color: $deafultGreen
+            p
+                text-indent: 20px
+                margin-bottom: 20px

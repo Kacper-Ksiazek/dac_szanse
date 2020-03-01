@@ -1,0 +1,220 @@
+section#ds-s-gallery-wrapper
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin-top: 70px
+    position: relative
+    h1
+        position: absolute
+        color: $deafultGreen
+        top: -100px
+        &::before
+            content: ''
+            position: absolute
+            bottom: -10px
+            width: 75%
+            height: 3px
+            background-color: $deafultGreen
+            left: 50%
+            transform: translateX(-50%)
+    div.ds-s-gallery-images-wrapper
+        display: flex
+        justify-content: center
+        width: 100%
+        background-color: #eb4d4b
+        position: relative
+        &::before
+            content: ''
+            position: absolute
+            bottom: 0
+            left: -7vw
+            width: 20vw
+            height: 20vw
+            background-image: url(./images/dayroom.png)
+            background-size: cover
+            opacity: .5
+        div.ds-s-gallery-header
+            width: 75%
+            display: flex
+            flex-direction: column
+            align-items: center
+            padding: 70px 0 40px 0
+            position: relative
+            overflow: hidden
+            div.ds-s-gallery-header-images
+                align-self: flex-start
+                position: relative
+                display: flex
+                margin-bottom: 20px
+                width: 200%
+                justify-content: space-between
+                transition: transform .2s linear
+                
+                div.ds-s-gallery-header-item
+                    background-image: url('images/header/header1.jpg')
+                    background-size: cover
+                    width: 20vw
+                    height: 20vw
+                    border: 10px solid #fff
+                    border-radius: 20px
+                    position: relative
+                    &::before
+                        content: ''
+                        position: absolute
+                        right: -3.7vw
+                        width: 5px
+                        height: 120%
+                        top: 50%
+                        transform: translateY(-50%)
+                        background-color: #fff          
+            button
+                margin-top: 20px
+                border: none
+                color: $deafultGreen
+                background-color: white
+                font-size: 1.5rem
+                padding: 5px 10px
+                border-radius: 10px
+                transition: all .2s linear
+                &:hover
+                    background-color: $deafultGreen
+                    color: white
+            div.ds-s-gallery-dots-wrapper
+                display: flex
+                margin-top: 40px
+                div.ds-s-gallery-dots
+                    width: 30px
+                    height: 30px
+                    border: 5px solid white
+                    background: transparent
+                    margin-right: 20px
+                    border-radius: 50%
+                    transition: background-color .2s linear
+                    cursor: pointer
+                    &:last-child
+                        margin-right: 0
+                div.ds-s-gallery-dots.active
+                    background-color: white
+        div.control-wrapper
+            span
+                position: absolute
+                top: 50%
+                color: white
+                font-size: 3rem
+                border: none
+                background: transparent
+                transform: translateY(-50%)
+                background: #eb4d4b
+                padding: 10px
+                border-radius: 10px
+                user-select: none
+                cursor: pointer
+            span.prev
+                left: 5%
+            span.next
+                right: 5%  
+
+    div.ds-s-gallery-all-images
+        width: 100%
+        section
+            display: flex
+            justify-content: center
+            flex-wrap: wrap
+            padding: 5vw
+            div.ds-s-gallery-image
+                background-size: cover
+                width: 300px
+                height: 300px
+                margin: 20px
+                transition: transform .2s linear
+                overflow: hidden
+                position: relative
+                cursor: pointer
+                &::before
+                    content: ''
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    background-color: black
+                    opacity: .2
+                    transition: opacity .2s linear
+                &:hover
+                    transform: scale(1.1)
+                &:hover::before
+                    opacity: 0
+        footer
+            width: 100%
+            background-color: #eb4d4b
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            padding: 0 0 50px 0
+            h3
+                color: white
+            div.logo
+                background-image: url(./images/dayroom.png)
+                width: 40vw
+                height: 40vw
+                max-width: 350px
+                max-height: 350px
+                background-size: cover
+                background-position: center
+    div.ds-s-gallery-modal
+        position: fixed
+        z-index: 100
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        animation: fadeIn .5s linear both
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background-color: black
+            opacity: .7
+        *
+            position: absolute
+            z-index: 101
+        span.ds-s-gallery-modal-exit
+            top: 25px
+            right: 25px
+            width: 40px
+            height: 40px
+            background-color: grey
+            display: flex
+            justify-content: center
+            align-items: center
+            border-radius: 50%
+            color: white
+            font-size: 2rem
+        div.ds-s-gallery-modal-image
+            width: 60vw
+            height: 60vh
+            background-size: contain
+            background-repeat: no-repeat
+            background-position: center
+            top: 50%
+            left: 50%
+            transform: translate(-50%,-50%)
+        span.next,
+        span.prev
+            top: 50%
+            transform: translateY(-50%)
+            font-size: 5rem 
+            color: white
+        span.next
+            right: 5%
+        span.prev
+            left: 5%
+        span.ds-s-gallery-order
+            bottom: 25px
+            right: 25px
+            font-size: 2.5rem
+            color: white

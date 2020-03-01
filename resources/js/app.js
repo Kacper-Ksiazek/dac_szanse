@@ -19,7 +19,12 @@ window.Vue = require("vue");
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component("menu-navs", require("./components/MenuNavs.vue").default);
+Vue.component("menu-navs", require("./components/menu/MenuNavs.vue").default);
+Vue.component("all-objects", require("./components/our_objects/AllObjects.vue").default);
+Vue.component("path-bar", require("./components/PathBar").default);
+Vue.component("oo-logo", require("./components/our_objects/OOLogo.vue").default);
+Vue.component("dayroom-tasks", require("./components/our_objects/DayroomTasks.vue").default);
+Vue.component("dayroom-gallery", require("./components/our_objects/DayroomGallery.vue").default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

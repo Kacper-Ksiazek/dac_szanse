@@ -1,0 +1,63 @@
+div.ds-path-bar
+    display: flex
+    background-color: $deafultGreen
+    padding: 5px 20px
+    div.ds-path-bar-item.scroll
+        display: none
+    div.ds-path-bar-item
+        margin-right: 30px
+        padding: 5px 10px
+        color: white
+        border: 2px solid
+        border-radius: 20px
+        position: relative
+        a
+            text-decoration: none
+            color: white
+            font-size: .8rem
+            cursor: pointer
+        i
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            right: -16%
+            font-size: 1rem
+    div.ds-path-bar-item.last
+        background-color: white
+        a
+            font-weight: bold
+            color:$deafultGreen
+        i
+            display: none
+//RWD
+@media screen and (max-width: 767px)
+    div.ds-path-bar.active
+        max-height: 600px !important
+    div.ds-path-bar
+        display: flex
+        background-color: $deafultGreen
+        padding: 5px 20px
+        flex-direction: column
+        max-height: 47px
+        overflow: hidden
+        transition: max-height .5s linear
+        div.ds-path-bar-item
+            margin-bottom: 10px
+            display: flex
+            justify-content: center
+            a
+                text-decoration: none
+                color: white
+                font-size: .8rem
+            i
+                display: none
+        div.ds-path-bar-item.last
+            background-color: white
+            a
+                font-weight: bold
+                color:$deafultGreen
+            i
+                display: none
+        div.ds-path-bar-item.scroll
+            display: flex
+            cursor: pointer
