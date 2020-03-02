@@ -17,6 +17,9 @@ section#ds-s-gallery-wrapper
             background-color: $deafultGreen
             left: 50%
             transform: translateX(-50%)
+    //
+    //HEADER IMAGE WRAPPER
+    //
     div.ds-s-gallery-images-wrapper
         display: flex
         justify-content: center
@@ -33,7 +36,8 @@ section#ds-s-gallery-wrapper
             background-image: url(./images/dayroom.png)
             background-size: cover
             opacity: .5
-        div.ds-s-gallery-header
+        div.ds-s-gallery-header-desktop,
+        div.ds-s-gallery-header-mobile
             width: 75%
             display: flex
             flex-direction: column
@@ -66,7 +70,7 @@ section#ds-s-gallery-wrapper
                         height: 120%
                         top: 50%
                         transform: translateY(-50%)
-                        background-color: #fff          
+                        background-color: #fff      
             button
                 margin-top: 20px
                 border: none
@@ -79,7 +83,8 @@ section#ds-s-gallery-wrapper
                 &:hover
                     background-color: $deafultGreen
                     color: white
-            div.ds-s-gallery-dots-wrapper
+            div.ds-s-gallery-dots-wrapper-desktop,
+            div.ds-s-gallery-dots-wrapper-mobile
                 display: flex
                 margin-top: 40px
                 div.ds-s-gallery-dots
@@ -95,6 +100,9 @@ section#ds-s-gallery-wrapper
                         margin-right: 0
                 div.ds-s-gallery-dots.active
                     background-color: white
+            div.ds-s-gallery-dots-wrapper-mobile
+                display: none
+                    
         div.control-wrapper
             span
                 position: absolute
@@ -113,7 +121,9 @@ section#ds-s-gallery-wrapper
                 left: 5%
             span.next
                 right: 5%  
-
+    //
+    //ALL IMAGES WRAPPER
+    //
     div.ds-s-gallery-all-images
         width: 100%
         section
@@ -162,6 +172,9 @@ section#ds-s-gallery-wrapper
                 max-height: 350px
                 background-size: cover
                 background-position: center
+    //
+    //MODAL
+    //
     div.ds-s-gallery-modal
         position: fixed
         z-index: 100
@@ -169,7 +182,7 @@ section#ds-s-gallery-wrapper
         top: 0
         width: 100%
         height: 100%
-        animation: fadeIn .5s linear both
+        animation: fadeIn .4s linear both
         &::before
             content: ''
             position: absolute
@@ -218,3 +231,85 @@ section#ds-s-gallery-wrapper
             right: 25px
             font-size: 2.5rem
             color: white
+            cursor: default !important
+        span
+            cursor: pointer
+    div.ds-s-gallery-modal.exit
+        animation: fadeOut .4s linear both
+//RWD
+@media screen and (max-width: 767px)
+    //START MODAL
+    section#ds-s-gallery-wrapper
+        margin-top: 150px
+        h1
+            top: -67px
+        div.ds-s-gallery-modal
+            
+            div.ds-s-gallery-modal-image
+                width: 100vw
+                height: 100vh
+            span.ds-s-gallery-order
+                bottom: 10px
+                left: 10px
+                font-size: 2rem
+            span.next
+                right: 21%
+            span.ds-s-gallery-modal-exit
+                z-index: 150
+    div.ds-s-gallery-all-images
+        footer
+            font-size: 1.5rem
+            text-align: center
+    //END MODAL
+
+@media screen and (min-width: 1101px)
+    section#ds-s-gallery-wrapper
+        div.ds-s-gallery-images-wrapper
+            div.ds-s-gallery-header-mobile
+                display: none
+@media screen and (max-width: 1100px)
+    //START HEADER IMAGE WRAPPER
+    section#ds-s-gallery-wrapper
+        div.ds-s-gallery-images-wrapper
+            &::before
+                width: 35vw
+                height: 25vw
+            div.ds-s-gallery-header-mobile
+                display: flex
+                padding: 20px 0
+                width: 100vw
+                div.ds-s-gallery-header-images
+                    width: 600%
+                    div.ds-s-gallery-header-item
+                        width: calc(100% / 6)
+                        height: 50vh
+                        border: none
+                        border-top: 5px solid #fff
+                        border-bottom: 5px solid #fff
+                        border-radius: 0
+                        &::before
+                            display: none
+                //DISPLAY DIRECT DOTS       
+                div.ds-s-gallery-dots-wrapper-desktop
+                    display: none
+                div.ds-s-gallery-dots-wrapper-mobile
+                    display: flex
+                    div.ds-s-gallery-dots
+                        width: 20px
+                        height: 20px
+                        border: 3px solid #fff
+
+            div.ds-s-gallery-header-desktop
+                display: none
+
+            div.control-wrapper
+                span
+                    background: transparent
+                    display: none
+                span.prev
+                    left: 0%
+                span.next
+                    right: 0%  
+            
+            
+                    

@@ -25,6 +25,7 @@ Vue.component("path-bar", require("./components/PathBar").default);
 Vue.component("oo-logo", require("./components/our_objects/OOLogo.vue").default);
 Vue.component("dayroom-tasks", require("./components/our_objects/DayroomTasks.vue").default);
 Vue.component("dayroom-gallery", require("./components/our_objects/DayroomGallery.vue").default);
+Vue.component("scroll-btn", require("./components/ScrollBTN.vue").default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

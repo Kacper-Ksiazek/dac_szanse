@@ -4,33 +4,58 @@
         <!--  -->
         <div class="ds-s-gallery-images-wrapper">
             <!--  -->
-            <div class="ds-s-gallery-header">
-                <!--  -->
+            <!-- DESKTOP HEADER -->
+            <!--  -->
+
+            <div class="ds-s-gallery-header-desktop">
                 <!-- IMAGES IN HEADER -->
-                <!--  -->
                 <div class="ds-s-gallery-header-images" :style="desktopStyle">
                     <div class="ds-s-gallery-header-item" v-for="item in headers" :key="item" :style="item | setPathHeader"></div>
                 </div>
-                <!--  -->
                 <!-- NAVIGATION DOTS -->
-                <!--  -->
-                <div class="ds-s-gallery-dots-wrapper">
-                    <div class="ds-s-gallery-dots" :class="desktopRotation == 0 ? 'active' : ''" @click="desktopRotation = 0"></div>
-                    <div class="ds-s-gallery-dots" :class="desktopRotation == 2 ? 'active' : ''" @click="desktopRotation = 2"></div>
-                    <div class="ds-s-gallery-dots" :class="desktopRotation == 4 ? 'active' : ''" @click="desktopRotation = 4"></div>
-                    <div class="ds-s-gallery-dots" :class="desktopRotation == 6 ? 'active' : ''" @click="desktopRotation = 6"></div>
+                <div class="ds-s-gallery-dots-wrapper-desktop">
+                    <div
+                        class="ds-s-gallery-dots"
+                        v-for="item in desktopHelperDotsCreate"
+                        :key="item"
+                        :class="desktopRotation == item ? 'active' : ''"
+                        @click="desktopRotation = item"
+                    ></div>
                 </div>
-                <!--  -->
                 <!-- SHOW/HIDE ALL IMAGES -->
-                <!--  -->
-                <button @click="showAllImages = !showAllImages" v-text="showAllImages ? 'Pokaż mniej' : 'Pokaż wszystkie'">Zobacz wszystkie</button>
+                <button @click="showImages" v-text="showAllImages ? 'Pokaż mniej' : 'Pokaż wszystkie'" ref="showAllBtn">Zobacz wszystkie</button>
             </div>
+
             <!--  -->
-            <!-- NEXT PREV BUTTONS -->
+            <!-- MOBILE HEADER -->
             <!--  -->
+
+            <div class="ds-s-gallery-header-mobile">
+                <!-- IMAGES IN HEADER -->
+                <div class="ds-s-gallery-header-images" :style="mobileStyle">
+                    <div class="ds-s-gallery-header-item" v-for="item in headers" :key="item" :style="item | setPathHeader"></div>
+                </div>
+                <!-- NAVIGATION DOTS -->
+                <div class="ds-s-gallery-dots-wrapper-mobile">
+                    <div
+                        class="ds-s-gallery-dots"
+                        v-for="item in mobileHelperDotsCreate"
+                        :key="item"
+                        :class="mobileRotation == item ? 'active' : ''"
+                        @click="mobileRotation = item"
+                    ></div>
+                </div>
+                <!-- SHOW/HIDE ALL IMAGES -->
+                <button @click="showImages" v-text="showAllImages ? 'Pokaż mniej' : 'Pokaż wszystkie'" ref="showAllBtn">Zobacz wszystkie</button>
+            </div>
+
+            <!-- NEXT PREV BUTTONS ONLY DESKTOP!!!-->
+
             <div class="control-wrapper">
-                <span class="next" @click="desktopRotation += 2" v-if="desktopRotation < 6"><i class="fa fa-chevron-right"></i></span>
-                <span class="prev" @click="desktopRotation -= 2" v-if="desktopRotation > 0"><i class="fa fa-chevron-left"></i></span>
+                <span class="next" @click="desktopRotation += 2" v-if="mobileRotation < mobileHelperDotsCreate[mobileHelperDotsCreate.length - 1]"
+                    ><i class="fa fa-chevron-right"></i
+                ></span>
+                <span class="prev" @click="desktopRotation -= 2" v-if="mobileRotation > 0"><i class="fa fa-chevron-left"></i></span>
             </div>
             <!--  -->
         </div>
@@ -49,8 +74,8 @@
         <!--  -->
         <!-- DISPLAY SINGLE IMAGE MODAL -->
         <!--  -->
-        <div class="ds-s-gallery-modal" v-if="modalActiveImageIndex >= 0">
-            <span class="ds-s-gallery-modal-exit" @click="modalActiveImageIndex = -1">
+        <div class="ds-s-gallery-modal" v-if="modalActiveImageIndex >= 0" ref="modal">
+            <span class="ds-s-gallery-modal-exit" @click="closeModal">
                 <i class="fa fa-times"></i>
             </span>
             <div class="ds-s-gallery-modal-image" :style="all_images[modalActiveImageIndex] | setPathBody"></div>
@@ -64,9 +89,15 @@
 </template>
 <script>
 export default {
+    created() {
+        this.limit;
+    },
     watch: {
         desktopRotation(val) {
             this.desktopStyle = `transform: translateX(calc(${(-50 * val) / 6}%))`;
+        },
+        mobileRotation(val) {
+            this.mobileStyle = `transform: translateX(calc(${(-50 * val) / 6}%))`;
         },
         modalActiveImageIndex(val) {
             this.orderNote = `${val + 1} z ${this.all_images.length}`;
@@ -82,17 +113,53 @@ export default {
     },
     methods: {
         handleImageClick(index) {
-            console.log(index);
             this.modalActiveImageIndex = index;
+        },
+        closeModal(e) {
+            if (this.pendingClosing) return;
+            this.$refs.modal.classList.add("exit");
+            this.pendingClosing = true;
+            setTimeout(() => {
+                this.modalActiveImageIndex = -1;
+                this.$refs.modal.classList.remove("exit");
+                this.pendingClosing = false;
+            }, 400);
+        },
+        showImages() {
+            if (this.pendingScrolling) return;
+            if (this.showAllImages) {
+                this.pendingScrolling = true;
+                window.scroll({
+                    top: this.scrollTo,
+                    left: 0,
+                    behavior: "smooth"
+                });
+                setTimeout(() => {
+                    this.showAllImages = !this.showAllImages;
+                    this.pendingScrolling = false;
+                }, 500);
+            } else {
+                this.showAllImages = !this.showAllImages;
+                this.scrollTo = scrollY;
+            }
         }
     },
     data() {
         return {
             desktopRotation: 0,
             desktopStyle: null,
+            desktopHelperDotsCreate: [0, 2, 4, 6],
+
+            mobileRotation: 0,
+            mobileStyle: null,
+            mobileHelperDotsCreate: [0, 2, 4, 6, 8, 10],
+
             showAllImages: false,
             modalActiveImageIndex: -1,
             orderNote: null,
+            pendingClosing: false,
+            scrollTo: null,
+            pendingScrolling: false,
             headers: ["header1", "header2", "header3", "header4", "header5", "header6"],
             all_images: [
                 "b_styczen_i_luty_1.jpg",

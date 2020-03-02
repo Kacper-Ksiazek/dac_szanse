@@ -39,6 +39,8 @@
         <main class="w-100">
             @yield('content')
         </main>
+
+        <scroll-btn></scroll-btn>
     </div>
 </body>
 </html>
