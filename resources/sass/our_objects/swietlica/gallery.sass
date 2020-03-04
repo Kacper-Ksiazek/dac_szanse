@@ -80,6 +80,8 @@ section#ds-s-gallery-wrapper
                 padding: 5px 10px
                 border-radius: 10px
                 transition: all .2s linear
+                position: relative
+                z-index: 50
                 &:hover
                     background-color: $deafultGreen
                     color: white
@@ -117,6 +119,7 @@ section#ds-s-gallery-wrapper
                 border-radius: 10px
                 user-select: none
                 cursor: pointer
+                z-index: 10
             span.prev
                 left: 5%
             span.next
@@ -208,7 +211,7 @@ section#ds-s-gallery-wrapper
             color: white
             font-size: 2rem
         div.ds-s-gallery-modal-image
-            width: 60vw
+            width: 80vw
             height: 60vh
             background-size: contain
             background-repeat: no-repeat
@@ -222,13 +225,16 @@ section#ds-s-gallery-wrapper
             transform: translateY(-50%)
             font-size: 5rem 
             color: white
+            @media screen and ( max-width: 1100px)
+                top: 80%
+                
         span.next
             right: 5%
         span.prev
             left: 5%
         span.ds-s-gallery-order
             bottom: 25px
-            right: 25px
+            left: 25px
             font-size: 2.5rem
             color: white
             cursor: default !important
@@ -237,31 +243,6 @@ section#ds-s-gallery-wrapper
     div.ds-s-gallery-modal.exit
         animation: fadeOut .4s linear both
 //RWD
-@media screen and (max-width: 767px)
-    //START MODAL
-    section#ds-s-gallery-wrapper
-        margin-top: 150px
-        h1
-            top: -67px
-        div.ds-s-gallery-modal
-            
-            div.ds-s-gallery-modal-image
-                width: 100vw
-                height: 100vh
-            span.ds-s-gallery-order
-                bottom: 10px
-                left: 10px
-                font-size: 2rem
-            span.next
-                right: 21%
-            span.ds-s-gallery-modal-exit
-                z-index: 150
-    div.ds-s-gallery-all-images
-        footer
-            font-size: 1.5rem
-            text-align: center
-    //END MODAL
-
 @media screen and (min-width: 1101px)
     section#ds-s-gallery-wrapper
         div.ds-s-gallery-images-wrapper
@@ -270,6 +251,9 @@ section#ds-s-gallery-wrapper
 @media screen and (max-width: 1100px)
     //START HEADER IMAGE WRAPPER
     section#ds-s-gallery-wrapper
+        margin-top: 150px
+        h1
+            top: -67px
         div.ds-s-gallery-images-wrapper
             &::before
                 width: 35vw
@@ -289,6 +273,15 @@ section#ds-s-gallery-wrapper
                         border-radius: 0
                         &::before
                             display: none
+                span
+                    position: absolute
+                    width: 50vw
+                    height: 100%
+                    z-index: 30
+                    top: 0
+                    left: 0
+                span.next
+                    left: 50vw
                 //DISPLAY DIRECT DOTS       
                 div.ds-s-gallery-dots-wrapper-desktop
                     display: none
@@ -298,6 +291,8 @@ section#ds-s-gallery-wrapper
                         width: 20px
                         height: 20px
                         border: 3px solid #fff
+                        position: relative
+                        z-index: 40
 
             div.ds-s-gallery-header-desktop
                 display: none
@@ -309,7 +304,24 @@ section#ds-s-gallery-wrapper
                 span.prev
                     left: 0%
                 span.next
-                    right: 0%  
+                    right: 0% 
+
+        div.ds-s-gallery-modal
+            div.ds-s-gallery-modal-image
+                width: 100vw
+                height: 100vh
+            span.ds-s-gallery-order
+                bottom: 10px
+                left: 10px
+                font-size: 2rem
+            span.next
+                right: 21%
+            span.ds-s-gallery-modal-exit
+                z-index: 150
+        div.ds-s-gallery-all-images
+            footer
+                font-size: 1.5rem
+                text-align: center 
             
             
                     

@@ -84,9 +84,9 @@ export default {
                     body: [
                         { content: "Niepubliczna Specjalistyczna Poradnia Psychologiczno-Pedagogiczna", href: "http://www.poradnia-wadowice.pl/" },
                         { content: "Niepubliczny Ośrodek Rewalidacyjno-Wychowawczy", href: "/nasze-placowki/niepubliczny-osrodek-rewalidacyjno-wychowawczy" },
-                        { content: 'Niepubliczny Punkt Przedszkolny "Dać Szansę', href: "#" },
+                        { content: 'Niepubliczny Punkt Przedszkolny "Dać Szansę', href: "http://www.przedszkoledacszanse.pl/" },
                         { content: 'Świetlica Terapeutyczno-Integracyjna  "Szansa', href: "/nasze-placowki/swietlica-terapeutyczno-integracyjna-szansa" },
-                        { content: 'Spółdzielnia Socjalna "AMICUS', href: "#" }
+                        { content: 'Spółdzielnia Socjalna "AMICUS', href: "http://spoldzielniaamicus.pl/" }
                     ]
                 },
                 {
