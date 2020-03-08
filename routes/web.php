@@ -18,6 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 //Home
 Route::get('/home', 'HomeController@index')->name('home');
+
+
 //
 //OUR OBJECTS
 //
@@ -27,3 +29,13 @@ Route::get('/nasze-placowki','OurObjectsController@index');
 Route::get('/nasze-placowki/niepubliczny-osrodek-rewalidacyjno-wychowawczy','OurObjectsController@getItem1');
 //Świetlica Terapeutyczno-Integracyjna "Szansa
 Route::get('/nasze-placowki/swietlica-terapeutyczno-integracyjna-szansa','OurObjectsController@getItem2');
+
+
+
+//
+//TASKS
+//
+//index
+Route::get('/dzialalnosc/zajecia','TasksController@getItem1');
+//
+Route::get('/dzialalnosc/zajecia/psychologiczno-pedaogiczno-logopedyczne','TasksController@getItemPsychologicznoPedagogiczne');

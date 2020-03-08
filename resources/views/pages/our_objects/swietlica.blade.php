@@ -34,15 +34,5 @@
 
     <dayroom-gallery></dayroom-gallery>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 </div>
 @endsection

@@ -26,6 +26,9 @@ Vue.component("oo-logo", require("./components/our_objects/OOLogo.vue").default)
 Vue.component("dayroom-tasks", require("./components/our_objects/dayroom/TaskList.vue").default);
 Vue.component("dayroom-gallery", require("./components/our_objects/dayroom/gallery/Index.vue").default);
 Vue.component("scroll-btn", require("./components/ScrollBTN.vue").default);
+Vue.component("our-tasks", require("./components/activities/tasks/Index.vue").default);
+Vue.component("activites-logo", require("./components/activities/ActivitesLogo.vue").default);
+Vue.component("single-task-gallery", require("./components/activities/tasks/SingleTaskGallery.vue").default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

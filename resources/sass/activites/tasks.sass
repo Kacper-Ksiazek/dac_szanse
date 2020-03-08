@@ -1,0 +1,178 @@
+section.ds-a-wrapper
+    div.ds-a-tasks-navs
+        display: flex
+        justify-content: center
+        padding: 30px 0
+        button
+            background: transparent
+            border: none
+            padding: 5px 10px
+            font-size: 1.3rem
+            i
+                margin-left: 20px
+        div.dropdown-menu
+            a
+                font-size: 1.1rem
+                margin-bottom: 5px
+                position: relative
+                z-index: 1
+                &::before
+                    content: ''
+                    position: absolute
+                    top: 0%
+                    left: 0%
+                    width: 0%
+                    height: 100%
+                    background-color: $deafultGreen
+                    color: white
+                    transition: all .2s linear
+                span
+                    position: relative
+                    z-index: 2
+                    transition: color .2s linear
+                &:hover
+                    &::before
+                        width: 100%
+                    span
+                        color: white
+    div.ds-a-tasks-tasks-wrapper
+        div.ds-a-tasks-task-item
+            display: flex
+            visibility: hidden
+            &:nth-of-type(even)
+                background-color: #FBF1F1
+                flex-direction: row-reverse
+            img
+                width: 50%
+            div.ds-a-task-item-content
+                width: 50%
+                display: flex
+                justify-content: center
+                align-items: center
+                flex-direction: column
+                padding: 0 50px
+                h1
+                    position: relative
+                    margin-bottom: 50px
+                    text-align: center
+                    &::before
+                        content: ''
+                        position: absolute
+                        bottom: -20px
+                        width: 75%
+                        height: 3px
+                        background-color: $deafultGreen
+                        left: 50%
+                        transform: translateX(-50%)
+                a
+                    margin-top: 40px
+        div.ds-a-tasks-task-item.active
+            img
+                animation: fadeIn 1s linear both
+            div.ds-a-task-item-content
+                h1
+                    animation: fadeInTop .7s  .1s linear both
+                    &::before
+                        animation: width0To75 .7s 1s both
+                h4
+                    animation: fadeInTop .7s  .3s linear both
+                a
+                    animation: fadeInTop .7s  .5s linear both
+    div.ds-a-tasks-hydrotherapy
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        padding: 20px 0
+        border-top: 5px solid $deafultGreen
+        border-bottom: 5px solid $deafultGreen
+        position: relative
+        visibility: hidden
+        &::before
+            content: ''
+            position: absolute
+            bottom: 0
+            left: -5vw
+            width: 100%
+            height: 100%
+            background-image: url(./images/dayroom.png)
+            background-size: contain
+            z-index: 2
+            background-repeat: no-repeat
+            opacity: .7
+        *
+            position: relative
+            z-index: 3
+        h1
+            position: relative
+            margin-bottom: 50px
+            &::before
+                content: ''
+                position: absolute
+                bottom: -20px
+                width: 125%
+                height: 3px
+                background-color: $deafultGreen
+                left: 50%
+                transform: translateX(-50%)
+        button
+            margin-top: 20px
+    @keyframes fadeInBorder
+        0%
+            border-top: 5px solid transparent
+            border-bottom: 5px solid transparent
+            visibility: hidden
+        100%
+            border-top: 5px solid $deafultGreen
+            border-bottom: 5px solid $deafultGreen
+            visibility: visible
+    div.ds-a-tasks-hydrotherapy.active
+        animation: fadeInBorder .2s 1s linear both
+        &::before
+            animation: fadeInLeft 1s .2s ease-in both
+        h1
+            animation: fadeInTop .5s  .3s linear both
+        h4
+            animation: fadeInTop .8s  .3s linear both
+        button
+            animation: fadeInTop 1.1s  .3s linear both
+
+// RWD
+@media screen and (max-width: 767px)
+    section.ds-a-wrapper
+        div.ds-a-tasks-navs
+            a
+                width: 100vw
+                i
+                    margin-left: 20px
+            div.dropdown-menu
+                width: 97vw
+                a
+                    white-space: pre-wrap !important
+                    margin-bottom: 0px
+                   
+        div.ds-a-tasks-tasks-wrapper
+            div.ds-a-tasks-task-item
+                flex-direction: column
+                &:nth-of-type(even)
+                    flex-direction: column
+                img
+                    width: 100%
+                    margin-bottom: 20px
+                div.ds-a-task-item-content
+                    padding: 0 10px
+                    width: 100%
+                    a
+                        margin-top: 20px
+                        margin-bottom: 70px
+                        width: 100vw
+                        border-radius: 0
+                        
+        div.ds-a-tasks-hydrotherapy
+            margin-bottom: 70px
+            h4
+                padding: 0 10px
+            button
+                margin-top: 20px
+                width: 100vw
+                border-radius: 0

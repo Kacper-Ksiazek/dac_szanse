@@ -22,4 +22,9 @@ class loadPagesTest extends TestCase
     public function load_dayroom_page(){
         $this->get('/nasze-placowki/swietlica-terapeutyczno-integracyjna-szansa')->assertSee(view('pages.our_objects.swietlica'));
     }
+
+    /** @test */
+    public function load_zajecia(){
+        $this->get('/dzialalnosc/zajecia')->assertSee(view('pages.tasks.index'));
+    }
 }

@@ -26,7 +26,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm p-1">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm p-1 ds-menu-wrapper">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{-- {{ config('app.name', 'Laravel') }} --}}
@@ -35,8 +35,7 @@
                 <menu-navs></menu-navs>
             </div>
         </nav>
-
-        <main class="w-100">
+        <main class="w-100" style='margin-top: 80px'>
             @yield('content')
         </main>
 

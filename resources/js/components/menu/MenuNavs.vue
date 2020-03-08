@@ -1,9 +1,7 @@
 <template>
     <div>
         <!-- OPEN MOBILE MENU -->
-        <button class="navbar-toggler" type="button" @click="openMobileMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <button class="ds-menu-navbar-toggler" type="button" @click="openMobileMenu"><i class="fa fa-bars"></i></button>
 
         <div class="" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
@@ -25,9 +23,10 @@
             <div class="ds-menu-small" v-if="mobileMenu">
                 <div class="ds-menu-small-logo">
                     <div>
+                        <div class="ds-menu-small-logo-img"></div>
                         <button class="btn btn-primary" @click="exitMobileMenu"><i class="fa fa-times"></i></button>
                     </div>
-                    <img src="./images/logo.png" alt="" />
+                    <!-- <img src="./images/logo.png" alt="" /> -->
                 </div>
                 <section class="ds-menu-small-content">
                     <div class="small-nav-item" v-for="nav in navs" :key="nav.header.content">
@@ -73,9 +72,9 @@ export default {
                     ]
                 },
                 {
-                    header: { content: "Co robimy", href: "#" },
+                    header: { content: "Działalność", href: "#" },
                     body: [
-                        { content: "Zajęcia", href: "#" },
+                        { content: "Zajęcia", href: "/dzialalnosc/zajecia" },
                         { content: "Projekty", href: "#" }
                     ]
                 },
@@ -118,7 +117,7 @@ export default {
             setTimeout(() => {
                 el.classList.remove("exit");
                 this.mobileMenu = false;
-            }, 200);
+            }, 600);
         }
     }
 };
