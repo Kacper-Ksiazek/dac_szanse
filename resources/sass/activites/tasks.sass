@@ -1,4 +1,4 @@
-section.ds-a-wrapper
+section.ds-a-tasks-wrapper
     div.ds-a-tasks-navs
         display: flex
         justify-content: center
@@ -38,10 +38,12 @@ section.ds-a-wrapper
     div.ds-a-tasks-tasks-wrapper
         div.ds-a-tasks-task-item
             display: flex
+            background-color: white
             visibility: hidden
             &:nth-of-type(even)
-                background-color: #FBF1F1
                 flex-direction: row-reverse
+                div.ds-a-task-item-content
+                    background-color: #FBF1F1
             img
                 width: 50%
             div.ds-a-task-item-content
@@ -70,6 +72,7 @@ section.ds-a-wrapper
             img
                 animation: fadeIn 1s linear both
             div.ds-a-task-item-content
+                animation: fadeIn .3s linear both
                 h1
                     animation: fadeInTop .7s  .1s linear both
                     &::before
@@ -115,7 +118,7 @@ section.ds-a-wrapper
                 background-color: $deafultGreen
                 left: 50%
                 transform: translateX(-50%)
-        button
+        a
             margin-top: 20px
     @keyframes fadeInBorder
         0%
@@ -134,12 +137,12 @@ section.ds-a-wrapper
             animation: fadeInTop .5s  .3s linear both
         h4
             animation: fadeInTop .8s  .3s linear both
-        button
+        a
             animation: fadeInTop 1.1s  .3s linear both
 
 // RWD
 @media screen and (max-width: 767px)
-    section.ds-a-wrapper
+    section.ds-a-tasks-wrapper
         div.ds-a-tasks-navs
             a
                 width: 100vw
@@ -172,7 +175,7 @@ section.ds-a-wrapper
             margin-bottom: 70px
             h4
                 padding: 0 10px
-            button
+            a
                 margin-top: 20px
                 width: 100vw
                 border-radius: 0

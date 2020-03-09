@@ -3,7 +3,7 @@
         <span class="ds-s-gallery-modal-exit" @click="closeModal">
             <i class="fa fa-times"></i>
         </span>
-        <div class="ds-s-gallery-modal-image" :style="all_images[modalActiveImageIndex] | setPathBody"></div>
+        <div class="ds-s-gallery-modal-image" :style="setPathBody(all_images[modalActiveImageIndex])"></div>
         <span class="next" @click="modalActiveImageIndex++" v-if="modalActiveImageIndex < all_images.length - 1"><i class="fa fa-chevron-right"></i></span>
         <span class="prev" @click="modalActiveImageIndex--" v-if="modalActiveImageIndex > 0"><i class="fa fa-chevron-left"></i></span>
         <!--  -->
@@ -13,7 +13,7 @@
 </template>
 <script>
 export default {
-    props: ["index", "all_images"],
+    props: ["index", "all_images", "prefix"],
     methods: {
         closeModal(e) {
             if (this.pendingClosing) return;
@@ -27,6 +27,9 @@ export default {
         },
         orderNote() {
             return `${this.modalActiveImageIndex + 1} z ${this.all_images.length}`;
+        },
+        setPathBody(value) {
+            return `background-image: url('${this.prefix}${value}.jpg')`;
         }
     },
     data() {
@@ -34,13 +37,6 @@ export default {
             pendingClosing: false,
             modalActiveImageIndex: this.index
         };
-    },
-
-    filters: {
-        setPathBody(value) {
-            return `background-image: url('/images/activities/psychologiczno-pedaogiczno-logopedyczne/${value}.jpg')`;
-        }
-    },
-    watch: {}
+    }
 };
 </script>

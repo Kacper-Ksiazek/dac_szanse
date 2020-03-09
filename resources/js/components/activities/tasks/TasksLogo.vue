@@ -1,5 +1,5 @@
 <template>
-    <div class="ds-a-logo">
+    <div class="ds-a-tasks-logo">
         <h1>Zajęcia</h1>
     </div>
 </template>

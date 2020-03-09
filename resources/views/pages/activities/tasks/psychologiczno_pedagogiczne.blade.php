@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('title')
-    <title>Zajęcia</title>
+    <title>Zajęcia psychologiczno-pedaogiczno-logopedyczne</title>
 @endsection
 @section('content')
 <div class="w-100">
     <path-bar path='[{"header":"Działalność","href":"/dzialalnosc"}, {"header":"Zajęcia","href":"/dzialalnosc/zajecia"},{"header":"Psychologiczno Pedaogiczno Logopedyczne","href":"#"}]'></path-bar>
-    <activites-logo></activites-logo>
+    <tasks-logo></tasks-logo>
     {{--  --}}
     <section class="ds-single-task-wrapper">
         {{--  --}}
@@ -49,7 +49,9 @@
             <li>Dzieci dzięki programom edukacyjnym uczą się poznawać otaczający świat, zdobywają wiedzę o życiu codziennym, poznają tajniki ortografii, uczą się liczyć i odnajdywać trudne hasła – a także wykorzystywać szeroko dziś dostępne techniki cyfrowe w wartościowy sposób</li>
         </ul>
         {{--  --}}
-        <single-task-gallery :images='[
+        <single-task-gallery 
+        prefix='/images/activities/psychologiczno-pedaogiczno-logopedyczne/'
+        :images='[
             "b_parzadka_stycze_1",
             "b_parzadka_stycze_2",
             "b_parzadka_stycze_3",
