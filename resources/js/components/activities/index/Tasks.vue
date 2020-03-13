@@ -2,10 +2,10 @@
     <div class="ds-a-content">
         <h1>Głównym celem Stowarzyszenia jest działalność rzecz osób poszkodowanych i wykluczonych</h1>
         <p>
-            a w szczególności dzieci niepełnosprawnych w zakresie wychowania, edukacji, pomocy społecznej, ochrony i promocji zdrowia, poszkodowanym w wypadkach i wymagającym
-            rehabilitacji. Swoje cele Stowarzyszenie stara się realizować poprzez:
+            A w szczególności dzieci niepełnosprawnych w zakresie wychowania, edukacji, pomocy społecznej, ochrony i promocji zdrowia, poszkodowanym w wypadkach i wymagającym
+            rehabilitacji. <strong>Swoje cele Stowarzyszenie stara się realizować poprzez:</strong>
         </p>
-        <div class="da-a-task" v-for="task in tasksAPI" :key="task.header">
+        <div class="ds-a-task" v-for="task in tasksAPI" :key="task.header">
             <p v-text="task.header"></p>
             <ul v-if="task.items">
                 <li v-for="item in task.items" :key="item" v-text="item"></li>

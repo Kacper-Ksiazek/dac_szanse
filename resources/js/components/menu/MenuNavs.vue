@@ -75,7 +75,7 @@ export default {
                     header: { content: "Działalność", href: "/dzialalnosc" },
                     body: [
                         { content: "Zajęcia", href: "/dzialalnosc/zajecia" },
-                        { content: "Projekty", href: "#" }
+                        { content: "Projekty", href: "/dzialalnosc/projekty" }
                     ]
                 },
                 {
@@ -89,7 +89,7 @@ export default {
                     ]
                 },
                 {
-                    header: { content: "Jak pomóc", href: "#" },
+                    header: { content: "Jak pomóc", href: "/jak-pomoc" },
                     body: [
                         { content: "Przekaż 1%", href: "#" },
                         { content: "Jak przekazać darowiznę", href: "#" }

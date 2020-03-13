@@ -60,3 +60,14 @@ Route::get('/dzialalnosc/zajecia/biofeedback','TasksController@getItemBiofeedbac
 //
 Route::get('/dzialalnosc/zajecia/arteterapia','TasksController@getItemArteterapia');
 //ZAJECIA STOP
+//
+//PROJEKTY
+Route::get('/dzialalnosc/projekty','ProjectController@index');
+Route::get('/dzialalnosc/projekty/{project}','ProjectController@showSingleProject');
+Route::get('/dzialalnosc/projekty/archiwum/{year}','ProjectController@handleArchives');
+Route::get('api/archives','ProjectController@archives');
+//
+//JAK POMOC
+//
+//INDEX
+Route::get('/jak-pomoc','HelpController@index');

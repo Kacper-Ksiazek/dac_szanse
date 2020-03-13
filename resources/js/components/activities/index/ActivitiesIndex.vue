@@ -5,8 +5,8 @@
         <!-- TOGGLE BETWEEN TASKS AND PROJECTS -->
         <!--  -->
         <div class="ds-a-control">
-            <span @click="currentActivity = 'tasks'">Zajecia</span>
-            <span @click="currentActivity = 'projects'">Projekty</span>
+            <span :class="currentActivity == 'tasks' ? 'active' : null" class="ds-a-control-header" @click="currentActivity = 'tasks'">Zajecia</span>
+            <span :class="currentActivity == 'projects' ? 'active' : null" class="ds-a-control-header" @click="currentActivity = 'projects'">Projekty</span>
         </div>
         <!--  -->
         <!-- TASKS -->
@@ -20,8 +20,8 @@
         <!-- NAVS -->
         <!--  -->
         <div class="ds-a-navs">
-            <a href="/dzialalnosc/zajecia">Pokaz zajecia</a>
-            <a href="/dzialalnosc/projekty">Pokaz projekty</a>
+            <a class="left" href="/dzialalnosc/zajecia">Pokaz zajecia</a>
+            <a class="right" href="/dzialalnosc/projekty">Pokaz projekty</a>
         </div>
     </section>
 </template>

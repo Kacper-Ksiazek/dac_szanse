@@ -53,4 +53,5 @@ class TasksController extends Controller
     public function getItemArteterapia(){
         return view('pages.activities.tasks.arteterapia');
     }
+    
 }

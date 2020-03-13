@@ -1,6 +1,6 @@
 //START LOGO
 div.ds-oo-logo
-    background-image: url('./images/oo_logo.png')
+    background-image: url('/images/ourObjects/logo.png')
     background-position: center
     background-repeat: no-repeat
     background-size: cover
@@ -18,71 +18,190 @@ div.ds-oo-logo
 
     
 //START PLACE
-section.ds-oo-place
-    width: 100%
-    display: flex
-    visibility: hidden
-    &:nth-of-type(even)
-        flex-direction: row-reverse
-        background-color: #FBF1F1
-        
-    img
-        width: 50%
-        height: 60vh
-    div.content
-        width: 50%
+div.ds-oo-single-item-wrapper
+    &:nth-of-type(odd)
+        section.ds-oo-place
+            flex-direction: row-reverse
+            background-color: #FBF1F1
+    section.ds-oo-place
+        width: 100%
         display: flex
+        visibility: hidden
+        img
+            width: 50%
+            height: 60vh
+        div.content
+            width: 50%
+            display: flex
+            justify-content: center
+            align-items: center
+            flex-direction: column
+            cursor: default
+            h1
+                position: relative
+                font-size: 1.5rem
+                font-weight: bold
+                &::before,
+                &::after
+                    content: ''
+                    position: absolute
+                    bottom: -20px
+                    background-color: #FF693A
+                    height: 5px
+                &::before
+                    left: 50%
+                &::after
+                    right: 50%
+
+            div.ds-oo-place-content-wrapper
+                display: flex
+                margin-top: 30px
+
+                div.ds-oo-border
+                    margin-right: 20px
+                    padding-left: 10%
+                    span
+                        font-size: 1.25rem
+                    &::before
+                        content: ''
+                        position: absolute
+                        height: 100%
+                        right: 0
+                        top: 0
+                        width: 2px
+                        background-color: black
+                div
+                    display: flex
+                    flex-direction: column
+                    flex-basis: 50%
+                    justify-content: center
+
+                    span
+                        margin-bottom: 10px
+                        font-size: 1.1rem
+
+            a.ds-oo-see-more
+                background-color: #FF693A
+                border: none
+                margin-top: 50px
+                padding: 10px 20px
+                font-size: 2rem
+                font-size: 'Arial'
+                color: white
+                border-radius: 30px
+                font-weight: bold
+                transition: background-color .2s linear
+                &:hover
+                    background-color: #ff9f43
+    //PLACE ANIMATIONS
+    section.ds-oo-place.active
+        visibility: visible
+        img
+            animation: fadeIn .5s 1.5s linear both
+        div.content
+            h1
+                position: relative
+                font-size: 1.5rem
+                font-weight: bold
+                &::before,
+                &::after
+                    content: ''
+                    position: absolute
+                    bottom: -20px
+                    background-color: #FF693A
+                    height: 5px
+                &::before
+                    left: 50%
+                    animation: oo-lineAnimationIn .5s linear both
+                &::after
+                    right: 50%
+                    animation: oo-lineAnimationIn .5s linear both
+                span
+                    animation: fadeIn .2s .8s both linear
+
+            div.ds-oo-place-content-wrapper
+                div.ds-oo-border
+                    animation: fadeInLeft .5s 1s both linear
+                    @media screen and (max-width: 767px)
+                        animation: fadeIn .5s 1s both linear
+                    &::before
+                        animation: fadeIn .2s 2s both linear
+                div
+                    animation: fadeInRight .5s 1s both linear
+                    @media screen and (max-width: 767px)
+                        animation: fadeIn .5s 1s both linear
+
+            a.ds-oo-see-more
+                animation: fadeIn .2s 2s both linear
+    //RWD PLACE
+    @media screen and (max-width: 767px)
+        div.ds-oo-logo
+            h1
+                font-size: 2rem
+        section.ds-oo-place
+            margin-top: 30px
+            flex-direction: column
+            margin-bottom: 30px
+            &:nth-of-type(even)
+                flex-direction: column
+            img
+                width: 100%
+                object-fit: cover
+                margin-bottom: 10px
+            div.content
+                width: 100%
+                h1
+                    text-align: center
+                    font-size: 1.2rem
+                div.ds-oo-place-content-wrapper
+                    flex-direction: column
+                    margin-bottom: 20px
+                    div.ds-oo-border
+                        padding-left: 20px
+                        margin-bottom: 10px
+                        span
+                            font-size: 1rem
+                        &::before
+                            display: none
+
+                    div
+                        padding-left: 20px
+                        span
+                            font-size: 1rem
+    @media screen and (max-width: 400px)
+        button.ds-oo-see-more
+                margin-top: 0px !important
+                width: 100%
+                border-radius: 0 !important
+    //END PLACE
+
+    //START DAYROOM
+    section.ds-oo-dayroom
+        position: relative
+        display: flex
+        flex-direction: column
         justify-content: center
         align-items: center
-        flex-direction: column
-        cursor: default
+        margin: 100px 0
+        visibility: hidden
         h1
             position: relative
-            font-size: 1.5rem
+            margin-bottom: 70px
             font-weight: bold
             &::before,
             &::after
                 content: ''
                 position: absolute
                 bottom: -20px
-                background-color: #FF693A
+                background-color: $deafultGreen
                 height: 5px
             &::before
                 left: 50%
             &::after
                 right: 50%
-
-        div.ds-oo-place-content-wrapper
-            display: flex
-            margin-top: 30px
-            
-            div.ds-oo-border
-                margin-right: 20px
-                padding-left: 10%
-                span
-                    font-size: 1.25rem
-                &::before
-                    content: ''
-                    position: absolute
-                    height: 100%
-                    right: 0
-                    top: 0
-                    width: 2px
-                    background-color: black
-            div
-                display: flex
-                flex-direction: column
-                flex-basis: 50%
-                justify-content: center
-
-                span
-                    margin-bottom: 10px
-                    font-size: 1.1rem
-
-        button.ds-oo-see-more
-            background-color: #FF693A
+        a
+            background-color: $deafultGreen
             border: none
-            margin-top: 50px
             padding: 10px 20px
             font-size: 2rem
             font-size: 'Arial'
@@ -91,183 +210,65 @@ section.ds-oo-place
             font-weight: bold
             transition: background-color .2s linear
             &:hover
-                background-color: #ff9f43
-//PLACE ANIMATIONS
-section.ds-oo-place.active
-    visibility: visible
-    img
-        animation: fadeIn .5s 1.5s linear both
-    div.content
-        h1
-            position: relative
-            font-size: 1.5rem
-            font-weight: bold
-            &::before,
-            &::after
-                content: ''
-                position: absolute
-                bottom: -20px
-                background-color: #FF693A
-                height: 5px
-            &::before
-                left: 50%
-                animation: oo-lineAnimationIn .5s linear both
-            &::after
-                right: 50%
-                animation: oo-lineAnimationIn .5s linear both
-            span
-                animation: fadeIn .2s .8s both linear
-
-        div.ds-oo-place-content-wrapper
-            div.ds-oo-border
-                animation: fadeInLeft .5s 1s both linear
-                @media screen and (max-width: 767px)
-                    animation: fadeIn .5s 1s both linear
-                &::before
-                    animation: fadeIn .2s 2s both linear
-            div
-                animation: fadeInRight .5s 1s both linear
-                @media screen and (max-width: 767px)
-                    animation: fadeIn .5s 1s both linear
-
-        button.ds-oo-see-more
-            animation: fadeIn .2s 2s both linear
-//RWD PLACE
-@media screen and (max-width: 767px)
-    div.ds-oo-logo
-        h1
-            font-size: 2rem
-    section.ds-oo-place
-        margin-top: 30px
-        flex-direction: column
-        margin-bottom: 30px
-        &:nth-of-type(even)
-            flex-direction: column
-        img
-            width: 100%
-            object-fit: cover
-            margin-bottom: 10px
-        div.content
-            width: 100%
-            h1
-                text-align: center
-                font-size: 1.2rem
-            div.ds-oo-place-content-wrapper
-                flex-direction: column
-                margin-bottom: 20px
-                div.ds-oo-border
-                    padding-left: 20px
-                    margin-bottom: 10px
-                    span
-                        font-size: 1rem
-                    &::before
-                        display: none
-
-                div
-                    padding-left: 20px
-                    span
-                        font-size: 1rem
-@media screen and (max-width: 400px)
-    button.ds-oo-see-more
-            margin-top: 0px !important
-            width: 100%
-            border-radius: 0 !important
-//END PLACE
-
-//START DAYROOM
-section.ds-oo-dayroom
-    position: relative
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
-    margin: 100px 0
-    visibility: hidden
-    h1
-        position: relative
-        margin-bottom: 70px
-        font-weight: bold
-        &::before,
-        &::after
-            content: ''
+                background-color: #7bed9f     
+        &::before
+            content: ""
             position: absolute
-            bottom: -20px
-            background-color: $deafultGreen
-            height: 5px
-        &::before
-            left: 50%
-        &::after
-            right: 50%
-    button
-        background-color: $deafultGreen
-        border: none
-        padding: 10px 20px
-        font-size: 2rem
-        font-size: 'Arial'
-        color: white
-        border-radius: 30px
-        font-weight: bold
-        transition: background-color .2s linear
-        &:hover
-            background-color: #7bed9f     
-    &::before
-        content: ""
-        position: absolute
-        top: 0
-        left: 52%
-        width: 40%
-        height: 100%
-        background-image: url(./images/dayroom.png)
-        background-repeat: no-repeat
-        background-size: contain
-        background-position: center
-    //DAYROOM ANIMATIONS
-section.ds-oo-dayroom.active
-    visibility: visible
-    h1
-        span
-            animation: fadeIn .5s .7s linear both
-        &::before
-            animation: oo-lineAnimationIn .5s .2s linear both
-        &::after
-            animation: oo-lineAnimationIn .5s .2s linear both
-    button
-        animation: fadeIn .5s 1s linear both
-        
-    &::before
-        animation: fadeInRight .5s 1.5s linear both
-//DAYROOM RWD
-@media screen and (max-width: 767px)
-    section.ds-oo-dayroom
-        margin-top: 250px !important
-        position: relative
-        display: flex
-        flex-direction: column
-        justify-content: center
-        align-items: center
-        margin: 100px 0
-        visibility: hidden
-
+            top: 0
+            left: 52%
+            width: 40%
+            height: 100%
+            background-image: url(/images/dayroom.png)
+            background-repeat: no-repeat
+            background-size: contain
+            background-position: center
+        //DAYROOM ANIMATIONS
+    section.ds-oo-dayroom.active
+        visibility: visible
         h1
-            position: relative
-            margin-bottom: 70px
-            text-align: center
-            font-size: 2rem
-        &::before
-            width: 100%
-            left: 0
-            top: -100%
-@media screen and (max-width: 400px)
-    button.ds-oo-dayroom-btn
-        width: 100% !important
-        border-radius: 0px !important
-//END RWD
-//END DAYROOM
+            span
+                animation: fadeIn .5s .7s linear both
+            &::before
+                animation: oo-lineAnimationIn .5s .2s linear both
+            &::after
+                animation: oo-lineAnimationIn .5s .2s linear both
+        a
+            animation: fadeIn .5s 1s linear both
 
-span.ds-oo-break-line
-    width: 70%
-    height: 5px
-    background-color: $deafultGreen
-    display: block
-    margin: 100px auto
+        &::before
+            animation: fadeInRight .5s 1.5s linear both
+    //DAYROOM RWD
+    @media screen and (max-width: 767px)
+        section.ds-oo-dayroom
+            margin-top: 250px !important
+            position: relative
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            margin: 100px 0
+            visibility: hidden
+
+            h1
+                position: relative
+                margin-bottom: 70px
+                text-align: center
+                font-size: 2rem
+            &::before
+                width: 100%
+                left: 0
+                top: -100%
+    @media screen and (max-width: 400px)
+        a.ds-oo-dayroom-btn
+            width: 100% !important
+            border-radius: 0px !important
+    //END RWD
+    //END DAYROOM
+
+    span.ds-oo-break-line
+        width: 70%
+        height: 5px
+        background-color: $deafultGreen
+        display: block
+        margin: 100px auto
 

@@ -39,7 +39,10 @@ Vue.component("single-task-gallery", require("./components/activities/tasks/Sing
 Vue.component("activites-logo", require("./components/activities/index/ActivitesLogo.vue").default);
 //Dzialalnosc index
 Vue.component("our-activities", require("./components/activities/index/ActivitiesIndex.vue").default);
-
+//Jak pomoc logo
+Vue.component("help-index", require("./components/help/index/HelpIndex.vue").default);
+//Projekty Index
+Vue.component("projects-index", require("./components/activities/projects/Index.vue").default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

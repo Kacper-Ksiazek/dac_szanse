@@ -14,7 +14,7 @@ export default {
     props: ["all_images"],
     filters: {
         setPathBody(value) {
-            return `background-image: url('/images/dayroom/body/${value}')`;
+            return `background-image: url('/images/ourObjects/dayroom/body/${value}')`;
         }
     }
 };

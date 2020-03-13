@@ -52,7 +52,7 @@ export default {
     },
     filters: {
         setPathHeader(value) {
-            return `background-image: url('/images/dayroom/header/${value}.jpg')`;
+            return `background-image: url('/images/ourObjects/dayroom/header/${value}.jpg')`;
         }
     }
 };

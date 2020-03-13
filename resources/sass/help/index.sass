@@ -1,0 +1,87 @@
+section.ds-help-wrapper
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    h1
+        position: relative
+        margin-top: 20px
+        font-size: 3rem
+        text-align: center
+        &::before
+            content: ''
+            position: absolute
+            bottom: -10px
+            left: 50%
+            width: 75%
+            height: 3px
+            transform: translateX(-50%)
+            background-color: $deafultGreen
+    div.ds-help-content
+        margin: 50px 10vw
+        text-align: center
+        @media screen and (max-width: 767px)
+            margin: 50px 3vw
+        p
+            font-size: 1.2rem
+            margin-bottom: 50px
+            
+        h3
+            font-size: 1.4rem
+            font-weight: bold
+
+    div.ds-help-accounts-wrapper
+        border-left: 5px solid $deafultGreen
+        border-right: 5px solid $deafultGreen
+        margin: 0 20px 70px 20px
+        padding: 0 40px
+        font-size: 1.3rem
+        text-align: center
+        div.ds-help-bank-account
+            display: flex
+            flex-direction: column
+            
+    div.ds-help-forms
+        width: 100%
+        background-image: url('/images/help/background.png')
+        background-size: cover
+        background-repeat: no-repeat
+        background-position: center
+        background-attachment: fixed
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        padding: 0 10%
+        @media screen and (max-width: 900px)
+            padding: 0 5%
+
+        div.ds-help-single-help-form
+            width: 300px
+            height: 200px
+            background-color: white
+            display: flex
+            justify-content: center
+            align-items: center
+            margin: 30px
+            display: flex
+            flex-direction: column
+            border-radius: 20px
+            font-size: 1.3rem
+            @media screen and (max-width: 900px)
+                width: 100%
+            span
+                font-weight: bold
+                text-align: center
+            a
+                background-color: $deafultGreen
+                padding: 5px 10px
+                border-radius: 10px
+                color: white
+                border-radius: 10px
+                text-decoration: none
+                margin-top: 5%
+                transition: all .2s linear
+                &:hover
+                    background-color: #fff
+                    color: $deafultGreen
+
