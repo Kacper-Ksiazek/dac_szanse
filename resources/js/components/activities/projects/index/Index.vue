@@ -5,9 +5,12 @@
         <!--  -->
         <help-logo></help-logo>
         <!--  -->
+        <a v-if="!auth" href="/login">Login</a>
+        <a v-if="auth" href="/logout">Logout</a>
+        <a v-if="auth" href="/admin/dodaj-projekt">Dodaj nowy</a>
         <!--  -->
         <!--  -->
-        <project v-for="item in projects" :key="item.id" :data="item"></project>
+        <project v-for="item in projects.reverse()" :key="item.id" :data="item"></project>
         <!--  -->
         <!--  -->
         <!--  -->
@@ -21,10 +24,10 @@
 </template>
 <script>
 import Project from "./Project.vue";
-import HelpLogo from "./HelpLogo.vue";
+import HelpLogo from "../HelpLogo.vue";
 export default {
     components: { project: Project, "help-logo": HelpLogo },
-    props: ["projects", "archives"],
+    props: ["projects", "archives", "auth"],
     data() {
         return {
             showArchives: false

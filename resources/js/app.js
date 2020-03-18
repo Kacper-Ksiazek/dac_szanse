@@ -42,7 +42,14 @@ Vue.component("our-activities", require("./components/activities/index/Activitie
 //Jak pomoc logo
 Vue.component("help-index", require("./components/help/index/HelpIndex.vue").default);
 //Projekty Index
-Vue.component("projects-index", require("./components/activities/projects/Index.vue").default);
+Vue.component("projects-index", require("./components/activities/projects/index/Index.vue").default);
+//Projekty Logo
+Vue.component("projects-logo", require("./components/activities/projects/HelpLogo.vue").default);
+//Podglad jednego projektu
+Vue.component("single-project", require("./components/activities/projects/showOneProject/Index.vue").default);
+//Dodaj nowy projekt
+Vue.component("add-project", require("./components/activities/projects/add_project/AddProject.vue").default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('/logout','Auth\LoginController@logout');
 //Home
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -65,7 +66,10 @@ Route::get('/dzialalnosc/zajecia/arteterapia','TasksController@getItemArteterapi
 Route::get('/dzialalnosc/projekty','ProjectController@index');
 Route::get('/dzialalnosc/projekty/{project}','ProjectController@showSingleProject');
 Route::get('/dzialalnosc/projekty/archiwum/{year}','ProjectController@handleArchives');
-Route::get('api/archives','ProjectController@archives');
+Route::get('/admin/dodaj-projekt','ProjectController@addNewForm')->middleware('auth');
+Route::post('/admin/dodaj-projekt','ProjectController@createNewProject')->middleware('auth');
+//API
+Route::post('api/archives','ProjectController@archives');
 //
 //JAK POMOC
 //

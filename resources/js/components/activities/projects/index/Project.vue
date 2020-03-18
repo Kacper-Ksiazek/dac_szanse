@@ -18,7 +18,6 @@ export default {
     methods: {
         setDurationTime() {
             const getTranslatedDate = date => {
-                console.log(date);
                 const months = ["styczeń", "luty", "marzec", "kwiecień", "maj", "czerwiec", "lipiec", "sierpień", "wrzesień", "październik", "listopad", "grudzień"];
                 let day, month, year;
                 day = date.getDate();
@@ -27,8 +26,8 @@ export default {
                 return `${day} ${month} ${year}`;
             };
             //
-            const from = getTranslatedDate(new Date(this.data.start));
-            const since = getTranslatedDate(new Date(this.data.end));
+            const from = getTranslatedDate(new Date(this.data.since));
+            const since = getTranslatedDate(new Date(this.data.till));
             return `Okres realizacji: ${from} do ${since}`;
         }
     }

@@ -1,0 +1,243 @@
+@import 'loading'
+$admin-color: #636e72
+section.ds-a-add-project
+    display: flex
+    justify-content: center
+    padding: 40px 20px 0 20px
+    background-color: $admin-color
+    align-items: flex-start
+    min-height: 91.7vh
+    position: relative
+    //
+    //LEFT SIDE
+    //
+    div.left-side-wrapper
+        flex-basis: 700px
+        background-color: #fff
+        padding: 30px
+        margin-right: 50px
+        animation: fadeIn .3s .2s linear both
+        *
+            animation: fadeIn .3s .5s linear both
+        div.form-wrapper    
+            display: flex
+            flex-direction: column
+            margin-bottom: 30px
+            label
+                font-size: 1rem
+            button
+                background-color: $admin-color
+                color: white
+                border-radius: 5px
+                font-size: 1.1rem
+                border: none
+                display: flex
+                justify-content: center
+                padding: 5px 15px
+                transition: all .2s linear
+                border: 2px solid
+                &:hover
+                    background-color: #fff
+                    color: $admin-color
+        div.form-wrapper.date
+            flex-direction: row
+            justify-content: space-between
+        div.form-wrapper.content
+            div.content-item
+                margin-bottom: 30px
+                animation: none !important
+                *
+                    animation: none !important
+
+                div.header
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                    margin-bottom: 10px
+                    h3
+                        margin: 0
+                div.body
+                    display: flex
+                    align-items: center
+                    .item
+                        flex-grow: 1
+                        margin-right: 20px
+                    div.item-control
+                        display: flex
+                        flex-direction: column
+                        *
+                            margin-bottom: 10px
+                            &:last-child
+                                margin-bottom: 0
+                        button
+                            background-color: $admin-color
+                            color: white
+                            border-radius: 5px
+                            font-size: 1.3rem
+                            border: none
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            padding: 5px
+                            transition: all .2s linear
+                            border: 2px solid
+                            &:hover
+                                background-color: #fff
+                                color: $admin-color
+                        button.delete
+                            background-color: #d63031
+                            &:hover
+                                background-color: #fff
+                                color: #d63031
+                    div.item.list-wrapper
+                        div.list-item
+                            display: flex
+                            align-items: center
+                            margin-bottom: 20px
+                            input
+                                flex-grow: 1
+                            input,
+                            button
+                                margin-left: 5px
+                            button.delete
+                                background-color: #d63031
+                                &:hover
+                                    background-color: #fff
+                                    color: #d63031
+    //
+    //RIGHT SIDE
+    //                            
+    div.right-side-wrapper
+        background-color: #fff
+        padding: 30px
+        animation: fadeIn .3s .5s linear both
+        *  
+            animation: fadeIn .3s .8s linear both
+
+        div.buttons-wrapper
+            display: flex
+            justify-content: space-between
+            margin-bottom: 10px
+            button
+                background-color: $admin-color
+                color: white
+                border-radius: 5px
+                font-size: 1rem
+                border: none
+                display: flex
+                justify-content: center
+                padding: 5px 10px
+                transition: all .2s linear
+                border: 2px solid
+                &:hover
+                    background-color: #fff
+                    color: $admin-color
+            button.green
+                background-color: $deafultGreen
+                &:hover
+                    background-color: #fff
+                    color: $deafultGreen
+        div.buttons-wrapper.closer
+            justify-content: space-evenly
+        div.view-img
+            margin-bottom: 20px
+            display: flex
+            justify-content: center
+            align-items: center
+            border: 2px dashed
+            font-size: 1.2rem
+            height: 30vh
+            background-position: center
+            background-size: cover
+            background-repeat: no-repeat
+        div.view-img.active
+            border: none
+        div.stats
+            display: flex
+            font-size: 1.1rem
+            justify-content: center
+            flex-direction: column
+            span
+                width: 30%
+                display: flex
+                align-items: center
+                margin-left: 10px
+                i
+                    font-size: 1.5rem
+                    margin-left: 5px
+                i.fa-check
+                    color: $deafultGreen
+                i.fa-times
+                    color: #d63031
+                &:first-of-type
+                    margin-left: none
+
+//
+//RWD
+//
+@media screen and ( max-width: 991px )
+    section.ds-a-add-project
+        flex-direction: column-reverse
+        align-items: stretch
+        //
+        //LEFT SIDE
+        //
+        div.left-side-wrapper
+            margin-top: 50px
+            margin-right: 0px
+            h1
+                text-align: center
+            div.form-wrapper    
+                label
+                    text-align: center
+            div.form-wrapper.date
+                flex-direction: row
+                justify-content: space-between
+                @media screen and ( max-width: 580px)
+                    flex-direction: column
+            div.form-wrapper.content
+                div.content-item
+                    div.body
+                        div.item.list-wrapper
+                            div.list-item
+                                display: flex
+                                align-items: center
+                                margin-bottom: 20px
+                                @media screen and ( max-width: 580px)
+                                    flex-wrap: wrap
+                                    justify-content: center
+                                    input
+                                        min-width: 60vw
+        //
+        //RIGHT SIDE
+        //
+        div.right-side-wrapper
+            background-color: #fff
+            padding: 30px
+            h1
+                text-align: center
+            div.buttons-wrapper
+                button
+                    background-color: $admin-color
+                    width: 30%
+                    &:hover
+                        background-color: #fff
+                        color: $admin-color
+            div.stats
+                display: flex
+                font-size: 1.1rem
+                justify-content: center
+                flex-direction: row
+                @media screen and ( max-width: 580px )
+                    flex-direction: column
+                    align-items: stretch
+                    span
+                        width: 100% !important
+                        text-align: center
+                        display: flex
+                        justify-content: center
+                span
+                    width: 30%
+                    display: flex
+                    align-items: center
+                    margin-left: 10px

@@ -17,10 +17,10 @@ class CreateProjectsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('author_id');
             $table->string('title');
-            $table->date('start');
-            $table->date('end');
+            $table->date('since');
+            $table->date('till');
             $table->string('image')->nullable();
-            $table->string('content');
+            $table->longText('content');
             $table->timestamps();
         });
     }

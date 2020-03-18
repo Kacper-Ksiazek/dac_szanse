@@ -9,8 +9,8 @@ $factory->define(Project::class, function (Faker $faker) {
     return [
         'author_id' => factory('App\User')->create()->id,
         'title' => $faker->name,
-        'start' => $faker->dateTime(),
-        'end' => $faker->dateTime(),
+        'since' => $faker->dateTime(),
+        'till' => $faker->dateTime(),
         'content' => $faker->text(200)
     ];
 });

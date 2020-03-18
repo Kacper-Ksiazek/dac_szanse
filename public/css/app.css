@@ -11741,6 +11741,459 @@ section.ds-a-wrapper div.ds-a-navs a.right {
     text-align: center;
   }
 }
+div.ds-a-add-project-loading {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.ds-a-add-project-loading::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  -webkit-animation: l-fade 0.5s linear both;
+          animation: l-fade 0.5s linear both;
+}
+@-webkit-keyframes l-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+@keyframes l-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+div.ds-a-add-project-loading div.body {
+  position: relative;
+  z-index: 6;
+  width: 40vw;
+  height: 30vw;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+div.ds-a-add-project-loading div.body div.loading {
+  width: 15vw;
+  height: 15vw;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.ds-a-add-project-loading div.body div.loading i {
+  font-size: 12rem;
+  color: #35C828;
+  visibility: hidden;
+}
+div.ds-a-add-project-loading div.body div.loading span.loading {
+  width: 100%;
+  height: 100%;
+  border: 10px solid #35C828;
+  border-radius: 50%;
+  position: absolute;
+  -webkit-animation: rotate both linear 2s infinite;
+          animation: rotate both linear 2s infinite;
+}
+div.ds-a-add-project-loading div.body div.loading span.loading span {
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  background-color: white;
+  border-radius: 30%;
+  transition: all 1s linear;
+}
+div.ds-a-add-project-loading div.body div.loading span.loading span:nth-of-type(2) {
+  right: -20%;
+  top: 30%;
+}
+div.ds-a-add-project-loading div.body div.loading span.loading span:nth-of-type(3) {
+  bottom: -10%;
+  left: 30%;
+}
+@-webkit-keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+div.ds-a-add-project-loading div.body div.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+div.ds-a-add-project-loading div.body div.buttons a {
+  color: inherit;
+  text-decoration: none;
+  visibility: hidden;
+}
+div.ds-a-add-project-loading div.body div.buttons a button {
+  background-color: #636e72;
+  color: white;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  border: none;
+  display: flex;
+  justify-content: center;
+  padding: 5px 15px;
+  transition: all 0.2s linear;
+  border: 2px solid;
+}
+div.ds-a-add-project-loading div.body div.buttons a button:hover {
+  background-color: #fff;
+  color: #636e72;
+}
+div.ds-a-add-project-loading div.body div.buttons a button.green {
+  background-color: #35C828;
+  transform: scale(1.2);
+  margin: 0 30px;
+}
+div.ds-a-add-project-loading div.body div.buttons a button.green:hover {
+  background-color: #fff;
+  color: #35C828;
+}
+
+div.ds-a-add-project-loading.stoped div.body div.loading span.loading span {
+  transform: scale(0);
+}
+div.ds-a-add-project-loading.stoped div.body div.loading i {
+  -webkit-animation: fadeIn 0.5s 1s linear both;
+          animation: fadeIn 0.5s 1s linear both;
+}
+div.ds-a-add-project-loading.stoped div.body div.buttons a {
+  -webkit-animation: fadeIn 0.5s 0.2s linear both;
+          animation: fadeIn 0.5s 0.2s linear both;
+}
+div.ds-a-add-project-loading.stoped div.body div.buttons a:nth-of-type(2) {
+  -webkit-animation: fadeIn 0.5s 0.7s linear both;
+          animation: fadeIn 0.5s 0.7s linear both;
+}
+div.ds-a-add-project-loading.stoped div.body div.buttons a:nth-of-type(3) {
+  -webkit-animation: fadeIn 0.5s 1.2s linear both;
+          animation: fadeIn 0.5s 1.2s linear both;
+}
+
+section.ds-a-add-project {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px 0 20px;
+  background-color: #636e72;
+  align-items: flex-start;
+  min-height: 91.7vh;
+  position: relative;
+}
+section.ds-a-add-project div.left-side-wrapper {
+  flex-basis: 700px;
+  background-color: #fff;
+  padding: 30px;
+  margin-right: 50px;
+  -webkit-animation: fadeIn 0.3s 0.2s linear both;
+          animation: fadeIn 0.3s 0.2s linear both;
+}
+section.ds-a-add-project div.left-side-wrapper * {
+  -webkit-animation: fadeIn 0.3s 0.5s linear both;
+          animation: fadeIn 0.3s 0.5s linear both;
+}
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper label {
+  font-size: 1rem;
+}
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper button {
+  background-color: #636e72;
+  color: white;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  border: none;
+  display: flex;
+  justify-content: center;
+  padding: 5px 15px;
+  transition: all 0.2s linear;
+  border: 2px solid;
+}
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper button:hover {
+  background-color: #fff;
+  color: #636e72;
+}
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper.date {
+  flex-direction: row;
+  justify-content: space-between;
+}
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper.content div.content-item {
+  margin-bottom: 30px;
+  -webkit-animation: none !important;
+          animation: none !important;
+}
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper.content div.content-item * {
+  -webkit-animation: none !important;
+          animation: none !important;
+}
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper.content div.content-item div.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper.content div.content-item div.header h3 {
+  margin: 0;
+}
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper.content div.content-item div.body {
+  display: flex;
+  align-items: center;
+}
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper.content div.content-item div.body .item {
+  flex-grow: 1;
+  margin-right: 20px;
+}
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper.content div.content-item div.body div.item-control {
+  display: flex;
+  flex-direction: column;
+}
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper.content div.content-item div.body div.item-control * {
+  margin-bottom: 10px;
+}
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper.content div.content-item div.body div.item-control *:last-child {
+  margin-bottom: 0;
+}
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper.content div.content-item div.body div.item-control button {
+  background-color: #636e72;
+  color: white;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  transition: all 0.2s linear;
+  border: 2px solid;
+}
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper.content div.content-item div.body div.item-control button:hover {
+  background-color: #fff;
+  color: #636e72;
+}
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper.content div.content-item div.body div.item-control button.delete {
+  background-color: #d63031;
+}
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper.content div.content-item div.body div.item-control button.delete:hover {
+  background-color: #fff;
+  color: #d63031;
+}
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper.content div.content-item div.body div.item.list-wrapper div.list-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper.content div.content-item div.body div.item.list-wrapper div.list-item input {
+  flex-grow: 1;
+}
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper.content div.content-item div.body div.item.list-wrapper div.list-item input,
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper.content div.content-item div.body div.item.list-wrapper div.list-item button {
+  margin-left: 5px;
+}
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper.content div.content-item div.body div.item.list-wrapper div.list-item button.delete {
+  background-color: #d63031;
+}
+section.ds-a-add-project div.left-side-wrapper div.form-wrapper.content div.content-item div.body div.item.list-wrapper div.list-item button.delete:hover {
+  background-color: #fff;
+  color: #d63031;
+}
+section.ds-a-add-project div.right-side-wrapper {
+  background-color: #fff;
+  padding: 30px;
+  -webkit-animation: fadeIn 0.3s 0.5s linear both;
+          animation: fadeIn 0.3s 0.5s linear both;
+}
+section.ds-a-add-project div.right-side-wrapper * {
+  -webkit-animation: fadeIn 0.3s 0.8s linear both;
+          animation: fadeIn 0.3s 0.8s linear both;
+}
+section.ds-a-add-project div.right-side-wrapper div.buttons-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+section.ds-a-add-project div.right-side-wrapper div.buttons-wrapper button {
+  background-color: #636e72;
+  color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+  border: none;
+  display: flex;
+  justify-content: center;
+  padding: 5px 10px;
+  transition: all 0.2s linear;
+  border: 2px solid;
+}
+section.ds-a-add-project div.right-side-wrapper div.buttons-wrapper button:hover {
+  background-color: #fff;
+  color: #636e72;
+}
+section.ds-a-add-project div.right-side-wrapper div.buttons-wrapper button.green {
+  background-color: #35C828;
+}
+section.ds-a-add-project div.right-side-wrapper div.buttons-wrapper button.green:hover {
+  background-color: #fff;
+  color: #35C828;
+}
+section.ds-a-add-project div.right-side-wrapper div.buttons-wrapper.closer {
+  justify-content: space-evenly;
+}
+section.ds-a-add-project div.right-side-wrapper div.view-img {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed;
+  font-size: 1.2rem;
+  height: 30vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+section.ds-a-add-project div.right-side-wrapper div.view-img.active {
+  border: none;
+}
+section.ds-a-add-project div.right-side-wrapper div.stats {
+  display: flex;
+  font-size: 1.1rem;
+  justify-content: center;
+  flex-direction: column;
+}
+section.ds-a-add-project div.right-side-wrapper div.stats span {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+section.ds-a-add-project div.right-side-wrapper div.stats span i {
+  font-size: 1.5rem;
+  margin-left: 5px;
+}
+section.ds-a-add-project div.right-side-wrapper div.stats span i.fa-check {
+  color: #35C828;
+}
+section.ds-a-add-project div.right-side-wrapper div.stats span i.fa-times {
+  color: #d63031;
+}
+section.ds-a-add-project div.right-side-wrapper div.stats span:first-of-type {
+  margin-left: none;
+}
+
+@media screen and (max-width: 991px) {
+  section.ds-a-add-project {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+  section.ds-a-add-project div.left-side-wrapper {
+    margin-top: 50px;
+    margin-right: 0px;
+  }
+  section.ds-a-add-project div.left-side-wrapper h1 {
+    text-align: center;
+  }
+  section.ds-a-add-project div.left-side-wrapper div.form-wrapper label {
+    text-align: center;
+  }
+  section.ds-a-add-project div.left-side-wrapper div.form-wrapper.date {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 991px) and (max-width: 580px) {
+  section.ds-a-add-project div.left-side-wrapper div.form-wrapper.date {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 991px) {
+  section.ds-a-add-project div.left-side-wrapper div.form-wrapper.content div.content-item div.body div.item.list-wrapper div.list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 991px) and (max-width: 580px) {
+  section.ds-a-add-project div.left-side-wrapper div.form-wrapper.content div.content-item div.body div.item.list-wrapper div.list-item {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  section.ds-a-add-project div.left-side-wrapper div.form-wrapper.content div.content-item div.body div.item.list-wrapper div.list-item input {
+    min-width: 60vw;
+  }
+}
+@media screen and (max-width: 991px) {
+  section.ds-a-add-project div.right-side-wrapper {
+    background-color: #fff;
+    padding: 30px;
+  }
+  section.ds-a-add-project div.right-side-wrapper h1 {
+    text-align: center;
+  }
+  section.ds-a-add-project div.right-side-wrapper div.buttons-wrapper button {
+    background-color: #636e72;
+    width: 30%;
+  }
+  section.ds-a-add-project div.right-side-wrapper div.buttons-wrapper button:hover {
+    background-color: #fff;
+    color: #636e72;
+  }
+  section.ds-a-add-project div.right-side-wrapper div.stats {
+    display: flex;
+    font-size: 1.1rem;
+    justify-content: center;
+    flex-direction: row;
+  }
+}
+@media screen and (max-width: 991px) and (max-width: 580px) {
+  section.ds-a-add-project div.right-side-wrapper div.stats {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  section.ds-a-add-project div.right-side-wrapper div.stats span {
+    width: 100% !important;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 991px) {
+  section.ds-a-add-project div.right-side-wrapper div.stats span {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+}
 div.ds-a-help-logo {
   background-image: url("/images/activities/projects/logo.png");
   background-position: center;
@@ -11898,6 +12351,246 @@ section.ds-a-projects span.ds-a-help-archives-control.active div.ds-a-help-archi
   }
   section.ds-a-projects span.ds-a-help-archives-control.active div.ds-a-help-archives {
     display: flex;
+  }
+}
+div.ds-a-add-project-preview {
+  position: absolute;
+  min-height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+div.ds-a-add-project-preview::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  -webkit-animation: l-fade 0.5s linear both;
+          animation: l-fade 0.5s linear both;
+}
+@keyframes l-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+div.ds-a-add-project-preview div.body {
+  width: 100%;
+  min-height: 100%;
+  -webkit-animation: fadeIn 0.3s 0.2s linear both;
+          animation: fadeIn 0.3s 0.2s linear both;
+  position: relative;
+  z-index: 6;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+section.ds-a-project-view-wrapper {
+  padding: 50px;
+}
+section.ds-a-project-view-wrapper button {
+  position: absolute;
+  right: 50px;
+  background-color: #636e72;
+  color: white;
+  border-radius: 15px;
+  font-size: 1.3rem;
+  border: none;
+  display: flex;
+  justify-content: center;
+  padding: 5px 10px;
+  transition: all 0.2s linear;
+  border: 2px solid;
+}
+section.ds-a-project-view-wrapper button:hover {
+  background-color: #fff;
+  color: #636e72;
+}
+section.ds-a-project-view-wrapper a {
+  background-color: #35C828;
+  font-size: 1.1rem;
+  color: white;
+  border-radius: 15px;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 5px 20px;
+  transition: all 0.2s linear;
+}
+section.ds-a-project-view-wrapper a:hover {
+  background-color: #fff;
+  color: #35C828;
+}
+section.ds-a-project-view-wrapper h4 {
+  font-weight: bold;
+}
+section.ds-a-project-view-wrapper div.wrapper {
+  display: flex;
+  width: 100%;
+  min-height: 60vh;
+}
+section.ds-a-project-view-wrapper div.wrapper img {
+  margin-left: 5%;
+  width: 40%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+section.ds-a-project-view-wrapper div.wrapper div.content {
+  flex-basis: 60%;
+}
+section.ds-a-project-view-wrapper div.wrapper div.content h1.main-header {
+  font-size: 2.5rem;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 30px;
+}
+section.ds-a-project-view-wrapper div.wrapper div.content h1.main-header::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  width: 75%;
+  height: 3px;
+  left: 0%;
+  background-color: #35C828;
+}
+section.ds-a-project-view-wrapper div.wrapper div.content div.ds-a-add-project-view-item {
+  margin-bottom: 20px;
+}
+section.ds-a-project-view-wrapper div.wrapper div.content div.header {
+  margin-bottom: 30px;
+}
+section.ds-a-project-view-wrapper div.wrapper div.content div.header h1 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  padding-left: 15px;
+}
+section.ds-a-project-view-wrapper div.wrapper div.content div.textarea p {
+  font-size: 1.3rem;
+  text-indent: 20px;
+  border-left: 4px solid #35C828;
+  padding-left: 20px;
+  margin-left: 20px;
+}
+section.ds-a-project-view-wrapper div.wrapper div.content div.list ul {
+  list-style: none;
+  margin-left: 10%;
+}
+section.ds-a-project-view-wrapper div.wrapper div.content div.list ul li {
+  font-size: 1.1rem;
+}
+section.ds-a-project-view-wrapper div.wrapper div.content div.list ul li::before {
+  content: "\2022";
+  color: #35C828;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+div.ds-a-add-project-preview.exit {
+  -webkit-animation: fadeOut 0.3s 0.5s linear both;
+          animation: fadeOut 0.3s 0.5s linear both;
+}
+div.ds-a-add-project-preview.exit div.body {
+  -webkit-animation: fadeOut 0.3s 0.1s linear both;
+          animation: fadeOut 0.3s 0.1s linear both;
+}
+
+@media screen and (max-width: 1240px) {
+  section.ds-a-project-view-wrapper {
+    padding: 30px;
+  }
+  section.ds-a-project-view-wrapper div.wrapper div.content h1 {
+    font-size: 2rem;
+  }
+  section.ds-a-project-view-wrapper div.wrapper div.content div.header h1 {
+    font-size: 1.5rem;
+  }
+  section.ds-a-project-view-wrapper div.wrapper div.content div.textarea p {
+    font-size: 1.1rem;
+  }
+  section.ds-a-project-view-wrapper div.wrapper div.content div.list ul li {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 991px) {
+  div.ds-a-add-project-preview {
+    align-items: flex-start;
+    padding: 130px 0 50px 0;
+  }
+
+  section.ds-a-project-view-wrapper {
+    padding: 0px;
+  }
+  section.ds-a-project-view-wrapper button {
+    right: 50%;
+    transform: translateX(50%);
+  }
+  section.ds-a-project-view-wrapper a {
+    margin-top: 30px;
+  }
+  section.ds-a-project-view-wrapper div.view-buttons-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  section.ds-a-project-view-wrapper div.view-buttons-wrapper a {
+    width: 25%;
+    text-align: center;
+  }
+  section.ds-a-project-view-wrapper div.wrapper {
+    display: flex;
+    width: 100%;
+    min-height: 60vh;
+    flex-direction: column-reverse;
+    padding: 20px;
+  }
+  section.ds-a-project-view-wrapper div.wrapper img {
+    height: 40vh;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 30px;
+  }
+  section.ds-a-project-view-wrapper div.wrapper div.content h1.main-header {
+    text-align: center;
+  }
+  section.ds-a-project-view-wrapper div.wrapper div.content h1.main-header::before {
+    transform: translateX(-50%);
+    left: 50%;
+  }
+  section.ds-a-project-view-wrapper div.wrapper div.content div.list ul {
+    margin-left: 2%;
+  }
+  section.ds-a-project-view-wrapper h4.duration-time {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 540px) {
+  section.ds-a-project-view-wrapper div.wrapper div.content h1 {
+    font-size: 2rem;
+  }
+  section.ds-a-project-view-wrapper div.wrapper div.content div.header h1 {
+    font-size: 1.5rem;
+  }
+  section.ds-a-project-view-wrapper div.wrapper div.content div.textarea p {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  section.ds-a-project-view-wrapper div.wrapper div.content div.list ul {
+    margin: 0;
+  }
+  section.ds-a-project-view-wrapper div.wrapper div.content div.list ul li {
+    font-size: 1rem;
   }
 }
 div.ds-a-logo,
