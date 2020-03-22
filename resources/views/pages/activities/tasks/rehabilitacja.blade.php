@@ -22,12 +22,12 @@
         </ul>
         {{--  --}}
         <p class="ds-single-task">
-            <strong><i>Zajęcia z rehabilitacji obejmują:</i></strong> kinezyterapię czyli leczenie ruchem (ćwiczenia o działaniu miejscowym i o działaniu ogólnoustrojowym), fizykoterapię (stosowanie w celach leczniczych różnego rodzaju energii wytwarzanej za pomocą aparatury) i masaż. Do dyspozycji dzieci niepełnosprawnych są również basen z kulkami i trampolina.
+            <strong>Zajęcia z rehabilitacji obejmują:</strong> kinezyterapię czyli leczenie ruchem (ćwiczenia o działaniu miejscowym i o działaniu ogólnoustrojowym), fizykoterapię (stosowanie w celach leczniczych różnego rodzaju energii wytwarzanej za pomocą aparatury) i masaż. Do dyspozycji dzieci niepełnosprawnych są również basen z kulkami i trampolina.
 
         </p>
         
         {{--  --}}
-        <single-task-gallery 
+        <gallery 
         prefix='/images/activities/rehabilitacja/'
         :images='[
             "b_rehabilitacja_kwiecie_1",
@@ -56,7 +56,7 @@
             "b_rehabilitacja_kwiecie_24",
             "b_rehabilitacja_kwiecie_25",
             "b_rehabilitacja_kwiecie_26",
-        ]'></single-task-gallery>
+        ]'></gallery>
     </section>
 </div>
 @endsection

@@ -12,6 +12,7 @@
         <h1>Hydroterapia</h1>
         <p class="ds-single-task">
             Rehabilitacja prowadzona w basenie pozwala wykorzystać właściwości fizyko-chemiczne wody do zwiększenia efektywności terapii.
+            <br/>
             <strong>Zajęcia w wodzie:</strong>
 
         </p>
@@ -27,7 +28,7 @@
         </p>
         
         {{--  --}}
-        <single-task-gallery 
+        <gallery 
         prefix='/images/activities/hydroterapia/'
         :images='[
             "b_basen_styczen_1",
@@ -69,7 +70,7 @@
             "b_24_luty_11",
             "b_24_luty_12",
             "b_24_luty_13",
-        ]'></single-task-gallery>
+        ]'></gallery>
     </section>
 </div>
 @endsection

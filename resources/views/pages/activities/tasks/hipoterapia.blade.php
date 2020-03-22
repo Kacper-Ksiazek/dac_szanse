@@ -1,8 +1,6 @@
-@extends('layouts.app')
-@section('title')
-    <title>Hipoterapia</title>
-@endsection
-@section('content')
+@extends('layouts.app') @section('title')
+<title>Hipoterapia</title>
+@endsection @section('content')
 <div class="w-100">
     <path-bar path='[{"header":"Działalność","href":"/dzialalnosc"}, {"header":"Zajęcia","href":"/dzialalnosc/zajecia"},{"header":"Hipoterapia","href":"#"}]'></path-bar>
     <tasks-logo></tasks-logo>
@@ -11,9 +9,11 @@
         {{--  --}}
         <h1>Hipoterapia</h1>
         <p class="ds-single-task">
-            Hipoterapia to ukierunkowane działanie terapeutyczne, mające służyć poprawie funkcjonowania człowieka w sferach fizycznej, emocjonalnej, poznawczej i społecznej. Podczas zajęć hipoterapii specjalnie przygotowany koń stanowi integralną część procesu terapeutycznego. To właśnie obecność konia – "współterapeuty" – sprawia, że jest to wyjątkowa oraz niepowtarzalna metoda terapeutyczna, dająca zupełnie nowe możliwości. 
+            Hipoterapia to ukierunkowane działanie terapeutyczne, mające służyć poprawie funkcjonowania człowieka w sferach fizycznej, emocjonalnej, poznawczej i społecznej.
+            Podczas zajęć hipoterapii specjalnie przygotowany koń stanowi integralną część procesu terapeutycznego. To właśnie obecność konia – "współterapeuty" – sprawia, że jest
+            to wyjątkowa oraz niepowtarzalna metoda terapeutyczna, dająca zupełnie nowe możliwości.
+            <br />
             <strong>Głównymi celami hipoterapii są:</strong>
-
         </p>
         <ul class="ds-single-task">
             <li>kształtowanie prawidłowego wzorca ruchowego chodu</li>
@@ -28,13 +28,15 @@
         </ul>
         {{--  --}}
         <p class="ds-single-task">
-            Największą korzyścią wynikająca z hipoterapii jest fakt, ze dziecko odnosząc radość z jazdy konnej, nie postrzega jej jako terapii. Wysiłek włożony w zajęcia z wykorzystaniem koni prowadzi do lepszych efektów terapeutycznych, a negatywny stosunek dziecka do terapii zostaje wyeliminowany. Zajęcia z hipoterapii prowadzone są w Stadninie Koni „Jowisz” w Choczni przy ul. Tadeusza Kościuszki 204.
+            Największą korzyścią wynikająca z hipoterapii jest fakt, ze dziecko odnosząc radość z jazdy konnej, nie postrzega jej jako terapii. Wysiłek włożony w zajęcia z
+            wykorzystaniem koni prowadzi do lepszych efektów terapeutycznych, a negatywny stosunek dziecka do terapii zostaje wyeliminowany. Zajęcia z hipoterapii prowadzone są w
+            Stadninie Koni „Jowisz” w Choczni przy ul. Tadeusza Kościuszki 204.
         </p>
-        
+        <i>Źródło: www.hipoterapia.org</i>
         {{--  --}}
-        <single-task-gallery 
-        prefix='/images/activities/hipoterapia/'
-        :images='[
+        <gallery
+            prefix="/images/activities/hipoterapia/"
+            :images='[
             "b_hipoterapia_1",
             "b_hipoterapia_2",
             "b_hipoterapia_3",
@@ -56,7 +58,8 @@
             "b_hipoterapia_19",
             "b_hipoterapia_20",
             "b_hipoterapia_21",
-        ]'></single-task-gallery>
+        ]'
+        ></gallery>
     </section>
 </div>
 @endsection

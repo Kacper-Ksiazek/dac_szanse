@@ -63,15 +63,33 @@ Route::get('/dzialalnosc/zajecia/arteterapia','TasksController@getItemArteterapi
 //ZAJECIA STOP
 //
 //PROJEKTY
+//Wszystkie projekty
 Route::get('/dzialalnosc/projekty','ProjectController@index');
+//Pojedynczy projekt
 Route::get('/dzialalnosc/projekty/{project}','ProjectController@showSingleProject');
+//Archiwum konkretny rok bazujacy na dacie zakonczenia projektu
 Route::get('/dzialalnosc/projekty/archiwum/{year}','ProjectController@handleArchives');
-Route::get('/admin/dodaj-projekt','ProjectController@addNewForm')->middleware('auth');
-Route::post('/admin/dodaj-projekt','ProjectController@createNewProject')->middleware('auth');
-//API
+//API- wez wszystkie projekty
 Route::post('api/archives','ProjectController@archives');
 //
 //JAK POMOC
 //
 //INDEX
 Route::get('/jak-pomoc','HelpController@index');
+Route::get('/jak-pomoc/ambasadorzy','HelpController@ambasadorzy');
+Route::get('/jak-pomoc/darczyncy','HelpController@darczyncy');
+Route::get('/jak-pomoc/wspolpraca','HelpController@wspolpraca');
+Route::get('/jak-pomoc/nowozency','HelpController@nowozency');
+Route::get('/jak-pomoc/allegro-charytatywni','HelpController@allegro');
+Route::get('/jak-pomoc/pomoz-nam-zaoszczedzic','HelpController@oszczedzanie');
+Route::get('/jak-pomoc/siepomaga','HelpController@siepomaga');
+Route::get('/jak-pomoc/zrzutka','HelpController@zrzutka');
+//
+//ADMIN
+//
+//Wyswietlanie formularzu dodajacego nowy projekt
+Route::get('/admin/dodaj-projekt','ProjectController@addNewForm')->middleware('auth');
+//Dodawanie na backendzie nowego projektu
+Route::post('/admin/dodaj-projekt','ProjectController@createNewProject')->middleware('auth');
+//Wyswietlanie formularza dodajacego nowa aktualnosc
+Route::get('/admin/dodaj-aktualnosc','NewsController@addNewForm')->middleware('auth');

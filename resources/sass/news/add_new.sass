@@ -1,0 +1,283 @@
+$admin-color: #636e72
+section.ds-news-add-new
+    padding: 40px 20px 0 20px
+    background-color: $admin-color
+    align-items: flex-start
+    min-height: 91.7vh
+    position: relative
+    button.grey-btn
+        background-color: $admin-color
+        color: white
+        border-radius: 5px
+        font-size: 1.1rem
+        border: none
+        display: flex
+        justify-content: center
+        padding: 5px 15px
+        transition: all .2s linear
+        border: 2px solid
+        font-size: 1rem
+        &:hover
+            color: $admin-color
+            background-color: white
+    button.grey-btn.active
+        background-color: $admin-color
+        color: white
+    button.reverse
+        background-color: #fff
+        color: $admin-color
+    button.delete
+        background-color: #d63031
+        &:hover
+            background-color: #fff
+            color: #d63031
+    div.toggle-editing-section
+        display: flex
+        margin-left: 20px
+
+    div.ds-news-edit-content-wrapper
+        display: flex
+        justify-content: center
+        //
+        //LEFT SIDE
+        //
+        div.left-side
+            flex-basis: 700px
+            background-color: #fff
+            padding: 30px
+            margin-right: 50px
+            div.form-item
+                display: flex
+                flex-direction: column
+                margin-bottom: 30px
+                label
+                    font-size: 1rem
+            div.form-item.image
+                flex-direction: row
+                justify-content: space-between
+            div.form-item.main
+                div.content-item.active
+                    border: 2px dashed black
+                div.content-item
+                    border: 2px dashed transparent
+                    padding: 10px
+                    margin-bottom: 30px
+                    animation: none !important
+                    transition: border .2s linear
+                    *
+                        animation: none !important
+
+                    div.header
+                        display: flex
+                        justify-content: space-between
+                        align-items: center
+                        margin-bottom: 10px
+                        h3
+                            margin: 0
+                        div.buttons-wrapper
+                            display: flex
+                            button
+                                font-size: 1.3rem
+                                padding: 5px
+                            button.small
+                                font-size: 1rem
+                            button.delete
+                                background-color: #d63031
+                                &:hover
+                                    background-color: #fff
+                                    color: #d63031
+                    div.body
+                        display: flex
+                        align-items: center
+                        .item
+                            flex-grow: 1
+                            margin-right: 20px
+                        div.item-control
+                            display: flex
+                            flex-direction: column
+                            *
+                                margin-bottom: 10px
+                                &:last-child
+                                    margin-bottom: 0
+                            button
+                                background-color: $admin-color
+                                color: white
+                                border-radius: 5px
+                                font-size: 1.3rem
+                                border: none
+                                display: flex
+                                justify-content: center
+                                align-items: center
+                                padding: 5px
+                                transition: all .2s linear
+                                border: 2px solid
+                                &:hover
+                                    background-color: #fff
+                                    color: $admin-color
+                            button.delete
+                                background-color: #d63031
+                                &:hover
+                                    background-color: #fff
+                                    color: #d63031
+                        div.item.list-wrapper
+                            div.list-item
+                                display: flex
+                                align-items: center
+                                margin-bottom: 20px
+                                input
+                                    flex-grow: 1
+                                input,
+                                button
+                                    margin-left: 5px
+                                    padding: 5px
+                                button.delete
+                                    background-color: #d63031
+                                    &:hover
+                                        background-color: #fff
+                                        color: #d63031
+                    div.footer
+                        display: flex
+                        justify-content: space-evenly
+                        padding-top: 5px
+                        user-select: none
+                        cursor: default
+                        span.wrapper
+                            font-size: 1rem
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            i
+                                font-size: 1.5rem
+                                margin-left: 10px
+                                width: 30px
+                            i.fa-check
+                                color: $deafultGreen
+                            i.fa-times
+                                color: #d63031
+                            span.color,
+                            span.size
+                                margin-left: 10px
+                                width: 50px
+                                height: 30px
+                                border-radius: 50px
+                            span.size
+                                border: 2px solid
+                                display: flex
+                                justify-content: center
+                                align-items: center
+
+        //
+        //RIGHT SIDE
+        //
+        div.right-side
+            background-color: #fff
+            padding: 30px
+            position: relative
+            height: 600px
+            overflow: hidden
+            div.news-content
+                height: 600px
+                transition: transform .4s linear
+                div.button-wrapper
+                    display: flex
+                    button
+                        padding: 5px 10px
+                        font-size: 1rem
+                div.preview-img
+                    margin-bottom: 20px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    border: 2px dashed
+                    font-size: 1.2rem
+                    height: 30vh
+                    background-position: center
+                    background-size: cover
+                    background-repeat: no-repeat
+
+                div.preview-img.active
+                   border: none
+            
+
+            div.edit-item
+                height: 600px
+                transition: transform .4s linear
+                position: relative
+                button.exit
+                    position: absolute
+                    right: 0
+                div.buttons-wrapper
+                    display: flex
+                    button
+                        font-size: 1.5rem
+                div.form-item
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    font-size: 1rem
+                    margin: 20px 0
+                    
+                    label
+                        margin: 0 7px 0 0
+
+                    .switch
+                        position: relative
+                        display: inline-block
+                        width: 45px
+                        height: 25px                  
+
+                    input
+                        opacity: 0
+                        width: 0
+                        height: 0                   
+
+                    .slider
+                        position: absolute
+                        cursor: pointer
+                        top: 0
+                        left: 0
+                        right: 0
+                        bottom: 0
+                        background-color: #ccc
+                        transition: .3s                   
+
+                        &:before
+                            position: absolute
+                            content: ""
+                            height: 19px
+                            width: 19px
+                            left: 3px
+                            bottom: 3px
+                            background-color: white
+                            transition: .3s                 
+
+                    input
+                        &:checked + .slider
+                            background-color: $deafultGreen                   
+
+                        &:focus + .slider
+                            box-shadow: 0 0 1px $deafultGreen                 
+
+                        &:checked + .slider:before
+                            transform: translateX(19px)
+
+
+                    .slider.round
+                        border-radius: 34px                   
+                        &:before
+                            border-radius: 50%
+                    
+
+
+                div.text-preview
+                    width: 100%
+                    height: 150px
+                    display: flex
+                    justify-content: center
+                    align-items: center 
+                    border: 2px dashed
+        div.right-side.active
+            div.edit-item
+                transform: translateY(-100%)
+            div.news-content
+                transform: translateY(-100%)

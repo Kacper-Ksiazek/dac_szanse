@@ -46,32 +46,14 @@
         
         <i>Źródło: materiały udostępnione przez firmę BioMed</i>
         {{--  --}}
-        <single-task-gallery 
-        prefix='/images/activities/rehabilitacja/'
+        <gallery 
+        prefix='/images/activities/bio/'
         :images='[
-            "b_rehabilitacja_kwiecie_1",
-            "b_rehabilitacja_kwiecie_2",
-            "b_rehabilitacja_kwiecie_3",
-            "b_rehabilitacja_kwiecie_4",
-            "b_rehabilitacja_kwiecie_5",
-            "b_rehabilitacja_kwiecie_6",
-            "b_rehabilitacja_kwiecie_7",
-            "b_rehabilitacja_kwiecie_8",
-            "b_rehabilitacja_kwiecie_9",
-            "b_rehabilitacja_kwiecie_10",
-            "b_rehabilitacja_kwiecie_11",
-            "b_rehabilitacja_kwiecie_12",
-            "b_rehabilitacja_kwiecie_13",
-            "b_rehabilitacja_kwiecie_14",
-            "b_rehabilitacja_kwiecie_15",
-            "b_rehabilitacja_kwiecie_16",
-            "b_rehabilitacja_kwiecie_17",
-            "b_rehabilitacja_kwiecie_18",
-            "b_rehabilitacja_kwiecie_19",
-            "b_rehabilitacja_kwiecie_20",
-            "b_rehabilitacja_kwiecie_21",
-            "b_rehabilitacja_kwiecie_22",
-        ]'></single-task-gallery>
+            "bio_1",
+            "bio_2",
+            "bio_3",
+            "bio_4",
+        ]'></gallery>
     </section>
 </div>
 @endsection

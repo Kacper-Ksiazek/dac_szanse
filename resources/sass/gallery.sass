@@ -1,0 +1,59 @@
+section.ds-single-task-gallery
+    display: flex
+    align-items: center
+    flex-direction: column
+    h1
+        color: $deafultGreen
+        font-size: 3rem
+        i
+            margin-left: 1rem
+    div.ds-single-task-images-wrapper
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        img
+            width: 30%
+            margin: 10px
+            cursor: pointer
+            transition: transform .2s linear
+            &:hover
+                transform: scale(1.1)
+
+@media screen and (max-width: 767px)
+    section.ds-single-task-gallery
+        display: flex
+        align-items: center
+        flex-direction: column
+        h1
+            color: $deafultGreen
+            font-size: 3rem
+            i
+                margin-left: 1rem
+        div.ds-single-task-images-wrapper
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+            img
+                width: 30%
+                margin: 10px
+                cursor: pointer
+
+@media screen and (max-width: 500px)
+    section.ds-single-task-gallery
+       display: flex
+       align-items: center
+       flex-direction: column
+       h1
+           color: $deafultGreen
+           font-size: 3rem
+           i
+               margin-left: 1rem
+       div.ds-single-task-images-wrapper
+           display: flex
+           flex-wrap: wrap
+           justify-content: center
+           img
+               width: 30%
+               margin: 10px
+               cursor: pointer
+               min-width: 300px

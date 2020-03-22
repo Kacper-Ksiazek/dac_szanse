@@ -12,7 +12,7 @@ export default {
     props: ["data"],
     filters: {
         setHref(val) {
-            return `${location.pathname}/${val}`;
+            return `/dzialalnosc/projekty/${val}`;
         }
     },
     methods: {

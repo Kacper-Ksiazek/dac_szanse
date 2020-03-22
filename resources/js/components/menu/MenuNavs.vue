@@ -91,8 +91,15 @@ export default {
                 {
                     header: { content: "Jak pomóc", href: "/jak-pomoc" },
                     body: [
-                        { content: "Przekaż 1%", href: "#" },
-                        { content: "Jak przekazać darowiznę", href: "#" }
+                        { content: "Ambasadorzy", href: "/jak-pomoc/ambasadorzy" },
+                        { content: "Darczyńcy", href: "/jak-pomoc/darczyncy" },
+                        { content: "Współpraca", href: "/jak-pomoc/wspolpraca" },
+                        { content: "Nowożeńcy dają szansę!", href: "/jak-pomoc/nowozency" },
+                        { content: "Jak przekazać darowiznę", href: "#" },
+                        { content: "Allegro charytatywni", href: "/jak-pomoc/allegro-charytatywni" },
+                        { content: "Pomóż nam zaoszczędzić", href: "/jak-pomoc/pomoz-nam-zaoszczedzic" },
+                        { content: "Siepomaga", href: "/jak-pomoc/siepomaga" },
+                        { content: "Zrzutka.pl", href: "/jak-pomoc/zrzutka" }
                     ]
                 },
                 {

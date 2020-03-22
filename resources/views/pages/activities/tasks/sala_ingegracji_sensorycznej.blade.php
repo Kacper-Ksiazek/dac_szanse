@@ -21,11 +21,11 @@
         </ul>
         {{--  --}}
         <p class="ds-single-task">
-            Terapia zaburzeń Integracji Sensorycznej polega na takim stymulowaniu układu nerwowego, aby dać mu możliwość właściwej pracy, czyli prawidłowego odbierania, przetwarzania i odpowiedzi na bodźce płynące ze środowiska i własnego ciała. Zajęcia z integracji sensorycznej prowadzone są w sali wyposażonej specjalistyczny sprzęt przez specjalistów posiadających niezbędne uprawnienia i kwalifikacje.
+            Terapia zaburzeń Integracji Sensorycznej polega na takim stymulowaniu układu nerwowego, aby dać mu możliwość właściwej pracy, czyli prawidłowego odbierania, przetwarzania i odpowiedzi na bodźce płynące ze środowiska i własnego ciała. Zajęcia z integracji sensorycznej prowadzone są w sali wyposażonej w specjalistyczny sprzęt przez specjalistów posiadających niezbędne uprawnienia i kwalifikacje. 
         </p>
         
         {{--  --}}
-        <single-task-gallery 
+        <gallery 
         prefix='/images/activities/sala-sensory/'
         :images='[
             "sensory1",
@@ -33,7 +33,7 @@
             "sensory3",
             "sensory4",
             "sensory5",
-        ]'></single-task-gallery>
+        ]'></gallery>
     </section>
 </div>
 @endsection

@@ -18,17 +18,24 @@ class ProjectController extends Controller
         ]);
     }
     //
+    //THIS IS ONLY API METHOD
     //
-    //
-    public function archives(){
+    public function archives() {
         $archives=[];
         foreach(Project::all() as $item){
             $date=Carbon::create($item->till)->year;
             if(!in_array($date,$archives)) array_push($archives,$date);
         }
+        //
         asort($archives);
         $result=[];
+
+        //We want to have items in array in correct order, cuz in a future
+        //JS and json parsing can make us a lot of mistakes, so we're trying 
+        //to avoid it right now and right here via creating now array.
         foreach($archives as $item) array_push($result,$item);
+        
+        //
         return $result;
     }
     //
@@ -51,15 +58,20 @@ class ProjectController extends Controller
         dd(Project::all()[$id]->title);
     }
     //
-    //
+    //THIS HANDLE SINGLE ARCHIVE VIEW
     //
     public function handleArchives($year){
         $result=[];
+        //
         foreach(Project::all() as $project){
             if(Carbon::create($project->till)->year==$year) array_push($result,$project);
         }
-        dd($result);
-        return $result;
+        //
+        return view('pages.activities.projects.single_archive',[
+            'projects'=>$result,
+            'year'=>$year
+        ]);
+
     }
     //
     //

@@ -29,20 +29,20 @@ export default {
                     header: "Zajecia rehabilitacyjne",
                     description: "Kinezyterapia, fizykoterapia i masaż.",
                     href: "/dzialalnosc/zajecia/zajecia-rehabilitacyjne",
-                    img: "image1.png"
+                    img: "rehabilitacja.png"
                 },
-                { header: "Zajęcia integracji sensorycznej", description: "", href: "/dzialalnosc/zajecia/sala-ingegracji-sensorycznej", img: "image1.png" },
+                { header: "Zajęcia integracji sensorycznej", description: "", href: "/dzialalnosc/zajecia/sala-ingegracji-sensorycznej", img: "sensory.png" },
                 {
                     header: "Zajęcia psychologiczno - pedagogiczno - logopedyczne",
                     description: "Zajęcia prowadzone są w salach przy ul. Kochanowskiego w Wadowicach.",
                     href: "/dzialalnosc/zajecia/psychologiczno-pedaogiczno-logopedyczne",
-                    img: "image1.png"
+                    img: "logopeda.png"
                 },
                 {
                     header: "Sala doświadczania świata",
                     description: "Terapia w Sali Doświadczania Świata wpływa na wszechstronny rozwój stymulując bodźce.",
                     href: "/dzialalnosc/zajecia/sala-doswiadczania-swiatla",
-                    img: "image1.png"
+                    img: "swiatlo.png"
                 }
             ],
             taskList2: [
@@ -51,31 +51,31 @@ export default {
                     description:
                         "EEG-Biofeedback to rodzaj terapii, dzięki której pacjent w sposób świadomy uczy się zmieniać wzorzec wytwarzanych fal w mózgu, tak aby mózg pracował wydajniej i szybciej.",
                     href: "/dzialalnosc/zajecia/biofeedback",
-                    img: "image1.png"
+                    img: "bio.png"
                 },
                 {
                     header: "Hipoterapia",
                     description: "Przywracanie zdrowia i usprawnianie przy pomocy koni i jazdy konnej.",
                     href: "/dzialalnosc/zajecia/hipoterapia",
-                    img: "image1.png"
+                    img: "hipoterapia.png"
                 },
                 {
                     header: "Dogoterapia",
                     description: "Dogoterapia to – najprościej rzecz ujmując – terapia z udziałem psa.",
                     href: "/dzialalnosc/zajecia/dogoterapia",
-                    img: "image1.png"
+                    img: "dogoterapia.png"
                 },
                 {
                     header: "Muzykoterapia",
                     description: "System umuzykalniający polegający na wyrażaniu muzyki ruchem.",
                     href: "/dzialalnosc/zajecia/muzykoterapia",
-                    img: "image1.png"
+                    img: "muzyka.png"
                 },
                 {
                     header: "Arteterapia",
                     description: `Arteterapia to – w najbardziej podstawowym wymiarze – "terapia przez sztukę".`,
                     href: "/dzialalnosc/zajecia/arteterapia",
-                    img: "image1.png"
+                    img: "arteterapia.png"
                 }
             ]
         };

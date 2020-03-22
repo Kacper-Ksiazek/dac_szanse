@@ -34,7 +34,7 @@ Vue.component("our-tasks", require("./components/activities/tasks/Index.vue").de
 //Zajęcia-logo
 Vue.component("tasks-logo", require("./components/activities/tasks/TasksLogo.vue").default);
 //Galeria do pojedynczego zajęcia, ta na dole
-Vue.component("single-task-gallery", require("./components/activities/tasks/SingleTaskGallery.vue").default);
+Vue.component("gallery", require("./components/activities/tasks/SingleTaskGallery.vue").default);
 //Dzialalność-logo
 Vue.component("activites-logo", require("./components/activities/index/ActivitesLogo.vue").default);
 //Dzialalnosc index
@@ -44,12 +44,17 @@ Vue.component("help-index", require("./components/help/index/HelpIndex.vue").def
 //Projekty Index
 Vue.component("projects-index", require("./components/activities/projects/index/Index.vue").default);
 //Projekty Logo
-Vue.component("projects-logo", require("./components/activities/projects/HelpLogo.vue").default);
+Vue.component("projects-logo", require("./components/activities/projects/ProjectsLogo.vue").default);
 //Podglad jednego projektu
 Vue.component("single-project", require("./components/activities/projects/showOneProject/Index.vue").default);
 //Dodaj nowy projekt
 Vue.component("add-project", require("./components/activities/projects/add_project/AddProject.vue").default);
-
+//Jak pomoc logo
+Vue.component("help-logo", require("./components/help/Logo.vue").default);
+//Galeria ze zdjeciami, co robia za a hrefy
+Vue.component("href-gallery", require("./components/GalleryWithHrefImg.vue").default);
+//Dodaniwenie nowej aktualności
+Vue.component("add-news", require("./components/news/add_new/AddNewMain.vue").default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

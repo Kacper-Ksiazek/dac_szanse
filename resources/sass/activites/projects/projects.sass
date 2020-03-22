@@ -35,6 +35,8 @@ section.ds-a-projects
             box-shadow: 0 0 5px 0px black
             text-decoration: none
             transition: all .2s linear
+            flex-basis: 26vw
+            max-width: 130px
             &:hover
                 background-color: white
                 color: $deafultGreen
@@ -57,6 +59,14 @@ section.ds-a-projects
         cursor: pointer
         transition: all .2s linear
         display: flex
+        a.control-header
+            color: $deafultGreen
+            text-decoration: none
+            padding: 5px 10px
+            transition: all .2s linear
+            &:hover
+                background-color: $deafultGreen
+                color: #fff 
         span.control-header
             display: flex
             justify-content: space-evenly

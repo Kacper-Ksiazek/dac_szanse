@@ -11352,7 +11352,7 @@ section.ds-a-tasks-wrapper div.ds-a-tasks-hydrotherapy::before {
   left: -5vw;
   width: 100%;
   height: 100%;
-  background-image: url(./images/dayroom.png);
+  background-image: url(/images/dayroom.png);
   background-size: contain;
   z-index: 2;
   background-repeat: no-repeat;
@@ -11485,36 +11485,13 @@ section.ds-single-task-wrapper p.ds-single-task {
   text-indent: 20px;
   margin-left: 2rem;
 }
+section.ds-single-task-wrapper p.b-none {
+  border: none;
+}
 section.ds-single-task-wrapper ul.ds-single-task {
   font-size: 1.2rem;
   padding: 0 10%;
   margin: 3vh 0;
-}
-section.ds-single-task-wrapper section.ds-single-task-gallery {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-section.ds-single-task-wrapper section.ds-single-task-gallery h1 {
-  color: #35C828;
-  font-size: 3rem;
-}
-section.ds-single-task-wrapper section.ds-single-task-gallery h1 i {
-  margin-left: 1rem;
-}
-section.ds-single-task-wrapper section.ds-single-task-gallery div.ds-single-task-images-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-section.ds-single-task-wrapper section.ds-single-task-gallery div.ds-single-task-images-wrapper img {
-  width: 30%;
-  margin: 10px;
-  cursor: pointer;
-  transition: transform 0.2s linear;
-}
-section.ds-single-task-wrapper section.ds-single-task-gallery div.ds-single-task-images-wrapper img:hover {
-  transform: scale(1.1);
 }
 
 @media screen and (max-width: 767px) {
@@ -11538,28 +11515,6 @@ section.ds-single-task-wrapper section.ds-single-task-gallery div.ds-single-task
     padding: 0 10%;
     margin: 1rem 0;
   }
-  section.ds-single-task-wrapper section.ds-single-task-gallery {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-  section.ds-single-task-wrapper section.ds-single-task-gallery h1 {
-    color: #35C828;
-    font-size: 3rem;
-  }
-  section.ds-single-task-wrapper section.ds-single-task-gallery h1 i {
-    margin-left: 1rem;
-  }
-  section.ds-single-task-wrapper section.ds-single-task-gallery div.ds-single-task-images-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  section.ds-single-task-wrapper section.ds-single-task-gallery div.ds-single-task-images-wrapper img {
-    width: 30%;
-    margin: 10px;
-    cursor: pointer;
-  }
 }
 @media screen and (max-width: 500px) {
   section.ds-single-task-wrapper {
@@ -11576,29 +11531,6 @@ section.ds-single-task-wrapper section.ds-single-task-gallery div.ds-single-task
   section.ds-single-task-wrapper ul.ds-single-task {
     font-size: 1rem;
     padding-left: 15%;
-  }
-  section.ds-single-task-wrapper section.ds-single-task-gallery {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-  section.ds-single-task-wrapper section.ds-single-task-gallery h1 {
-    color: #35C828;
-    font-size: 3rem;
-  }
-  section.ds-single-task-wrapper section.ds-single-task-gallery h1 i {
-    margin-left: 1rem;
-  }
-  section.ds-single-task-wrapper section.ds-single-task-gallery div.ds-single-task-images-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  section.ds-single-task-wrapper section.ds-single-task-gallery div.ds-single-task-images-wrapper img {
-    width: 30%;
-    margin: 10px;
-    cursor: pointer;
-    min-width: 300px;
   }
 }
 section.ds-a-wrapper div.ds-a-control {
@@ -12235,6 +12167,8 @@ section.ds-a-projects div.ds-a-projects-single-project a {
   box-shadow: 0 0 5px 0px black;
   text-decoration: none;
   transition: all 0.2s linear;
+  flex-basis: 26vw;
+  max-width: 130px;
 }
 section.ds-a-projects div.ds-a-projects-single-project a:hover {
   background-color: white;
@@ -12261,6 +12195,16 @@ section.ds-a-projects span.ds-a-help-archives-control {
   cursor: pointer;
   transition: all 0.2s linear;
   display: flex;
+}
+section.ds-a-projects span.ds-a-help-archives-control a.control-header {
+  color: #35C828;
+  text-decoration: none;
+  padding: 5px 10px;
+  transition: all 0.2s linear;
+}
+section.ds-a-projects span.ds-a-help-archives-control a.control-header:hover {
+  background-color: #35C828;
+  color: #fff;
 }
 section.ds-a-projects span.ds-a-help-archives-control span.control-header {
   display: flex;
@@ -12721,6 +12665,84 @@ section.ds-help-wrapper div.ds-help-forms div.ds-help-single-help-form a:hover {
   color: #35C828;
 }
 
+section.ds-help-single-help-form {
+  padding: 50px 15vw;
+}
+section.ds-help-single-help-form h1 {
+  font-size: 2.3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+section.ds-help-single-help-form p {
+  font-size: 1.5rem;
+  padding-left: 30px;
+  border-left: 4px solid #35C828;
+  text-indent: 20px;
+  margin-left: 2rem;
+}
+section.ds-help-single-help-form p.b-none {
+  border: none;
+}
+section.ds-help-single-help-form ul {
+  font-size: 1.2rem;
+  padding: 0 10%;
+  margin: 3vh 0;
+}
+section.ds-help-single-help-form ul.green {
+  list-style: none;
+}
+section.ds-help-single-help-form ul.green li::before {
+  content: "\2022";
+  color: #35C828;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+section.ds-help-single-help-form h2.green {
+  color: #35C828;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 767px) {
+  section.ds-help-single-help-form {
+    padding: 5vw;
+  }
+  section.ds-help-single-help-form h1 {
+    font-size: 2.3rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  section.ds-help-single-help-form p {
+    font-size: 1.5rem;
+    padding-left: 10px;
+    border-left: 4px solid #35C828;
+    text-indent: 10px;
+    margin-left: 1rem;
+  }
+  section.ds-help-single-help-form ul {
+    font-size: 1.2rem;
+    padding: 0 10%;
+    margin: 1rem 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  section.ds-help-single-help-form {
+    padding: 5vw;
+  }
+  section.ds-help-single-help-form h1 {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  section.ds-help-single-help-form p {
+    font-size: 1.2rem;
+  }
+  section.ds-help-single-help-form ul {
+    font-size: 1rem;
+    padding-left: 15%;
+  }
+}
 div.ds-help-logo {
   background-image: url("/images/help/logo.png");
   background-position: center;
@@ -12737,6 +12759,333 @@ div.ds-help-logo h1 {
   font-size: 4rem;
   font-weight: bold;
   font-family: "Open Sans";
+}
+
+section.ds-news-add-new {
+  padding: 40px 20px 0 20px;
+  background-color: #636e72;
+  align-items: flex-start;
+  min-height: 91.7vh;
+  position: relative;
+}
+section.ds-news-add-new button.grey-btn {
+  background-color: #636e72;
+  color: white;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  border: none;
+  display: flex;
+  justify-content: center;
+  padding: 5px 15px;
+  transition: all 0.2s linear;
+  border: 2px solid;
+  font-size: 1rem;
+}
+section.ds-news-add-new button.grey-btn:hover {
+  color: #636e72;
+  background-color: white;
+}
+section.ds-news-add-new button.grey-btn.active {
+  background-color: #636e72;
+  color: white;
+}
+section.ds-news-add-new button.reverse {
+  background-color: #fff;
+  color: #636e72;
+}
+section.ds-news-add-new button.delete {
+  background-color: #d63031;
+}
+section.ds-news-add-new button.delete:hover {
+  background-color: #fff;
+  color: #d63031;
+}
+section.ds-news-add-new div.toggle-editing-section {
+  display: flex;
+  margin-left: 20px;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper {
+  display: flex;
+  justify-content: center;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side {
+  flex-basis: 700px;
+  background-color: #fff;
+  padding: 30px;
+  margin-right: 50px;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item label {
+  font-size: 1rem;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.image {
+  flex-direction: row;
+  justify-content: space-between;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item.active {
+  border: 2px dashed black;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item {
+  border: 2px dashed transparent;
+  padding: 10px;
+  margin-bottom: 30px;
+  -webkit-animation: none !important;
+          animation: none !important;
+  transition: border 0.2s linear;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item * {
+  -webkit-animation: none !important;
+          animation: none !important;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.header h3 {
+  margin: 0;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.header div.buttons-wrapper {
+  display: flex;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.header div.buttons-wrapper button {
+  font-size: 1.3rem;
+  padding: 5px;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.header div.buttons-wrapper button.small {
+  font-size: 1rem;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.header div.buttons-wrapper button.delete {
+  background-color: #d63031;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.header div.buttons-wrapper button.delete:hover {
+  background-color: #fff;
+  color: #d63031;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.body {
+  display: flex;
+  align-items: center;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.body .item {
+  flex-grow: 1;
+  margin-right: 20px;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.body div.item-control {
+  display: flex;
+  flex-direction: column;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.body div.item-control * {
+  margin-bottom: 10px;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.body div.item-control *:last-child {
+  margin-bottom: 0;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.body div.item-control button {
+  background-color: #636e72;
+  color: white;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  transition: all 0.2s linear;
+  border: 2px solid;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.body div.item-control button:hover {
+  background-color: #fff;
+  color: #636e72;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.body div.item-control button.delete {
+  background-color: #d63031;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.body div.item-control button.delete:hover {
+  background-color: #fff;
+  color: #d63031;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.body div.item.list-wrapper div.list-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.body div.item.list-wrapper div.list-item input {
+  flex-grow: 1;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.body div.item.list-wrapper div.list-item input,
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.body div.item.list-wrapper div.list-item button {
+  margin-left: 5px;
+  padding: 5px;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.body div.item.list-wrapper div.list-item button.delete {
+  background-color: #d63031;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.body div.item.list-wrapper div.list-item button.delete:hover {
+  background-color: #fff;
+  color: #d63031;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.footer {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: default;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.footer span.wrapper {
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.footer span.wrapper i {
+  font-size: 1.5rem;
+  margin-left: 10px;
+  width: 30px;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.footer span.wrapper i.fa-check {
+  color: #35C828;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.footer span.wrapper i.fa-times {
+  color: #d63031;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.footer span.wrapper span.color,
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.footer span.wrapper span.size {
+  margin-left: 10px;
+  width: 50px;
+  height: 30px;
+  border-radius: 50px;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.left-side div.form-item.main div.content-item div.footer span.wrapper span.size {
+  border: 2px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side {
+  background-color: #fff;
+  padding: 30px;
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side div.news-content {
+  height: 600px;
+  transition: transform 0.4s linear;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side div.news-content div.button-wrapper {
+  display: flex;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side div.news-content div.button-wrapper button {
+  padding: 5px 10px;
+  font-size: 1rem;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side div.news-content div.preview-img {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed;
+  font-size: 1.2rem;
+  height: 30vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side div.news-content div.preview-img.active {
+  border: none;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side div.edit-item {
+  height: 600px;
+  transition: transform 0.4s linear;
+  position: relative;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side div.edit-item button.exit {
+  position: absolute;
+  right: 0;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side div.edit-item div.buttons-wrapper {
+  display: flex;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side div.edit-item div.buttons-wrapper button {
+  font-size: 1.5rem;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side div.edit-item div.form-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  margin: 20px 0;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side div.edit-item div.form-item label {
+  margin: 0 7px 0 0;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side div.edit-item div.form-item .switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 25px;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side div.edit-item div.form-item input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side div.edit-item div.form-item .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.3s;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side div.edit-item div.form-item .slider:before {
+  position: absolute;
+  content: "";
+  height: 19px;
+  width: 19px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side div.edit-item div.form-item input:checked + .slider {
+  background-color: #35C828;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side div.edit-item div.form-item input:focus + .slider {
+  box-shadow: 0 0 1px #35C828;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side div.edit-item div.form-item input:checked + .slider:before {
+  transform: translateX(19px);
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side div.edit-item div.form-item .slider.round {
+  border-radius: 34px;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side div.edit-item div.form-item .slider.round:before {
+  border-radius: 50%;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side div.edit-item div.text-preview {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed;
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side.active div.edit-item {
+  transform: translateY(-100%);
+}
+section.ds-news-add-new div.ds-news-edit-content-wrapper div.right-side.active div.news-content {
+  transform: translateY(-100%);
 }
 
 div.ds-path-bar {
@@ -12962,6 +13311,119 @@ div.ds-s-gallery-modal.exit {
     z-index: 150;
   }
 }
+section.ds-single-task-gallery {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+section.ds-single-task-gallery h1 {
+  color: #35C828;
+  font-size: 3rem;
+}
+section.ds-single-task-gallery h1 i {
+  margin-left: 1rem;
+}
+section.ds-single-task-gallery div.ds-single-task-images-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+section.ds-single-task-gallery div.ds-single-task-images-wrapper img {
+  width: 30%;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.2s linear;
+}
+section.ds-single-task-gallery div.ds-single-task-images-wrapper img:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 767px) {
+  section.ds-single-task-gallery {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  section.ds-single-task-gallery h1 {
+    color: #35C828;
+    font-size: 3rem;
+  }
+  section.ds-single-task-gallery h1 i {
+    margin-left: 1rem;
+  }
+  section.ds-single-task-gallery div.ds-single-task-images-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  section.ds-single-task-gallery div.ds-single-task-images-wrapper img {
+    width: 30%;
+    margin: 10px;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 500px) {
+  section.ds-single-task-gallery {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  section.ds-single-task-gallery h1 {
+    color: #35C828;
+    font-size: 3rem;
+  }
+  section.ds-single-task-gallery h1 i {
+    margin-left: 1rem;
+  }
+  section.ds-single-task-gallery div.ds-single-task-images-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  section.ds-single-task-gallery div.ds-single-task-images-wrapper img {
+    width: 30%;
+    margin: 10px;
+    cursor: pointer;
+    min-width: 300px;
+  }
+}
+section.ds-gallery-with-hrefs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+section.ds-gallery-with-hrefs div.gallery-item {
+  width: 500px;
+  margin-bottom: 50px;
+}
+section.ds-gallery-with-hrefs div.gallery-item a {
+  width: 100%;
+}
+section.ds-gallery-with-hrefs div.gallery-item a img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.logo {
+  position: relative;
+}
+.logo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0.8;
+  z-index: 3;
+}
+.logo * {
+  position: relative;
+  z-index: 5;
+}
+
 .ds-show-more-green {
   background-color: #35C828;
   border: none;
