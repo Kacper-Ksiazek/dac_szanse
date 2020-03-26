@@ -29,6 +29,7 @@ export default {
             return `${this.modalActiveImageIndex + 1} z ${this.all_images.length}`;
         },
         setPathBody(value) {
+            if (this.prefix == "DONT_USE_FILE_EXTENSION") return `background-image: url(${value})`;
             return `background-image: url('${this.prefix}${value}.jpg')`;
         }
     },

@@ -18,9 +18,12 @@
         <!--  -->
         <!-- SELECT COLOR -->
         <!--  -->
-        <div class="form-item">
+        <div class="form-item color">
             <label for="color">Kolor</label>
-            <input v-if="prevItem" v-model="prevItem.color" id="color" type="color" />
+            <button v-if="prevItem" :style="`background-color: ${prevItem.color}`" class="select" @click="$refs.color.click()"></button>
+            <input v-if="prevItem" v-model="prevItem.color" id="color" type="color" ref="color" class="d-none" />
+            <button class="color green" @click="prevItem.color = '#35C828'"></button>
+            <button class="color black" @click="prevItem.color = '#000000'"></button>
         </div>
         <!--  -->
         <!-- SELECT FONT SIZE -->
@@ -63,6 +66,16 @@
             </label>
         </div>
         <!--  -->
+        <!-- SELECT CENTER -->
+        <!--  -->
+        <div class="form-item">
+            <label for="italic">Wyśrodkowanie</label>
+            <label class="switch">
+                <input v-if="prevItem" v-model="prevItem.center" type="checkbox" />
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <!--  -->
         <!-- TEXT PREVIEW -->
         <!--  -->
         <hr />
@@ -80,8 +93,9 @@ export default {
             const bold = `font-weight: ${this.prevItem.bold ? "bold" : "normal"};`,
                 size = `font-size: ${this.prevItem.size}px;`,
                 color = `color: ${this.prevItem.color};`,
-                italic = `font-style: ${this.prevItem.italic ? "italic" : "normal"}; `;
-            return bold + size + color + italic;
+                italic = `font-style: ${this.prevItem.italic ? "italic" : "normal"}; `,
+                center = `justify-content: ${this.prevItem.center ? "center" : "flex-start"}`;
+            return bold + size + color + italic + center;
         }
     }
 };

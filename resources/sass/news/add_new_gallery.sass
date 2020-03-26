@@ -1,0 +1,38 @@
+$admin-color: #636e72
+section.ds-news-add-new
+    div.ds-news-gallery-wrapper
+        width: 100%
+        max-width: 1220px
+        min-height: 600px
+        background-color: white
+        padding: 30px
+
+    div.gallery-items-wrapper
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-evenly
+        div.gallery-item
+            position: relative
+            max-width: 400px
+            width: 75vw
+            animation: fadeIn .7s linear both
+
+            button.delete
+                position: absolute
+                z-index: 6
+                right: 0px
+                border: none
+                color: #fff
+                padding: 5px
+                background-color: #d63031
+                font-size: 1.5rem
+                border-radius: 0 0 0 8px
+            img
+                position: relative
+                z-index: 5
+                width: 100%
+                margin-bottom: 50px
+                background-size: cover
+                background-repeat: no-repeat
+                background-position: center
+

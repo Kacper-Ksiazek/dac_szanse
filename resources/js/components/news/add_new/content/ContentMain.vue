@@ -19,7 +19,7 @@
             <div class="form-item image">
                 <label for="image">Prześlij logo</label>
                 <button @click="$refs.image.click()" class="grey-btn">Prześlij</button>
-                <input ref="image" class="d-none" type="file" accept="image/*" />
+                <input @change="changeLogo" ref="image" class="d-none" type="file" accept="image/*" />
             </div>
             <!--  -->
             <!-- MAIN CONTENT -->
@@ -55,7 +55,7 @@
                 <!--  -->
                 <div class="image-preview">
                     <h1>Podgląd loga</h1>
-                    <div class="preview-img">
+                    <div class="preview-img" :style="this.logoHref ? `background-image: url(${this.logoHref})` : ''" :class="logoHref ? 'active' : ''">
                         <span v-if="!logoHref">Prześlij logo <i class="fa fa-picture-o"></i></span>
                     </div>
                 </div>
@@ -84,18 +84,35 @@ export default {
         "content-item": Item,
         "edit-item": EditItem
     },
-    props: ["logoHref", "content", "editingContentItemIndex"],
+    props: ["logoHref", "content", "editingContentItemIndex", "pdate", "ptitle"],
     data() {
         return {
-            title: null,
-            date: null
+            title: this.ptitle,
+            date: this.pdate,
+            logo: null
         };
     },
     methods: {
+        changeLogo(e) {
+            if (!e.target.files[0]) return;
+            const file = e.target.files[0];
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = e => {
+                this.$emit("changeValue", "logoHref", e.target.result);
+            };
+            this.$emit("changeValue", "logo", file);
+        },
+        //
+        //
+        //
         setEditingItem(id) {
             const val = id === false ? false : this.findIndex(id);
             this.$emit("changeContentEditItem", val);
         },
+        //
+        //
+        //
         findIndex(id) {
             let result;
             this.content.forEach((item, index) => {
@@ -103,32 +120,44 @@ export default {
             });
             return result;
         },
+        //
+        //
+        //
         deleteItemFromContent(id) {
             if (this.findIndex(id) == this.editingContentItemIndex) {
                 this.$emit("changeContentEditItem", false);
             }
             this.content.splice(this.findIndex(id), 1);
         },
+        //
+        //
+        //
         addItemToContent(type) {
             const len = this.content.length;
             //
-            let id;
-            try {
-                id = this.content[len - 1].id + 1;
-            } catch (e) {
-                id = 0;
+            let id = 0;
+            if (len) {
+                this.content.forEach(item => {
+                    if (item.id > id || !id) id = item.id;
+                });
+                id++;
             }
+
             //
             this.content.push({
                 id,
                 type,
                 color: "#000000",
-                size: type === "header" ? "36" : "15",
+                size: type === "header" ? "36" : "22",
                 italic: false,
                 bold: false,
-                content: type === "list" ? [{ id: 1, content: "" }] : ""
+                center: false,
+                content: type === "list" ? [{ id: 0, content: "" }] : ""
             });
         },
+        //
+        //
+        //
         changeItemOreder(id, order) {
             const len = this.content.length;
             //
@@ -163,10 +192,10 @@ export default {
     },
     watch: {
         title(val) {
-            this.$emit("changeTitle", val);
+            this.$emit("changeValue", "title", val);
         },
         date(val) {
-            this.$emit("changeDate", val);
+            this.$emit("changeValue", "date", val);
         }
     }
 };

@@ -92,4 +92,6 @@ Route::get('/admin/dodaj-projekt','ProjectController@addNewForm')->middleware('a
 //Dodawanie na backendzie nowego projektu
 Route::post('/admin/dodaj-projekt','ProjectController@createNewProject')->middleware('auth');
 //Wyswietlanie formularza dodajacego nowa aktualnosc
-Route::get('/admin/dodaj-aktualnosc','NewsController@addNewForm')->middleware('auth');
+Route::get('/admin/dodaj-aktualnosc','NewsController@viewAddNewForm')->middleware('auth');
+//Dodawanie
+Route::post('/admin/dodaj-aktualnosc','NewsController@addNewNews')->middleware('auth');

@@ -57,11 +57,12 @@ export default {
             const value = this.data.content;
             const len = value.length;
             //
-            let id;
-            try {
-                id = value[len - 1].id + 1;
-            } catch (e) {
-                id = 0;
+            let id = 0;
+            if (len) {
+                value.forEach(item => {
+                    if (item.id > id || !id) id = item.id;
+                });
+                id++;
             }
             //
             value.push({

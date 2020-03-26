@@ -52,11 +52,12 @@ export default {
         addItemToList() {
             const len = this.value.length;
             //
-            let id;
-            try {
-                id = this.value[len - 1].id + 1;
-            } catch (e) {
-                id = 0;
+            let id = 0;
+            if (len) {
+                this.value.forEach(item => {
+                    if (item.id > id || !id) id = item.id;
+                });
+                id++;
             }
             //
             this.value.push({

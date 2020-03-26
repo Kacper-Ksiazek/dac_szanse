@@ -1,0 +1,70 @@
+section.ds-news-add-new
+    div.main-content-wrapper
+        div.continue-wrapper.active
+            div.content
+                div.text
+                    span.hr
+                        animation: myk .5s 1s both
+                        @keyframes myk
+                            0%
+                                widht: 0
+                            100%
+                                width: 75%
+    div.main-content-wrapper
+        div.continue-wrapper
+            width: 25%
+            display: flex
+            justify-content: center
+            div.content
+                display: flex
+                align-items: center
+                height: 70vh
+                background-color: #fff
+                max-width: 1220px
+                width: 90%
+                padding: 30px
+                @media screen and ( max-width: 750px )
+                    align-items: flex-start
+                    flex-direction: column-reverse
+                div.text
+                    width: 70%
+                    h1
+                        font-weight: bold
+                    span.hr
+                        width: 0%
+                        height: 2px
+                        background-color: #000
+                        display: block
+                    div.stats
+                        padding-top: 20px
+                        padding-left: 5%
+                        h3
+                            padding-left: 2.5%
+                        i.fa-check
+                            color: $deafultGreen
+                        i.fa-times
+                            color: #d63031
+                        h2
+                            margin-bottom: 10px
+                    button
+                        color: #fff
+                        background-color: $deafultGreen
+                        padding: 5px 15px
+                        font-size: 1.2rem
+                        border-radius: 10px
+                        border: 2px solid
+                        box-shadow: none
+                        margin-left: 5%
+                        transition: all .2s linear
+                        &:hover
+                            background-color: #fff
+                            color: $deafultGreen 
+
+                    i.note
+                        padding-top: 52px
+                        display: block
+                i.c-logo
+                    width: 40%
+                    font-size: 15rem
+                    @media screen and ( max-width: 750px )
+                        font-size: 7rem

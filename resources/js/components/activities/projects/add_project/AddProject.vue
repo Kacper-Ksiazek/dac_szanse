@@ -158,11 +158,12 @@ export default {
         addItemToContent(type) {
             const len = this.content.length;
             //
-            let id;
-            try {
-                id = this.content[len - 1].id + 1;
-            } catch (e) {
-                id = 0;
+            let id = 0;
+            if (len) {
+                this.content.forEach(item => {
+                    if (item.id > id || !id) id = item.id;
+                });
+                id++;
             }
             //
             this.content.push({
