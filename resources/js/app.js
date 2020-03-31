@@ -55,6 +55,19 @@ Vue.component("help-logo", require("./components/help/Logo.vue").default);
 Vue.component("href-gallery", require("./components/GalleryWithHrefImg.vue").default);
 //Dodaniwenie nowej aktualności
 Vue.component("add-news", require("./components/news/add_new/AddNewMain.vue").default);
+//Jeden element na liscie aktualnosci w indexie
+Vue.component("news-on-list", require("./components/news/add_new/preview/on_list/Item.vue").default);
+//Aktywności logo
+Vue.component("news-logo", require("./components/news/Logo.vue").default);
+//Wyswietlanie pojedyczej aktualnosci
+Vue.component("single-news", require("./components/news/add_new/preview/view/ViewMain.vue").default);
+//Aktualności wyswietlanie wszystkich aktualnosci
+Vue.component("news-index", require("./components/news/NewsIndex.vue").default);
+//O nas logo
+Vue.component("about-logo", require("./components/about/Logo.vue").default);
+//Index
+Vue.component("about-index", require("./components/about/index/IndexMain.vue").default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

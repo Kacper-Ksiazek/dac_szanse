@@ -54,7 +54,7 @@ export default {
             mobileMenu: false,
             navs: [
                 {
-                    header: { content: "O nas", href: "#" },
+                    header: { content: "O nas", href: "/o-nas" },
                     body: [
                         { content: "Zarząd", href: "#" },
                         { content: "Historia", href: "#" },
@@ -64,12 +64,7 @@ export default {
                     ]
                 },
                 {
-                    header: { content: "Aktualności", href: "#" },
-                    body: [
-                        { content: "Bieżące", href: "#" },
-                        { content: "Archiwum- 2019", href: "#" },
-                        { content: "Archiwum- 2018", href: "#" }
-                    ]
+                    header: { content: "Aktualności", href: "/aktualnosci" }
                 },
                 {
                     header: { content: "Działalność", href: "/dzialalnosc" },

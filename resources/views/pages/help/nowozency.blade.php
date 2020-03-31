@@ -36,6 +36,7 @@
             </h4>
         </div>
         <gallery
+            :extensions='true'
             prefix="/images/help/nowozency/"
             :images='[
             "nowozency_1",

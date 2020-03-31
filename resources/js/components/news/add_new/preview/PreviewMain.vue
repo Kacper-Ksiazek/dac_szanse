@@ -5,7 +5,7 @@
             <button class="grey-btn reverse" @click="$emit('changeCurrentPage', 'onList')" :class="currentPreviewPage === 'onList' ? 'active' : ''">Podgląd na liście</button>
         </div>
         <div class="ds-news-preview" :class="currentPreviewPage === 'onList' ? 'active' : ''">
-            <view-news :type="type" :content="content" :gallery="gallery" :title="title" :logo="logo" :modal="false"></view-news>
+            <view-news type="preview" :content="content" :gallery="gallery" :title="title" :logo="logo" :modal="false"></view-news>
             <!--  -->
             <!--  -->
             <!--  -->
@@ -24,6 +24,6 @@ export default {
         "view-news": View,
         "on-list": OnList
     },
-    props: ["type", "content", "gallery", "title", "date", "logo", "currentPreviewPage"]
+    props: ["content", "gallery", "title", "date", "logo", "currentPreviewPage"]
 };
 </script>

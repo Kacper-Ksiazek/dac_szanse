@@ -13,7 +13,7 @@
 </template>
 <script>
 export default {
-    props: ["index", "all_images", "prefix"],
+    props: ["index", "all_images", "prefix", "extensions"],
     methods: {
         closeModal(e) {
             if (this.pendingClosing) return;
@@ -30,7 +30,8 @@ export default {
         },
         setPathBody(value) {
             if (this.prefix == "DONT_USE_FILE_EXTENSION") return `background-image: url(${value})`;
-            return `background-image: url('${this.prefix}${value}.jpg')`;
+            else if (this.extensions !== false) return `background-image: url('${this.prefix}${value}.jpg')`;
+            else return `background-image: url('${this.prefix}${value}')`;
         }
     },
     data() {

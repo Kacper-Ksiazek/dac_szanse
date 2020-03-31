@@ -27,8 +27,8 @@
         <!--  -->
         <h4 v-text="getProjectDurationText()" class="duration-time"></h4>
         <div class="view-buttons-wrapper">
-            <a :href="next | setPrevNextHref" v-if="next || type === 'preview'">Następny</a>
             <a :href="prev | setPrevNextHref" v-if="prev || type === 'preview'">Poprzedni</a>
+            <a :href="next | setPrevNextHref" v-if="next || type === 'preview'">Następny</a>
         </div>
     </section>
 </template>

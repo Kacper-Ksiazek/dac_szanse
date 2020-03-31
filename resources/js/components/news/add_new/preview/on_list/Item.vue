@@ -1,14 +1,15 @@
 <template>
     <div class="item-on-list">
-        <div class="body" v-if="showErrorContition()">
-            <img :src="logo" alt="" />
+        <div class="body" v-if="showPreviw()">
+            <img :src="getLogo()" alt="" />
             <div class="content">
                 <h3 v-text="title"></h3>
                 <span v-text="`Data: ${date}`"></span>
                 <p v-text="getText()"></p>
             </div>
         </div>
-        <button v-if="showErrorContition()">Zobacz wiecej</button>
+        <a v-if="showPreviw() && type === 'preview'">Zobacz wiecej</a>
+        <a v-if="showPreviw() && type === 'view'" :href="getHref()">Zobacz wiecej</a>
         <div class="error" v-else>
             <i class="fa fa-bullhorn"></i>
             <h2>Problem mamy!</h2>
@@ -24,20 +25,35 @@
 </template>
 <script>
 export default {
-    props: ["date", "title", "logo", "content", "type"],
+    props: ["date", "title", "logo", "content", "type", "directory"],
     methods: {
         getText() {
-            const { content } = this;
+            const { content, type } = this;
             let text;
-            content.forEach(item => {
-                if (text) return;
-                else if (item.type == "textarea") text = item.content;
-            });
+            if (type === "view")
+                JSON.parse(content).forEach(item => {
+                    if (text) return;
+                    else if (item.type == "textarea") text = item.content;
+                });
+            else {
+                content.forEach(item => {
+                    if (text) return;
+                    else if (item.type == "textarea") text = item.content;
+                });
+            }
             return text;
         },
-        showErrorContition() {
+        showPreviw() {
             const { date, title, logo, getText } = this;
             return !!date && !!title && !!logo && !!getText();
+        },
+        getLogo() {
+            const { type, logo, directory } = this;
+            if (type === "preview") return logo;
+            return `/storage/news/${directory}/${logo}`;
+        },
+        getHref() {
+            return `/aktualnosci/${this.title}`;
         }
     }
 };

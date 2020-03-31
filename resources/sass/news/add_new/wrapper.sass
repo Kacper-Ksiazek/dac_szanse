@@ -1,0 +1,59 @@
+
+@import 'content'
+@import 'gallery'
+@import 'preview'
+@import 'continue'
+@import 'loading'
+
+section.ds-news-add-new
+    padding: 40px 0px 0 0px
+    background-color: $admin-color
+    align-items: flex-start
+    min-height: 91.7vh
+    position: relative
+    display: flex
+    width: 100%
+    overflow-x: hidden
+    
+    button.grey-btn
+        background-color: $admin-color
+        color: white
+        border-radius: 5px
+        font-size: 1.1rem
+        border: none
+        display: flex
+        justify-content: center
+        padding: 5px 15px
+        transition: all .2s linear
+        border: 2px solid
+        font-size: 1rem
+        &:hover
+            color: $admin-color
+            background-color: white
+    button.grey-btn.active
+        background-color: $admin-color
+        color: white
+    button.reverse
+        background-color: #fff
+        color: $admin-color
+    button.delete
+        background-color: #d63031
+        &:hover
+            background-color: #fff
+            color: #d63031
+
+    div.toggle-editing-section
+        display: flex
+        margin-left: 20px
+        margin-bottom: 40px
+        position: fixed
+        z-index: 500
+        top: 100px
+    
+    div.main-content-wrapper
+        width: 400%
+        position: absolute
+        display: flex
+        transition: transform .7s
+        padding-top: 50px
+        background-color: $admin-color

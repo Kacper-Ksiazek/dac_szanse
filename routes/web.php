@@ -85,13 +85,29 @@ Route::get('/jak-pomoc/pomoz-nam-zaoszczedzic','HelpController@oszczedzanie');
 Route::get('/jak-pomoc/siepomaga','HelpController@siepomaga');
 Route::get('/jak-pomoc/zrzutka','HelpController@zrzutka');
 //
+//AKTUALNOSCI
+//
+//Wszystkie aktualnosci
+Route::get('/aktualnosci','NewsController@index');
+//Jedna aktualność
+Route::get('/aktualnosci/{news}','NewsController@singleNews');
+//
 //ADMIN
 //
+//Projekty
 //Wyswietlanie formularzu dodajacego nowy projekt
 Route::get('/admin/dodaj-projekt','ProjectController@addNewForm')->middleware('auth');
 //Dodawanie na backendzie nowego projektu
 Route::post('/admin/dodaj-projekt','ProjectController@createNewProject')->middleware('auth');
+//
+//Aktualnosci
 //Wyswietlanie formularza dodajacego nowa aktualnosc
 Route::get('/admin/dodaj-aktualnosc','NewsController@viewAddNewForm')->middleware('auth');
-//Dodawanie
+//Dodawanie nowej aktualności
 Route::post('/admin/dodaj-aktualnosc','NewsController@addNewNews')->middleware('auth');
+//
+//
+//
+//O NAS
+//index
+Route::get('/o-nas','AboutUsController@index');

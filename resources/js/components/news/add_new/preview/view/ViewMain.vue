@@ -5,12 +5,12 @@
             <!--  -->
             <!--  -->
             <!--  -->
-            <single-item v-for="item in content" :key="item.id" :data="item"></single-item>
+            <single-item v-for="item in contentToUse()" :key="item.id" :data="item"></single-item>
         </div>
         <!--  -->
         <!--  -->
         <!--  -->
-        <gallery v-if="gallery.length" class="mt-0" prefix="DONT_USE_FILE_EXTENSION" :images="galleryToUse()" :modal="modal"></gallery>
+        <gallery v-if="galleryToUse().length" class="mt-0" :prefix="setPrefix()" :images="galleryToUse()" :modal="modal" :extensions="false"></gallery>
     </div>
 </template>
 <script>
@@ -22,12 +22,24 @@ export default {
         "single-item": SingleContentItem,
         gallery: Gallery
     },
-    props: ["type", "content", "gallery", "title", "logo", "modal"],
+    props: ["type", "content", "gallery", "title", "modal", "directory"],
     methods: {
         galleryToUse() {
+            const { type, gallery } = this;
+            if (type === "view") return JSON.parse(gallery);
             const result = [];
-            this.gallery.forEach(item => result.push(item.href));
+            gallery.forEach(item => result.push(item.href));
             return result;
+        },
+        contentToUse() {
+            const { content, type } = this;
+            if (type === "preview") return content;
+            else return JSON.parse(content);
+        },
+        setPrefix() {
+            const { modal, directory } = this;
+            if (!modal) return;
+            else return `/storage/news/${directory}/gallery/`;
         }
     }
 };
