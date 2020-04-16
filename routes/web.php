@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome',[
+        'projects' => App\Project::all()->reverse()->values()->take(2),
+        'news' => App\News::all()->reverse()->values()->take(2)
+
+    ]);
 });
 
 Auth::routes();
@@ -111,3 +115,5 @@ Route::post('/admin/dodaj-aktualnosc','NewsController@addNewNews')->middleware('
 //O NAS
 //index
 Route::get('/o-nas','AboutUsController@index');
+//RODO
+Route::get('/o-nas/polityka-rodo','AboutUsController@rodo');

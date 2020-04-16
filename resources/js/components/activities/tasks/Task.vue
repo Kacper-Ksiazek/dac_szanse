@@ -20,7 +20,7 @@ export default {
         const prevNode = this.$refs.item.previousSibling;
         let prevElement = prevNode ? prevNode : this.$refs.item.parentNode.previousElementSibling;
         window.addEventListener("scroll", () => {
-            if (scrollY >= prevElement.offsetTop) this.$refs.item.classList.add("active");
+            if (scrollY >= prevElement.offsetTop - 200) this.$refs.item.classList.add("active");
         });
     }
 };

@@ -5,12 +5,6 @@
         <!--  -->
         <help-logo :message="logo_message"></help-logo>
         <!--  -->
-        <!--LOGOWANIE  -->
-        <!--  -->
-        <a v-if="!auth" href="/login">Login</a>
-        <a v-if="auth" href="/logout">Logout</a>
-        <a v-if="auth" href="/admin/dodaj-projekt">Dodaj nowy</a>
-        <!--  -->
         <!--PROJEKTY  -->
         <!--  -->
         <project v-for="item in projectsToShow" :key="item.id" :data="item"></project>
@@ -33,7 +27,7 @@ import Project from "./Project.vue";
 import HelpLogo from "../ProjectsLogo.vue";
 export default {
     components: { project: Project, "help-logo": HelpLogo },
-    props: ["projects", "archives", "auth", "logo_message"],
+    props: ["projects", "archives", "logo_message"],
     data() {
         return {
             showArchives: false,

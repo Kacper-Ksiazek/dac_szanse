@@ -60,7 +60,7 @@ export default {
                         { content: "Historia", href: "#" },
                         { content: "Nagrody i Wyróżnienia", href: "#" },
                         { content: "Budowa CERT", href: "#" },
-                        { content: "RODO", href: "#" }
+                        { content: "RODO", href: "/o-nas/polityka-rodo" }
                     ]
                 },
                 {

@@ -4,7 +4,7 @@
             <div class="ds-s-gallery-image" v-for="(item, index) in all_images" :key="item" :style="item | setPathBody" @click="$emit('handleClick', index)"></div>
         </section>
         <footer>
-            <div class="logo"></div>
+            <div class="dayroom-logo"></div>
             <h3>ŚWIETLICA TERAPEUTYCZNO-INTEGRACYJNA SZANSA</h3>
         </footer>
     </div>

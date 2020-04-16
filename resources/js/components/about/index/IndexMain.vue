@@ -10,7 +10,7 @@
         <!--  -->
         <h1>Historia Stowarzyszenia „Dać Szansę”</h1>
         <!--  -->
-        <div class="history-text">
+        <div class="text">
             <div class="main">
                 Początki Stowarzyszenia „Dać Szansę” sięgają 2002 roku, kiedy to kilkoro rodziców dzieci z różnego rodzaju niepełnosprawnościami postanowiło wspólnie starać się o
                 lepszy start życiowy dla swoich pociech. Doszliśmy do wniosku, że razem możemy więcej! – dlatego członków Stowarzyszenia szybko zaczęło przybywać.
@@ -35,15 +35,30 @@
             </div>
             <button @click="historyAllText = !historyAllText">Zobacz więcej</button>
         </div>
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <our-awards :awards="awardsList"></our-awards>
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <cert></cert>
+        <!--  -->
+        <!--  -->
+        <!--  -->
     </section>
 </template>
 <script>
 //
 //
 import PeopleList from "./PeopleList.vue";
+import OurAwards from "./OurAwards.vue";
+import cert from "./Cert.vue";
 export default {
     components: {
-        "people-list": PeopleList
+        "people-list": PeopleList,
+        "our-awards": OurAwards,
+        cert: cert
     },
     data() {
         return {
@@ -88,34 +103,35 @@ export default {
                     id: 0,
                     content:
                         "W latach 2008 i 2010 zostaliśmy dwukrotnym laureatem konkursu „Warto być za!  - konkurs organizowany był przez Kampanię Piwowarską. Wygrane pieniądze przeznaczone zostały na realizację wsparcia dla dzieci niepełnosprawnych w tym otwarcie pierwszej w powiecie  Sali Doświadczania Świata.",
-                    image1: "",
-                    image2: ""
+                    image1: "nagroda1.png",
+                    image2: "nagroda2.png",
+                    currentImage: 0
                 },
                 {
                     id: 1,
                     content: 'W 2008 zostaliśmy finalistami konkursu „Kryształy Soli" – za całokształt działalności na rzecz osób niepełnosprawnych.',
-                    image1: "",
-                    image2: ""
+                    image1: "nagroda3.png"
                 },
                 {
                     id: 2,
                     content:
                         "Działalność naszego Stowarzyszenia została dostrzeżona i w 2006 oraz 2007 roku byliśmy półfinalistami w konkursie o nagrodę Marszałka Województwa Małopolskiego „Kryształy Soli” w kategorii Polityka Społeczna.",
-                    image1: "",
-                    image2: ""
+                    image1: "nagroda4.png",
+                    image2: "nagroda5.png",
+                    currentImage: 0
                 },
                 {
                     id: 3,
                     content:
                         'W roku 2013 otrzymaliśmy Wyróżnienie w Konkursie o Nagrodę Marszałka Województwa Małopolskiego "Kryształy Soli" w kategorii polityka społeczna, zdrowie oraz działalność na rzecz osób niepełnosprawnych:',
-                    image1: "",
-                    image2: ""
+                    image1: "nagroda6.png"
                 },
                 {
                     id: 4,
                     content: "A także pierwsze miejsce w kategorii Lodołamacz - instytucja.",
-                    image1: "",
-                    image2: ""
+                    image1: "nagroda7.png",
+                    image2: "nagroda8.png",
+                    currentImage: 0
                 }
             ]
         };

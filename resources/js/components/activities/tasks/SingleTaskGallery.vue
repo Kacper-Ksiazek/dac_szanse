@@ -1,6 +1,6 @@
 <template>
     <section class="ds-single-task-gallery mt-2">
-        <h1>Galeria<i class="fa fa-picture-o"></i></h1>
+        <h1 v-if="header !== false">Galeria<i class="fa fa-picture-o"></i></h1>
         <div class="ds-single-task-images-wrapper">
             <img :src="setImagePath(item)" v-for="(item, index) in temporaryImages" :key="item" @click="modalIndex = index" />
         </div>
@@ -12,7 +12,7 @@
 import Modal from "./Modal";
 export default {
     components: { modal: Modal },
-    props: ["images", "prefix", "modal", "extensions"],
+    props: ["images", "prefix", "modal", "extensions", "header"],
     data() {
         return {
             temporaryImages: this.images.slice(0, 3),

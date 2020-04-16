@@ -175,6 +175,30 @@
     width: 75%;
   }
 }
+@-webkit-keyframes fadeFromBottom {
+  0% {
+    visibility: hidden;
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeFromBottom {
+  0% {
+    visibility: hidden;
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -10292,7 +10316,7 @@ div.ds-menu-small div.ds-menu-small-logo div button {
 div.ds-menu-small div.ds-menu-small-logo div.ds-menu-small-logo-img {
   height: 10vh;
   width: 15vh;
-  background-image: url("./images/dayroom.png");
+  background-image: url("/images/dayroom.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -10425,6 +10449,7 @@ div.ds-oo-logo h1 {
   font-size: 4rem;
   font-weight: bold;
   font-family: "Open Sans";
+  text-align: center;
 }
 
 div.ds-oo-single-item-wrapper:nth-of-type(odd) section.ds-oo-place {
@@ -10499,7 +10524,7 @@ div.ds-oo-single-item-wrapper section.ds-oo-place div.content div.ds-oo-place-co
 div.ds-oo-single-item-wrapper section.ds-oo-place div.content a.ds-oo-see-more {
   background-color: #FF693A;
   border: none;
-  margin-top: 50px;
+  margin: 25px 0;
   padding: 10px 20px;
   font-size: 2rem;
   font-size: "Arial";
@@ -10507,6 +10532,7 @@ div.ds-oo-single-item-wrapper section.ds-oo-place div.content a.ds-oo-see-more {
   border-radius: 30px;
   font-weight: bold;
   transition: background-color 0.2s linear;
+  text-decoration: none;
 }
 div.ds-oo-single-item-wrapper section.ds-oo-place div.content a.ds-oo-see-more:hover {
   background-color: #ff9f43;
@@ -10580,9 +10606,13 @@ div.ds-oo-single-item-wrapper section.ds-oo-place.active div.content a.ds-oo-see
     margin-top: 30px;
     flex-direction: column;
     margin-bottom: 30px;
+    background-color: #FBF1F1;
   }
   div.ds-oo-single-item-wrapper section.ds-oo-place:nth-of-type(even) {
     flex-direction: column;
+  }
+  div.ds-oo-single-item-wrapper section.ds-oo-place:nth-of-type(odd) {
+    flex-direction: column-reverse;
   }
   div.ds-oo-single-item-wrapper section.ds-oo-place img {
     width: 100%;
@@ -10943,7 +10973,7 @@ section#ds-s-gallery-wrapper div.ds-s-gallery-images-wrapper::before {
   left: -7vw;
   width: 20vw;
   height: 20vw;
-  background-image: url(./images/dayroom.png);
+  background-image: url(/images/dayroom.png);
   background-size: cover;
   opacity: 0.5;
 }
@@ -11114,8 +11144,8 @@ section#ds-s-gallery-wrapper div.ds-s-gallery-all-images footer {
 section#ds-s-gallery-wrapper div.ds-s-gallery-all-images footer h3 {
   color: white;
 }
-section#ds-s-gallery-wrapper div.ds-s-gallery-all-images footer div.logo {
-  background-image: url(./images/dayroom.png);
+section#ds-s-gallery-wrapper div.ds-s-gallery-all-images footer div.dayroom-logo {
+  background-image: url(/images/dayroom.png);
   width: 40vw;
   height: 40vw;
   max-width: 350px;
@@ -12251,6 +12281,10 @@ section.ds-a-projects span.ds-a-help-archives-control.active div.ds-a-help-archi
     margin-left: 0px;
     padding: 5px 15px;
     font-size: 1.3rem;
+    flex-basis: 0;
+    text-align: center;
+    min-width: 200px;
+    width: 200px;
   }
   section.ds-a-projects div.ds-a-projects-single-project div.content {
     border-bottom: 0;
@@ -12561,30 +12595,6 @@ div.ds-a-logo {
   background-image: url("/images/activities/activities_logo.png");
 }
 
-section.ds-about-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff;
-}
-section.ds-about-wrapper h1 {
-  font-weight: bold;
-  position: relative;
-  font-size: 2.5rem;
-  margin: 40px;
-  text-align: center;
-}
-section.ds-about-wrapper h1::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  width: 110%;
-  max-width: 90vw;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 4px;
-  background-color: #35C828;
-}
 section.ds-about-wrapper div.people-list-wrapper {
   width: 85vw;
   max-width: 1100px;
@@ -12608,6 +12618,9 @@ section.ds-about-wrapper div.people-list-wrapper div.people-list-item.active {
   section.ds-about-wrapper div.people-list-wrapper div.people-list-item.active {
     max-height: 1000px;
   }
+}
+section.ds-about-wrapper div.people-list-wrapper div.people-list-item.active div.header i {
+  transform: rotate(180deg);
 }
 section.ds-about-wrapper div.people-list-wrapper div.people-list-item {
   padding-bottom: 20px;
@@ -12648,6 +12661,8 @@ section.ds-about-wrapper div.people-list-wrapper div.people-list-item div.header
   background-color: #35C828;
   padding: 5px;
   cursor: pointer;
+  transition: transform 0.2s linear;
+  transform: rotate(0deg);
 }
 section.ds-about-wrapper div.people-list-wrapper div.people-list-item div.peoples {
   display: flex;
@@ -12687,7 +12702,8 @@ section.ds-about-wrapper div.people-list-wrapper div.people-list-item div.people
   text-align: center;
   cursor: default;
 }
-section.ds-about-wrapper div.history-text {
+
+section.ds-about-wrapper div.text {
   margin: 30px 10%;
   display: flex;
   flex-direction: column;
@@ -12695,45 +12711,45 @@ section.ds-about-wrapper div.history-text {
   font-size: 1.2rem;
 }
 @media screen and (max-width: 700px) {
-  section.ds-about-wrapper div.history-text {
+  section.ds-about-wrapper div.text {
     margin: 0 20px;
   }
 }
-section.ds-about-wrapper div.history-text div.second,
-section.ds-about-wrapper div.history-text div.main {
+section.ds-about-wrapper div.text div.second,
+section.ds-about-wrapper div.text div.main {
   padding-left: 20px;
   border-left: 4px solid #35C828;
 }
-section.ds-about-wrapper div.history-text div.second {
+section.ds-about-wrapper div.text div.second {
   max-height: 0;
   transition: max-height 0.5s linear;
   transform-origin: bottom;
   overflow: hidden;
 }
-section.ds-about-wrapper div.history-text div.second.active {
+section.ds-about-wrapper div.text div.second.active {
   max-height: 700px;
 }
 @media screen and (max-width: 1200px) {
-  section.ds-about-wrapper div.history-text div.second.active {
+  section.ds-about-wrapper div.text div.second.active {
     max-height: 1000px;
   }
 }
 @media screen and (max-width: 900px) {
-  section.ds-about-wrapper div.history-text div.second.active {
+  section.ds-about-wrapper div.text div.second.active {
     max-height: 1200px;
   }
 }
 @media screen and (max-width: 700px) {
-  section.ds-about-wrapper div.history-text div.second.active {
+  section.ds-about-wrapper div.text div.second.active {
     max-height: 1600px;
   }
 }
 @media screen and (max-width: 600px) {
-  section.ds-about-wrapper div.history-text div.second.active {
+  section.ds-about-wrapper div.text div.second.active {
     max-height: 2100px;
   }
 }
-section.ds-about-wrapper div.history-text button {
+section.ds-about-wrapper div.text button {
   margin-top: 30px;
   background-color: #35C828;
   color: #fff;
@@ -12744,9 +12760,299 @@ section.ds-about-wrapper div.history-text button {
   transition: all 0.2s linear;
   border: 2px solid #35C828;
 }
-section.ds-about-wrapper div.history-text button:hover {
+section.ds-about-wrapper div.text button:hover {
   color: #35C828;
   background-color: #fff;
+}
+section.ds-about-wrapper div.text div.item {
+  margin-bottom: 20px;
+}
+section.ds-about-wrapper div.text div.item p {
+  text-indent: 50px;
+}
+
+section.ds-about-wrapper div.about-our-awards-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper {
+  width: 100vw;
+  background-color: #6BA81D;
+  min-height: 400px;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 60px;
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("/images/dayroom.png");
+  width: 50%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0.2;
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper * {
+  position: relative;
+  z-index: 5;
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  background-color: transparent;
+  color: #fff;
+  transform: scale(1);
+  transition: transform 0.2s linear;
+  cursor: pointer;
+  -webkit-animation: fadeIn 0.3s linear;
+          animation: fadeIn 0.3s linear;
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper span:hover {
+  transform: scale(1.2);
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper span.left {
+  left: 20px;
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper span.right {
+  right: 20px;
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.dots div.dot.active {
+  background-color: #fff;
+  transform: scale(1.2);
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.dots div.dot {
+  border: 4px solid #fff;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  margin-left: 20px;
+  transition: all 0.25s;
+  background-color: transparent;
+  transform: scale(1);
+  cursor: pointer;
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.dots div.dot:first-of-type {
+  margin-left: 0;
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper {
+  width: 500%;
+  display: flex;
+  height: 100%;
+  transition: transform 1s;
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-item.active {
+  -webkit-animation: fadeIn 0.5s 0.4s both;
+          animation: fadeIn 0.5s 0.4s both;
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-item.active h2::after {
+  -webkit-animation: lineSizeMyk 0.8s 1s both;
+          animation: lineSizeMyk 0.8s 1s both;
+}
+@-webkit-keyframes lineSizeMyk {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 75%;
+  }
+}
+@keyframes lineSizeMyk {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 75%;
+  }
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-item {
+  width: 20%;
+  height: 100%;
+  color: white;
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-item h2 {
+  width: 40%;
+  text-indent: 20px;
+  position: relative;
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-item h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  width: 75%;
+  height: 5px;
+  background-color: #fff;
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper {
+  width: 40%;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 80px;
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.carousel {
+  width: 200%;
+  display: flex;
+  transition: transform 0.5s;
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.carousel img {
+  width: 50%;
+  height: 600px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.dots {
+  bottom: 0px;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 20px;
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.dots div.dot {
+  width: 15px;
+  height: 15px;
+  border: 2px solid #fff;
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.dots span {
+  position: static;
+  font-size: 2rem;
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.dots span.right {
+  margin-left: 20px;
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.dots span.left {
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper span.right {
+    right: 0;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper span.left {
+    left: 0;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper::after {
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-position-y: 60%;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper {
+    width: 500%;
+    display: flex;
+    height: 100%;
+    transition: transform 1s;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-item.active {
+    -webkit-animation: fadeIn 0.5s 0.4s both;
+            animation: fadeIn 0.5s 0.4s both;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-item {
+    flex-direction: column-reverse;
+    width: 20%;
+    height: 100%;
+    color: white;
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-item h2 {
+    width: 100%;
+    margin: 35px 0;
+    text-align: center;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-item h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -30px;
+    width: 75%;
+    height: 5px;
+    background-color: #fff;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper {
+    width: 100%;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.carousel {
+    width: 200%;
+    display: flex;
+    transition: transform 0.5s;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.carousel img {
+    width: 50%;
+    height: 400px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.dots {
+    border: 3px solid;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.dots div.dot {
+    width: 15px;
+    height: 15px;
+    border: 2px solid #fff;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.dots span {
+    position: static;
+  }
+}
+div.cert {
+  text-align: center;
+}
+div.cert h2 {
+  font-weight: bold;
+}
+div.cert a.rodo button {
+  margin-top: 50px;
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+section.ds-about-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+}
+section.ds-about-wrapper h1 {
+  font-weight: bold;
+  position: relative;
+  font-size: 2.5rem;
+  margin: 40px;
+  text-align: center;
+}
+section.ds-about-wrapper h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  width: 110%;
+  max-width: 90vw;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 4px;
+  background-color: #35C828;
 }
 
 div.ds-about-logo {
@@ -12965,6 +13271,11 @@ div.ds-help-logo h1 {
   font-size: 4rem;
   font-weight: bold;
   font-family: "Open Sans";
+}
+@media screen and (max-width: 500px) {
+  div.ds-help-logo h1 {
+    font-size: 3rem;
+  }
 }
 
 section.ds-news-list-wrapper {
@@ -14061,6 +14372,877 @@ div.ds-news-logo h1 {
   font-size: 4rem;
   font-weight: bold;
   font-family: "Open Sans";
+}
+
+section.ds-weclome-wrapper div.ds-welcome-activites {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  margin-bottom: 50px;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.buttons-wrapper {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  max-width: 100vw;
+  padding: 0 20px;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.buttons-wrapper button {
+  padding: 7px 40px;
+  font-size: 1.3rem;
+  background-color: #DEFFDC;
+  color: #35C828;
+  border: none;
+  border-radius: 20px;
+  transition: all 0.2s linear;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.buttons-wrapper button:focus {
+  outline: none;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.buttons-wrapper button:hover {
+  transform: scale(1.1);
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.buttons-wrapper button.active {
+  color: white;
+  background-color: #35C828;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view {
+  width: 100vw;
+  height: 600px;
+  display: flex;
+  overflow: hidden;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image {
+  width: 50%;
+  height: 200%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.8s;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.tasks,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.tasks {
+  padding: 0 30px;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.tasks p,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.tasks p {
+  font-size: 1.1rem;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.tasks,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.projects,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.tasks,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.projects {
+  height: 50%;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.tasks h1,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.tasks h3,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.tasks p,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.projects h1,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.projects h3,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.projects p,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.tasks h1,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.tasks h3,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.tasks p,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.projects h1,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.projects h3,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.projects p {
+  cursor: default;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.tasks a,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.projects a,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.tasks a,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.projects a {
+  font-size: 1.7rem;
+  padding: 5px 15px;
+  border: none;
+  background-color: #35C828;
+  color: white;
+  border-radius: 20px;
+  margin-top: 40px;
+  transition: 0.2s linear;
+  border: 3px solid #35C828;
+  cursor: pointer;
+  text-decoration: none;
+}
+@media screen and (max-width: 1000px) {
+  section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.tasks a,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.projects a,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.tasks a,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.projects a {
+    font-size: 1.3rem;
+  }
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.tasks a:hover,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.projects a:hover,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.tasks a:hover,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.projects a:hover {
+  background-color: white;
+  color: #35C828;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text.active,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image.active {
+  transform: translateY(0);
+}
+@media screen and (max-width: 1400px) {
+  section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 1100px) {
+  section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image {
+    width: 35%;
+  }
+}
+@media screen and (max-width: 1400px) {
+  section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 1100px) {
+  section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text {
+    width: 65%;
+  }
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text {
+  transform: translateY(50%);
+  align-self: flex-end;
+  background-color: #F0F9E5;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.tasks {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.tasks * {
+  margin-top: 20px;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.tasks h1 {
+  margin-bottom: 30px;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.projects div.ds-a-projects-single-project {
+  padding: 0 3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.projects div.ds-a-projects-single-project a {
+  margin-left: 50px;
+  background-color: #35C828;
+  padding: 3px 7px;
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 0px black;
+  text-decoration: none;
+  transition: all 0.2s linear;
+  flex-basis: 26vw;
+  max-width: 135px;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.projects div.ds-a-projects-single-project a:hover {
+  background-color: white;
+  color: #35C828;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.projects div.ds-a-projects-single-project div.content {
+  border-bottom: 1px solid black;
+  flex-basis: 80%;
+  padding: 5%;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.projects div.ds-a-projects-single-project div.content h1 {
+  margin: 0;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.projects div.ds-a-projects-single-project div.content * {
+  color: #F07716;
+  text-decoration: underline;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image {
+  transform: translateY(-50%);
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.tasks,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.projects {
+  background-image: url("/images/welcome/activities/tasks.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 20px 0 20px 20px;
+}
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.projects {
+  background-image: url("/images/welcome/activities/projects.png");
+}
+
+@media screen and (max-width: 1000px) {
+  section.ds-weclome-wrapper div.ds-welcome-activites {
+    width: 100%;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image {
+    transform: translateX(-50%);
+    margin-bottom: 50px;
+    height: 450px;
+    min-height: 450px !important;
+  }
+}
+@media screen and (max-width: 1000px) and (max-width: 700px) {
+  section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image {
+    height: 300px;
+    min-height: 300px !important;
+  }
+}
+@media screen and (max-width: 1000px) and (max-width: 500px) {
+  section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image {
+    height: 200px;
+    min-height: 200px !important;
+  }
+}
+@media screen and (max-width: 1000px) {
+  section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.tasks,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.projects {
+    margin: 20px 0;
+    height: 100%;
+    min-height: 0px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text {
+    transform: translateX(50%);
+    height: auto;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.projects div.ds-a-projects-single-project {
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid black;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.projects div.ds-a-projects-single-project div.content {
+    width: 100%;
+    border-bottom: none;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.projects div.ds-a-projects-single-project div.content h1 {
+    font-size: 1.7rem;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.projects div.ds-a-projects-single-project a {
+    flex-basis: 0;
+    width: 200px;
+    text-align: center;
+    margin-top: 20px;
+    max-width: 95%;
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 1000px) {
+  section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image {
+    min-height: 500px;
+    width: 200%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    transition: transform 0.8s;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.tasks,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.projects,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.tasks,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.projects {
+    height: 100%;
+    padding: 30px;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 1000px) and (max-width: 500px) {
+  section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.tasks,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text div.projects,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.tasks,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.projects {
+    padding: 30px 10px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.text.active,
+section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image.active {
+    transform: translateX(0);
+  }
+}
+section.ds-weclome-wrapper div.ds-welcome-about-us {
+  margin-top: 50px;
+  width: 100vw;
+  margin-bottom: 50px;
+}
+section.ds-weclome-wrapper div.ds-welcome-about-us div.about-us-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #F0F9E5;
+  padding: 20px 0;
+  flex-wrap: wrap;
+}
+section.ds-weclome-wrapper div.ds-welcome-about-us div.about-us-content div.about-us-item {
+  width: 300px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  border-radius: 15px;
+  box-shadow: 2px 2px 10px 1px black;
+  margin: 20px;
+}
+section.ds-weclome-wrapper div.ds-welcome-about-us div.about-us-content div.about-us-item h3 {
+  font-weight: bold;
+}
+section.ds-weclome-wrapper div.ds-welcome-about-us div.about-us-content div.about-us-item a {
+  font-size: 1.2rem;
+  padding: 0px 15px;
+  border: none;
+  background-color: #35C828;
+  color: white;
+  border-radius: 20px;
+  margin-top: 10px;
+  transition: 0.2s linear;
+  border: 3px solid #35C828;
+  cursor: pointer;
+  text-decoration: none;
+}
+section.ds-weclome-wrapper div.ds-welcome-about-us div.about-us-content div.about-us-item a:hover {
+  background-color: white;
+  color: #35C828;
+}
+
+section.ds-weclome-wrapper div.ds-welcome-news {
+  width: 95%;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+section.ds-weclome-wrapper div.ds-welcome-news div.news-content {
+  border: 4px solid #35C828;
+  border-radius: 35px;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (max-width: 950px) {
+  section.ds-weclome-wrapper div.ds-welcome-news div.news-content {
+    border: none;
+  }
+}
+section.ds-weclome-wrapper div.ds-welcome-news div.news-content div.item-on-list {
+  width: 100%;
+}
+section.ds-weclome-wrapper div.ds-welcome-news div.news-content div.dots {
+  display: flex;
+  justify-content: center;
+}
+section.ds-weclome-wrapper div.ds-welcome-news div.news-content div.dots div.dot {
+  width: 15px;
+  height: 15px;
+  background-color: #333333;
+  margin: 5px;
+}
+section.ds-weclome-wrapper div.ds-welcome-news div.news-content a.more {
+  color: #35C828;
+  background-color: white;
+  border: 2px solid #35C828;
+  text-decoration: none;
+  transition: all 0.2s linear;
+  padding: 5px 15px;
+  font-size: 1.3rem;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+section.ds-weclome-wrapper div.ds-welcome-news div.news-content a.more:hover {
+  background-color: #35C828;
+  color: white;
+}
+
+section.ds-weclome-wrapper div.ds-welcome-how-to-help {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  margin: 60px 0 30px 0;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content {
+  marign-top: 30px;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.header-desktop {
+  display: flex;
+  justify-content: space-evenly;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.header-desktop button {
+  color: #35C828;
+  background-color: white;
+  padding: 10px 45px;
+  font-size: 1.3rem;
+  border-top: 2px solid #35C828;
+  border-right: 2px solid #35C828;
+  border-left: 2px solid #35C828;
+  border-bottom: none;
+  border-radius: 20px 20px 0 0;
+  transition: all 0.2s linear;
+  font-weight: bold;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.header-desktop button:focus {
+  outline: none;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.header-desktop button.active {
+  color: white;
+  background-color: #35C828;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper {
+  position: relative;
+  background-color: #35C828;
+  overflow: hidden;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0%;
+  height: 100%;
+  width: 50%;
+  background-image: url("/images/dayroom.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.35;
+  z-index: 5;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper * {
+  position: relative;
+  z-index: 10;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile {
+  display: flex;
+  height: 650px;
+  position: relative;
+  padding: 20px 0;
+  transition: transform 1s;
+}
+@media screen and (max-width: 1200px) {
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile {
+    height: 550px;
+  }
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.gallery,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery {
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 50px;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.gallery img,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery img {
+  width: 30vw;
+  max-height: 80%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: relative;
+  transform: translateY(-200%);
+  transition: transform 0.6s 0.3s linear;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.gallery img:nth-of-type(2),
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery img:nth-of-type(2) {
+  transition: transform 0.6s 0.6s linear;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.gallery img:nth-of-type(3),
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery img:nth-of-type(3) {
+  transition: transform 0.6s 0.9s linear;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.gallery a.show-more,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery a.show-more {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: #35C828;
+  border: 2px solid white;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  transition: all 0.2s linear;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.gallery a.show-more:hover,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery a.show-more:hover {
+  color: white;
+  background-color: #35C828;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.gallery.active img,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery.active img {
+  transform: translateY(0%);
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.text,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 0;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.text div.content,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text div.content {
+  width: 45%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.text div.content h1,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text div.content h1 {
+  font-weight: bold;
+  position: relative;
+  font-size: 3rem;
+}
+@media screen and (max-width: 1200px) {
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.text div.content h1,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text div.content h1 {
+    font-size: 2.5rem;
+  }
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.text div.content p,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text div.content p {
+  text-indent: 20px;
+  font-size: 1.8rem;
+}
+@media screen and (max-width: 1200px) {
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.text div.content p,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text div.content p {
+    font-size: 1.5rem;
+  }
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.text div.img,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text div.img {
+  width: 45%;
+  height: 80%;
+  margin: 30px;
+  background-image: url("/images/welcome/podatek.png");
+  background-size: contain;
+  background-position: center;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.text.active div.content h1,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text.active div.content h1 {
+  -webkit-animation: fadeFromBottom 0.5s 0.7s linear both;
+          animation: fadeFromBottom 0.5s 0.7s linear both;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.text.active div.content p,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text.active div.content p {
+  -webkit-animation: fadeFromBottom 0.5s 1.2s linear both;
+          animation: fadeFromBottom 0.5s 1.2s linear both;
+}
+
+@media screen and (min-width: 1001px) {
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.header-mobile {
+    display: none;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile {
+    display: none;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile * {
+    display: none;
+  }
+}
+@media screen and (max-width: 1000px) {
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.header-mobile {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3px;
+  }
+}
+@media screen and (max-width: 1000px) and (max-width: 380px) {
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.header-mobile {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 1000px) {
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.header-mobile div.titles {
+    height: 40px;
+    overflow: hidden;
+  }
+}
+@media screen and (max-width: 1000px) and (max-width: 380px) {
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.header-mobile div.titles {
+    flex-direction: row;
+  }
+}
+@media screen and (max-width: 1000px) {
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.header-mobile div.titles div.content {
+    height: 160px;
+    transition: transform 0.5s;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.header-mobile div.titles div.content h3 {
+    height: 40px;
+    margin: 0;
+    background-color: white;
+    border: #35C828 solid 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 1000px) {
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.header-mobile div.titles,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.header-mobile div.buttons {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 1000px) {
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.header-mobile div.buttons {
+    flex-direction: row;
+  }
+}
+@media screen and (max-width: 1000px) and (max-width: 500px) {
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.header-mobile div.buttons {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 1000px) and (max-width: 380px) {
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.header-mobile div.buttons {
+    margin-top: 20px;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+@media screen and (max-width: 1000px) {
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.header-mobile div.buttons button {
+    background-color: white;
+    color: #35C828;
+    border: #35C828 solid 2px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    padding: 5px 15px;
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 1000px) and (max-width: 500px) {
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.header-mobile div.buttons button {
+    padding: 5px;
+    font-size: 1.1rem;
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 1000px) and (max-width: 380px) {
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.header-mobile div.buttons button {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.header-desktop {
+    display: none;
+  }
+}
+@media screen and (max-width: 1000px) {
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop {
+    display: none;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop * {
+    display: none;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile {
+    display: flex;
+    padding: 0;
+    height: 500px;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item {
+    display: flex;
+    flex-direction: column;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.control a.show-more {
+    background-color: white;
+    color: #35C828;
+    border: 2px solid white;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    transition: all 0.2s linear;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.control a.show-more:hover {
+    color: white;
+    background-color: #35C828;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.control div.dots {
+    display: flex;
+    justify-content: center;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.control div.dots div.dot.active {
+    background-color: white;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.control div.dots div.dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 30%;
+    border: 3px solid white;
+    margin: 10px;
+    transition: background-color 0.2s linear;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery {
+    height: 80%;
+    width: 300%;
+    padding-bottom: 0px;
+    transition: transform 0.7s;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery div.img-wrapper {
+    width: calc(100% / 3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery div.img-wrapper img {
+    width: 100%;
+    max-width: 85vw;
+    max-height: 400px;
+    -o-object-fit: contain;
+       object-fit: contain;
+    position: relative;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text.active button {
+    aniamtion: fadeFromBottom 0.5s 1.5s linear both;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 50;
+    font-size: 2rem;
+    border: none;
+    background-color: white;
+    color: #35C828;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text button i {
+    transition: transform 0.5s linear;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text button:focus {
+    outline: none;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text button.active i {
+    transform: rotate(540deg);
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text div.wrapper.active {
+    transform: translateX(-50%);
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text div.wrapper {
+    height: 100%;
+    width: 200vw;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    transform: translateX(0%);
+    transition: transform 0.7s;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text div.wrapper div.content,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text div.wrapper div.img {
+    width: 50%;
+    margin: 0;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text div.wrapper div.content {
+    padding: 30px;
+  }
+}
+@media screen and (max-width: 1000px) and (max-width: 500px) {
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text div.wrapper div.content h1 {
+    font-size: 2rem;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text div.wrapper div.content p {
+    font-size: 1.3rem;
+  }
+}
+section.ds-weclome-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+@media screen and (max-width: 1000px) {
+  section.ds-weclome-wrapper {
+    padding: 30px;
+  }
+}
+@media screen and (max-width: 500px) {
+  section.ds-weclome-wrapper {
+    padding: 20px;
+  }
+}
+section.ds-weclome-wrapper div.main-logo {
+  background-image: url("/images/welcome/main_logo.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  width: 100vw;
+  height: 720px;
+  -webkit-animation: fadeIn 1s both;
+          animation: fadeIn 1s both;
+}
+section.ds-weclome-wrapper h1.header {
+  font-weight: bold;
+  position: relative;
+  font-size: 2.5rem;
+  margin: 40px;
+  text-align: center;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+section.ds-weclome-wrapper h1.header::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  background-color: #35C828;
+  height: 4px;
+  width: 110%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 div.ds-path-bar {

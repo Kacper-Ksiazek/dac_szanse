@@ -3,7 +3,7 @@
     <title>Dać Szansę</title>
 @endsection
 @section('content')
-<div class="container">
-    welcome page
+<div class="w-100">
+    <welcome projects='{{$projects}}' news='{{$news}}'></welcome>
 </div>
 @endsection
