@@ -21,7 +21,9 @@
                     <div class="dot" @click="item.currentImageIndex = 1" :class="item.currentImageIndex === 1 ? 'active' : ''"></div>
                     <div class="dot" @click="item.currentImageIndex = 2" :class="item.currentImageIndex === 2 ? 'active' : ''"></div>
                 </div>
-                <a class="show-more">Zobacz wiecej</a>
+                <div class="d-flex justify-content-center">
+                    <a class="show-more controlled" :href="item.href">Zobacz wiecej</a>
+                </div>
             </div>
             <!--  -->
             <!--  -->
@@ -32,6 +34,9 @@
                     <div class="content">
                         <h1 v-text="item.text.header"></h1>
                         <p v-text="item.text.content"></p>
+                        <div class="d-flex justify-content-center">
+                            <a class="show-more controlled" :href="item.href">Zobacz wiecej</a>
+                        </div>
                     </div>
                     <!--  -->
                     <div class="img"></div>
@@ -57,7 +62,7 @@ export default {
         },
         setGalleryTransform(item) {
             return `transform: translateX(-${(item.currentImageIndex * 100) / 3}%)`;
-        },
-    },
+        }
+    }
 };
 </script>

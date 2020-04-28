@@ -69,7 +69,8 @@ Vue.component("about-logo", require("./components/about/Logo.vue").default);
 Vue.component("about-index", require("./components/about/index/IndexMain.vue").default);
 //WITAMY
 Vue.component("welcome", require("./components/welcome/WelcomeWrapper.vue").default);
-
+//STOPKA
+Vue.component("ds-footer", require("./components/Footer.vue").default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

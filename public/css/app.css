@@ -12746,7 +12746,12 @@ section.ds-about-wrapper div.text div.second.active {
 }
 @media screen and (max-width: 600px) {
   section.ds-about-wrapper div.text div.second.active {
-    max-height: 2100px;
+    max-height: 2400px;
+  }
+}
+@media screen and (max-width: 600px) {
+  section.ds-about-wrapper div.text div.second.active {
+    max-height: 2700px;
   }
 }
 section.ds-about-wrapper div.text button {
@@ -12778,7 +12783,7 @@ section.ds-about-wrapper div.about-our-awards-wrapper {
   margin-bottom: 40px;
   position: relative;
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop {
   width: 100vw;
   background-color: #6BA81D;
   min-height: 400px;
@@ -12786,7 +12791,7 @@ section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper {
   overflow: hidden;
   padding-bottom: 60px;
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper::after {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop::after {
   content: "";
   position: absolute;
   left: 0;
@@ -12799,11 +12804,11 @@ section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper::after
   z-index: 2;
   opacity: 0.2;
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper * {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop * {
   position: relative;
   z-index: 5;
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper span {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop span {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -12816,27 +12821,27 @@ section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper span {
   -webkit-animation: fadeIn 0.3s linear;
           animation: fadeIn 0.3s linear;
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper span:hover {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop span:hover {
   transform: scale(1.2);
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper span.left {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop span.left {
   left: 20px;
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper span.right {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop span.right {
   right: 20px;
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.dots {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.dots {
   position: absolute;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.dots div.dot.active {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.dots div.dot.active {
   background-color: #fff;
   transform: scale(1.2);
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.dots div.dot {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.dots div.dot {
   border: 4px solid #fff;
   border-radius: 50%;
   width: 25px;
@@ -12847,20 +12852,20 @@ section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.do
   transform: scale(1);
   cursor: pointer;
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.dots div.dot:first-of-type {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.dots div.dot:first-of-type {
   margin-left: 0;
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.awards-items-wrapper {
   width: 500%;
   display: flex;
   height: 100%;
   transition: transform 1s;
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-item.active {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.awards-items-wrapper div.award-item.active {
   -webkit-animation: fadeIn 0.5s 0.4s both;
           animation: fadeIn 0.5s 0.4s both;
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-item.active h2::after {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.awards-items-wrapper div.award-item.active h2::after {
   -webkit-animation: lineSizeMyk 0.8s 1s both;
           animation: lineSizeMyk 0.8s 1s both;
 }
@@ -12880,7 +12885,7 @@ section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.aw
     width: 75%;
   }
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-item {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.awards-items-wrapper div.award-item {
   width: 20%;
   height: 100%;
   color: white;
@@ -12889,12 +12894,12 @@ section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.aw
   align-items: center;
   justify-content: space-evenly;
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-item h2 {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.awards-items-wrapper div.award-item h2 {
   width: 40%;
   text-indent: 20px;
   position: relative;
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-item h2::after {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.awards-items-wrapper div.award-item h2::after {
   content: "";
   position: absolute;
   left: 0;
@@ -12903,119 +12908,232 @@ section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.aw
   height: 5px;
   background-color: #fff;
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.awards-items-wrapper div.award-images-wrapper {
   width: 40%;
   position: relative;
   overflow: hidden;
   padding-bottom: 80px;
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.carousel {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.awards-items-wrapper div.award-images-wrapper div.carousel {
   width: 200%;
   display: flex;
   transition: transform 0.5s;
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.carousel img {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.awards-items-wrapper div.award-images-wrapper div.carousel img {
   width: 50%;
   height: 600px;
   -o-object-fit: contain;
      object-fit: contain;
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.dots {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.awards-items-wrapper div.award-images-wrapper div.dots {
   bottom: 0px;
   align-items: center;
   padding: 0 10px;
   border-radius: 20px;
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.dots div.dot {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.awards-items-wrapper div.award-images-wrapper div.dots div.dot {
   width: 15px;
   height: 15px;
   border: 2px solid #fff;
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.dots span {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.awards-items-wrapper div.award-images-wrapper div.dots span {
   position: static;
   font-size: 2rem;
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.dots span.right {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.awards-items-wrapper div.award-images-wrapper div.dots span.right {
   margin-left: 20px;
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.dots span.left {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.awards-items-wrapper div.award-images-wrapper div.dots span.left {
   margin-right: 20px;
 }
 
 @media screen and (max-width: 1000px) {
-  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper span.right {
-    right: 0;
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop {
+    display: none;
   }
-  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper span.left {
+}
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile {
+    display: block;
+    width: 100vw;
+    background-color: #6BA81D;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 60px;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile::after {
+    content: "";
+    position: absolute;
     left: 0;
-  }
-  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper::after {
-    width: 100%;
+    bottom: -30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("/images/dayroom.png");
+    width: 50%;
     height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-position-y: 60%;
+    z-index: 2;
+    opacity: 0.2;
   }
-  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper {
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile * {
+    position: relative;
+    z-index: 5;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.dots div.dot.active {
+    background-color: #fff;
+    transform: scale(1.2);
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.dots div.dot {
+    border: 4px solid #fff;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    margin-left: 20px;
+    transition: all 0.25s;
+    background-color: transparent;
+    transform: scale(1);
+    cursor: pointer;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.dots div.dot:first-of-type {
+    margin-left: 0;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.dots span {
+    transform: translateY(-50%);
+    font-size: 3rem;
+    background-color: transparent;
+    color: #fff;
+    transform: scale(1);
+    transition: transform 0.2s linear;
+    cursor: pointer;
+    -webkit-animation: fadeIn 0.3s linear;
+            animation: fadeIn 0.3s linear;
+    display: block;
+    margin: 0 10px;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.dots span:hover {
+    transform: scale(1.2);
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.awards-items-wrapper {
     width: 500%;
     display: flex;
     height: 100%;
     transition: transform 1s;
+    margin-bottom: 40px;
   }
-  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-item.active {
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.awards-items-wrapper div.award-item.active {
     -webkit-animation: fadeIn 0.5s 0.4s both;
             animation: fadeIn 0.5s 0.4s both;
   }
-  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-item {
-    flex-direction: column-reverse;
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.awards-items-wrapper div.award-item {
     width: 20%;
     height: 100%;
     color: white;
-    display: flex;
-    padding: 20px;
+    padding: 20px 0;
     align-items: center;
     justify-content: space-evenly;
+    overflow: hidden;
   }
-  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-item h2 {
-    width: 100%;
-    margin: 35px 0;
-    text-align: center;
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.awards-items-wrapper div.award-item div.buttons-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    height: 50px;
+    overflow: hidden;
+    margin-bottom: 10px;
   }
-  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-item h2::after {
-    content: "";
-    position: absolute;
-    left: 50%;
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.awards-items-wrapper div.award-item div.buttons-wrapper div.buttons.active {
+    transform: translateY(-60px);
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.awards-items-wrapper div.award-item div.buttons-wrapper div.buttons {
+    padding-right: 10px;
+    transition: transform 0.4s;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.awards-items-wrapper div.award-item div.buttons-wrapper div.buttons button {
+    background-color: white;
+    border-radius: 10px;
+    color: #35C828;
+    border: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.awards-items-wrapper div.award-item div.buttons-wrapper div.buttons button:first-of-type {
+    margin-bottom: 10px;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.awards-items-wrapper div.award-item div.award-content.active {
     transform: translateX(-50%);
-    bottom: -30px;
-    width: 75%;
-    height: 5px;
-    background-color: #fff;
   }
-  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper {
-    width: 100%;
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.awards-items-wrapper div.award-item div.award-content {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 200%;
+    transition: transform 0.5s;
   }
-  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.carousel {
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.awards-items-wrapper div.award-item div.award-content h2 {
+    width: 50%;
+    text-indent: 20px;
+    position: relative;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 1000px) and (max-width: 600px) {
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.awards-items-wrapper div.award-item div.award-content h2 {
+    padding: 0 10px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.awards-items-wrapper div.award-images-wrapper {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.awards-items-wrapper div.award-images-wrapper div.carousel {
     width: 200%;
     display: flex;
     transition: transform 0.5s;
   }
-  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.carousel img {
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.awards-items-wrapper div.award-images-wrapper div.carousel img {
     width: 50%;
-    height: 400px;
+    height: 450px;
     -o-object-fit: contain;
        object-fit: contain;
   }
-  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.dots {
-    border: 3px solid;
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.awards-items-wrapper div.award-images-wrapper div.dots {
+    bottom: 0px;
+    align-items: center;
+    padding: 0 10px;
+    border-radius: 20px;
   }
-  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.dots div.dot {
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.awards-items-wrapper div.award-images-wrapper div.dots div.dot {
     width: 15px;
     height: 15px;
     border: 2px solid #fff;
   }
-  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper div.awards-items-wrapper div.award-images-wrapper div.dots span {
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.awards-items-wrapper div.award-images-wrapper div.dots span {
     position: static;
+    font-size: 2rem;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.awards-items-wrapper div.award-images-wrapper div.dots span.right {
+    margin-left: 20px;
+  }
+  section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.awards-items-wrapper div.award-images-wrapper div.dots span.left {
+    margin-right: 20px;
   }
 }
 div.cert {
@@ -14850,34 +14968,8 @@ section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content di
   height: 100%;
   overflow: hidden;
 }
-section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.gallery,
-section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery {
-  height: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding-bottom: 50px;
-}
-section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.gallery img,
-section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery img {
-  width: 30vw;
-  max-height: 80%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  position: relative;
-  transform: translateY(-200%);
-  transition: transform 0.6s 0.3s linear;
-}
-section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.gallery img:nth-of-type(2),
-section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery img:nth-of-type(2) {
-  transition: transform 0.6s 0.6s linear;
-}
-section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.gallery img:nth-of-type(3),
-section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery img:nth-of-type(3) {
-  transition: transform 0.6s 0.9s linear;
-}
-section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.gallery a.show-more,
-section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery a.show-more {
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item a.show-more,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item a.show-more {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -14889,15 +14981,61 @@ section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content di
   font-size: 1.2rem;
   padding: 5px 10px;
   transition: all 0.2s linear;
+  text-decoration: none;
 }
-section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.gallery a.show-more:hover,
-section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery a.show-more:hover {
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item a.show-more:hover,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item a.show-more:hover {
   color: white;
   background-color: #35C828;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item a.show-more.controlled,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item a.show-more.controlled {
+  position: static;
+  bottom: 0;
+  left: 0;
+  transform: translateX(0);
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.gallery,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery {
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 50px;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.gallery img,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery img {
+  border: 10px solid #fff;
+  max-width: 30vw;
+  max-height: 80%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: relative;
+  transform: translateY(-200%);
+  transition: transform 0.6s 0.3s linear;
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.gallery img:nth-of-type(2),
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery img:nth-of-type(2) {
+  transition: transform 0.6s 0.6s linear;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.gallery img:nth-of-type(3),
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery img:nth-of-type(3) {
+  transition: transform 0.6s 0.9s linear;
 }
 section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.gallery.active img,
 section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery.active img {
   transform: translateY(0%);
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.gallery.active a.show-more,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery.active a.show-more {
+  -webkit-animation: fadeIn 0.7s 0.8s both;
+          animation: fadeIn 0.7s 0.8s both;
 }
 section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.text,
 section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text {
@@ -14946,6 +15084,11 @@ section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content di
   background-image: url("/images/welcome/podatek.png");
   background-size: contain;
   background-position: center;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.text.active a.show-more,
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text.active a.show-more {
+  -webkit-animation: fadeIn 0.7s 0.8s both;
+          animation: fadeIn 0.7s 0.8s both;
 }
 section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.text.active div.content h1,
 section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text.active div.content h1 {
@@ -15197,6 +15340,10 @@ section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content di
     font-size: 1.3rem;
   }
 }
+section.ds-weclome-wrapper > div {
+  margin-top: 150px !important;
+}
+
 section.ds-weclome-wrapper {
   display: flex;
   align-items: center;
@@ -15204,12 +15351,12 @@ section.ds-weclome-wrapper {
 }
 @media screen and (max-width: 1000px) {
   section.ds-weclome-wrapper {
-    padding: 30px;
+    padding: 0 30px 30px 30px;
   }
 }
 @media screen and (max-width: 500px) {
   section.ds-weclome-wrapper {
-    padding: 20px;
+    padding: 0 20px 20px 20px;
   }
 }
 section.ds-weclome-wrapper div.main-logo {
@@ -15221,6 +15368,7 @@ section.ds-weclome-wrapper div.main-logo {
   height: 720px;
   -webkit-animation: fadeIn 1s both;
           animation: fadeIn 1s both;
+  margin-top: 0 !important;
 }
 section.ds-weclome-wrapper h1.header {
   font-weight: bold;
@@ -15371,11 +15519,11 @@ button.ds-scroll.active {
 
 div.ds-s-gallery-modal {
   position: fixed;
-  z-index: 100;
+  z-index: 10000;
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   -webkit-animation: fadeIn 0.4s linear both;
           animation: fadeIn 0.4s linear both;
 }
@@ -15408,7 +15556,7 @@ div.ds-s-gallery-modal span.ds-s-gallery-modal-exit {
 }
 div.ds-s-gallery-modal div.ds-s-gallery-modal-image {
   width: 80vw;
-  height: 60vh;
+  height: 90vh;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -15426,6 +15574,7 @@ div.ds-s-gallery-modal span.prev {
 @media screen and (max-width: 1100px) {
   div.ds-s-gallery-modal span.next,
 div.ds-s-gallery-modal span.prev {
+    display: none;
     top: 80%;
   }
 }
@@ -15536,6 +15685,73 @@ section.ds-gallery-with-hrefs div.gallery-item a img {
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+section.ds-footer {
+  margin-top: 50px;
+  background-color: rgba(51, 255, 0, 0.3);
+  display: flex;
+  padding: 20px;
+  justify-content: space-evenly;
+}
+@media screen and (max-width: 1000px) {
+  section.ds-footer {
+    flex-wrap: wrap;
+  }
+}
+section.ds-footer div.footer-box {
+  width: 20%;
+}
+@media screen and (max-width: 1000px) {
+  section.ds-footer div.footer-box {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 570px) {
+  section.ds-footer div.footer-box {
+    width: 100%;
+    border-bottom: 2px solid #000;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
+  section.ds-footer div.footer-box:last-of-type {
+    border-bottom: none;
+  }
+}
+section.ds-footer div.footer-box * {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+section.ds-footer div.footer-box h3 {
+  text-align: center;
+  font-weight: bold;
+}
+section.ds-footer div.footer-box a {
+  color: black;
+  text-decoration: none;
+}
+section.ds-footer div.footer-box.f-logo {
+  background-image: url("/images/dayroom.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.7;
+}
+@media screen and (max-width: 1300px) {
+  section.ds-footer div.footer-box.f-logo {
+    display: none;
+  }
+}
+section.ds-footer div.footer-box.info {
+  text-align: center;
+}
+section.ds-footer div.footer-box.info * {
+  -webkit-user-select: auto;
+     -moz-user-select: auto;
+      -ms-user-select: auto;
+          user-select: auto;
 }
 
 .logo {

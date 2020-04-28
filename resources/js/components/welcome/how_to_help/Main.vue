@@ -32,7 +32,7 @@ export default {
         "desktop-body": DesktopBody,
         "desktop-head": DesktopHead,
         "mobile-head": MobileHead,
-        "mobile-body": MobileBody,
+        "mobile-body": MobileBody
     },
     methods: {
         getImgPath(prefix, extenstion, item) {
@@ -47,7 +47,7 @@ export default {
         },
         setCurrentSection(val) {
             this.currentHelpSection = val;
-        },
+        }
     },
     //
     data() {
@@ -62,6 +62,7 @@ export default {
                     extenstion: "jpg",
                     currentImageIndex: 0,
                     title: "Ambasadorzy",
+                    href: "/jak-pomoc/ambasadorzy"
                 },
                 {
                     id: 1,
@@ -114,12 +115,13 @@ export default {
                         "steakhouse",
                         "dura farby",
                         "chem bud wadowice",
-                        "wycieraczki samochodowe",
+                        "wycieraczki samochodowe"
                     ],
                     prefix: "/images/help/darczyncy/",
                     extenstion: "png",
                     currentImageIndex: 0,
                     title: "Darczyńcy",
+                    href: "/jak-pomoc/darczyncy"
                 },
 
                 {
@@ -135,12 +137,13 @@ export default {
                         "tvk hd",
                         "http://mamatezkobieta.pl/",
                         "https://kampaniespoleczne.pl/",
-                        "mamnewsa1",
+                        "mamnewsa1"
                     ],
                     prefix: "/images/help/wspolprace/",
                     extenstion: "png",
                     currentImageIndex: 0,
                     title: "Współpraca",
+                    href: "/jak-pomoc/wspolpraca"
                 },
                 {
                     id: 3,
@@ -152,11 +155,12 @@ export default {
                     text: {
                         header: "Pomaganie jest proste - wystarczy jeden wpis w Twoim zeznaniu podatkowym PIT !",
                         content: `Drodzy Państwo,
-                                 Dzięki przekazaniu 1 % podatku przez osoby wielkiego serca, nasze dzieci mogą uczestniczyć w zajęciach, które są dla nich jednocześnie zabawą, ale i ciężką pracą terapeutyczną. `,
+                                 Dzięki przekazaniu 1 % podatku przez osoby wielkiego serca, nasze dzieci mogą uczestniczyć w zajęciach, które są dla nich jednocześnie zabawą, ale i ciężką pracą terapeutyczną. `
                     },
-                },
-            ],
+                    href: "/jak-pomoc/podatek"
+                }
+            ]
         };
-    },
+    }
 };
 </script>

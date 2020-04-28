@@ -14,6 +14,7 @@
                 </div>
             </div>
         </div>
+        <span id="historia"></span>
     </div>
 </template>
 <script>

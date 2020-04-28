@@ -2,14 +2,16 @@
 @import 'about_us'
 @import 'news'
 @import 'how_to_help'
+section.ds-weclome-wrapper>div
+    margin-top: 150px !important
 section.ds-weclome-wrapper
     display: flex
     align-items: center
     flex-direction: column
     @media screen and ( max-width: 1000px )
-        padding: 30px
+        padding: 0 30px 30px 30px
     @media screen and ( max-width: 500px )
-        padding: 20px
+        padding: 0 20px 20px 20px
     
     div.main-logo
         background-image: url('/images/welcome/main_logo.png')
@@ -19,6 +21,7 @@ section.ds-weclome-wrapper
         width: 100vw
         height: 720px
         animation: fadeIn 1s both
+        margin-top: 0 !important
     
     h1.header
             font-weight: bold

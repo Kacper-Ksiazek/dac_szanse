@@ -7,7 +7,7 @@
                 <img :src="getImgPath(item.prefix, item.extenstion, item.images[0])" v-if="item.images[0]" />
                 <img :src="getImgPath(item.prefix, item.extenstion, item.images[1])" v-if="item.images[1]" />
                 <img :src="getImgPath(item.prefix, item.extenstion, item.images[2])" v-if="item.images[2]" />
-                <a class="show-more">Zobacz wiecej</a>
+                <a class="show-more" :href="item.href">Zobacz wiecej</a>
             </div>
             <!--  -->
             <!--  -->
@@ -16,6 +16,9 @@
                 <div class="content">
                     <h1 v-text="item.text.header"></h1>
                     <p v-text="item.text.content"></p>
+                    <div class="d-flex justify-content-center">
+                        <a class="show-more controlled" :href="item.href">Zobacz wiecej</a>
+                    </div>
                 </div>
                 <!--  -->
                 <div class="img"></div>
@@ -37,7 +40,7 @@ export default {
                 transform = `transform: translateX(-${(currentHelpSection * 100) / howToHelpList.length}%);`;
 
             return width + transform;
-        },
-    },
+        }
+    }
 };
 </script>

@@ -33,6 +33,7 @@
                     czytają „O Nas” serdecznie zapraszamy do zapoznania się z nasządziałalnością oraz wsparcie i podarowania nam tej niewielkiej części swojego podatku.
                 </span>
             </div>
+            <span id="nagrody"></span>
             <button @click="historyAllText = !historyAllText">Zobacz więcej</button>
         </div>
         <!--  -->
@@ -52,9 +53,12 @@
 //
 //
 import PeopleList from "./PeopleList.vue";
-import OurAwards from "./OurAwards.vue";
+import OurAwards from "./awards/OurAwards.vue";
 import cert from "./Cert.vue";
 export default {
+    mounted() {
+        if (window.location.href.includes("#historia")) this.historyAllText = true;
+    },
     components: {
         "people-list": PeopleList,
         "our-awards": OurAwards,
@@ -105,12 +109,14 @@ export default {
                         "W latach 2008 i 2010 zostaliśmy dwukrotnym laureatem konkursu „Warto być za!  - konkurs organizowany był przez Kampanię Piwowarską. Wygrane pieniądze przeznaczone zostały na realizację wsparcia dla dzieci niepełnosprawnych w tym otwarcie pierwszej w powiecie  Sali Doświadczania Świata.",
                     image1: "nagroda1.png",
                     image2: "nagroda2.png",
-                    currentImage: 0
+                    currentImage: 0,
+                    mobileShowText: false
                 },
                 {
                     id: 1,
                     content: 'W 2008 zostaliśmy finalistami konkursu „Kryształy Soli" – za całokształt działalności na rzecz osób niepełnosprawnych.',
-                    image1: "nagroda3.png"
+                    image1: "nagroda3.png",
+                    mobileShowText: false
                 },
                 {
                     id: 2,
@@ -118,20 +124,23 @@ export default {
                         "Działalność naszego Stowarzyszenia została dostrzeżona i w 2006 oraz 2007 roku byliśmy półfinalistami w konkursie o nagrodę Marszałka Województwa Małopolskiego „Kryształy Soli” w kategorii Polityka Społeczna.",
                     image1: "nagroda4.png",
                     image2: "nagroda5.png",
-                    currentImage: 0
+                    currentImage: 0,
+                    mobileShowText: false
                 },
                 {
                     id: 3,
                     content:
                         'W roku 2013 otrzymaliśmy Wyróżnienie w Konkursie o Nagrodę Marszałka Województwa Małopolskiego "Kryształy Soli" w kategorii polityka społeczna, zdrowie oraz działalność na rzecz osób niepełnosprawnych:',
-                    image1: "nagroda6.png"
+                    image1: "nagroda6.png",
+                    mobileShowText: false
                 },
                 {
                     id: 4,
                     content: "A także pierwsze miejsce w kategorii Lodołamacz - instytucja.",
                     image1: "nagroda7.png",
                     image2: "nagroda8.png",
-                    currentImage: 0
+                    currentImage: 0,
+                    mobileShowText: false
                 }
             ]
         };

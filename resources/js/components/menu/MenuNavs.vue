@@ -56,10 +56,10 @@ export default {
                 {
                     header: { content: "O nas", href: "/o-nas" },
                     body: [
-                        { content: "Zarząd", href: "#" },
-                        { content: "Historia", href: "#" },
+                        { content: "Zarząd", href: "/o-nas" },
+                        { content: "Historia", href: "/o-nas#historia" },
                         { content: "Nagrody i Wyróżnienia", href: "#" },
-                        { content: "Budowa CERT", href: "#" },
+                        { content: "Budowa CERT", href: "/o-nas#cert" },
                         { content: "RODO", href: "/o-nas/polityka-rodo" }
                     ]
                 },
