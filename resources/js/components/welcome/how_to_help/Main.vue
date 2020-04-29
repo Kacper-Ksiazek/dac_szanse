@@ -14,20 +14,89 @@
             <!--  -->
             <!--  -->
             <div class="body-wrapper">
-                <desktop-body :howToHelpList="howToHelpList" :currentHelpSection="currentHelpSection"></desktop-body>
+                <!--  -->
+                <!-- SPAN THAT HANDLE TOUGCH SWAPPING -->
+                <!--  -->
+                <span class="control" ref="control"></span>
+                <!--  -->
+                <!-- MAIN CONTENT -->
+                <!--  -->
+                <desktop-body :howToHelpList="howToHelpList" :currentHelpSection="currentHelpSection" rel="body"></desktop-body>
                 <mobile-body :howToHelpList="howToHelpList" :currentHelpSection="currentHelpSection"></mobile-body>
+                <!-- buttons that toggle between text and img preview on card section -->
+                <button
+                    class="toggle-img-text"
+                    v-if="howToHelpList[currentHelpSection].type === 'card'"
+                    @click="howToHelpList[currentHelpSection].showImg = !howToHelpList[currentHelpSection].showImg"
+                    :class="howToHelpList[currentHelpSection].showImg ? 'active' : ''"
+                >
+                    <i class="fa fa-arrow-right"></i>
+                </button>
+                <!--  -->
+                <!-- NAVIGATION SECTION -->
+                <!--  -->
+                <div class="bottom">
+                    <!--  -->
+                    <!-- Control dots -->
+                    <!--  -->
+                    <div v-if="howToHelpList[currentHelpSection].type === 'gallery'" class="control">
+                        <div class="dots">
+                            <div
+                                class="dot"
+                                @click="howToHelpList[currentHelpSection].currentImageIndex = 0"
+                                :class="howToHelpList[currentHelpSection].currentImageIndex === 0 ? 'active' : ''"
+                            ></div>
+                            <div
+                                class="dot"
+                                @click="howToHelpList[currentHelpSection].currentImageIndex = 1"
+                                :class="howToHelpList[currentHelpSection].currentImageIndex === 1 ? 'active' : ''"
+                            ></div>
+                            <div
+                                class="dot"
+                                @click="howToHelpList[currentHelpSection].currentImageIndex = 2"
+                                :class="howToHelpList[currentHelpSection].currentImageIndex === 2 ? 'active' : ''"
+                            ></div>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <!-- SHOW MORE -->
+                    <!--  -->
+                    <a :href="howToHelpList[currentHelpSection].href" class="show-more main">Zobacz wiecej</a>
+                </div>
             </div>
             <!--  -->
         </div>
     </div>
 </template>
 <script>
+//Components
 import DesktopBody from "./DesktopBody";
 import MobileBody from "./MobileBody";
 import DesktopHead from "./DesktopHead";
 import MobileHead from "./MobileHead";
+//Scripts
+import { tougchSwapping } from "../../../scripts/tougchSwapping";
+//
 //
 export default {
+    mounted() {
+        const rightCaseSwap = () => {
+            const { currentHelpSection, howToHelpList } = this;
+            if (currentHelpSection < howToHelpList.length - 1) this.currentHelpSection++;
+        };
+        //
+        const leftCaseSwap = () => {
+            if (this.currentHelpSection > 0) this.currentHelpSection--;
+        };
+        //
+        tougchSwapping({
+            that: this,
+            methodIfRight: rightCaseSwap,
+            methodIfLeft: leftCaseSwap,
+            initValue: "swapXOnStart",
+            element: this.$refs.control
+        });
+    },
     components: {
         "desktop-body": DesktopBody,
         "desktop-head": DesktopHead,
@@ -52,6 +121,7 @@ export default {
     //
     data() {
         return {
+            swapXOnStart: null,
             currentHelpSection: 0,
             howToHelpList: [
                 {

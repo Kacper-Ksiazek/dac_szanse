@@ -3,6 +3,7 @@
         <div class="ds-s-gallery-header-desktop">
             <!-- IMAGES IN HEADER -->
             <div class="ds-s-gallery-header-images" :style="desktopStyle">
+                <span class="control" ref="control"></span>
                 <div class="ds-s-gallery-header-item" v-for="item in headers" :key="item" :style="item | setPathHeader"></div>
             </div>
             <!-- NAVIGATION DOTS -->
@@ -30,15 +31,34 @@
     </div>
 </template>
 <script>
+import { tougchSwapping } from "../../../../scripts/tougchSwapping";
 import HeaderControl from "./HeaderControl.vue";
 
 export default {
+    mounted() {
+        const rightCaseSwap = () => {
+            if (this.desktopRotation < 6) this.desktopRotation += 2;
+        };
+        //
+        const leftCaseSwap = () => {
+            if (this.desktopRotation > 0) this.desktopRotation -= 2;
+        };
+        //
+        tougchSwapping({
+            that: this,
+            methodIfRight: rightCaseSwap,
+            methodIfLeft: leftCaseSwap,
+            initValue: "swapXOnStart",
+            element: this.$refs.control
+        });
+    },
     components: {
         "header-control": HeaderControl
     },
     props: ["showAllImages"],
     data() {
         return {
+            swapXOnStart: null,
             desktopRotation: 0,
             desktopStyle: null,
             desktopHelperDotsCreate: [0, 2, 4, 6],

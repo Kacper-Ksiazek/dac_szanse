@@ -10997,6 +10997,15 @@ section#ds-s-gallery-wrapper div.ds-s-gallery-images-wrapper div.ds-s-gallery-he
   justify-content: space-between;
   transition: transform 0.2s linear;
 }
+section#ds-s-gallery-wrapper div.ds-s-gallery-images-wrapper div.ds-s-gallery-header-desktop div.ds-s-gallery-header-images span.control,
+section#ds-s-gallery-wrapper div.ds-s-gallery-images-wrapper div.ds-s-gallery-header-mobile div.ds-s-gallery-header-images span.control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+}
 section#ds-s-gallery-wrapper div.ds-s-gallery-images-wrapper div.ds-s-gallery-header-desktop div.ds-s-gallery-header-images div.ds-s-gallery-header-item,
 section#ds-s-gallery-wrapper div.ds-s-gallery-images-wrapper div.ds-s-gallery-header-mobile div.ds-s-gallery-header-images div.ds-s-gallery-header-item {
   background-image: url("images/header/header1.jpg");
@@ -14929,6 +14938,7 @@ section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content di
   position: relative;
   background-color: #35C828;
   overflow: hidden;
+  padding: 10px 0;
 }
 section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper::after {
   content: "";
@@ -14947,6 +14957,35 @@ section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content di
 section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper * {
   position: relative;
   z-index: 10;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.bottom {
+  z-index: 201;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.bottom a.show-more {
+  background-color: white;
+  color: #35C828;
+  border: 2px solid white;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  transition: all 0.2s linear;
+  text-decoration: none;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.bottom a.show-more:hover {
+  color: white;
+  background-color: #35C828;
+}
+section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper span.control {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
 }
 section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop,
 section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile {
@@ -14967,33 +15006,6 @@ section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content di
   width: 100%;
   height: 100%;
   overflow: hidden;
-}
-section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item a.show-more,
-section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item a.show-more {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: white;
-  color: #35C828;
-  border: 2px solid white;
-  border-radius: 15px;
-  font-size: 1.2rem;
-  padding: 5px 10px;
-  transition: all 0.2s linear;
-  text-decoration: none;
-}
-section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item a.show-more:hover,
-section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item a.show-more:hover {
-  color: white;
-  background-color: #35C828;
-}
-section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item a.show-more.controlled,
-section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item a.show-more.controlled {
-  position: static;
-  bottom: 0;
-  left: 0;
-  transform: translateX(0);
 }
 section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-desktop div.body-item div.gallery,
 section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery {
@@ -15113,6 +15125,48 @@ section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content di
   }
 }
 @media screen and (max-width: 1000px) {
+  section.ds-weclome-wrapper button.toggle-img-text {
+    position: absolute !important;
+    top: 20px;
+    right: 20px;
+    z-index: 201 !important;
+    font-size: 2rem;
+    border: none;
+    background-color: white;
+    color: #35C828;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    -webkit-animation: fadeIn 0.7s 0.7s both;
+            animation: fadeIn 0.7s 0.7s both;
+  }
+  section.ds-weclome-wrapper button.toggle-img-text i {
+    transition: transform 0.5s linear;
+  }
+  section.ds-weclome-wrapper button.toggle-img-text:focus {
+    outline: none;
+  }
+  section.ds-weclome-wrapper button.active i {
+    transform: rotate(540deg);
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.dots {
+    display: flex;
+    justify-content: center;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.dots div.dot.active {
+    background-color: white;
+  }
+  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.dots div.dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 30%;
+    border: 3px solid white;
+    margin: 10px;
+    transition: background-color 0.2s linear;
+  }
   section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.header-mobile {
     display: flex;
     justify-content: space-between;
@@ -15240,21 +15294,6 @@ section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content di
     color: white;
     background-color: #35C828;
   }
-  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.control div.dots {
-    display: flex;
-    justify-content: center;
-  }
-  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.control div.dots div.dot.active {
-    background-color: white;
-  }
-  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.control div.dots div.dot {
-    width: 20px;
-    height: 20px;
-    border-radius: 30%;
-    border: 3px solid white;
-    margin: 10px;
-    transition: background-color 0.2s linear;
-  }
   section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.gallery {
     height: 80%;
     width: 300%;
@@ -15285,31 +15324,6 @@ section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content di
     display: flex;
     justify-content: flex-start;
     width: 100%;
-  }
-  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 50;
-    font-size: 2rem;
-    border: none;
-    background-color: white;
-    color: #35C828;
-    height: 50px;
-    width: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-  }
-  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text button i {
-    transition: transform 0.5s linear;
-  }
-  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text button:focus {
-    outline: none;
-  }
-  section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text button.active i {
-    transform: rotate(540deg);
   }
   section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content div.body-wrapper div.body-mobile div.body-item div.text div.wrapper.active {
     transform: translateX(-50%);
@@ -15522,7 +15536,7 @@ div.ds-s-gallery-modal {
   z-index: 10000;
   left: 0;
   top: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   -webkit-animation: fadeIn 0.4s linear both;
           animation: fadeIn 0.4s linear both;
@@ -15752,6 +15766,10 @@ section.ds-footer div.footer-box.info * {
      -moz-user-select: auto;
       -ms-user-select: auto;
           user-select: auto;
+}
+
+body {
+  max-width: 100vw;
 }
 
 .logo {

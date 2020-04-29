@@ -33,6 +33,7 @@ section.ds-weclome-wrapper
                 position: relative
                 background-color: $deafultGreen
                 overflow: hidden
+                padding: 10px 0
                 &::after
                     content: ''
                     position: absolute
@@ -49,6 +50,31 @@ section.ds-weclome-wrapper
                 *
                     position: relative 
                     z-index: 10
+                div.bottom
+                    z-index: 201
+                    position: absolute
+                    bottom: 10px
+                    left: 50%
+                    transform: translateX(-50%)
+                    display: flex
+                    flex-direction: column
+                    a.show-more
+                        background-color: white
+                        color: $deafultGreen
+                        border: 2px solid white
+                        border-radius: 15px
+                        font-size: 1.2rem
+                        padding: 5px 10px
+                        transition: all .2s linear
+                        text-decoration: none
+                        &:hover
+                            color: white
+                            background-color: $deafultGreen
+                span.control
+                    position: absolute
+                    width: 100%
+                    height: 100%
+                    z-index: 200
                 div.body-desktop,
                 div.body-mobile
                     display: flex
@@ -62,27 +88,6 @@ section.ds-weclome-wrapper
                         width: 100%
                         height: 100%
                         overflow: hidden
-                        a.show-more
-                            position: absolute
-                            bottom: 0
-                            left: 50%
-                            transform: translateX(-50%)
-                            background-color: white
-                            color: $deafultGreen
-                            border: 2px solid white
-                            border-radius: 15px
-                            font-size: 1.2rem
-                            padding: 5px 10px
-                            transition: all .2s linear
-                            text-decoration: none
-                            &:hover
-                                color: white
-                                background-color: $deafultGreen
-                        a.show-more.controlled
-                            position: static
-                            bottom: 0
-                            left: 0
-                            transform: translateX(0)
                         div.gallery
                             height: 100%
                             display: flex
@@ -170,7 +175,42 @@ section.ds-weclome-wrapper
 
 @media screen and ( max-width: 1000px )
     section.ds-weclome-wrapper
+        button.toggle-img-text
+            position: absolute !important
+            top: 20px
+            right: 20px
+            z-index: 201 !important
+            font-size: 2rem
+            border: none
+            background-color: white
+            color: $deafultGreen
+            height: 50px
+            width: 50px
+            display: flex
+            justify-content: center
+            align-items: center
+            border-radius: 20px
+            animation: fadeIn .7s .7s both
+            i
+                transition: transform .5s linear
+            &:focus
+                outline: none
+        button.active
+            i
+                transform: rotate(540deg)
         div.ds-welcome-how-to-help
+            div.dots
+                display: flex
+                justify-content: center
+                div.dot.active
+                    background-color: white
+                div.dot
+                    width: 20px
+                    height: 20px
+                    border-radius: 30%
+                    border: 3px solid white
+                    margin: 10px
+                    transition: background-color .2s linear
             div.how-to-help-content
                 div.header-mobile
                     display: flex
@@ -256,18 +296,6 @@ section.ds-weclome-wrapper
                                     &:hover
                                         color: white
                                         background-color: $deafultGreen
-                                div.dots
-                                    display: flex
-                                    justify-content: center
-                                    div.dot.active
-                                        background-color: white
-                                    div.dot
-                                        width: 20px
-                                        height: 20px
-                                        border-radius: 30%
-                                        border: 3px solid white
-                                        margin: 10px
-                                        transition: background-color .2s linear
                             div.gallery
                                 height: 80%
                                 width: 300%
@@ -294,29 +322,6 @@ section.ds-weclome-wrapper
                                 display: flex
                                 justify-content: flex-start
                                 width: 100%
-                                button
-                                    position: absolute
-                                    top: 20px
-                                    right: 20px
-                                    z-index: 50
-                                    font-size: 2rem
-                                    border: none
-                                    background-color: white
-                                    color: $deafultGreen
-                                    height: 50px
-                                    width: 50px
-                                    display: flex
-                                    justify-content: center
-                                    align-items: center
-                                    border-radius: 20px
-
-                                    i
-                                        transition: transform .5s linear
-                                    &:focus
-                                        outline: none
-                                button.active
-                                    i
-                                        transform: rotate(540deg)
                                         
                                 div.wrapper.active
                                     transform: translateX(-50%)

@@ -12,34 +12,29 @@
     </div>
 </template>
 <script>
+import { tougchSwapping } from "../../../scripts/tougchSwapping";
 export default {
     mounted() {
         this.scrollY = scrollY;
-
-        this.translateElements("MOVE");
-        //Touch images swappin'
-        const handleImageSwap = e => {
-            const { modalActiveImageIndex, all_images, swapXOnStart } = this;
-            //
-            let x;
-            try {
-                //Tougch event case
-                x = e.changedTouches[0].clientX;
-            } catch (error) {
-                //Mouse event case
-                x = e.x;
-            }
-            //
-            if (x < swapXOnStart) {
-                if (modalActiveImageIndex < all_images.length - 1) this.modalActiveImageIndex++;
-            } else if (x > swapXOnStart) {
-                if (modalActiveImageIndex > 0) this.modalActiveImageIndex--;
-            }
+        const rightCaseSwap = () => {
+            const { modalActiveImageIndex, all_images } = this;
+            if (modalActiveImageIndex < all_images.length - 1) this.modalActiveImageIndex++;
         };
         //
-        this.$refs.img.addEventListener("touchstart", e => (this.swapXOnStart = e.changedTouches[0].clientX));
-        this.$refs.img.addEventListener("mousedown", e => (this.swapXOnStart = e.x));
-        ["touchend", "mouseup"].forEach(event => this.$refs.img.addEventListener(event, handleImageSwap));
+        const leftCaseSwap = () => {
+            if (this.modalActiveImageIndex > 0) this.modalActiveImageIndex--;
+        };
+        //
+        tougchSwapping({
+            that: this,
+            methodIfRight: rightCaseSwap,
+            methodIfLeft: leftCaseSwap,
+            initValue: "swapXOnStart",
+            element: this.$refs.img
+        });
+        //This action is require to correct working of scroll block
+        this.translateElements("MOVE");
+        //
     },
     props: ["index", "all_images", "prefix", "extensions"],
     methods: {
@@ -50,6 +45,7 @@ export default {
             //
             document.body.style.position = state === "MOVE" ? "fixed" : "static";
             document.body.style.transform = state === "MOVE" ? `translateY(-${scrollY}px)` : null;
+            document.body.style.paddingRight = state === "MOVE" ? `17px` : null;
             document.getElementById("main-menu").style.transform = state === "MOVE" ? `translateY(${scrollY}px)` : null;
             this.$refs.modal.style.transform = state === "MOVE" ? `translateY(${scrollY}px)` : null;
         },

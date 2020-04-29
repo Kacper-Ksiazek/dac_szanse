@@ -16,12 +16,19 @@
         <!--  -->
         <!-- DISPLAY SINGLE IMAGE MODAL -->
         <!--  -->
-        <modal v-if="modalActiveImageIndex >= 0" :index="modalActiveImageIndex" :all_images="all_images" @close="modalActiveImageIndex = -1"></modal>
+        <modal
+            :index="modalActiveImageIndex"
+            :all_images="all_images"
+            @close="modalActiveImageIndex = -1"
+            v-if="modalActiveImageIndex >= 0"
+            prefix="/images/ourObjects/dayroom/body/"
+            :extensions="false"
+        ></modal>
         <!--  -->
     </section>
 </template>
 <script>
-import DayroomGalleryModal from "./Modal.vue";
+import DayroomGalleryModal from "../../../activities/tasks/Modal";
 import DayroomGalleryAllImages from "./Images.vue";
 import HeaderControl from "./HeaderControl.vue";
 import MobileHeader from "./MobileHeader.vue";

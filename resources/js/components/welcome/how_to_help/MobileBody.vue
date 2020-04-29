@@ -15,28 +15,14 @@
                     <img :src="getImgPath(item.prefix, item.extenstion, item.images[2])" />
                 </div>
             </div>
-            <div v-if="item.type === 'gallery'" class="control">
-                <div class="dots">
-                    <div class="dot" @click="item.currentImageIndex = 0" :class="item.currentImageIndex === 0 ? 'active' : ''"></div>
-                    <div class="dot" @click="item.currentImageIndex = 1" :class="item.currentImageIndex === 1 ? 'active' : ''"></div>
-                    <div class="dot" @click="item.currentImageIndex = 2" :class="item.currentImageIndex === 2 ? 'active' : ''"></div>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <a class="show-more controlled" :href="item.href">Zobacz wiecej</a>
-                </div>
-            </div>
             <!--  -->
             <!--  -->
             <!--  -->
             <div class="text" v-if="item.type === 'card'" :class="currentHelpSection === item.id ? 'active' : ''">
-                <button @click="item.showImg = !item.showImg" :class="item.showImg ? 'active' : ''"><i class="fa fa-arrow-right"></i></button>
                 <div class="wrapper" :class="item.showImg ? 'active' : ''">
                     <div class="content">
                         <h1 v-text="item.text.header"></h1>
                         <p v-text="item.text.content"></p>
-                        <div class="d-flex justify-content-center">
-                            <a class="show-more controlled" :href="item.href">Zobacz wiecej</a>
-                        </div>
                     </div>
                     <!--  -->
                     <div class="img"></div>
