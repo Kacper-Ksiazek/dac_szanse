@@ -196,8 +196,7 @@ section#ds-s-gallery-wrapper
             top: -67px
         div.ds-s-gallery-images-wrapper
             &::before
-                width: 35vw
-                height: 25vw
+                display: none
             div.ds-s-gallery-header-mobile
                 display: flex
                 padding: 20px 0
@@ -213,15 +212,13 @@ section#ds-s-gallery-wrapper
                         border-radius: 0
                         &::before
                             display: none
-                span
+                span.control
                     position: absolute
-                    width: 50vw
+                    width: 100vw
                     height: 100%
                     z-index: 30
                     top: 0
                     left: 0
-                span.next
-                    left: 50vw
                 //DISPLAY DIRECT DOTS       
                 div.ds-s-gallery-dots-wrapper-desktop
                     display: none

@@ -4057,6 +4057,7 @@ __webpack_require__.r(__webpack_exports__);
   //body- to co widzimy po najechaniu w header
   data: function data() {
     return {
+      developItemIndex: -1,
       mobileMenu: false,
       navs: [{
         header: {
@@ -4071,7 +4072,7 @@ __webpack_require__.r(__webpack_exports__);
           href: "/o-nas#historia"
         }, {
           content: "Nagrody i Wyróżnienia",
-          href: "#"
+          href: "/o-nas#nagrody"
         }, {
           content: "Budowa CERT",
           href: "/o-nas#cert"
@@ -4108,13 +4109,13 @@ __webpack_require__.r(__webpack_exports__);
           content: "Niepubliczny Ośrodek Rewalidacyjno-Wychowawczy",
           href: "/nasze-placowki/niepubliczny-osrodek-rewalidacyjno-wychowawczy"
         }, {
-          content: 'Niepubliczny Punkt Przedszkolny "Dać Szansę',
+          content: 'Niepubliczny Punkt Przedszkolny "Dać Szansę"',
           href: "http://www.przedszkoledacszanse.pl/"
         }, {
-          content: 'Świetlica Terapeutyczno-Integracyjna  "Szansa',
+          content: 'Świetlica Terapeutyczno-Integracyjna "Szansa"',
           href: "/nasze-placowki/swietlica-terapeutyczno-integracyjna-szansa"
         }, {
-          content: 'Spółdzielnia Socjalna "AMICUS',
+          content: 'Spółdzielnia Socjalna "AMICUS"',
           href: "http://spoldzielniaamicus.pl/"
         }]
       }, {
@@ -4159,16 +4160,13 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    setTransform: function setTransform() {
+      var developItemIndex = this.developItemIndex;
+      if (developItemIndex === -1) return "";
+      return "transform: translateY(-".concat(developItemIndex * 60, "px)");
+    },
     openMobileMenu: function openMobileMenu() {
       this.mobileMenu = true;
-    },
-    mobileToggleClass: function mobileToggleClass(e) {
-      var el = e.target.parentNode.parentNode,
-          addActive = el.classList.contains("active");
-      document.querySelectorAll(".small-nav-item").forEach(function (item) {
-        return item.classList.remove("active");
-      });
-      if (!addActive) el.classList.add("active");
     },
     exitMobileMenu: function exitMobileMenu(e) {
       var _this = this;
@@ -5317,9 +5315,12 @@ __webpack_require__.r(__webpack_exports__);
         left: [],
         right: []
       }, {
-        type: "dayroom",
+        type: "item",
         title: "\u015Awietlica Terapeutyczno-Integracyjna \"Szansa\"",
-        href: "./nasze-placowki/swietlica-terapeutyczno-integracyjna-szansa"
+        href: "./nasze-placowki/swietlica-terapeutyczno-integracyjna-szansa",
+        img: "./images/item2.png",
+        left: [],
+        right: []
       }, {
         type: "item",
         title: "Niepubliczny Punkt Przedszkolny \"Da\u0107 Szans\u0119\"",
@@ -5395,12 +5396,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["data"],
   data: function data() {
@@ -5428,6 +5423,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _scripts_tougchSwapping__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../scripts/tougchSwapping */ "./resources/js/scripts/tougchSwapping.js");
 //
 //
 //
@@ -5475,7 +5471,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  mounted: function mounted() {
+    var _this = this;
+
+    var rightCaseSwap = function rightCaseSwap() {
+      if (_this.mobileActiveTaskIndex < 6) _this.mobileActiveTaskIndex++;
+    }; //
+
+
+    var leftCaseSwap = function leftCaseSwap() {
+      if (_this.mobileActiveTaskIndex > 0) _this.mobileActiveTaskIndex--;
+    }; //
+
+
+    Object(_scripts_tougchSwapping__WEBPACK_IMPORTED_MODULE_0__["tougchSwapping"])({
+      that: this,
+      methodIfRight: rightCaseSwap,
+      methodIfLeft: leftCaseSwap,
+      initValue: "swapXOnStart",
+      element: this.$refs.control
+    });
+  },
   created: function created() {
     if (!this.activeTask) this.activeTask = this.tasks[0];
   },
@@ -5491,6 +5510,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      swapXOnStart: null,
       activeTask: null,
       mobileActiveTaskIndex: 0,
       mobileRotate: "",
@@ -5772,6 +5792,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _scripts_tougchSwapping__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../scripts/tougchSwapping */ "./resources/js/scripts/tougchSwapping.js");
 //
 //
 //
@@ -5796,8 +5817,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  mounted: function mounted() {
+    var _this = this;
+
+    var rightCaseSwap = function rightCaseSwap() {
+      if (_this.mobileRotation < 10) _this.mobileRotation += 2;
+    }; //
+
+
+    var leftCaseSwap = function leftCaseSwap() {
+      if (_this.mobileRotation > 0) _this.mobileRotation -= 2;
+    }; //
+
+
+    Object(_scripts_tougchSwapping__WEBPACK_IMPORTED_MODULE_0__["tougchSwapping"])({
+      that: this,
+      methodIfRight: rightCaseSwap,
+      methodIfLeft: leftCaseSwap,
+      initValue: "swapXOnStart",
+      element: this.$refs.control
+    });
+  },
   props: ["showAllImages"],
   data: function data() {
     return {
@@ -5852,15 +5894,15 @@ __webpack_require__.r(__webpack_exports__);
       aboutUsList: [{
         id: 0,
         content: "Zarząd",
-        href: "#"
+        href: "/o-nas"
       }, {
         id: 1,
         content: "Historia",
-        href: "#"
+        href: "/o-nas#historia"
       }, {
         id: 2,
         content: "Nagrody i Wyróżnienia",
-        href: "#"
+        href: "/o-nas#nagrody"
       }, {
         id: 3,
         content: "Budowa CERT",
@@ -5868,7 +5910,7 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         id: 4,
         content: "RODO",
-        href: "#"
+        href: "/o-nas/polityka-rodo"
       }]
     };
   }
@@ -44520,17 +44562,31 @@ var render = function() {
             _vm._v(" "),
             _c(
               "section",
-              { staticClass: "ds-menu-small-content" },
-              _vm._l(_vm.navs, function(nav) {
+              {
+                staticClass: "ds-menu-small-content",
+                style: _vm.setTransform()
+              },
+              _vm._l(_vm.navs, function(nav, index) {
                 return _c(
                   "div",
-                  { key: nav.header.content, staticClass: "small-nav-item" },
+                  {
+                    key: nav.header.content,
+                    staticClass: "small-nav-item",
+                    class: _vm.developItemIndex === index ? "active" : ""
+                  },
                   [
                     _c("span", { staticClass: "ds-menu-small-nav-header" }, [
-                      _c("i", {
-                        staticClass: "fa fa-chevron-down",
-                        on: { click: _vm.mobileToggleClass }
-                      }),
+                      nav.body
+                        ? _c("i", {
+                            staticClass: "fa fa-chevron-down",
+                            on: {
+                              click: function($event) {
+                                _vm.developItemIndex =
+                                  _vm.developItemIndex === index ? -1 : index
+                              }
+                            }
+                          })
+                        : _c("span", { staticClass: "indent" }),
                       _vm._v(" "),
                       _c("a", {
                         attrs: { href: nav.header.href },
@@ -46163,94 +46219,53 @@ var render = function() {
     "div",
     { ref: "wrapper", staticClass: "ds-oo-single-item-wrapper" },
     [
-      _vm.data.type == "item"
-        ? _c("section", { staticClass: "ds-oo-place", class: _vm.classes }, [
-            _c("img", { attrs: { src: _vm.data.img } }),
+      _c("section", { staticClass: "ds-oo-place", class: _vm.classes }, [
+        _c("img", { attrs: { src: _vm.data.img } }),
+        _vm._v(" "),
+        _c("div", { staticClass: "content" }, [
+          _c("h1", [
+            _c("span", { domProps: { textContent: _vm._s(_vm.data.title) } })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "ds-oo-place-content-wrapper" }, [
+            _c(
+              "div",
+              { staticClass: "ds-oo-border" },
+              _vm._l(_vm.data.left, function(item) {
+                return _c("span", { key: item.value }, [
+                  _c("i", { class: item.icon }),
+                  _vm._v(" "),
+                  _c("span", { domProps: { textContent: _vm._s(item.value) } })
+                ])
+              }),
+              0
+            ),
             _vm._v(" "),
-            _c("div", { staticClass: "content" }, [
-              _c("h1", [
-                _c("span", {
-                  domProps: { textContent: _vm._s(_vm.data.title) }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "ds-oo-place-content-wrapper" }, [
-                _c(
-                  "div",
-                  { staticClass: "ds-oo-border" },
-                  _vm._l(_vm.data.left, function(item) {
-                    return _c("span", { key: item.value }, [
-                      _c("i", { class: item.icon }),
-                      _vm._v(" "),
-                      _c("span", {
-                        domProps: { textContent: _vm._s(item.value) }
-                      })
-                    ])
+            _c(
+              "div",
+              _vm._l(_vm.data.right, function(item) {
+                return _c("span", { key: item.title }, [
+                  _c("strong", {
+                    domProps: { textContent: _vm._s(item.title) }
                   }),
-                  0
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  _vm._l(_vm.data.right, function(item) {
-                    return _c("span", { key: item.title }, [
-                      _c("strong", {
-                        domProps: { textContent: _vm._s(item.title) }
-                      }),
-                      _vm._v(" "),
-                      _c("span", {
-                        domProps: { textContent: _vm._s(item.value) }
-                      })
-                    ])
-                  }),
-                  0
-                )
-              ]),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass: "ds-oo-see-more",
-                  attrs: { href: _vm.data.href }
-                },
-                [
-                  _vm._v("Zobacz szczegóły "),
-                  _c("i", { staticClass: "fa fa-info-circle" })
-                ]
-              )
-            ])
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.data.type == "dayroom"
-        ? _c(
-            "section",
-            {
-              staticClass: "ds-oo-dayroom",
-              class: _vm.classes,
-              attrs: { id: "dayroom" }
-            },
+                  _vm._v(" "),
+                  _c("span", { domProps: { textContent: _vm._s(item.value) } })
+                ])
+              }),
+              0
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "a",
+            { staticClass: "ds-oo-see-more", attrs: { href: _vm.data.href } },
             [
-              _c("h1", [
-                _c("span", {
-                  domProps: { textContent: _vm._s(_vm.data.title) }
-                })
-              ]),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass: "ds-oo-dayroom-btn",
-                  attrs: { href: _vm.data.href }
-                },
-                [
-                  _vm._v("Zobacz szczegóły "),
-                  _c("i", { staticClass: "fa fa-info-circle" })
-                ]
-              )
+              _vm._v("Zobacz szczegóły "),
+              _c("i", { staticClass: "fa fa-info-circle" })
             ]
           )
-        : _vm._e()
+        ])
+      ])
     ]
   )
 }
@@ -46319,23 +46334,27 @@ var render = function() {
       _c(
         "section",
         { staticClass: "ds-s-mobile-task-list", style: _vm.mobileRotate },
-        _vm._l(_vm.tasks, function(item) {
-          return _c("div", { key: item.task, staticClass: "mobile-task" }, [
-            _c("h3", { domProps: { textContent: _vm._s(item.task) } }),
-            _vm._v(" "),
-            _c(
-              "ul",
-              _vm._l(item.description, function(task) {
-                return _c("li", {
-                  key: task,
-                  domProps: { textContent: _vm._s(task) }
-                })
-              }),
-              0
-            )
-          ])
-        }),
-        0
+        [
+          _c("span", { ref: "control", staticClass: "control" }),
+          _vm._v(" "),
+          _vm._l(_vm.tasks, function(item) {
+            return _c("div", { key: item.task, staticClass: "mobile-task" }, [
+              _c("h3", { domProps: { textContent: _vm._s(item.task) } }),
+              _vm._v(" "),
+              _c(
+                "ul",
+                _vm._l(item.description, function(task) {
+                  return _c("li", {
+                    key: task,
+                    domProps: { textContent: _vm._s(task) }
+                  })
+                }),
+                0
+              )
+            ])
+          })
+        ],
+        2
       ),
       _vm._v(" "),
       _c("div", { staticClass: "ds-s-mobile-buttons-wrapper" }, [
@@ -46727,25 +46746,7 @@ var render = function() {
         0
       ),
       _vm._v(" "),
-      _c("span", {
-        staticClass: "prev",
-        on: {
-          click: function($event) {
-            _vm.mobileRotation =
-              _vm.mobileRotation == 0 ? 0 : (_vm.mobileRotation -= 2)
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("span", {
-        staticClass: "next",
-        on: {
-          click: function($event) {
-            _vm.mobileRotation =
-              _vm.mobileRotation == 10 ? 10 : (_vm.mobileRotation += 2)
-          }
-        }
-      }),
+      _c("span", { ref: "control", staticClass: "control" }),
       _vm._v(" "),
       _c(
         "div",

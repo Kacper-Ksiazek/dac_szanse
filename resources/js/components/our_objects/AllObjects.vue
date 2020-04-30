@@ -41,9 +41,12 @@ export default {
                     right: []
                 },
                 {
-                    type: "dayroom",
+                    type: "item",
                     title: `Świetlica Terapeutyczno-Integracyjna "Szansa"`,
-                    href: "./nasze-placowki/swietlica-terapeutyczno-integracyjna-szansa"
+                    href: "./nasze-placowki/swietlica-terapeutyczno-integracyjna-szansa",
+                    img: "./images/item2.png",
+                    left: [],
+                    right: []
                 },
                 {
                     type: "item",

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <!-- BIGGER TASK LIST -->
+        <!-- DESKTOP TASK LIST -->
         <div class="ds-s-task-list-wrapper-big">
             <h1 class="ds-s-task-list-header">Rodzaje zajęć <i class="fa fa-info-circle"></i></h1>
             <section class="ds-s-tasks">
@@ -18,10 +18,11 @@
                 </ul>
             </section>
         </div>
-        <!-- SMALLER TASK LIST -->
+        <!-- MOBILE TASK LIST -->
         <div class="ds-s-task-list-wrapper-mobile">
             <h1 class="ds-s-task-list-header">Rodzaje zajęć <i class="fa fa-info-circle"></i></h1>
             <section class="ds-s-mobile-task-list" :style="mobileRotate">
+                <span class="control" ref="control"></span>
                 <div class="mobile-task" v-for="item in tasks" :key="item.task">
                     <h3 v-text="item.task"></h3>
                     <ul>
@@ -46,7 +47,25 @@
     </div>
 </template>
 <script>
+import { tougchSwapping } from "../../../scripts/tougchSwapping";
 export default {
+    mounted() {
+        const rightCaseSwap = () => {
+            if (this.mobileActiveTaskIndex < 6) this.mobileActiveTaskIndex++;
+        };
+        //
+        const leftCaseSwap = () => {
+            if (this.mobileActiveTaskIndex > 0) this.mobileActiveTaskIndex--;
+        };
+        //
+        tougchSwapping({
+            that: this,
+            methodIfRight: rightCaseSwap,
+            methodIfLeft: leftCaseSwap,
+            initValue: "swapXOnStart",
+            element: this.$refs.control
+        });
+    },
     created() {
         if (!this.activeTask) this.activeTask = this.tasks[0];
     },
@@ -62,6 +81,7 @@ export default {
     },
     data() {
         return {
+            swapXOnStart: null,
             activeTask: null,
             mobileActiveTaskIndex: 0,
             mobileRotate: "",

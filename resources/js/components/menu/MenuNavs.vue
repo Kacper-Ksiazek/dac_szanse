@@ -21,22 +21,23 @@
             </ul>
             <!-- MOBILE MENU -->
             <div class="ds-menu-small" v-if="mobileMenu">
+                <!-- HEADER -->
                 <div class="ds-menu-small-logo">
                     <div>
                         <div class="ds-menu-small-logo-img"></div>
                         <button class="btn btn-primary" @click="exitMobileMenu"><i class="fa fa-times"></i></button>
                     </div>
-                    <!-- <img src="./images/logo.png" alt="" /> -->
                 </div>
-                <section class="ds-menu-small-content">
-                    <div class="small-nav-item" v-for="nav in navs" :key="nav.header.content">
+                <!-- IMAGES -->
+                <section class="ds-menu-small-content" :style="setTransform()">
+                    <div class="small-nav-item" v-for="(nav, index) in navs" :key="nav.header.content" :class="developItemIndex === index ? 'active' : ''">
                         <span class="ds-menu-small-nav-header">
-                            <i class="fa fa-chevron-down" @click="mobileToggleClass"></i>
+                            <i v-if="nav.body" class="fa fa-chevron-down" @click="developItemIndex = developItemIndex === index ? -1 : index"></i>
+                            <span v-else class="indent"></span>
                             <a :href="nav.header.href" v-text="nav.header.content"></a>
                         </span>
                         <br />
                         <div>
-                            <!-- <a href="#" class="ds-menu-small-dropdown-item">adasd</a> -->
                             <a v-for="task in nav.body" :key="task.content" v-text="task.content" :href="task.href" class="ds-menu-small-dropdown-item"></a>
                         </div>
                     </div>
@@ -51,6 +52,7 @@ export default {
     //body- to co widzimy po najechaniu w header
     data() {
         return {
+            developItemIndex: -1,
             mobileMenu: false,
             navs: [
                 {
@@ -58,7 +60,7 @@ export default {
                     body: [
                         { content: "Zarząd", href: "/o-nas" },
                         { content: "Historia", href: "/o-nas#historia" },
-                        { content: "Nagrody i Wyróżnienia", href: "#" },
+                        { content: "Nagrody i Wyróżnienia", href: "/o-nas#nagrody" },
                         { content: "Budowa CERT", href: "/o-nas#cert" },
                         { content: "RODO", href: "/o-nas/polityka-rodo" }
                     ]
@@ -78,9 +80,9 @@ export default {
                     body: [
                         { content: "Niepubliczna Specjalistyczna Poradnia Psychologiczno-Pedagogiczna", href: "http://www.poradnia-wadowice.pl/" },
                         { content: "Niepubliczny Ośrodek Rewalidacyjno-Wychowawczy", href: "/nasze-placowki/niepubliczny-osrodek-rewalidacyjno-wychowawczy" },
-                        { content: 'Niepubliczny Punkt Przedszkolny "Dać Szansę', href: "http://www.przedszkoledacszanse.pl/" },
-                        { content: 'Świetlica Terapeutyczno-Integracyjna  "Szansa', href: "/nasze-placowki/swietlica-terapeutyczno-integracyjna-szansa" },
-                        { content: 'Spółdzielnia Socjalna "AMICUS', href: "http://spoldzielniaamicus.pl/" }
+                        { content: 'Niepubliczny Punkt Przedszkolny "Dać Szansę"', href: "http://www.przedszkoledacszanse.pl/" },
+                        { content: 'Świetlica Terapeutyczno-Integracyjna "Szansa"', href: "/nasze-placowki/swietlica-terapeutyczno-integracyjna-szansa" },
+                        { content: 'Spółdzielnia Socjalna "AMICUS"', href: "http://spoldzielniaamicus.pl/" }
                     ]
                 },
                 {
@@ -104,14 +106,13 @@ export default {
         };
     },
     methods: {
+        setTransform() {
+            const { developItemIndex } = this;
+            if (developItemIndex === -1) return "";
+            return `transform: translateY(-${developItemIndex * 60}px)`;
+        },
         openMobileMenu() {
             this.mobileMenu = true;
-        },
-        mobileToggleClass(e) {
-            const el = e.target.parentNode.parentNode,
-                addActive = el.classList.contains("active");
-            document.querySelectorAll(".small-nav-item").forEach(item => item.classList.remove("active"));
-            if (!addActive) el.classList.add("active");
         },
         exitMobileMenu(e) {
             const el = document.querySelector("div.ds-menu-small");

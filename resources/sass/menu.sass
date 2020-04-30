@@ -150,6 +150,9 @@ div.ds-menu-small
         display: flex
         padding: 10px
         flex-direction: column
+        position: relative
+        z-index: 10
+        background: white
         div
             color: red
             display: flex
@@ -171,6 +174,7 @@ div.ds-menu-small
         flex-grow: 1
         padding: 20px
         margin: 0 10%
+        transition: transform .5s
         @media screen and ( max-width: 450px )
             margin: 0 10px
             padding: 0
@@ -206,6 +210,10 @@ div.ds-menu-small
                     color: white
                     padding: 5px
                     transition: transform .2s .1s linear
+                    width: 30px
+                span.indent
+                    width: 50px
+                    display: block
                 a
                     text-decoration: none
                     color: white

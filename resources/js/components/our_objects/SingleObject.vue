@@ -1,7 +1,6 @@
 <template>
     <div class="ds-oo-single-item-wrapper" ref="wrapper">
-        <!-- NORMAL OBJECT CASE -->
-        <section :class="classes" class="ds-oo-place" v-if="data.type == 'item'">
+        <section :class="classes" class="ds-oo-place">
             <img :src="data.img" />
             <div class="content">
                 <h1><span v-text="data.title"></span></h1>
@@ -23,11 +22,6 @@
                 </div>
                 <a :href="data.href" class="ds-oo-see-more">Zobacz szczegóły <i class="fa fa-info-circle"></i></a>
             </div>
-        </section>
-        <!-- DAYROOM CASE -->
-        <section :class="classes" v-if="data.type == 'dayroom'" class="ds-oo-dayroom" id="dayroom">
-            <h1><span v-text="data.title"></span></h1>
-            <a :href="data.href" class="ds-oo-dayroom-btn">Zobacz szczegóły <i class="fa fa-info-circle"></i></a>
         </section>
     </div>
 </template>

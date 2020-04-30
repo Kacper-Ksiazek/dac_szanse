@@ -10302,6 +10302,9 @@ div.ds-menu-small div.ds-menu-small-logo {
   display: flex;
   padding: 10px;
   flex-direction: column;
+  position: relative;
+  z-index: 10;
+  background: white;
 }
 div.ds-menu-small div.ds-menu-small-logo div {
   color: red;
@@ -10327,6 +10330,7 @@ div.ds-menu-small section.ds-menu-small-content {
   flex-grow: 1;
   padding: 20px;
   margin: 0 10%;
+  transition: transform 0.5s;
 }
 @media screen and (max-width: 450px) {
   div.ds-menu-small section.ds-menu-small-content {
@@ -10368,6 +10372,11 @@ div.ds-menu-small section.ds-menu-small-content div.small-nav-item span.ds-menu-
   color: white;
   padding: 5px;
   transition: transform 0.2s 0.1s linear;
+  width: 30px;
+}
+div.ds-menu-small section.ds-menu-small-content div.small-nav-item span.ds-menu-small-nav-header span.indent {
+  width: 50px;
+  display: block;
 }
 div.ds-menu-small section.ds-menu-small-content div.small-nav-item span.ds-menu-small-nav-header a {
   text-decoration: none;
@@ -10598,7 +10607,7 @@ div.ds-oo-single-item-wrapper section.ds-oo-place.active div.content a.ds-oo-see
   -webkit-animation: fadeIn 0.2s 2s both linear;
           animation: fadeIn 0.2s 2s both linear;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1000px) {
   div.ds-oo-single-item-wrapper div.ds-oo-logo h1 {
     font-size: 2rem;
   }
@@ -10612,13 +10621,14 @@ div.ds-oo-single-item-wrapper section.ds-oo-place.active div.content a.ds-oo-see
     flex-direction: column;
   }
   div.ds-oo-single-item-wrapper section.ds-oo-place:nth-of-type(odd) {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
   div.ds-oo-single-item-wrapper section.ds-oo-place img {
     width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
     margin-bottom: 10px;
+    max-height: 50vh;
   }
   div.ds-oo-single-item-wrapper section.ds-oo-place div.content {
     width: 100%;
@@ -10648,116 +10658,14 @@ div.ds-oo-single-item-wrapper section.ds-oo-place.active div.content a.ds-oo-see
     font-size: 1rem;
   }
 }
-@media screen and (max-width: 400px) {
-  div.ds-oo-single-item-wrapper button.ds-oo-see-more {
+@media screen and (max-width: 500px) {
+  div.ds-oo-single-item-wrapper a.ds-oo-see-more {
     margin-top: 0px !important;
     width: 100%;
     border-radius: 0 !important;
-  }
-}
-div.ds-oo-single-item-wrapper section.ds-oo-dayroom {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 100px 0;
-  visibility: hidden;
-}
-div.ds-oo-single-item-wrapper section.ds-oo-dayroom h1 {
-  position: relative;
-  margin-bottom: 70px;
-  font-weight: bold;
-}
-div.ds-oo-single-item-wrapper section.ds-oo-dayroom h1::before, div.ds-oo-single-item-wrapper section.ds-oo-dayroom h1::after {
-  content: "";
-  position: absolute;
-  bottom: -20px;
-  background-color: #35C828;
-  height: 5px;
-}
-div.ds-oo-single-item-wrapper section.ds-oo-dayroom h1::before {
-  left: 50%;
-}
-div.ds-oo-single-item-wrapper section.ds-oo-dayroom h1::after {
-  right: 50%;
-}
-div.ds-oo-single-item-wrapper section.ds-oo-dayroom a {
-  background-color: #35C828;
-  border: none;
-  padding: 10px 20px;
-  font-size: 2rem;
-  font-size: "Arial";
-  color: white;
-  border-radius: 30px;
-  font-weight: bold;
-  transition: background-color 0.2s linear;
-}
-div.ds-oo-single-item-wrapper section.ds-oo-dayroom a:hover {
-  background-color: #7bed9f;
-}
-div.ds-oo-single-item-wrapper section.ds-oo-dayroom::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 52%;
-  width: 40%;
-  height: 100%;
-  background-image: url(/images/dayroom.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-div.ds-oo-single-item-wrapper section.ds-oo-dayroom.active {
-  visibility: visible;
-}
-div.ds-oo-single-item-wrapper section.ds-oo-dayroom.active h1 span {
-  -webkit-animation: fadeIn 0.5s 0.7s linear both;
-          animation: fadeIn 0.5s 0.7s linear both;
-}
-div.ds-oo-single-item-wrapper section.ds-oo-dayroom.active h1::before {
-  -webkit-animation: oo-lineAnimationIn 0.5s 0.2s linear both;
-          animation: oo-lineAnimationIn 0.5s 0.2s linear both;
-}
-div.ds-oo-single-item-wrapper section.ds-oo-dayroom.active h1::after {
-  -webkit-animation: oo-lineAnimationIn 0.5s 0.2s linear both;
-          animation: oo-lineAnimationIn 0.5s 0.2s linear both;
-}
-div.ds-oo-single-item-wrapper section.ds-oo-dayroom.active a {
-  -webkit-animation: fadeIn 0.5s 1s linear both;
-          animation: fadeIn 0.5s 1s linear both;
-}
-div.ds-oo-single-item-wrapper section.ds-oo-dayroom.active::before {
-  -webkit-animation: fadeInRight 0.5s 1.5s linear both;
-          animation: fadeInRight 0.5s 1.5s linear both;
-}
-@media screen and (max-width: 767px) {
-  div.ds-oo-single-item-wrapper section.ds-oo-dayroom {
-    margin-top: 250px !important;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 100px 0;
-    visibility: hidden;
-  }
-  div.ds-oo-single-item-wrapper section.ds-oo-dayroom h1 {
-    position: relative;
-    margin-bottom: 70px;
     text-align: center;
-    font-size: 2rem;
-  }
-  div.ds-oo-single-item-wrapper section.ds-oo-dayroom::before {
-    width: 100%;
-    left: 0;
-    top: -100%;
-  }
-}
-@media screen and (max-width: 400px) {
-  div.ds-oo-single-item-wrapper a.ds-oo-dayroom-btn {
-    width: 100% !important;
-    border-radius: 0px !important;
+    padding: 5px 0;
+    font-size: 1.6rem;
   }
 }
 div.ds-oo-single-item-wrapper span.ds-oo-break-line {
@@ -10892,6 +10800,14 @@ section.ds-s-content div.ds-s-text-wrapper::before {
     display: flex;
     width: 700%;
     transition: transform 0.3s linear;
+    position: relative;
+  }
+  div.ds-s-task-list-wrapper-mobile section.ds-s-mobile-task-list span.control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
   }
   div.ds-s-task-list-wrapper-mobile section.ds-s-mobile-task-list div.mobile-task {
     flex-basis: calc( 100% / 6 );
@@ -11176,8 +11092,7 @@ section#ds-s-gallery-wrapper div.ds-s-gallery-all-images footer div.dayroom-logo
     top: -67px;
   }
   section#ds-s-gallery-wrapper div.ds-s-gallery-images-wrapper::before {
-    width: 35vw;
-    height: 25vw;
+    display: none;
   }
   section#ds-s-gallery-wrapper div.ds-s-gallery-images-wrapper div.ds-s-gallery-header-mobile {
     display: flex;
@@ -11198,16 +11113,13 @@ section#ds-s-gallery-wrapper div.ds-s-gallery-all-images footer div.dayroom-logo
   section#ds-s-gallery-wrapper div.ds-s-gallery-images-wrapper div.ds-s-gallery-header-mobile div.ds-s-gallery-header-images div.ds-s-gallery-header-item::before {
     display: none;
   }
-  section#ds-s-gallery-wrapper div.ds-s-gallery-images-wrapper div.ds-s-gallery-header-mobile span {
+  section#ds-s-gallery-wrapper div.ds-s-gallery-images-wrapper div.ds-s-gallery-header-mobile span.control {
     position: absolute;
-    width: 50vw;
+    width: 100vw;
     height: 100%;
     z-index: 30;
     top: 0;
     left: 0;
-  }
-  section#ds-s-gallery-wrapper div.ds-s-gallery-images-wrapper div.ds-s-gallery-header-mobile span.next {
-    left: 50vw;
   }
   section#ds-s-gallery-wrapper div.ds-s-gallery-images-wrapper div.ds-s-gallery-header-mobile div.ds-s-gallery-dots-wrapper-desktop {
     display: none;
@@ -14819,20 +14731,64 @@ section.ds-weclome-wrapper div.ds-welcome-about-us div.about-us-content {
   flex-wrap: wrap;
 }
 section.ds-weclome-wrapper div.ds-welcome-about-us div.about-us-content div.about-us-item {
-  width: 300px;
+  width: 250px;
+  height: 250px;
   background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
   border-radius: 15px;
-  box-shadow: 2px 2px 10px 1px black;
+  box-shadow: 5px 4px 10px 1px #35C828;
   margin: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+section.ds-weclome-wrapper div.ds-welcome-about-us div.about-us-content div.about-us-item:hover {
+  box-shadow: 5px 4px 10px 1px transparent;
+}
+section.ds-weclome-wrapper div.ds-welcome-about-us div.about-us-content div.about-us-item:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+section.ds-weclome-wrapper div.ds-welcome-about-us div.about-us-content div.about-us-item:hover a {
+  background-color: white;
+  color: #35C828;
+}
+section.ds-weclome-wrapper div.ds-welcome-about-us div.about-us-content div.about-us-item:hover h3 {
+  color: white;
+}
+section.ds-weclome-wrapper div.ds-welcome-about-us div.about-us-content div.about-us-item::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #35C828;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%) scale(0);
+  transform-origin: center;
+  transition: transform 0.5s;
+  border-radius: 50%;
 }
 section.ds-weclome-wrapper div.ds-welcome-about-us div.about-us-content div.about-us-item h3 {
   font-weight: bold;
+  z-index: 3;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: default;
+  transition: color 0.3s;
 }
 section.ds-weclome-wrapper div.ds-welcome-about-us div.about-us-content div.about-us-item a {
+  z-index: 3;
   font-size: 1.2rem;
   padding: 0px 15px;
   border: none;
@@ -14841,13 +14797,8 @@ section.ds-weclome-wrapper div.ds-welcome-about-us div.about-us-content div.abou
   border-radius: 20px;
   margin-top: 10px;
   transition: 0.2s linear;
-  border: 3px solid #35C828;
   cursor: pointer;
   text-decoration: none;
-}
-section.ds-weclome-wrapper div.ds-welcome-about-us div.about-us-content div.about-us-item a:hover {
-  background-color: white;
-  color: #35C828;
 }
 
 section.ds-weclome-wrapper div.ds-welcome-news {
@@ -14897,6 +14848,9 @@ section.ds-weclome-wrapper div.ds-welcome-news div.news-content a.more:hover {
   color: white;
 }
 
+section.ds-weclome-wrapper button.toggle-img-text {
+  display: none;
+}
 section.ds-weclome-wrapper div.ds-welcome-how-to-help {
   width: 100vw;
   display: flex;
@@ -15355,7 +15309,7 @@ section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content di
   }
 }
 section.ds-weclome-wrapper > div {
-  margin-top: 150px !important;
+  margin-top: 100px !important;
 }
 
 section.ds-weclome-wrapper {
@@ -15789,6 +15743,11 @@ body {
 .logo * {
   position: relative;
   z-index: 5;
+}
+@media screen and (max-width: 500px) {
+  .logo h1 {
+    font-size: 3rem !important;
+  }
 }
 
 .ds-show-more-green {

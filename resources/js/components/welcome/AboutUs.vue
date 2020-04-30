@@ -22,17 +22,17 @@ export default {
                 {
                     id: 0,
                     content: "Zarząd",
-                    href: "#"
+                    href: "/o-nas"
                 },
                 {
                     id: 1,
                     content: "Historia",
-                    href: "#"
+                    href: "/o-nas#historia"
                 },
                 {
                     id: 2,
                     content: "Nagrody i Wyróżnienia",
-                    href: "#"
+                    href: "/o-nas#nagrody"
                 },
                 {
                     id: 3,
@@ -42,7 +42,7 @@ export default {
                 {
                     id: 4,
                     content: "RODO",
-                    href: "#"
+                    href: "/o-nas/polityka-rodo"
                 }
             ]
         };

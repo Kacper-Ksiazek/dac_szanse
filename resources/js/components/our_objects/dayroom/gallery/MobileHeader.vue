@@ -5,8 +5,7 @@
             <div class="ds-s-gallery-header-images" :style="mobileStyle">
                 <div class="ds-s-gallery-header-item" v-for="item in headers" :key="item" :style="item | setPathHeader"></div>
             </div>
-            <span class="prev" @click="mobileRotation = mobileRotation == 0 ? 0 : (mobileRotation -= 2)"></span>
-            <span class="next" @click="mobileRotation = mobileRotation == 10 ? 10 : (mobileRotation += 2)"></span>
+            <span class="control" ref="control"></span>
             <!-- NAVIGATION DOTS -->
             <div class="ds-s-gallery-dots-wrapper-mobile">
                 <div
@@ -24,7 +23,25 @@
     </div>
 </template>
 <script>
+import { tougchSwapping } from "../../../../scripts/tougchSwapping";
 export default {
+    mounted() {
+        const rightCaseSwap = () => {
+            if (this.mobileRotation < 10) this.mobileRotation += 2;
+        };
+        //
+        const leftCaseSwap = () => {
+            if (this.mobileRotation > 0) this.mobileRotation -= 2;
+        };
+        //
+        tougchSwapping({
+            that: this,
+            methodIfRight: rightCaseSwap,
+            methodIfLeft: leftCaseSwap,
+            initValue: "swapXOnStart",
+            element: this.$refs.control
+        });
+    },
     props: ["showAllImages"],
     data() {
         return {
