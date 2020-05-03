@@ -3,7 +3,7 @@
         <!--  -->
         <!--  -->
         <div class="awards-items-wrapper" :style="setAwardsWrapperTransform()">
-            <div class="award-item" v-for="item in awards" :key="item.id" :class="currentAwardIndex === item.id ? 'active' : null">
+            <div class="award-item" ref="item" v-for="item in awards" :key="item.id" :class="currentAwardIndex === item.id ? 'active' : null">
                 <!--  -->
                 <div class="buttons-wrapper">
                     <div :class="item.mobileShowText ? 'active' : ''" class="buttons">
@@ -41,8 +41,28 @@
     </div>
 </template>
 <script>
+import { tougchSwapping } from "../../../../scripts/tougchSwapping";
 import Modal from "../../../activities/tasks/Modal.vue";
+//
 export default {
+    //
+    mounted() {
+        const rightCaseSwap = () => {
+            if (this.currentAwardIndex < 4) this.currentAwardIndex++;
+        };
+        //
+        const leftCaseSwap = () => {
+            if (this.currentAwardIndex > 0) this.currentAwardIndex--;
+        };
+        //
+        tougchSwapping({
+            that: this,
+            methodIfRight: rightCaseSwap,
+            methodIfLeft: leftCaseSwap,
+            initValue: "swapXOnStart",
+            element: this.$refs.item
+        });
+    },
     //
     components: { modal: Modal },
     props: ["awards"],

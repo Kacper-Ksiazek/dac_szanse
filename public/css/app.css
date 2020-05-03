@@ -12782,6 +12782,14 @@ section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-deskto
   height: 100%;
   transition: transform 1s;
 }
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.awards-items-wrapper span.control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+}
 section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.awards-items-wrapper div.award-item.active {
   -webkit-animation: fadeIn 0.5s 0.4s both;
           animation: fadeIn 0.5s 0.4s both;
@@ -12816,6 +12824,10 @@ section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-deskto
   justify-content: space-evenly;
 }
 section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.awards-items-wrapper div.award-item h2 {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   width: 40%;
   text-indent: 20px;
   position: relative;
@@ -12840,11 +12852,12 @@ section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-deskto
   display: flex;
   transition: transform 0.5s;
 }
-section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.awards-items-wrapper div.award-images-wrapper div.carousel img {
+section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.awards-items-wrapper div.award-images-wrapper div.carousel div.img {
   width: 50%;
   height: 600px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-desktop div.awards-items-wrapper div.award-images-wrapper div.dots {
   bottom: 0px;
@@ -13040,6 +13053,7 @@ section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile
     align-items: center;
     padding: 0 10px;
     border-radius: 20px;
+    background-color: #6BA81D;
   }
   section.ds-about-wrapper div.about-our-awards-wrapper div.content-wrapper-mobile div.awards-items-wrapper div.award-images-wrapper div.dots div.dot {
     width: 15px;
@@ -13067,6 +13081,62 @@ div.cert a.rodo button {
   margin-top: 50px;
   font-weight: bold;
   font-size: 1.7rem;
+}
+div.cert div.ds-cert-logo {
+  width: 100vw;
+  height: 600px;
+  background-image: url("/images/about/cert/logo.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+}
+div.cert div.ds-cert-logo a {
+  background-color: #fff;
+  font-weight: normal;
+  border: 3px solid #35C828;
+  padding: 15px;
+  font-size: 3rem;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  border-radius: 15px;
+  text-decoration: none;
+}
+div.cert div.ds-cert-logo a::after, div.cert div.ds-cert-logo a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background-color: #35C828;
+  transition: width 0.3s;
+}
+div.cert div.ds-cert-logo a::after {
+  left: 0;
+}
+div.cert div.ds-cert-logo a::before {
+  right: 0;
+}
+div.cert div.ds-cert-logo a:hover::after, div.cert div.ds-cert-logo a:hover::before {
+  width: 51%;
+}
+div.cert div.ds-cert-logo a:hover span {
+  color: #fff;
+}
+div.cert div.ds-cert-logo a span {
+  color: #35C828;
+  position: relative;
+  z-index: 3;
+  transition: color 0.3s;
 }
 
 section.ds-about-wrapper {
@@ -13216,8 +13286,44 @@ section.ds-help-wrapper div.ds-help-forms div.ds-help-single-help-form a:hover {
   color: #35C828;
 }
 
+section.ds-help-single-help-form.tax {
+  padding: 50px 5vw;
+}
+section.ds-help-single-help-form.tax div.ds-redirect-tax-wrapper {
+  display: flex;
+}
+section.ds-help-single-help-form.tax div.ds-redirect-tax-wrapper div.img {
+  background-image: url("/images/help/podatek/podatek.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+section.ds-help-single-help-form.tax div.ds-tax-download {
+  margin-top: 50px;
+}
+section.ds-help-single-help-form.tax div.ds-tax-download i {
+  font-size: 1.3rem;
+}
+section.ds-help-single-help-form.tax div.ds-tax-download div.download-item {
+  margin-top: 70px;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+section.ds-help-single-help-form.tax div.ds-tax-download div.download-item * {
+  margin-top: 10px;
+}
+section.ds-help-single-help-form.tax div.ds-tax-download div.download-item a {
+  font-size: 1.1rem;
+  color: #35C828;
+  font-weight: bold;
+}
+
 section.ds-help-single-help-form {
   padding: 50px 15vw;
+}
+section.ds-help-single-help-form * {
+  cursor: default;
 }
 section.ds-help-single-help-form h1 {
   font-size: 2.3rem;
@@ -13255,6 +13361,46 @@ section.ds-help-single-help-form h2.green {
   text-decoration: underline;
 }
 
+@media screen and (min-width: 1001px) {
+  section.ds-help-single-help-form.tax {
+    padding: 50px 5vw;
+  }
+  section.ds-help-single-help-form.tax div.ds-redirect-tax-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  section.ds-help-single-help-form.tax div.ds-redirect-tax-wrapper div.info {
+    width: 58%;
+  }
+  section.ds-help-single-help-form.tax div.ds-redirect-tax-wrapper div.info img.tax-log {
+    width: 50%;
+    margin-top: 20px;
+    margin-left: 25%;
+  }
+  section.ds-help-single-help-form.tax div.ds-redirect-tax-wrapper div.img {
+    width: 38%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  section.ds-help-single-help-form a.download {
+    display: none;
+  }
+  section.ds-help-single-help-form div.ds-redirect-tax-wrapper {
+    flex-direction: column-reverse;
+  }
+  section.ds-help-single-help-form div.ds-redirect-tax-wrapper div.info {
+    width: 100%;
+  }
+  section.ds-help-single-help-form div.ds-redirect-tax-wrapper div.info img.tax-log {
+    margin-top: 20px;
+    width: 100%;
+  }
+  section.ds-help-single-help-form div.ds-redirect-tax-wrapper div.img {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 15px;
+  }
+}
 @media screen and (max-width: 767px) {
   section.ds-help-single-help-form {
     padding: 5vw;
@@ -15384,11 +15530,7 @@ div.ds-path-bar div.ds-path-bar-item a {
   cursor: pointer;
 }
 div.ds-path-bar div.ds-path-bar-item i {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: -16%;
-  font-size: 1rem;
+  display: none;
 }
 div.ds-path-bar div.ds-path-bar-item.last {
   background-color: white;
@@ -15648,11 +15790,50 @@ section.ds-gallery-with-hrefs div.gallery-item {
 }
 section.ds-gallery-with-hrefs div.gallery-item a {
   width: 100%;
+  position: relative;
+  text-decoration: none;
 }
 section.ds-gallery-with-hrefs div.gallery-item a img {
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+  z-index: 1;
+  position: relative;
+}
+section.ds-gallery-with-hrefs div.gallery-item a span.wrap {
+  margin-left: 10px;
+  position: relative;
+  bottom: 10px;
+  right: 0;
+  background-color: #35C828;
+  color: white;
+  padding: 5px 10px;
+  z-index: 2;
+  font-size: 1.2rem;
+  border: 2px solid #35C828;
+}
+section.ds-gallery-with-hrefs div.gallery-item a span.wrap span {
+  position: relative;
+  z-index: 3;
+  transition: color 0.2s;
+}
+section.ds-gallery-with-hrefs div.gallery-item a span.wrap::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: white;
+  z-index: 2;
+  transition: height 0.2s;
+}
+section.ds-gallery-with-hrefs div.gallery-item a:hover span.wrap::before {
+  height: 100%;
+}
+section.ds-gallery-with-hrefs div.gallery-item a:hover span.wrap span {
+  color: #35C828;
 }
 
 section.ds-footer {
@@ -15746,6 +15927,7 @@ body {
 }
 @media screen and (max-width: 500px) {
   .logo h1 {
+    text-align: center;
     font-size: 3rem !important;
   }
 }
@@ -15761,9 +15943,13 @@ body {
   font-weight: bold;
   transition: background-color 0.2s linear;
   text-align: center;
+  cursor: pointer !important;
 }
 .ds-show-more-green:hover {
   background-color: #7bed9f;
   color: white;
   text-decoration: none;
+}
+.ds-show-more-green:focus {
+  outline: none;
 }

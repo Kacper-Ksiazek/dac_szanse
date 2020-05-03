@@ -14,5 +14,8 @@ class AboutUsController extends Controller
     public function rodo(){
         return view('pages.about.rodo');
     }
+    public function certIndex(){
+        return view('pages.about.cert.index');
+    }
     //
 }

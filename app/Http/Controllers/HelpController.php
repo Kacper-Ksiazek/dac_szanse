@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class HelpController extends Controller
 {
@@ -40,5 +41,15 @@ class HelpController extends Controller
     //
     public function wspolpraca(){
         return view('pages.help.wspolpraca');
+    }
+    //
+    public function podatek(){
+        return view('pages.help.podatek');
+    }
+    //
+    public function downloadPit(){
+        $file = '../storage/app/download/pity2019.exe';
+        $name = basename($file);
+        return response()->download($file, $name);
     }
 }

@@ -92,7 +92,7 @@ export default {
                         { content: "Darczyńcy", href: "/jak-pomoc/darczyncy" },
                         { content: "Współpraca", href: "/jak-pomoc/wspolpraca" },
                         { content: "Nowożeńcy dają szansę!", href: "/jak-pomoc/nowozency" },
-                        { content: "Jak przekazać darowiznę", href: "#" },
+                        { content: "Przekaż 1% podatku", href: "/jak-pomoc/przekaz-1%-podatku" },
                         { content: "Allegro charytatywni", href: "/jak-pomoc/allegro-charytatywni" },
                         { content: "Pomóż nam zaoszczędzić", href: "/jak-pomoc/pomoz-nam-zaoszczedzic" },
                         { content: "Siepomaga", href: "/jak-pomoc/siepomaga" },

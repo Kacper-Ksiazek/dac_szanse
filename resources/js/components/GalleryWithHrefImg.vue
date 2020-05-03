@@ -2,8 +2,9 @@
     <section class="ds-gallery-with-hrefs">
         <div class="gallery-item" v-for="item in content" :key="item.img">
             <!--  -->
-            <a v-if='item.href' :href="item.href" target="blank">
+            <a v-if="item.href" :href="item.href" target="blank">
                 <img :src="setPath(item.img)" alt="" />
+                <span class="wrap"><span>Zobacz wiecej</span></span>
             </a>
             <!--  -->
             <a v-else>

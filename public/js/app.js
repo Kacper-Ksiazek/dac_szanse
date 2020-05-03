@@ -2047,6 +2047,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["prefix", "content"],
   methods: {
@@ -2155,9 +2156,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/about/index/Cert.vue?vue&type=script&lang=js&":
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/about/cert/Index.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/about/index/Cert.vue?vue&type=script&lang=js& ***!
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/about/cert/Index.vue?vue&type=script&lang=js& ***!
   \***************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -2182,51 +2183,60 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      floorsList: [{
+        header: "Parter",
+        features: [{
+          title: "Budynek",
+          img: "budynek/9.jpg",
+          href: "#"
+        }, {
+          title: "Recepcja ",
+          img: "recepcja/3.jpg",
+          href: "#"
+        }, {
+          title: "Poczekalnia ",
+          img: "poczekalnia/5.jpg",
+          href: "#"
+        }, {
+          title: "Sale rehabilitacyjne",
+          img: "sala/16.jpg",
+          href: "#"
+        }, {
+          title: "Darczyńcy",
+          img: "darczyncy/2.jpg",
+          href: "#"
+        }],
+        href: "#",
+        imagesPrefix: "/images/about/cert/parter/"
+      } // {
+      //     header: "1 pientro",
+      //     items: ["Dyrektor", "Gabinety terapeutyczne", "OREW", "Poczekalnia", "Sekretariat"],
+      //     href: "#"
+      // },
+      // {
+      //     header: "2 pientro",
+      //     items: ["Prezes Zarzadu", "Wice Prezes zarzadu", "Administracja", "Główny księgowy", "Księgowość", "Gabinety terapeutyczne"],
+      //     href: "#"
+      // }
+      ]
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/about/index/Cert.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/about/index/Cert.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 //
 //
 //
@@ -2490,7 +2500,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _activities_tasks_Modal_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../activities/tasks/Modal.vue */ "./resources/js/components/activities/tasks/Modal.vue");
+/* harmony import */ var _scripts_tougchSwapping__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../scripts/tougchSwapping */ "./resources/js/scripts/tougchSwapping.js");
+/* harmony import */ var _activities_tasks_Modal_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../activities/tasks/Modal.vue */ "./resources/js/components/activities/tasks/Modal.vue");
+//
 //
 //
 //
@@ -2524,14 +2536,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+ //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   //
+  mounted: function mounted() {
+    var _this = this;
+
+    var rightCaseSwap = function rightCaseSwap() {
+      if (_this.currentAwardIndex < 4) _this.currentAwardIndex++;
+    }; //
+
+
+    var leftCaseSwap = function leftCaseSwap() {
+      if (_this.currentAwardIndex > 0) _this.currentAwardIndex--;
+    }; //
+
+
+    Object(_scripts_tougchSwapping__WEBPACK_IMPORTED_MODULE_0__["tougchSwapping"])({
+      that: this,
+      methodIfRight: rightCaseSwap,
+      methodIfLeft: leftCaseSwap,
+      initValue: "swapXOnStart",
+      element: this.$refs.item
+    });
+  },
   components: {
-    modal: _activities_tasks_Modal_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    modal: _activities_tasks_Modal_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   props: ["awards"],
   data: function data() {
     return {
+      swapXOnStart: null,
       currentAwardIndex: 0
     };
   },
@@ -2552,7 +2588,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   filters: {
     setImagePath: function setImagePath(val) {
-      return "/images/about/awards/".concat(val);
+      return "background-image: url('/images/about/awards/".concat(val, "')");
     }
   }
 });
@@ -2568,7 +2604,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _activities_tasks_Modal_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../activities/tasks/Modal.vue */ "./resources/js/components/activities/tasks/Modal.vue");
+/* harmony import */ var _scripts_tougchSwapping__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../scripts/tougchSwapping */ "./resources/js/scripts/tougchSwapping.js");
+/* harmony import */ var _activities_tasks_Modal_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../activities/tasks/Modal.vue */ "./resources/js/components/activities/tasks/Modal.vue");
 //
 //
 //
@@ -2612,10 +2649,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+ //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   //
+  mounted: function mounted() {
+    var _this = this;
+
+    var rightCaseSwap = function rightCaseSwap() {
+      if (_this.currentAwardIndex < 4) _this.currentAwardIndex++;
+    }; //
+
+
+    var leftCaseSwap = function leftCaseSwap() {
+      if (_this.currentAwardIndex > 0) _this.currentAwardIndex--;
+    }; //
+
+
+    Object(_scripts_tougchSwapping__WEBPACK_IMPORTED_MODULE_0__["tougchSwapping"])({
+      that: this,
+      methodIfRight: rightCaseSwap,
+      methodIfLeft: leftCaseSwap,
+      initValue: "swapXOnStart",
+      element: this.$refs.item
+    });
+  },
+  //
   components: {
-    modal: _activities_tasks_Modal_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    modal: _activities_tasks_Modal_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   props: ["awards"],
   data: function data() {
@@ -4052,6 +4113,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   //header- to co widzimy i z czym wchodzimy w interakcje
   //body- to co widzimy po najechaniu w header
@@ -4136,8 +4198,8 @@ __webpack_require__.r(__webpack_exports__);
           content: "Nowożeńcy dają szansę!",
           href: "/jak-pomoc/nowozency"
         }, {
-          content: "Jak przekazać darowiznę",
-          href: "#"
+          content: "Przekaż 1% podatku",
+          href: "/jak-pomoc/przekaz-1%-podatku"
         }, {
           content: "Allegro charytatywni",
           href: "/jak-pomoc/allegro-charytatywni"
@@ -5280,7 +5342,7 @@ __webpack_require__.r(__webpack_exports__);
         type: "item",
         title: "Niepubliczna Specjalistyczna Poradnia Psychologiczno-Pedagogiczna",
         href: "http://www.poradnia-wadowice.pl/",
-        img: "./images/item1.png",
+        img: "./images/ourObjects/item1.png",
         left: [{
           icon: "fa fa-phone",
           value: "608 822 852"
@@ -5311,28 +5373,28 @@ __webpack_require__.r(__webpack_exports__);
         type: "item",
         title: "Niepubliczny Ośrodek Rewalidacyjno-Wychowawczy",
         href: "./nasze-placowki/niepubliczny-osrodek-rewalidacyjno-wychowawczy",
-        img: "./images/item2.png",
+        img: "./images/ourObjects/item2.png",
         left: [],
         right: []
       }, {
         type: "item",
         title: "\u015Awietlica Terapeutyczno-Integracyjna \"Szansa\"",
         href: "./nasze-placowki/swietlica-terapeutyczno-integracyjna-szansa",
-        img: "./images/item2.png",
+        img: "./images/ourObjects/item2.png",
         left: [],
         right: []
       }, {
         type: "item",
         title: "Niepubliczny Punkt Przedszkolny \"Da\u0107 Szans\u0119\"",
         href: "http://www.przedszkoledacszanse.pl/",
-        img: "./images/item1.png",
+        img: "./images/ourObjects/item1.png",
         left: [],
         right: []
       }, {
         type: "item",
         title: "Sp\xF3\u0142dzielnia Socjalna \"AMICUS\"",
         href: "http://spoldzielniaamicus.pl/",
-        img: "./images/item2.png",
+        img: "./images/ourObjects/item2.png",
         left: [],
         right: []
       }]
@@ -41950,7 +42012,9 @@ var render = function() {
       return _c("div", { key: item.img, staticClass: "gallery-item" }, [
         item.href
           ? _c("a", { attrs: { href: item.href, target: "blank" } }, [
-              _c("img", { attrs: { src: _vm.setPath(item.img), alt: "" } })
+              _c("img", { attrs: { src: _vm.setPath(item.img), alt: "" } }),
+              _vm._v(" "),
+              _vm._m(0, true)
             ])
           : _c("a", [
               _c("img", { attrs: { src: _vm.setPath(item.img), alt: "" } })
@@ -41960,7 +42024,16 @@ var render = function() {
     0
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "wrap" }, [
+      _c("span", [_vm._v("Zobacz wiecej")])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -42097,6 +42170,61 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/about/cert/Index.vue?vue&type=template&id=09c1dad8&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/about/cert/Index.vue?vue&type=template&id=09c1dad8& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "section",
+    { staticClass: "ds-cert-main" },
+    _vm._l(_vm.floorsList, function(floor) {
+      return _c("div", { key: floor.header, staticClass: "ds-cert-floor" }, [
+        _c("div", { staticClass: "ds-floor-header" }, [
+          _c("span", { domProps: { textContent: _vm._s(floor.header) } }),
+          _vm._v(" "),
+          _c("button", [_vm._v("Rozwin")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: floor.href } }, [_vm._v("Zobacz galerie")])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "ds-floor-features" },
+          _vm._l(floor.features, function(feature) {
+            return _c("div", { key: feature.title, staticClass: "feature" }, [
+              _c("h2", { domProps: { textContent: _vm._s(feature.title) } }),
+              _vm._v(" "),
+              _c("img", {
+                staticStyle: { width: "50vw" },
+                attrs: { src: "" + floor.imagesPrefix + feature.img }
+              })
+            ])
+          }),
+          0
+        )
+      ])
+    }),
+    0
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/about/index/Cert.vue?vue&type=template&id=14505c24&":
 /*!*******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/about/index/Cert.vue?vue&type=template&id=14505c24& ***!
@@ -42112,138 +42240,55 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "text cert", attrs: { id: "cert" } },
-    [
-      _c("br"),
-      _c("br"),
-      _vm._v(" "),
-      _c("h1", [_vm._v("Budowa CERT")]),
-      _vm._v(" "),
-      _vm._m(0),
-      _vm._v(" "),
-      _c("gallery", {
-        attrs: {
-          header: false,
-          extensions: true,
-          prefix: "/images/about/cert/header/",
-          images: ["etap_1", "etap_2", "etap_3", "etap_4", "etap_5"]
-        }
-      }),
-      _vm._v(" "),
-      _c("h1", [_vm._v("Postępy prac")]),
-      _vm._v(" "),
-      _c("gallery", {
-        attrs: {
-          header: false,
-          extensions: true,
-          prefix: "/images/about/cert/budowa/",
-          images: [
-            "budowa_1",
-            "budowa_2",
-            "budowa_3",
-            "budowa_4",
-            "budowa_5",
-            "budowa_6",
-            "budowa_7",
-            "budowa_8",
-            "budowa_9",
-            "budowa_10",
-            "budowa_11",
-            "budowa_12",
-            "budowa_13",
-            "budowa_14",
-            "budowa_15",
-            "budowa_16",
-            "budowa_17",
-            "budowa_18",
-            "budowa_19",
-            "budowa_20",
-            "budowa_21",
-            "budowa_22",
-            "budowa_23",
-            "budowa_24",
-            "budowa_25",
-            "budowa_26",
-            "budowa_27",
-            "budowa_28",
-            "budowa_29",
-            "budowa_30",
-            "budowa_31",
-            "budowa_32",
-            "budowa_33",
-            "budowa_34",
-            "budowa_35",
-            "budowa_36",
-            "budowa_37",
-            "budowa_38",
-            "budowa_39",
-            "budowa_40",
-            "budowa_41",
-            "budowa_42",
-            "budowa_43",
-            "budowa_44",
-            "budowa_45",
-            "budowa_46",
-            "budowa_47",
-            "budowa_48",
-            "budowa_49",
-            "budowa_50",
-            "budowa_51",
-            "budowa_52",
-            "budowa_53",
-            "budowa_54",
-            "budowa_55",
-            "budowa_56",
-            "budowa_57"
-          ]
-        }
-      }),
-      _vm._v(" "),
-      _vm._m(1)
-    ],
-    1
-  )
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("h2", [
-        _vm._v(
-          "\n            Koncepcja architektoniczno funkcjonalna dla budynku Centrum Edukacji, Rehabilitacji i Terapii (CERT) dla dzieci niepełnosprawnych w Wadowicach przy ul.\n            Kochanowskiego.\n        "
-        )
-      ]),
-      _vm._v(" "),
+    return _c("div", { staticClass: "text cert", attrs: { id: "cert" } }, [
+      _c("br"),
       _c("br"),
       _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "\n            Projekt obejmuje rozwiązania przestrzenne dla budynku CERT dla I etapu inwestycji.\n        "
-        )
+      _c("h1", [_vm._v("Budowa CERT")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "p-5" }, [
+        _c("h2", [
+          _vm._v(
+            "\n            Koncepcja architektoniczno funkcjonalna dla budynku Centrum Edukacji, Rehabilitacji i Terapii (CERT) dla dzieci niepełnosprawnych w Wadowicach przy ul.\n            Kochanowskiego.\n        "
+          )
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "\n            Projekt obejmuje rozwiązania przestrzenne dla budynku CERT dla I etapu inwestycji.\n        "
+          )
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "\n            I etap tego zadania obejmować będzie budynek, w którym mieścić się będą: oddział rehabilitacyjny wraz z gabinetami, niepubliczna specjalistyczna poradnia\n            psychologiczno-pedagogiczna, sale terapeutyczne oraz pomieszczenia biurowe.\n        "
+          )
+        ])
       ]),
       _vm._v(" "),
-      _c("br"),
+      _c("div", { staticClass: "ds-cert-logo" }, [
+        _c("a", { attrs: { href: "/o-nas/budowa-cert" } }, [
+          _c("span", [_vm._v("Zobacz galerie")])
+        ])
+      ]),
       _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "\n            I etap tego zadania obejmować będzie budynek, w którym mieścić się będą: oddział rehabilitacyjny wraz z gabinetami, niepubliczna specjalistyczna poradnia\n            psychologiczno-pedagogiczna, sale terapeutyczne oraz pomieszczenia biurowe.\n        "
-        )
-      ])
+      _c(
+        "a",
+        { staticClass: "rodo", attrs: { href: "/o-nas/polityka-rodo" } },
+        [_c("button", [_vm._v("Polityka RODO")])]
+      )
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      { staticClass: "rodo", attrs: { href: "/o-nas/polityka-rodo" } },
-      [_c("button", [_vm._v("Polityka RODO")])]
-    )
   }
 ]
 render._withStripped = true
@@ -42427,6 +42472,8 @@ var render = function() {
           "div",
           {
             key: item.id,
+            ref: "item",
+            refInFor: true,
             staticClass: "award-item",
             class: _vm.currentAwardIndex === item.id ? "active" : null
           },
@@ -42441,13 +42488,15 @@ var render = function() {
                   style: _vm.setImagesWrapperTransform(item.currentImage)
                 },
                 [
-                  _c("img", {
-                    attrs: { src: _vm._f("setImagePath")(item.image1) }
+                  _c("div", {
+                    staticClass: "img",
+                    style: _vm._f("setImagePath")(item.image1)
                   }),
                   _vm._v(" "),
                   item.image2
-                    ? _c("img", {
-                        attrs: { src: _vm._f("setImagePath")(item.image2) }
+                    ? _c("div", {
+                        staticClass: "img",
+                        style: _vm._f("setImagePath")(item.image2)
                       })
                     : _vm._e()
                 ]
@@ -42594,6 +42643,8 @@ var render = function() {
           "div",
           {
             key: item.id,
+            ref: "item",
+            refInFor: true,
             staticClass: "award-item",
             class: _vm.currentAwardIndex === item.id ? "active" : null
           },
@@ -59856,7 +59907,9 @@ Vue.component("about-index", __webpack_require__(/*! ./components/about/index/In
 
 Vue.component("welcome", __webpack_require__(/*! ./components/welcome/WelcomeWrapper.vue */ "./resources/js/components/welcome/WelcomeWrapper.vue")["default"]); //STOPKA
 
-Vue.component("ds-footer", __webpack_require__(/*! ./components/Footer.vue */ "./resources/js/components/Footer.vue")["default"]);
+Vue.component("ds-footer", __webpack_require__(/*! ./components/Footer.vue */ "./resources/js/components/Footer.vue")["default"]); //Budowa CERT- index
+
+Vue.component("cert-index", __webpack_require__(/*! ./components/about/cert/Index.vue */ "./resources/js/components/about/cert/Index.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -60257,6 +60310,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Logo_vue_vue_type_template_id_73a52918___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Logo_vue_vue_type_template_id_73a52918___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/about/cert/Index.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/components/about/cert/Index.vue ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Index_vue_vue_type_template_id_09c1dad8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Index.vue?vue&type=template&id=09c1dad8& */ "./resources/js/components/about/cert/Index.vue?vue&type=template&id=09c1dad8&");
+/* harmony import */ var _Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Index.vue?vue&type=script&lang=js& */ "./resources/js/components/about/cert/Index.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Index_vue_vue_type_template_id_09c1dad8___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Index_vue_vue_type_template_id_09c1dad8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/about/cert/Index.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/about/cert/Index.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/about/cert/Index.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Index.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/about/cert/Index.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/about/cert/Index.vue?vue&type=template&id=09c1dad8&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/about/cert/Index.vue?vue&type=template&id=09c1dad8& ***!
+  \*************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_09c1dad8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Index.vue?vue&type=template&id=09c1dad8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/about/cert/Index.vue?vue&type=template&id=09c1dad8&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_09c1dad8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_09c1dad8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -64247,14 +64369,6 @@ var tougchSwapping = function tougchSwapping(API) {
       initValue = API.initValue,
       element = API.element,
       that = API.that; //
-  //INIT
-
-  element.addEventListener("touchstart", function (e) {
-    return that[initValue] = e.changedTouches[0].clientX;
-  });
-  element.addEventListener("mousedown", function (e) {
-    return that[initValue] = e.x;
-  }); //
 
   var handleImageSwap = function handleImageSwap(e) {
     var init = that[initValue]; //
@@ -64274,11 +64388,35 @@ var tougchSwapping = function tougchSwapping(API) {
     if (x - init < -120) methodIfRight(); //Left case
     else if (x - init > 120) methodIfLeft();
   }; //
+  //INIT
 
 
-  ["touchend", "mouseup"].forEach(function (event) {
-    return API.element.addEventListener(event, handleImageSwap);
-  }); //
+  try {
+    element.forEach(function (el) {
+      el.addEventListener("touchstart", function (e) {
+        return that[initValue] = e.changedTouches[0].clientX;
+      });
+      el.addEventListener("mousedown", function (e) {
+        return that[initValue] = e.x;
+      }); //
+
+      ["touchend", "mouseup"].forEach(function (event) {
+        return el.addEventListener(event, handleImageSwap);
+      });
+    });
+  } catch (error) {
+    element.addEventListener("touchstart", function (e) {
+      return that[initValue] = e.changedTouches[0].clientX;
+    });
+    element.addEventListener("mousedown", function (e) {
+      return that[initValue] = e.x;
+    }); //
+
+    ["touchend", "mouseup"].forEach(function (event) {
+      return element.addEventListener(event, handleImageSwap);
+    });
+  } //
+
 };
 
 /***/ }),

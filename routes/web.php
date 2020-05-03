@@ -72,8 +72,6 @@ Route::get('/dzialalnosc/projekty','ProjectController@index');
 Route::get('/dzialalnosc/projekty/{project}','ProjectController@showSingleProject');
 //Archiwum konkretny rok bazujacy na dacie zakonczenia projektu
 Route::get('/dzialalnosc/projekty/archiwum/{year}','ProjectController@handleArchives');
-//API- wez wszystkie projekty
-Route::post('api/archives','ProjectController@archives');
 //
 //JAK POMOC
 //
@@ -87,6 +85,9 @@ Route::get('/jak-pomoc/allegro-charytatywni','HelpController@allegro');
 Route::get('/jak-pomoc/pomoz-nam-zaoszczedzic','HelpController@oszczedzanie');
 Route::get('/jak-pomoc/siepomaga','HelpController@siepomaga');
 Route::get('/jak-pomoc/zrzutka','HelpController@zrzutka');
+Route::get('/jak-pomoc/przekaz-1%-podatku','HelpController@podatek');
+//
+Route::get('/files/download-pit','HelpController@downloadPit');
 //
 //AKTUALNOSCI
 //
@@ -100,7 +101,7 @@ Route::get('/aktualnosci/{news}','NewsController@singleNews');
 //Projekty
 //Wyswietlanie formularzu dodajacego nowy projekt
 Route::get('/admin/dodaj-projekt','ProjectController@addNewForm')->middleware('auth');
-//Dodawanie na backendzie nowego projektu
+//Dodawanie nowego projektu
 Route::post('/admin/dodaj-projekt','ProjectController@createNewProject')->middleware('auth');
 //
 //Aktualnosci
@@ -116,3 +117,5 @@ Route::post('/admin/dodaj-aktualnosc','NewsController@addNewNews')->middleware('
 Route::get('/o-nas','AboutUsController@index');
 //RODO
 Route::get('/o-nas/polityka-rodo','AboutUsController@rodo');
+//CERT index
+Route::get('/o-nas/budowa-cert','AboutUsController@certIndex');

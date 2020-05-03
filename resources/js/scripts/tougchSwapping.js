@@ -19,10 +19,6 @@ export const tougchSwapping = API => {
     });
     const { methodIfRight, methodIfLeft, initValue, element, that } = API;
     //
-    //INIT
-    element.addEventListener("touchstart", e => (that[initValue] = e.changedTouches[0].clientX));
-    element.addEventListener("mousedown", e => (that[initValue] = e.x));
-    //
     const handleImageSwap = e => {
         const init = that[initValue];
         //
@@ -41,6 +37,19 @@ export const tougchSwapping = API => {
         else if (x - init > 120) methodIfLeft();
     };
     //
-    ["touchend", "mouseup"].forEach(event => API.element.addEventListener(event, handleImageSwap));
+    //INIT
+    try {
+        element.forEach(el => {
+            el.addEventListener("touchstart", e => (that[initValue] = e.changedTouches[0].clientX));
+            el.addEventListener("mousedown", e => (that[initValue] = e.x));
+            //
+            ["touchend", "mouseup"].forEach(event => el.addEventListener(event, handleImageSwap));
+        });
+    } catch (error) {
+        element.addEventListener("touchstart", e => (that[initValue] = e.changedTouches[0].clientX));
+        element.addEventListener("mousedown", e => (that[initValue] = e.x));
+        //
+        ["touchend", "mouseup"].forEach(event => element.addEventListener(event, handleImageSwap));
+    }
     //
 };

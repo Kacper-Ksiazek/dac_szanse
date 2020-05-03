@@ -3,13 +3,14 @@
         <!--  -->
         <!--  -->
         <div class="awards-items-wrapper" :style="setAwardsWrapperTransform()">
-            <div class="award-item" v-for="item in awards" :key="item.id" :class="currentAwardIndex === item.id ? 'active' : null">
+            <!-- <span class="control" ref="control"></span> -->
+            <div ref="item" class="award-item" v-for="item in awards" :key="item.id" :class="currentAwardIndex === item.id ? 'active' : null">
                 <h2 v-text="item.content"></h2>
                 <div class="award-images-wrapper">
                     <!--  -->
                     <div class="carousel" :style="setImagesWrapperTransform(item.currentImage)">
-                        <img :src="item.image1 | setImagePath" />
-                        <img v-if="item.image2" :src="item.image2 | setImagePath" />
+                        <div class="img" :style="item.image1 | setImagePath"></div>
+                        <div v-if="item.image2" class="img" :style="item.image2 | setImagePath"></div>
                     </div>
                     <!--  -->
                     <div v-if="item.image2" class="dots">
@@ -31,13 +32,33 @@
     </div>
 </template>
 <script>
+import { tougchSwapping } from "../../../../scripts/tougchSwapping";
 import Modal from "../../../activities/tasks/Modal.vue";
+//
 export default {
     //
+    mounted() {
+        const rightCaseSwap = () => {
+            if (this.currentAwardIndex < 4) this.currentAwardIndex++;
+        };
+        //
+        const leftCaseSwap = () => {
+            if (this.currentAwardIndex > 0) this.currentAwardIndex--;
+        };
+        //
+        tougchSwapping({
+            that: this,
+            methodIfRight: rightCaseSwap,
+            methodIfLeft: leftCaseSwap,
+            initValue: "swapXOnStart",
+            element: this.$refs.item
+        });
+    },
     components: { modal: Modal },
     props: ["awards"],
     data() {
         return {
+            swapXOnStart: null,
             currentAwardIndex: 0
         };
     },
@@ -57,7 +78,7 @@ export default {
     },
     filters: {
         setImagePath(val) {
-            return `/images/about/awards/${val}`;
+            return `background-image: url('/images/about/awards/${val}')`;
         }
     }
 };

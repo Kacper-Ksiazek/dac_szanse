@@ -71,6 +71,8 @@ Vue.component("about-index", require("./components/about/index/IndexMain.vue").d
 Vue.component("welcome", require("./components/welcome/WelcomeWrapper.vue").default);
 //STOPKA
 Vue.component("ds-footer", require("./components/Footer.vue").default);
+//Budowa CERT- index
+Vue.component("cert-index", require("./components/about/cert/Index.vue").default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
