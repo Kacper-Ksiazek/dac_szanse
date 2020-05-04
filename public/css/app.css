@@ -13164,6 +13164,181 @@ section.ds-about-wrapper h1::after {
   background-color: #35C828;
 }
 
+section.ds-cert-main {
+  padding: 50px 10vw 0 10vw;
+}
+@media screen and (max-width: 1000px) {
+  section.ds-cert-main {
+    padding: 50px 2vw 0 2vw;
+  }
+}
+section.ds-cert-main div.ds-cert-floor.active {
+  max-height: 1000px;
+}
+@media screen and (max-width: 900px) {
+  section.ds-cert-main div.ds-cert-floor.active {
+    max-height: 2000px;
+  }
+}
+section.ds-cert-main div.ds-cert-floor {
+  max-height: 70px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  transition: max-height 0.7s;
+}
+@media screen and (max-width: 600px) {
+  section.ds-cert-main div.ds-cert-floor {
+    max-height: 130px;
+  }
+  section.ds-cert-main div.ds-cert-floor div.ds-floor-header {
+    height: 110px !important;
+    flex-direction: column;
+  }
+}
+section.ds-cert-main div.ds-cert-floor div.ds-floor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  margin: 20px 0 10px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid black;
+}
+section.ds-cert-main div.ds-cert-floor div.ds-floor-header h1 {
+  padding-left: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+section.ds-cert-main div.ds-cert-floor div.ds-floor-header a {
+  background-color: #35C828;
+  margin-right: 20px;
+  padding: 5px 10px;
+  font-size: 1rem;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s;
+  border: 2px solid #35C828;
+}
+section.ds-cert-main div.ds-cert-floor div.ds-floor-header a:hover {
+  background-color: white;
+  color: #35C828;
+}
+section.ds-cert-main div.ds-cert-floor div.ds-floor-header button {
+  background-color: white;
+  color: #35C828;
+  border: 2px solid #35C828;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  transition: all 0.3s;
+}
+section.ds-cert-main div.ds-cert-floor div.ds-floor-header button:hover {
+  background-color: #35C828;
+  color: white;
+}
+section.ds-cert-main div.ds-cert-floor div.ds-floor-header button:focus {
+  outline: none;
+}
+section.ds-cert-main div.ds-cert-floor div.ds-floor-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+section.ds-cert-main div.ds-cert-floor div.ds-floor-features div.feature {
+  width: 350px;
+  height: 218px;
+  margin: 30px 30px 60px 30px;
+}
+section.ds-cert-main div.ds-cert-floor div.ds-floor-features div.feature div.img-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+section.ds-cert-main div.ds-cert-floor div.ds-floor-features div.feature div.img-wrapper a,
+section.ds-cert-main div.ds-cert-floor div.ds-floor-features div.feature div.img-wrapper img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+section.ds-cert-main div.ds-cert-floor div.ds-floor-features div.feature div.img-wrapper a {
+  z-index: 4;
+  color: #35C828;
+  text-decoration: none;
+  font-size: 2rem;
+  border: 3px solid;
+  padding: 20px;
+  font-weight: bold;
+  transition: transform 0.3s;
+  transform: translate(-50%, -50%) scale(0);
+}
+section.ds-cert-main div.ds-cert-floor div.ds-floor-features div.feature div.img-wrapper span.black {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+section.ds-cert-main div.ds-cert-floor div.ds-floor-features div.feature div.img-wrapper img {
+  width: 100%;
+  transition: width 0.3s;
+}
+section.ds-cert-main div.ds-cert-floor div.ds-floor-features div.feature div.img-wrapper:hover img {
+  width: 120%;
+}
+section.ds-cert-main div.ds-cert-floor div.ds-floor-features div.feature div.img-wrapper:hover span.black {
+  opacity: 0.4;
+}
+section.ds-cert-main div.ds-cert-floor div.ds-floor-features div.feature div.img-wrapper:hover a {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+section.ds-cert-single-floor {
+  padding: 0 10vw;
+}
+section.ds-cert-single-floor h1 {
+  font-size: 2.5rem;
+  padding-bottom: 10px;
+  position: relative;
+  font-weight: bold;
+  margin-top: 20px;
+}
+section.ds-cert-single-floor h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: 120%;
+  height: 3px;
+  background-color: #000;
+}
+section.ds-cert-single-floor div.cert-floor-place {
+  margin: 20px 0;
+  border-bottom: 3px solid #35C828;
+  padding: 30px 0;
+}
+section.ds-cert-single-floor div.cert-floor-place div.images-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+section.ds-cert-single-floor div.cert-floor-place div.images-wrapper div.single-image {
+  width: 300px;
+}
+section.ds-cert-single-floor div.cert-floor-place div.images-wrapper div.single-image img {
+  width: 100%;
+}
+
 div.ds-about-logo {
   background-image: url("/images/about/logo.png");
   background-position: center;
@@ -15744,14 +15919,18 @@ section.ds-single-task-gallery div.ds-single-task-images-wrapper {
   flex-wrap: wrap;
   justify-content: center;
 }
-section.ds-single-task-gallery div.ds-single-task-images-wrapper img {
+section.ds-single-task-gallery div.ds-single-task-images-wrapper div.img-wrapper {
   width: 30%;
   margin: 10px;
-  cursor: pointer;
-  transition: transform 0.2s linear;
+  overflow: hidden;
 }
-section.ds-single-task-gallery div.ds-single-task-images-wrapper img:hover {
-  transform: scale(1.1);
+section.ds-single-task-gallery div.ds-single-task-images-wrapper div.img-wrapper img {
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+section.ds-single-task-gallery div.ds-single-task-images-wrapper div.img-wrapper img:hover {
+  transform: scale(1.2);
 }
 
 @media screen and (max-width: 700px) {
@@ -15772,7 +15951,7 @@ section.ds-single-task-gallery div.ds-single-task-images-wrapper img:hover {
     flex-wrap: wrap;
     justify-content: center;
   }
-  section.ds-single-task-gallery div.ds-single-task-images-wrapper img {
+  section.ds-single-task-gallery div.ds-single-task-images-wrapper div.img-wrapper {
     width: 100%;
     margin: 10px;
     cursor: pointer;
@@ -15935,8 +16114,8 @@ body {
 .ds-show-more-green {
   background-color: #35C828;
   border: none;
-  padding: 10px 20px;
-  font-size: 2rem;
+  padding: 5px 20px;
+  font-size: 1.5rem;
   font-size: "Arial";
   color: white;
   border-radius: 30px;

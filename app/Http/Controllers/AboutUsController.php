@@ -17,5 +17,8 @@ class AboutUsController extends Controller
     public function certIndex(){
         return view('pages.about.cert.index');
     }
+    public function certParter(){
+        return view('pages.about.cert.parter');
+    }
     //
 }

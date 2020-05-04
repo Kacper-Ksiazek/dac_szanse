@@ -73,6 +73,9 @@ Vue.component("welcome", require("./components/welcome/WelcomeWrapper.vue").defa
 Vue.component("ds-footer", require("./components/Footer.vue").default);
 //Budowa CERT- index
 Vue.component("cert-index", require("./components/about/cert/Index.vue").default);
+//Cert- jedno pietro
+Vue.component("cert-floor", require("./components/about/cert/Floor.vue").default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

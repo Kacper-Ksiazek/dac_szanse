@@ -119,3 +119,5 @@ Route::get('/o-nas','AboutUsController@index');
 Route::get('/o-nas/polityka-rodo','AboutUsController@rodo');
 //CERT index
 Route::get('/o-nas/budowa-cert','AboutUsController@certIndex');
+//CERT-parter
+Route::get('/o-nas/budowa-cert/parter','AboutUsController@certParter');

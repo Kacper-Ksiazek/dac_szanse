@@ -2,7 +2,9 @@
     <section class="ds-single-task-gallery mt-2">
         <h1 v-if="header !== false">Galeria<i class="fa fa-picture-o"></i></h1>
         <div class="ds-single-task-images-wrapper">
-            <img :src="setImagePath(item)" v-for="(item, index) in temporaryImages" :key="item" @click="modalIndex = index" />
+            <div class="img-wrapper" v-for="(item, index) in temporaryImages" :key="item" @click="modalIndex = index">
+                <img :src="setImagePath(item)" />
+            </div>
         </div>
         <button v-if="images.length > 3" class="ds-show-more-green mt-3" @click="showAll = !showAll" v-text="showAll ? 'Ukryj' : 'Pokaż wszystkie'"></button>
         <modal :index="modalIndex" :all_images="images" @close="modalIndex = -1" v-if="modalIndex >= 0 && modal !== false" :prefix="prefix" :extensions="extensions"></modal>

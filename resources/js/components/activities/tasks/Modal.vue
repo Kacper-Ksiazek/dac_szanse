@@ -45,7 +45,7 @@ export default {
             //
             document.body.style.position = state === "MOVE" ? "fixed" : "static";
             document.body.style.transform = state === "MOVE" ? `translateY(-${scrollY}px)` : null;
-            document.body.style.paddingRight = state === "MOVE" ? `17px` : null;
+            document.body.style.paddingRight = state === "MOVE" ? (window.innerWidth >= 1000 ? `17px` : null) : null;
             document.getElementById("main-menu").style.transform = state === "MOVE" ? `translateY(${scrollY}px)` : null;
             this.$refs.modal.style.transform = state === "MOVE" ? `translateY(${scrollY}px)` : null;
         },
