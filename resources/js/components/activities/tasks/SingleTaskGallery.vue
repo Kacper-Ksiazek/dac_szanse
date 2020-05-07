@@ -3,7 +3,7 @@
         <h1 v-if="header !== false">Galeria<i class="fa fa-picture-o"></i></h1>
         <div class="ds-single-task-images-wrapper">
             <div class="img-wrapper" v-for="(item, index) in temporaryImages" :key="item" @click="modalIndex = index">
-                <img :src="setImagePath(item)" />
+                <img :data-src="setImagePath(item)" ref="lazy" />
             </div>
         </div>
         <button v-if="images.length > 3" class="ds-show-more-green mt-3" @click="showAll = !showAll" v-text="showAll ? 'Ukryj' : 'Pokaż wszystkie'"></button>
@@ -15,6 +15,9 @@ import Modal from "./Modal";
 export default {
     components: { modal: Modal },
     props: ["images", "prefix", "modal", "extensions", "header"],
+    mounted() {
+        this.lazy();
+    },
     data() {
         return {
             temporaryImages: this.images.slice(0, 3),
@@ -27,11 +30,22 @@ export default {
             if (this.prefix == "DONT_USE_FILE_EXTENSION") return value;
             else if (this.extensions !== false) return `${this.prefix}${value}.jpg`;
             else return `${this.prefix}${value}`;
+        },
+        lazy() {
+            setTimeout(() => {
+                this.$refs.lazy.forEach(img => {
+                    img.src = img.dataset.src;
+                });
+            }, 100);
         }
     },
     watch: {
         showAll(value) {
             this.temporaryImages = value ? this.images : this.images.slice(0, 3);
+            this.lazy();
+        },
+        images(value) {
+            this.temporaryImages = value.slice(0, 3);
         }
     }
 };

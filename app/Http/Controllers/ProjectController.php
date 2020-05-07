@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Facade\FlareClient\Http\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ProjectController extends Controller
 {
@@ -94,8 +95,13 @@ class ProjectController extends Controller
         ]);
         $validatedData['author_id']=auth()->id();
         //
-        $title=$validatedData['title'];
-        $file->store("projects/{$title}",'public');
+        //Set new project ID sooner
+        if(app()->environment()==="testing") $id=Project::all()->count()+1;
+        else if(app()->environment()==='local') $id=DB::select("SHOW TABLE STATUS LIKE 'news'")[0]->Auto_increment;
+        $root="news_{$id}";
+        $validatedData['directory']=$root;
+        //
+        $file->store("projects/{$root}",'public');
         $validatedData['image'] = $file->hashName();
         Project::create($validatedData);
         //

@@ -107,23 +107,23 @@ export default {
                     id: 0,
                     content:
                         "W latach 2008 i 2010 zostaliśmy dwukrotnym laureatem konkursu „Warto być za!  - konkurs organizowany był przez Kampanię Piwowarską. Wygrane pieniądze przeznaczone zostały na realizację wsparcia dla dzieci niepełnosprawnych w tym otwarcie pierwszej w powiecie  Sali Doświadczania Świata.",
-                    image1: "nagroda1.png",
-                    image2: "nagroda2.png",
+                    image1: "nagroda1.jpg",
+                    image2: "nagroda2.jpg",
                     currentImage: 0,
                     mobileShowText: false
                 },
                 {
                     id: 1,
                     content: 'W 2008 zostaliśmy finalistami konkursu „Kryształy Soli" – za całokształt działalności na rzecz osób niepełnosprawnych.',
-                    image1: "nagroda3.png",
+                    image1: "nagroda3.jpg",
                     mobileShowText: false
                 },
                 {
                     id: 2,
                     content:
                         "Działalność naszego Stowarzyszenia została dostrzeżona i w 2006 oraz 2007 roku byliśmy półfinalistami w konkursie o nagrodę Marszałka Województwa Małopolskiego „Kryształy Soli” w kategorii Polityka Społeczna.",
-                    image1: "nagroda4.png",
-                    image2: "nagroda5.png",
+                    image1: "nagroda4.jpg",
+                    image2: "nagroda5.jpg",
                     currentImage: 0,
                     mobileShowText: false
                 },
@@ -131,14 +131,14 @@ export default {
                     id: 3,
                     content:
                         'W roku 2013 otrzymaliśmy Wyróżnienie w Konkursie o Nagrodę Marszałka Województwa Małopolskiego "Kryształy Soli" w kategorii polityka społeczna, zdrowie oraz działalność na rzecz osób niepełnosprawnych:',
-                    image1: "nagroda6.png",
+                    image1: "nagroda6.jpg",
                     mobileShowText: false
                 },
                 {
                     id: 4,
                     content: "A także pierwsze miejsce w kategorii Lodołamacz - instytucja.",
-                    image1: "nagroda7.png",
-                    image2: "nagroda8.png",
+                    image1: "nagroda7.jpg",
+                    image2: "nagroda8.jpg",
                     currentImage: 0,
                     mobileShowText: false
                 }

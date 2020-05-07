@@ -11,7 +11,7 @@
     {{--  --}}
     {{--  --}}
     {{--  --}}
-    <single-project :title="{{json_encode($project->title)}}" :content="{{json_encode($project->content)}}" :img="{{json_encode($project->image)}}" type="view" :since="{{json_encode($project->since)}}" :till="{{json_encode($project->till)}}" :next='{{json_encode($next)}}' :prev='{{json_encode($previous)}}'></single-project>
+    <single-project :title="{{json_encode($project->title)}}" :content="{{json_encode($project->content)}}" :img="{{json_encode($project->image)}}" type="view" :since="{{json_encode($project->since)}}" :till="{{json_encode($project->till)}}" :next='{{json_encode($next)}}' :prev='{{json_encode($previous)}}' :directory='{{json_encode($project->directory)}}'></single-project>
     {{--  --}}
     {{--  --}}
     {{--  --}}

@@ -11,6 +11,7 @@ $factory->define(Project::class, function (Faker $faker) {
         'title' => $faker->name,
         'since' => $faker->dateTime(),
         'till' => $faker->dateTime(),
-        'content' => $faker->text(200)
+        'content' => $faker->text(200),
+        'directory'=>$faker->name
     ];
 });

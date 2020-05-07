@@ -10442,25 +10442,6 @@ div.ds-menu-small section.ds-menu-small-content div.small-nav-item div::before {
     display: none;
   }
 }
-div.ds-oo-logo {
-  background-image: url("/images/ourObjects/logo.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 30vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-div.ds-oo-logo h1 {
-  color: #35C828;
-  font-size: 4rem;
-  font-weight: bold;
-  font-family: "Open Sans";
-  text-align: center;
-}
-
 div.ds-oo-single-item-wrapper:nth-of-type(odd) section.ds-oo-place {
   flex-direction: row-reverse;
   background-color: #FBF1F1;
@@ -11179,6 +11160,25 @@ section.ds-s-content div.ds-s-text-wrapper * {
   text-indent: 50px;
 }
 
+div.ds-oo-logo {
+  background-image: url("/images/ourObjects/logo.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.ds-oo-logo h1 {
+  color: #35C828;
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: "Open Sans";
+  text-align: center;
+}
+
 section.ds-a-tasks-wrapper div.ds-a-tasks-navs {
   display: flex;
   justify-content: center;
@@ -11484,146 +11484,38 @@ section.ds-single-task-wrapper ul.ds-single-task {
     padding-left: 15%;
   }
 }
-section.ds-a-wrapper div.ds-a-control {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 5vh 0;
-  border-bottom: 4px solid #35C828;
-}
-section.ds-a-wrapper div.ds-a-control span.ds-a-control-header {
-  transition: all 0.2s linear;
-  font-size: 2.5rem;
-  color: #35C828;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  cursor: pointer;
-  padding: 0 20px;
-  border-radius: 15px 15px 0 0;
-}
-section.ds-a-wrapper div.ds-a-control span.ds-a-control-header:first-child {
-  margin-right: 10vw;
-}
-section.ds-a-wrapper div.ds-a-control span.ds-a-control-header.active {
-  background-color: #35C828;
-  color: white;
-}
-section.ds-a-wrapper div.ds-a-content {
-  margin: 0 15vw;
-  position: relative;
-}
-section.ds-a-wrapper div.ds-a-content::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("/images/dayroom.png");
+section.ds-a-wrapper div.ds-a-navs {
+  margin-top: 50px;
+  height: 700px;
+  background-image: url("/images/activities/activities.jpg");
   background-size: contain;
   background-position: center;
-  background-repeat: no-repeat;
-  z-index: 3;
-  opacity: 0.5;
-}
-section.ds-a-wrapper div.ds-a-content * {
+  background-attachment: fixed;
   position: relative;
-  z-index: 5;
 }
-section.ds-a-wrapper div.ds-a-content h1 {
-  font-style: italic;
-  font-size: 2.3rem;
-  margin-bottom: 1rem;
-}
-section.ds-a-wrapper div.ds-a-content p {
-  font-size: 1.3rem;
-}
-section.ds-a-wrapper div.ds-a-content div.ds-a-task {
-  padding-left: 2%;
-  margin-bottom: 30px;
-  font-size: 1.15rem;
-}
-section.ds-a-wrapper div.ds-a-content div.ds-a-task p {
-  padding-left: 20px;
-  position: relative;
-  font-size: inherit;
-}
-section.ds-a-wrapper div.ds-a-content div.ds-a-task p::before {
-  content: "";
+section.ds-a-wrapper div.ds-a-navs div.wrapper {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 4px;
-  background-color: #35C828;
-}
-section.ds-a-wrapper div.ds-a-content div.ds-a-task ul {
-  padding-left: 5%;
-  list-style-type: none;
-}
-section.ds-a-wrapper div.ds-a-content div.ds-a-task ul li::before {
-  content: "o";
-  color: #35C828;
-  font-weight: bold;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
-}
-section.ds-a-wrapper div.ds-a-navs a {
-  position: fixed;
-  z-index: 10;
-  background-color: #35C828;
-  color: white;
-  text-decoration: none;
   top: 50%;
-  transform: translateY(-50%);
-  font-size: 1rem;
-  padding: 5px 10px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
 }
-section.ds-a-wrapper div.ds-a-navs a.left {
-  left: 0;
+section.ds-a-wrapper div.ds-a-navs div.wrapper a {
+  position: relative;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 20px;
+  font-size: 2rem;
+  border: 3px solid;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
 }
-section.ds-a-wrapper div.ds-a-navs a.right {
-  right: 0;
+section.ds-a-wrapper div.ds-a-navs div.wrapper a:first-child {
+  margin-bottom: 40px;
 }
 
-@media screen and (max-width: 767px) {
-  section.ds-a-wrapper div.ds-a-content {
-    margin: 0 5vw;
-  }
-  section.ds-a-wrapper div.ds-a-content * {
-    position: relative;
-    z-index: 5;
-  }
-  section.ds-a-wrapper div.ds-a-content div.ds-a-task {
-    padding-left: 2%;
-    margin-bottom: 30px;
-    font-size: 1.15rem;
-  }
-  section.ds-a-wrapper div.ds-a-content div.ds-a-task ul {
-    padding-left: 15%;
-  }
-  section.ds-a-wrapper div.ds-a-navs {
-    padding-top: 30px;
-    display: flex;
-    justify-content: space-evenly;
-  }
-  section.ds-a-wrapper div.ds-a-navs a {
-    position: relative;
-    z-index: 10;
-    background-color: #35C828;
-    color: white;
-    text-decoration: none;
-    top: 50%;
-    font-size: 1.5rem;
-    padding: 10px 15px;
-    flex-basis: 45%;
-    border-radius: 20px;
-    text-align: center;
-  }
-}
 div.ds-a-add-project-loading {
   position: fixed;
   width: 100%;
@@ -12494,7 +12386,7 @@ div.ds-a-add-project-preview.exit div.body {
 }
 div.ds-a-logo,
 div.ds-a-tasks-logo {
-  background-image: url("/images/activities/tasks/logo.png");
+  background-image: url("/images/activities/tasks/logo.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -13327,6 +13219,10 @@ section.ds-cert-single-floor div.cert-floor-place {
   border-bottom: 3px solid #35C828;
   padding: 30px 0;
 }
+section.ds-cert-single-floor div.cert-floor-place h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
 section.ds-cert-single-floor div.cert-floor-place div.images-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -13340,7 +13236,7 @@ section.ds-cert-single-floor div.cert-floor-place div.images-wrapper div.single-
 }
 
 div.ds-about-logo {
-  background-image: url("/images/about/logo.png");
+  background-image: url("/images/about/logo.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -13409,7 +13305,7 @@ section.ds-help-wrapper div.ds-help-accounts-wrapper div.ds-help-bank-account {
 }
 section.ds-help-wrapper div.ds-help-forms {
   width: 100%;
-  background-image: url("/images/help/background.png");
+  background-image: url("/images/help/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -13468,7 +13364,7 @@ section.ds-help-single-help-form.tax div.ds-redirect-tax-wrapper {
   display: flex;
 }
 section.ds-help-single-help-form.tax div.ds-redirect-tax-wrapper div.img {
-  background-image: url("/images/help/podatek/podatek.png");
+  background-image: url("/images/help/podatek/podatek.jpg");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -13557,6 +13453,9 @@ section.ds-help-single-help-form h2.green {
   }
 }
 @media screen and (max-width: 1000px) {
+  section.ds-help-single-help-form {
+    padding: 5vw;
+  }
   section.ds-help-single-help-form a.download {
     display: none;
   }
@@ -13577,9 +13476,6 @@ section.ds-help-single-help-form h2.green {
   }
 }
 @media screen and (max-width: 767px) {
-  section.ds-help-single-help-form {
-    padding: 5vw;
-  }
   section.ds-help-single-help-form h1 {
     font-size: 2.3rem;
     font-weight: bold;
@@ -13599,9 +13495,6 @@ section.ds-help-single-help-form h2.green {
   }
 }
 @media screen and (max-width: 500px) {
-  section.ds-help-single-help-form {
-    padding: 5vw;
-  }
   section.ds-help-single-help-form h1 {
     font-size: 1.7rem;
     font-weight: bold;
@@ -13616,7 +13509,7 @@ section.ds-help-single-help-form h2.green {
   }
 }
 div.ds-help-logo {
-  background-image: url("/images/help/logo.png");
+  background-image: url("/images/help/logo.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -14186,6 +14079,7 @@ section.ds-news-add-new section.ds-news-preview div.ds-news-preview {
   width: calc( 200% + 40px );
   justify-content: space-between;
   transition: transform 0.7s;
+  background-color: white;
 }
 section.ds-news-add-new section.ds-news-preview div.ds-news-preview div.ds-news-view {
   width: calc( 50% - 20px );
@@ -14717,7 +14611,7 @@ section.ds-news-list-wrapper.on-single-element h1::before {
 }
 
 div.ds-news-logo {
-  background-image: url("/images/news/logo.png");
+  background-image: url("/images/news/logo.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -14929,14 +14823,14 @@ section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image 
 }
 section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.tasks,
 section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.projects {
-  background-image: url("/images/welcome/activities/tasks.png");
+  background-image: url("/images/welcome/activities/tasks.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   margin: 20px 0 20px 20px;
 }
 section.ds-weclome-wrapper div.ds-welcome-activites div.activity-view div.image div.projects {
-  background-image: url("/images/welcome/activities/projects.png");
+  background-image: url("/images/welcome/activities/projects.jpg");
 }
 
 @media screen and (max-width: 1000px) {
@@ -15368,7 +15262,7 @@ section.ds-weclome-wrapper div.ds-welcome-how-to-help div.how-to-help-content di
   width: 45%;
   height: 80%;
   margin: 30px;
-  background-image: url("/images/welcome/podatek.png");
+  background-image: url("/images/welcome/podatek.jpg");
   background-size: contain;
   background-position: center;
 }
@@ -15649,7 +15543,7 @@ section.ds-weclome-wrapper {
   }
 }
 section.ds-weclome-wrapper div.main-logo {
-  background-image: url("/images/welcome/main_logo.png");
+  background-image: url("/images/welcome/main_logo.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position-x: center;
@@ -16082,6 +15976,124 @@ section.ds-footer div.footer-box.info * {
           user-select: auto;
 }
 
+section.ds-contact div.ds-contact-logo {
+  background-image: url("/images/contact/logo.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.ds-contact div.ds-contact-logo h1 {
+  color: #35C828;
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: "Open Sans";
+}
+section.ds-contact div.ds-contact-form {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0px;
+}
+section.ds-contact div.ds-contact-form div.single-form {
+  flex-basis: 20%;
+  padding: 20px 0px;
+  border-left: 3px solid #35C828;
+}
+section.ds-contact div.ds-contact-form div.single-form div.line {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1rem;
+  text-align: center;
+}
+section.ds-contact div.ds-content-items {
+  margin-top: 100px;
+}
+section.ds-contact div.ds-content-items div.info {
+  text-align: center;
+}
+section.ds-contact div.ds-content-items div.info div.d-flex {
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 1000px) {
+  section.ds-contact div.ds-content-items div.info div.d-flex {
+    flex-direction: column;
+  }
+  section.ds-contact div.ds-content-items div.info div.d-flex i {
+    font-size: 5rem !important;
+  }
+}
+section.ds-contact div.ds-content-items div.info div.d-flex i {
+  color: #FDA24E;
+  font-size: 3rem;
+  margin-left: 20px;
+}
+section.ds-contact div.ds-content-items div.info div.d-flex h1 {
+  font-weight: bold;
+}
+section.ds-contact div.ds-content-items div.info span {
+  font-size: 1.3rem;
+}
+section.ds-contact div.ds-content-items div.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+section.ds-contact div.ds-content-items div.wrapper div.single-map {
+  width: 40%;
+}
+section.ds-contact div.ds-content-items div.wrapper div.single-map a {
+  width: 100%;
+}
+section.ds-contact div.ds-content-items div.wrapper div.single-map a img {
+  width: 100%;
+}
+section.ds-contact div.ds-content-items div.big-map {
+  margin-top: 100px;
+}
+section.ds-contact div.ds-content-items div.big-map img {
+  width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  section.ds-contact {
+    padding: 0 5vw;
+  }
+  section.ds-contact div.ds-contact-form {
+    flex-direction: column;
+  }
+  section.ds-contact div.ds-contact-form div.single-form {
+    border-left: none !important;
+    border-top: 3px solid #35C828;
+  }
+  section.ds-contact div.ds-content-items {
+    margin-top: 50px;
+  }
+  section.ds-contact div.ds-content-items div.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+  section.ds-contact div.ds-content-items div.wrapper div.single-map {
+    width: 100%;
+    margin-top: 50px;
+  }
+  section.ds-contact div.ds-content-items div.wrapper div.single-map a {
+    width: 100%;
+  }
+  section.ds-contact div.ds-content-items div.wrapper div.single-map a img {
+    width: 100%;
+  }
+  section.ds-contact div.ds-content-items div.big-map {
+    margin-top: 50px;
+  }
+}
 body {
   max-width: 100vw;
 }

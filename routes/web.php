@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/home',function(){
+    return redirect('/');
+});
 
 Route::get('/', function () {
     return view('welcome',[
@@ -121,3 +124,14 @@ Route::get('/o-nas/polityka-rodo','AboutUsController@rodo');
 Route::get('/o-nas/budowa-cert','AboutUsController@certIndex');
 //CERT-parter
 Route::get('/o-nas/budowa-cert/parter','AboutUsController@certParter');
+//CERT- pietro 1
+Route::get('/o-nas/budowa-cert/pietro-pierwsze','AboutUsController@certFirstFloor');
+//CERT- pietro 2
+Route::get('/o-nas/budowa-cert/pietro-drugie','AboutUsController@certSecondFloor');
+//
+//
+//
+//KONTAKT
+Route::get('/kontakt',function(){
+    return view('pages.contact');
+});

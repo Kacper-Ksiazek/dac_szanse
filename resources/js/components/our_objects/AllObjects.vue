@@ -18,7 +18,7 @@ export default {
                     type: "item",
                     title: "Niepubliczna Specjalistyczna Poradnia Psychologiczno-Pedagogiczna",
                     href: "http://www.poradnia-wadowice.pl/",
-                    img: "./images/ourObjects/item1.png",
+                    img: "./images/ourObjects/item1.jpg",
                     left: [
                         { icon: "fa fa-phone", value: "608 822 852" },
                         { icon: "fa fa-phone", value: "531 403 805" },
@@ -36,7 +36,7 @@ export default {
                     type: "item",
                     title: "Niepubliczny Ośrodek Rewalidacyjno-Wychowawczy",
                     href: "./nasze-placowki/niepubliczny-osrodek-rewalidacyjno-wychowawczy",
-                    img: "./images/ourObjects/item2.png",
+                    img: "/images/ourObjects/item2.jpg",
                     left: [],
                     right: []
                 },
@@ -44,7 +44,7 @@ export default {
                     type: "item",
                     title: `Świetlica Terapeutyczno-Integracyjna "Szansa"`,
                     href: "./nasze-placowki/swietlica-terapeutyczno-integracyjna-szansa",
-                    img: "./images/ourObjects/item2.png",
+                    img: "/images/ourObjects/item3.jpg",
                     left: [],
                     right: []
                 },
@@ -52,7 +52,7 @@ export default {
                     type: "item",
                     title: `Niepubliczny Punkt Przedszkolny "Dać Szansę"`,
                     href: "http://www.przedszkoledacszanse.pl/",
-                    img: "./images/ourObjects/item1.png",
+                    img: "/images/ourObjects/item4.jpg",
                     left: [],
                     right: []
                 },
@@ -60,7 +60,7 @@ export default {
                     type: "item",
                     title: `Spółdzielnia Socjalna "AMICUS"`,
                     href: "http://spoldzielniaamicus.pl/",
-                    img: "./images/ourObjects/item2.png",
+                    img: "/images/ourObjects/item5.jpg",
                     left: [],
                     right: []
                 }

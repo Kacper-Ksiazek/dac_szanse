@@ -29,11 +29,11 @@ class ProjectTest extends TestCase
         $project=Project::first();
         //
         $fileExistsInStorage= function () use($project){
-            return Storage::disk('public')->exists("/projects/{$project->title}/{$project->image}");
+            return Storage::disk('public')->exists("/projects/{$project->directory}/{$project->image}");
         };
         //
         $this->assertTrue($fileExistsInStorage());
-        if($fileExistsInStorage()) Storage::disk('public')->deleteDirectory("projects/{$project->title}");
+        if($fileExistsInStorage()) Storage::disk('public')->deleteDirectory("projects/{$project->directory}");
         $this->assertFalse($fileExistsInStorage());
         
     }

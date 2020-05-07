@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    <title>Dać Szansę | O nas</title>
+    <title>Dać Szansę | Budowa CERT</title>
 @endsection
 @section('content')
 <div class="w-100">

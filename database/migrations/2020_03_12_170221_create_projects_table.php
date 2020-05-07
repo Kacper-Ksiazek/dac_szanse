@@ -19,6 +19,7 @@ class CreateProjectsTable extends Migration
             $table->string('title');
             $table->date('since');
             $table->date('till');
+            $table->string('directory');
             $table->string('image')->nullable();
             $table->longText('content');
             $table->timestamps();

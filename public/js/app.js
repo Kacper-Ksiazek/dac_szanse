@@ -2291,7 +2291,7 @@ __webpack_require__.r(__webpack_exports__);
           img: "sekretariat/1.jpg",
           href: "#"
         }],
-        href: "#",
+        href: "/o-nas/budowa-cert/pietro-pierwsze",
         imagesPrefix: "/images/about/cert/pierwsze/"
       }, {
         header: "2. piętro",
@@ -2320,7 +2320,7 @@ __webpack_require__.r(__webpack_exports__);
           img: "zarzad/1.jpg",
           href: "#"
         }],
-        href: "#",
+        href: "/o-nas/budowa-cert/pietro-drugie",
         imagesPrefix: "/images/about/cert/drugie/"
       }]
     };
@@ -2518,32 +2518,32 @@ __webpack_require__.r(__webpack_exports__);
       awardsList: [{
         id: 0,
         content: "W latach 2008 i 2010 zostaliśmy dwukrotnym laureatem konkursu „Warto być za!  - konkurs organizowany był przez Kampanię Piwowarską. Wygrane pieniądze przeznaczone zostały na realizację wsparcia dla dzieci niepełnosprawnych w tym otwarcie pierwszej w powiecie  Sali Doświadczania Świata.",
-        image1: "nagroda1.png",
-        image2: "nagroda2.png",
+        image1: "nagroda1.jpg",
+        image2: "nagroda2.jpg",
         currentImage: 0,
         mobileShowText: false
       }, {
         id: 1,
         content: 'W 2008 zostaliśmy finalistami konkursu „Kryształy Soli" – za całokształt działalności na rzecz osób niepełnosprawnych.',
-        image1: "nagroda3.png",
+        image1: "nagroda3.jpg",
         mobileShowText: false
       }, {
         id: 2,
         content: "Działalność naszego Stowarzyszenia została dostrzeżona i w 2006 oraz 2007 roku byliśmy półfinalistami w konkursie o nagrodę Marszałka Województwa Małopolskiego „Kryształy Soli” w kategorii Polityka Społeczna.",
-        image1: "nagroda4.png",
-        image2: "nagroda5.png",
+        image1: "nagroda4.jpg",
+        image2: "nagroda5.jpg",
         currentImage: 0,
         mobileShowText: false
       }, {
         id: 3,
         content: 'W roku 2013 otrzymaliśmy Wyróżnienie w Konkursie o Nagrodę Marszałka Województwa Małopolskiego "Kryształy Soli" w kategorii polityka społeczna, zdrowie oraz działalność na rzecz osób niepełnosprawnych:',
-        image1: "nagroda6.png",
+        image1: "nagroda6.jpg",
         mobileShowText: false
       }, {
         id: 4,
         content: "A także pierwsze miejsce w kategorii Lodołamacz - instytucja.",
-        image1: "nagroda7.png",
-        image2: "nagroda8.png",
+        image1: "nagroda7.jpg",
+        image2: "nagroda8.jpg",
         currentImage: 0,
         mobileShowText: false
       }]
@@ -2853,20 +2853,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Tasks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Tasks */ "./resources/js/components/activities/index/Tasks.vue");
 /* harmony import */ var _Projects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Projects */ "./resources/js/components/activities/index/Projects.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -3588,13 +3574,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   components: {
     "project-content-field": _ViewOneProjectField_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  props: ["title", "content", "img", "next", "prev", "type", "since", "till"],
+  props: ["title", "content", "img", "next", "prev", "type", "since", "till", "directory"],
   computed: {
     contentToUse: function contentToUse() {
       if (_typeof(this.content) === "object") return this.content;else if (typeof this.content === "string") return JSON.parse(this.content);
     },
     hrefToUse: function hrefToUse() {
-      if (this.type === "preview") return this.img;else if (this.type === "view") return "/storage/projects/".concat(this.title, "/").concat(this.img);
+      if (this.type === "preview") return this.img;else if (this.type === "view") return "/storage/projects/".concat(this.directory, "/").concat(this.img);
     }
   },
   filters: {
@@ -3753,48 +3739,48 @@ __webpack_require__.r(__webpack_exports__);
         header: "Zajecia rehabilitacyjne",
         description: "Kinezyterapia, fizykoterapia i masaż.",
         href: "/dzialalnosc/zajecia/zajecia-rehabilitacyjne",
-        img: "rehabilitacja.png"
+        img: "rehabilitacja.jpg"
       }, {
         header: "Zajęcia integracji sensorycznej",
         description: "",
         href: "/dzialalnosc/zajecia/sala-ingegracji-sensorycznej",
-        img: "sensory.png"
+        img: "sensory.jpg"
       }, {
         header: "Zajęcia psychologiczno - pedagogiczno - logopedyczne",
         description: "Zajęcia prowadzone są w salach przy ul. Kochanowskiego w Wadowicach.",
         href: "/dzialalnosc/zajecia/psychologiczno-pedaogiczno-logopedyczne",
-        img: "logopeda.png"
+        img: "logopeda.jpg"
       }, {
         header: "Sala doświadczania świata",
         description: "Terapia w Sali Doświadczania Świata wpływa na wszechstronny rozwój stymulując bodźce.",
         href: "/dzialalnosc/zajecia/sala-doswiadczania-swiatla",
-        img: "swiatlo.png"
+        img: "swiatlo.jpg"
       }],
       taskList2: [{
         header: "Terapia Biofeedback",
         description: "EEG-Biofeedback to rodzaj terapii, dzięki której pacjent w sposób świadomy uczy się zmieniać wzorzec wytwarzanych fal w mózgu, tak aby mózg pracował wydajniej i szybciej.",
         href: "/dzialalnosc/zajecia/biofeedback",
-        img: "bio.png"
+        img: "bio.jpg"
       }, {
         header: "Hipoterapia",
         description: "Przywracanie zdrowia i usprawnianie przy pomocy koni i jazdy konnej.",
         href: "/dzialalnosc/zajecia/hipoterapia",
-        img: "hipoterapia.png"
+        img: "hipoterapia.jpg"
       }, {
         header: "Dogoterapia",
         description: "Dogoterapia to – najprościej rzecz ujmując – terapia z udziałem psa.",
         href: "/dzialalnosc/zajecia/dogoterapia",
-        img: "dogoterapia.png"
+        img: "dogoterapia.jpg"
       }, {
         header: "Muzykoterapia",
         description: "System umuzykalniający polegający na wyrażaniu muzyki ruchem.",
         href: "/dzialalnosc/zajecia/muzykoterapia",
-        img: "muzyka.png"
+        img: "muzyka.jpg"
       }, {
         header: "Arteterapia",
         description: "Arteterapia to \u2013 w najbardziej podstawowym wymiarze \u2013 \"terapia przez sztuk\u0119\".",
         href: "/dzialalnosc/zajecia/arteterapia",
-        img: "arteterapia.png"
+        img: "arteterapia.jpg"
       }]
     };
   }
@@ -3937,6 +3923,9 @@ __webpack_require__.r(__webpack_exports__);
     modal: _Modal__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   props: ["images", "prefix", "modal", "extensions", "header"],
+  mounted: function mounted() {
+    this.lazy();
+  },
   data: function data() {
     return {
       temporaryImages: this.images.slice(0, 3),
@@ -3947,11 +3936,24 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     setImagePath: function setImagePath(value) {
       if (this.prefix == "DONT_USE_FILE_EXTENSION") return value;else if (this.extensions !== false) return "".concat(this.prefix).concat(value, ".jpg");else return "".concat(this.prefix).concat(value);
+    },
+    lazy: function lazy() {
+      var _this = this;
+
+      setTimeout(function () {
+        _this.$refs.lazy.forEach(function (img) {
+          img.src = img.dataset.src;
+        });
+      }, 100);
     }
   },
   watch: {
     showAll: function showAll(value) {
       this.temporaryImages = value ? this.images : this.images.slice(0, 3);
+      this.lazy();
+    },
+    images: function images(value) {
+      this.temporaryImages = value.slice(0, 3);
     }
   }
 });
@@ -4020,6 +4022,133 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["data"]
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/contact/Main.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/contact/Main.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  //
+  data: function data() {
+    return {
+      contactForms: [{
+        firstLine: {
+          title: "Godziny pracy: ",
+          strong: "poniedziałek-piątek 7:30-15:30"
+        }
+      }, {
+        firstLine: {
+          title: "Recepcja: ",
+          strong: "(33)873-18-87"
+        }
+      }, {
+        firstLine: {
+          title: "Administracja: ",
+          strong: "697-280-553"
+        },
+        secondLine: {
+          title: "lub",
+          strong: "697-280-553"
+        }
+      }, {
+        firstLine: {
+          title: "email: ",
+          strong: "stowarzyszenie@dacszanse.pl"
+        }
+      }, {
+        firstLine: {
+          title: "Bank Pekao SA o/Wadowice: ",
+          strong: "89 1240 4197 1111 0000 46 92 9350"
+        },
+        secondLine: {
+          title: "Bank Alior Bank o/Wadowice",
+          strong: "60 2490 0005 0000 4530 8455 3611"
+        }
+      }]
+    };
+  }
 });
 
 /***/ }),
@@ -4319,7 +4448,7 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         header: {
           content: "Kontakt",
-          href: "#"
+          href: "/kontakt"
         }
       }]
     };
@@ -5406,7 +5535,7 @@ __webpack_require__.r(__webpack_exports__);
     setPrefix: function setPrefix() {
       var modal = this.modal,
           directory = this.directory;
-      if (!modal) return;else return "/storage/news/".concat(directory, "/gallery/");
+      if (!modal) return "DONT_USE_FILE_EXTENSION";else return "/storage/news/".concat(directory, "/gallery/");
     }
   }
 });
@@ -5445,7 +5574,7 @@ __webpack_require__.r(__webpack_exports__);
         type: "item",
         title: "Niepubliczna Specjalistyczna Poradnia Psychologiczno-Pedagogiczna",
         href: "http://www.poradnia-wadowice.pl/",
-        img: "./images/ourObjects/item1.png",
+        img: "./images/ourObjects/item1.jpg",
         left: [{
           icon: "fa fa-phone",
           value: "608 822 852"
@@ -5476,28 +5605,28 @@ __webpack_require__.r(__webpack_exports__);
         type: "item",
         title: "Niepubliczny Ośrodek Rewalidacyjno-Wychowawczy",
         href: "./nasze-placowki/niepubliczny-osrodek-rewalidacyjno-wychowawczy",
-        img: "./images/ourObjects/item2.png",
+        img: "/images/ourObjects/item2.jpg",
         left: [],
         right: []
       }, {
         type: "item",
         title: "\u015Awietlica Terapeutyczno-Integracyjna \"Szansa\"",
         href: "./nasze-placowki/swietlica-terapeutyczno-integracyjna-szansa",
-        img: "./images/ourObjects/item2.png",
+        img: "/images/ourObjects/item3.jpg",
         left: [],
         right: []
       }, {
         type: "item",
         title: "Niepubliczny Punkt Przedszkolny \"Da\u0107 Szans\u0119\"",
         href: "http://www.przedszkoledacszanse.pl/",
-        img: "./images/ourObjects/item1.png",
+        img: "/images/ourObjects/item4.jpg",
         left: [],
         right: []
       }, {
         type: "item",
         title: "Sp\xF3\u0142dzielnia Socjalna \"AMICUS\"",
         href: "http://spoldzielniaamicus.pl/",
-        img: "./images/ourObjects/item2.png",
+        img: "/images/ourObjects/item5.jpg",
         left: [],
         right: []
       }]
@@ -43108,45 +43237,7 @@ var render = function() {
   return _c(
     "section",
     { staticClass: "ds-a-wrapper" },
-    [
-      _c("activites-logo"),
-      _vm._v(" "),
-      _c("div", { staticClass: "ds-a-control" }, [
-        _c(
-          "span",
-          {
-            staticClass: "ds-a-control-header",
-            class: _vm.currentActivity == "tasks" ? "active" : null,
-            on: {
-              click: function($event) {
-                _vm.currentActivity = "tasks"
-              }
-            }
-          },
-          [_vm._v("Zajecia")]
-        ),
-        _vm._v(" "),
-        _c(
-          "span",
-          {
-            staticClass: "ds-a-control-header",
-            class: _vm.currentActivity == "projects" ? "active" : null,
-            on: {
-              click: function($event) {
-                _vm.currentActivity = "projects"
-              }
-            }
-          },
-          [_vm._v("Projekty")]
-        )
-      ]),
-      _vm._v(" "),
-      _vm.currentActivity === "tasks" ? _c("tasks") : _vm._e(),
-      _vm._v(" "),
-      _vm.currentActivity === "projects" ? _c("projects") : _vm._e(),
-      _vm._v(" "),
-      _vm._m(0)
-    ],
+    [_c("activites-logo"), _vm._v(" "), _vm._m(0)],
     1
   )
 }
@@ -43156,17 +43247,15 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "ds-a-navs" }, [
-      _c(
-        "a",
-        { staticClass: "left", attrs: { href: "/dzialalnosc/zajecia" } },
-        [_vm._v("Pokaz zajecia")]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        { staticClass: "right", attrs: { href: "/dzialalnosc/projekty" } },
-        [_vm._v("Pokaz projekty")]
-      )
+      _c("div", { staticClass: "wrapper" }, [
+        _c("a", { attrs: { href: "/dzialalnosc/zajecia" } }, [
+          _vm._v("Pokaż zajęcia")
+        ]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "/dzialalnosc/projekty" } }, [
+          _vm._v("Pokaż projekty")
+        ])
+      ])
     ])
   }
 ]
@@ -44372,7 +44461,13 @@ var render = function() {
                 }
               }
             },
-            [_c("img", { attrs: { src: _vm.setImagePath(item) } })]
+            [
+              _c("img", {
+                ref: "lazy",
+                refInFor: true,
+                attrs: { "data-src": _vm.setImagePath(item) }
+              })
+            ]
           )
         }),
         0
@@ -44554,6 +44649,168 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "ds-a-tasks-logo logo" }, [
       _c("h1", [_vm._v("Zajęcia")])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/contact/Main.vue?vue&type=template&id=5b30f633&":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/contact/Main.vue?vue&type=template&id=5b30f633& ***!
+  \***************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("section", { staticClass: "ds-contact" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "ds-contact-form" },
+      _vm._l(_vm.contactForms, function(item, index) {
+        return _c("div", { key: index, staticClass: "single-form" }, [
+          _c("div", { staticClass: "line" }, [
+            _c("span", {
+              domProps: { textContent: _vm._s(item.firstLine.title) }
+            }),
+            _vm._v(" "),
+            _c("strong", {
+              domProps: { textContent: _vm._s(item.firstLine.strong) }
+            })
+          ]),
+          _vm._v(" "),
+          item.secondLine
+            ? _c("div", { staticClass: "line" }, [
+                _c("span", {
+                  domProps: { textContent: _vm._s(item.secondLine.title) }
+                }),
+                _vm._v(" "),
+                _c("strong", {
+                  domProps: { textContent: _vm._s(item.secondLine.strong) }
+                })
+              ])
+            : _vm._e()
+        ])
+      }),
+      0
+    ),
+    _vm._v(" "),
+    _vm._m(1)
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "ds-contact-logo logo" }, [
+      _c("h1", [_vm._v("Kontakt")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "ds-content-items" }, [
+      _c("div", { staticClass: "wrapper" }, [
+        _c("div", { staticClass: "single-map" }, [
+          _c("div", { staticClass: "info" }, [
+            _c("div", { staticClass: "d-flex" }, [
+              _c("i", { staticClass: "fa fa-location-arrow" }),
+              _vm._v(" "),
+              _c("h1", [_vm._v("Stowarzyszenie+ Poradnia+ NOREW")])
+            ]),
+            _vm._v(" "),
+            _c("span", [_vm._v("34-100 Wadowice ul. Kochanowskiego 42")])
+          ]),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              attrs: {
+                href:
+                  "https://www.google.com/maps/place/Jana+Kochanowskiego+42,+34-100+Wadowice",
+                target: "_blank"
+              }
+            },
+            [
+              _c("img", {
+                attrs: { src: "/images/contact/maps/poradnia.jpg", alt: "" }
+              })
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "single-map" }, [
+          _c("div", { staticClass: "info" }, [
+            _c("div", { staticClass: "d-flex" }, [
+              _c("i", { staticClass: "fa fa-location-arrow" }),
+              _vm._v(" "),
+              _c("h1", [_vm._v("Spółdzielnia")])
+            ]),
+            _vm._v(" "),
+            _c("span", [
+              _vm._v("34-100 Wadowice Os. XX-lecia Konstytucji RP 19/1")
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              attrs: {
+                href:
+                  "https://www.google.com/maps/search/34-100+Wadowice+Os.+XX-lecia+Konstytucji+RP+19%2F1",
+                target: "_blank"
+              }
+            },
+            [
+              _c("img", {
+                attrs: { src: "/images/contact/maps/spoldzielnia.jpg", alt: "" }
+              })
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "big-map" }, [
+        _c("div", { staticClass: "info" }, [
+          _c("div", { staticClass: "d-flex" }, [
+            _c("i", { staticClass: "fa fa-location-arrow" }),
+            _vm._v(" "),
+            _c("h1", [_vm._v("Stowarzyszenie+ Poradnia+ NOREW")])
+          ]),
+          _vm._v(" "),
+          _c("span", [_vm._v("34-100 Wadowice ul. Kochanowskiego 42")])
+        ]),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            attrs: {
+              href:
+                "https://www.google.com/maps/place/Ko%C5%9Bcielna+3,+34-123+Chocznia",
+              target: "_blank"
+            }
+          },
+          [
+            _c("img", {
+              attrs: { src: "/images/contact/maps/przedszkole.jpg", alt: "" }
+            })
+          ]
+        )
+      ])
     ])
   }
 ]
@@ -45161,7 +45418,21 @@ var render = function() {
     _vm._v(" "),
     _vm.loading
       ? _c("div", { ref: "loading", staticClass: "ds-news-add-loading" }, [
-          _vm._m(2)
+          _c("div", { staticClass: "body" }, [
+            _vm._m(2),
+            _vm._v(" "),
+            _c("div", { staticClass: "buttons" }, [
+              _vm._m(3),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "/aktualnosci/" + _vm.title } }, [
+                _c("button", { staticClass: "green" }, [
+                  _vm._v("Przejdź do aktualności")
+                ])
+              ]),
+              _vm._v(" "),
+              _vm._m(4)
+            ])
+          ])
         ])
       : _vm._e()
   ])
@@ -45186,34 +45457,32 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "body" }, [
-      _c("div", { staticClass: "loading" }, [
-        _c("span", { staticClass: "loading" }, [
-          _c("span"),
-          _vm._v(" "),
-          _c("span"),
-          _vm._v(" "),
-          _c("span")
-        ]),
+    return _c("div", { staticClass: "loading" }, [
+      _c("span", { staticClass: "loading" }, [
+        _c("span"),
         _vm._v(" "),
-        _c("i", { staticClass: "fa fa-check" })
+        _c("span"),
+        _vm._v(" "),
+        _c("span")
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "buttons" }, [
-        _c("a", { attrs: { href: "" } }, [
-          _c("button", [_vm._v("Strona główna")])
-        ]),
-        _vm._v(" "),
-        _c("a", { attrs: { href: "" } }, [
-          _c("button", { staticClass: "green" }, [
-            _vm._v("Przejdź do aktualności")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("a", { attrs: { href: "" } }, [
-          _c("button", [_vm._v("Dodaj kolejny")])
-        ])
-      ])
+      _c("i", { staticClass: "fa fa-check" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "/" } }, [
+      _c("button", [_vm._v("Strona główna")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "/admin/dodaj-aktualnosc" } }, [
+      _c("button", [_vm._v("Dodaj kolejną")])
     ])
   }
 ]
@@ -46231,7 +46500,10 @@ var render = function() {
     _vm._v(" "),
     _vm.showPreviw() && _vm.type === "view"
       ? _c("a", { attrs: { href: _vm.getHref() } }, [_vm._v("Zobacz wiecej")])
-      : _c("div", { staticClass: "error" }, [
+      : _vm._e(),
+    _vm._v(" "),
+    !_vm.showPreviw()
+      ? _c("div", { staticClass: "error" }, [
           _c("i", { staticClass: "fa fa-bullhorn" }),
           _vm._v(" "),
           _c("h2", [_vm._v("Problem mamy!")]),
@@ -46250,6 +46522,7 @@ var render = function() {
               : _vm._e()
           ])
         ])
+      : _vm._e()
   ])
 }
 var staticRenderFns = []
@@ -60100,7 +60373,9 @@ Vue.component("ds-footer", __webpack_require__(/*! ./components/Footer.vue */ ".
 
 Vue.component("cert-index", __webpack_require__(/*! ./components/about/cert/Index.vue */ "./resources/js/components/about/cert/Index.vue")["default"]); //Cert- jedno pietro
 
-Vue.component("cert-floor", __webpack_require__(/*! ./components/about/cert/Floor.vue */ "./resources/js/components/about/cert/Floor.vue")["default"]);
+Vue.component("cert-floor", __webpack_require__(/*! ./components/about/cert/Floor.vue */ "./resources/js/components/about/cert/Floor.vue")["default"]); //Kontakt
+
+Vue.component("contact", __webpack_require__(/*! ./components/contact/Main.vue */ "./resources/js/components/contact/Main.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -62316,6 +62591,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TasksLogo_vue_vue_type_template_id_174e7b3e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TasksLogo_vue_vue_type_template_id_174e7b3e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/contact/Main.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/components/contact/Main.vue ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Main_vue_vue_type_template_id_5b30f633___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Main.vue?vue&type=template&id=5b30f633& */ "./resources/js/components/contact/Main.vue?vue&type=template&id=5b30f633&");
+/* harmony import */ var _Main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Main.vue?vue&type=script&lang=js& */ "./resources/js/components/contact/Main.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Main_vue_vue_type_template_id_5b30f633___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Main_vue_vue_type_template_id_5b30f633___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/contact/Main.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/contact/Main.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/contact/Main.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Main.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/contact/Main.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/contact/Main.vue?vue&type=template&id=5b30f633&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/contact/Main.vue?vue&type=template&id=5b30f633& ***!
+  \*********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Main_vue_vue_type_template_id_5b30f633___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Main.vue?vue&type=template&id=5b30f633& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/contact/Main.vue?vue&type=template&id=5b30f633&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Main_vue_vue_type_template_id_5b30f633___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Main_vue_vue_type_template_id_5b30f633___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

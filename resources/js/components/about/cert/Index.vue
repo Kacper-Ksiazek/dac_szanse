@@ -51,7 +51,7 @@ export default {
                         { title: "Poczekalnia", img: "poczekalnia/5.jpg", href: "#" },
                         { title: "Sekretariat", img: "sekretariat/1.jpg", href: "#" }
                     ],
-                    href: "#",
+                    href: "/o-nas/budowa-cert/pietro-pierwsze",
                     imagesPrefix: "/images/about/cert/pierwsze/"
                 },
                 {
@@ -64,7 +64,7 @@ export default {
                         { title: "Sekretariat", img: "wice_prezes_zarzadu/1.jpg", href: "#" },
                         { title: "Zarząd", img: "zarzad/1.jpg", href: "#" }
                     ],
-                    href: "#",
+                    href: "/o-nas/budowa-cert/pietro-drugie",
                     imagesPrefix: "/images/about/cert/drugie/"
                 }
             ]

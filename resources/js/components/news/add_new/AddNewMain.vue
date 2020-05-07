@@ -89,9 +89,9 @@
                     <i class="fa fa-check"></i>
                 </div>
                 <div class="buttons">
-                    <a href=""><button>Strona główna</button></a>
-                    <a href=""><button class="green">Przejdź do aktualności</button></a>
-                    <a href=""><button>Dodaj kolejny</button></a>
+                    <a href="/"><button>Strona główna</button></a>
+                    <a :href="`/aktualnosci/${title}`"><button class="green">Przejdź do aktualności</button></a>
+                    <a href="/admin/dodaj-aktualnosc"><button>Dodaj kolejną</button></a>
                 </div>
             </div>
         </div>

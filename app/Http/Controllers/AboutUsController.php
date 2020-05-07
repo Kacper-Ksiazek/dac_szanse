@@ -20,5 +20,11 @@ class AboutUsController extends Controller
     public function certParter(){
         return view('pages.about.cert.parter');
     }
+    public function certFirstFloor(){
+        return view('pages.about.cert.pierwsze');
+    }
+    public function certSecondFloor(){
+        return view('pages.about.cert.drugie');
+    }
     //
 }

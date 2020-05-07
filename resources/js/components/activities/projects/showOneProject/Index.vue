@@ -36,7 +36,7 @@
 import ViewOneProject from "./ViewOneProjectField.vue";
 export default {
     components: { "project-content-field": ViewOneProject },
-    props: ["title", "content", "img", "next", "prev", "type", "since", "till"],
+    props: ["title", "content", "img", "next", "prev", "type", "since", "till", "directory"],
     computed: {
         contentToUse() {
             if (typeof this.content === "object") return this.content;
@@ -44,7 +44,7 @@ export default {
         },
         hrefToUse() {
             if (this.type === "preview") return this.img;
-            else if (this.type === "view") return `/storage/projects/${this.title}/${this.img}`;
+            else if (this.type === "view") return `/storage/projects/${this.directory}/${this.img}`;
         }
     },
     filters: {

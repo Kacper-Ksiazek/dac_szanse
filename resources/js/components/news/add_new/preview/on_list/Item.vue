@@ -10,7 +10,7 @@
         </div>
         <a v-if="showPreviw() && type === 'preview'">Zobacz wiecej</a>
         <a v-if="showPreviw() && type === 'view'" :href="getHref()">Zobacz wiecej</a>
-        <div class="error" v-else>
+        <div class="error" v-if="!showPreviw()">
             <i class="fa fa-bullhorn"></i>
             <h2>Problem mamy!</h2>
             <p>Żeby wyświetlić ten podgląd musisz podać:</p>

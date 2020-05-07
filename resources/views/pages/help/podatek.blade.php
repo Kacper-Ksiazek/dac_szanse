@@ -29,7 +29,7 @@
                     Aby okazać wsparcie, wystarczy w zeznaniu PIT wpisać
                     <strong>numer KRS Stowarzyszenia- 0000146813</strong>
                 </p>
-                <img src="/images/help/podatek/log.png" alt="" class="tax-log">
+                <img src="/images/help/podatek/log.jpg" alt="" class="tax-log">
             </div>
             <div class="img"></div>
         </div>

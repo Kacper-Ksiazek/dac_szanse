@@ -100,7 +100,7 @@ export default {
                     ]
                 },
                 {
-                    header: { content: "Kontakt", href: "#" }
+                    header: { content: "Kontakt", href: "/kontakt" }
                 }
             ]
         };

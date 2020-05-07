@@ -12,6 +12,7 @@
     <section class="ds-news-list-wrapper on-single-element">
         <h1>Zobacz również</h1>
         @foreach ($recommended as $item)
+            @if ($item)
             <news-on-list
                 type="view"
                 date="{{$item->date}}"
@@ -20,6 +21,7 @@
                 content="{{$item->content}}"
                 directory="{{$item->directory}}"
             ></news-on-list>
+            @endif
         @endforeach
     </section>
         

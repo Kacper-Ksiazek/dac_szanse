@@ -38,7 +38,7 @@ export default {
         },
         setPrefix() {
             const { modal, directory } = this;
-            if (!modal) return;
+            if (!modal) return "DONT_USE_FILE_EXTENSION";
             else return `/storage/news/${directory}/gallery/`;
         }
     }
