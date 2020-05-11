@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/home',function(){
     return redirect('/');
 });
@@ -22,7 +23,8 @@ Route::get('/', function () {
     ]);
 });
 
-Auth::routes();
+Auth::routes(['register' => false]);
+
 Route::get('/logout','Auth\LoginController@logout');
 //Home
 
