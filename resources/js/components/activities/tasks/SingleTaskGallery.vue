@@ -6,7 +6,7 @@
                 <img :data-src="setImagePath(item)" ref="lazy" />
             </div>
         </div>
-        <button v-if="images.length > 3" class="ds-show-more-green mt-3" @click="showAll = !showAll" v-text="showAll ? 'Ukryj' : 'Pokaż wszystkie'"></button>
+        <button v-if="images.length > 3" class="ds-show-more-green mt-3" @click="showAll ? closeGallery() : openGallery()" v-text="showAll ? 'Ukryj' : 'Pokaż wszystkie'"></button>
         <modal :index="modalIndex" :all_images="images" @close="modalIndex = -1" v-if="modalIndex >= 0 && modal !== false" :prefix="prefix" :extensions="extensions"></modal>
     </section>
 </template>
@@ -22,7 +22,8 @@ export default {
         return {
             temporaryImages: this.images.slice(0, 3),
             showAll: false,
-            modalIndex: -1
+            modalIndex: -1,
+            posY: null
         };
     },
     methods: {
@@ -37,6 +38,21 @@ export default {
                     img.src = img.dataset.src;
                 });
             }, 100);
+        },
+        openGallery() {
+            this.showAll = true;
+            this.posY = scrollY;
+        },
+        closeGallery() {
+            scrollTo({
+                top: this.posY,
+                left: 0,
+                behavior: "smooth"
+            });
+            setTimeout(() => {
+                this.showAll = false;
+            }, 300);
+            this.posY = null;
         }
     },
     watch: {

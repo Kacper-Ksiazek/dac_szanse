@@ -1,0 +1,254 @@
+section.ds-landing-help
+    width: 100%
+    min-height: 600px
+    margin-top: 100px
+    position: relative
+    border-bottom: 20px solid rgb(158,183,43)
+    &::after
+        content: ''
+        position: absolute
+        top: 1px
+        right: 0
+        height: 100%
+        width: 100%
+        background-size: contain
+        background-repeat: no-repeat
+        background-position-x: right
+        background-image: url('/images/welcome/tree.png')
+        @media screen and ( max-width: 1000px )
+            background-image: none
+    div.content
+        position: relative
+        z-index: 2
+        div.text
+            padding: 5% 0 0 10%
+            opacity: 0
+            font-family: 'Lato', sans-serif
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            cursor: default
+            user-select: none
+            
+            h1.you
+                text-transform: uppercase
+                font-size: 3.5rem
+                margin: 0
+                font-weight: bold
+                color: $dsBlue
+            h1.dac-szanse
+                font-size: 8rem
+                font-weight: bold
+                margin-top: -20px
+                margin-left: 10px
+                color: $dsPink
+            a.how-to-help
+                font-size: 2rem
+                text-transform: uppercase
+                text-decoration: none
+                background-color: $dsBlue
+                color: #fff
+                padding: 0 25px
+                font-weight: bold
+                margin-left: 250px
+                border: 4px solid $dsBlue
+                box-sizing: border-box
+                position: relative
+                overflow: hidden
+                letter-spacing: 1px
+                &::after
+                    content: ''
+                    position: absolute
+                    top: -102%
+                    width: 10%
+                    height: 100%
+                    right: 0
+                    background-color: white
+                    transition: top .3s, width .3s .3s
+                span
+                    position: relative
+                    z-index: 5
+                    transition: color .3s .1s
+                &:hover
+                    &::after
+                        top: 0
+                        width: 100%
+                    span
+                        color: $dsBlue
+        div.tree
+            display: none
+        div.help-forms
+            width: 60%
+            margin-top: 50px
+            height: 150px
+            margin-left: 40px
+            display: flex
+            justify-content: space-between
+            div.single-help-form
+                width: 18%
+                height: 100%
+                background-size: contain
+                background-position: center
+                background-repeat: no-repeat
+            @media screen and ( max-width: 730px )
+                justify-content: space-evenly
+                flex-wrap: wrap
+                height: 300px
+                div.single-help-form
+                    width: 30%
+                    height: 50%
+            @media screen and ( max-width: 500px )
+                height: 200px
+        @media screen and ( max-width: 1000px )
+            div.text
+                padding: 5% 0 0 5%
+                @media screen and ( max-width: 730px )
+                    padding: 5% 0 0 10%
+                    h1.you
+                        font-size: 2.5rem
+                    h1.dac-szanse
+                        font-size: 6rem
+                        margin-left: 10px
+                    a.how-to-help
+                        font-size: 2rem
+                        padding: 0 25px
+                        font-weight: bold
+                        margin-left: 150px
+                //
+                @media screen and ( max-width: 650px )
+                    padding: 5% 0 0 8%
+                //
+                @media screen and ( max-width: 600px )
+                    padding: 5% 0 0 3%
+                //
+                @media screen and ( max-width: 580px )
+                    a.how-to-help
+                        font-size: 1.5rem
+                        margin-left: 0
+                        align-self: flex-end
+                        margin-right: 30px
+                //
+                @media screen and ( max-width: 530px )
+                    h1.you
+                        font-size: 2rem
+                    h1.dac-szanse
+                        font-size: 5rem
+                //
+                @media screen and ( max-width: 500px )
+                    padding: 0
+                    h1.you
+                        font-size: 2rem
+                        padding-left: 10px
+                    h1.dac-szanse
+                        font-size: 5rem
+                        padding-left: 10px
+                    a.how-to-help
+                        align-self: center
+                        margin: 0
+                //
+                @media screen and ( max-width: 430px )
+                    h1.dac-szanse
+                        font-size: 4rem
+                //
+                @media screen and ( max-width: 360px )
+                    h1.dac-szanse
+                        font-size: 3.5rem
+                    
+            div.help-forms
+                width: 100%
+                margin-left: 0
+                padding: 0 20px
+            div.tree
+                width: 100%
+                height: 250px
+                background-size: contain
+                background-repeat: no-repeat
+                background-position: bottom center
+                background-image: url('/images/welcome/tree.png')
+                display: block
+
+//ANIMATIONS
+section.ds-landing-help.active
+    div.text
+        overflow: hidden
+        opacity: 1 !important
+        h1.you
+            background-color: red
+            animation: lp-help-you 1.5s 1.1s both
+            z-index: 3
+            @keyframes lp-help-you
+                0%
+                    transform: translateX(-150%)
+                    background-color: $dsBlue
+                60%
+                    transform: translateX(0)
+                    background-color: $dsBlue
+                75%
+                    transform: translateX(0)
+                    background-color: $dsBlue
+                100%
+                    transform: translateX(0)
+                    background-color: transparent
+        h1.dac-szanse
+            position: relative
+            overflow: hidden
+            animation: lp-help-dac-szanse1 .1s .9s both
+            background-color: #f8fafc
+            z-index: 2
+            @keyframes lp-help-dac-szanse1
+                from
+                    color: #f8fafc
+                to
+                    color: $dsPink
+            &::after
+                content: ''
+                position: absolute
+                top: 0
+                left: 0
+                background-color: $dsPink
+                height: 100%
+                width: 100%
+                animation: lp-help-dac-szanse2 1.5s .2s both
+                @keyframes lp-help-dac-szanse2
+                    0%
+                        transform: translate(0, -150%)
+                    50%
+                        transform: translate(0, 0)
+                    75%
+                        transform: translate(0, 0)
+                    100%
+                        transform: translate(101%, 0)
+        a.how-to-help
+            position: relative
+            z-index: 1
+            animation: lp-help-dac-a-how 1.3s 1.3s both
+            transform-origin: left
+            @keyframes lp-help-dac-a-how
+                0%
+                    transform: translateY(-150%) scaleX(.2)
+                    color: $dsBlue
+                25%
+                    transform: translateY(0) scaleX(.2)
+                    color: $dsBlue
+                50%
+                    transform: translateY(0) scaleX(.2)
+                    color: $dsBlue
+                85%
+                    transform: translateY(0) scaleX(1)
+                    color: $dsBlue
+                100%
+                    color: #fff
+    div.help-forms
+        div.single-help-form
+            &:nth-of-type(1)
+                animation: lp-news-a-all 1s 1.8s both
+            &:nth-of-type(2)
+                animation: lp-news-a-all 1s 2s both    
+            &:nth-of-type(3)
+                animation: lp-news-a-all 1s 2.2s both    
+            &:nth-of-type(4)
+                animation: lp-news-a-all 1s 2.4s both    
+            &:nth-of-type(5)
+                animation: lp-news-a-all 1s 2.6s both
+                
+        

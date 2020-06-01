@@ -1,8 +1,11 @@
 <template>
     <div>
         <!-- OPEN MOBILE MENU -->
-        <button class="ds-menu-navbar-toggler" type="button" @click="openMobileMenu"><i class="fa fa-bars"></i></button>
-
+        <span class="open-mobile-menu" @click="mobileMenu ? exitMobileMenu() : (mobileMenu = true)" :class="{ active: mobileMenu }">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </span>
         <div class="" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto"></ul>
@@ -21,24 +24,25 @@
             </ul>
             <!-- MOBILE MENU -->
             <div class="ds-menu-small" v-if="mobileMenu">
-                <!-- HEADER -->
-                <div class="ds-menu-small-logo">
-                    <div>
-                        <div class="ds-menu-small-logo-img"></div>
-                        <button class="btn btn-primary" @click="exitMobileMenu"><i class="fa fa-times"></i></button>
-                    </div>
-                </div>
                 <!-- IMAGES -->
-                <section class="ds-menu-small-content" :style="setTransform()">
-                    <div class="small-nav-item" v-for="(nav, index) in navs" :key="nav.header.content" :class="developItemIndex === index ? 'active' : ''">
-                        <span class="ds-menu-small-nav-header">
-                            <i v-if="nav.body" class="fa fa-chevron-down" @click="developItemIndex = developItemIndex === index ? -1 : index"></i>
-                            <span v-else class="indent"></span>
-                            <a :href="nav.header.href" v-text="nav.header.content"></a>
-                        </span>
-                        <br />
-                        <div>
-                            <a v-for="task in nav.body" :key="task.content" v-text="task.content" :href="task.href" class="ds-menu-small-dropdown-item"></a>
+                <section class="ds-menu-small-content">
+                    <div class="navs-wrapper">
+                        <div
+                            class="small-nav-item"
+                            v-for="(nav, index) in navs"
+                            :key="nav.header.content"
+                            :class="developItemIndex === index ? 'active' : ''"
+                            :style="setTransform()"
+                        >
+                            <span class="ds-menu-small-nav-header">
+                                <i v-if="nav.body" class="fa fa-chevron-down" @click="developItemIndex = developItemIndex === index ? -1 : index"></i>
+                                <span v-else class="indent"></span>
+                                <a :href="nav.header.href" v-text="nav.header.content"></a>
+                            </span>
+                            <br />
+                            <div>
+                                <a v-for="task in nav.body" :key="task.content" v-text="task.content" :href="task.href" class="ds-menu-small-dropdown-item"></a>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -110,9 +114,6 @@ export default {
             const { developItemIndex } = this;
             if (developItemIndex === -1) return "";
             return `transform: translateY(-${developItemIndex * 60}px)`;
-        },
-        openMobileMenu() {
-            this.mobileMenu = true;
         },
         exitMobileMenu(e) {
             const el = document.querySelector("div.ds-menu-small");

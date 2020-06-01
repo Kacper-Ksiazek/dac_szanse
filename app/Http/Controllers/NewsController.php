@@ -9,8 +9,13 @@ use Illuminate\Support\Facades\DB;
 class NewsController extends Controller
 {
     public function index(){
+        $news=[];
+        foreach (News::all() as $item) {
+            array_unshift($news,$item->toArray());
+        }
+        // 
         return view('pages.news.index',[
-            'news'=>News::all()
+            'news'=>json_encode($news)
         ]);
     }
     //

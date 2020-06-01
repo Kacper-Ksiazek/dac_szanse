@@ -15,7 +15,7 @@
                     <!--  -->
                     <div class="img-wrapper">
                         <span class="black"></span>
-                        <a :href="feature.href">Zobacz</a>
+                        <a :href="`${floor.href}#${feature.href}`">Zobacz</a>
                         <img :src="`${floor.imagesPrefix}${feature.img}`" />
                     </div>
                 </div>
@@ -28,16 +28,15 @@ export default {
     data() {
         return {
             currentActiveFloor: null,
-            // currentActiveFloor: 0,
             floorsList: [
                 {
                     header: "Parter",
                     features: [
-                        { title: "Budynek", img: "budynek/1.jpg", href: "#" },
-                        { title: "Recepcja ", img: "recepcja/3.jpg", href: "#" },
-                        { title: "Poczekalnia ", img: "poczekalnia/5.jpg", href: "#" },
-                        { title: "Sale rehabilitacyjne", img: "sala/16.jpg", href: "#" },
-                        { title: "Darczyńcy", img: "darczyncy/2.jpg", href: "#" }
+                        { title: "Budynek", img: "budynek/1.jpg", href: "budynek" },
+                        { title: "Recepcja ", img: "recepcja/3.jpg", href: "recepcja" },
+                        { title: "Poczekalnia ", img: "poczekalnia/5.jpg", href: "poczekalnia" },
+                        { title: "Sale rehabilitacyjne", img: "sala/16.jpg", href: "sala-rehabilitacyjne" },
+                        { title: "Darczyńcy", img: "darczyncy/2.jpg", href: "darczyncy" }
                     ],
                     href: "/o-nas/budowa-cert/parter",
                     imagesPrefix: "/images/about/cert/parter/"
@@ -45,11 +44,11 @@ export default {
                 {
                     header: "1. piętro",
                     features: [
-                        { title: "Dyrektor", img: "dyrektor/1.jpg", href: "#" },
-                        { title: "Gabinety terapeutyczne ", img: "gabinety/5.jpg", href: "#" },
-                        { title: "OREW ", img: "OREW/3.jpg", href: "#" },
-                        { title: "Poczekalnia", img: "poczekalnia/5.jpg", href: "#" },
-                        { title: "Sekretariat", img: "sekretariat/1.jpg", href: "#" }
+                        { title: "Dyrektor", img: "dyrektor/1.jpg", href: "dyrektor" },
+                        { title: "Gabinety terapeutyczne ", img: "gabinety/5.jpg", href: "gabinety" },
+                        { title: "OREW ", img: "OREW/3.jpg", href: "orew" },
+                        { title: "Poczekalnia", img: "poczekalnia/5.jpg", href: "poczekalnia" },
+                        { title: "Sekretariat", img: "sekretariat/1.jpg", href: "sekretariat" }
                     ],
                     href: "/o-nas/budowa-cert/pietro-pierwsze",
                     imagesPrefix: "/images/about/cert/pierwsze/"
@@ -57,12 +56,12 @@ export default {
                 {
                     header: "2. piętro",
                     features: [
-                        { title: "Administracja", img: "administracja/1.jpg", href: "#" },
-                        { title: "Gabinety terapeutyczne ", img: "gabinety/9.jpg", href: "#" },
+                        { title: "Administracja", img: "administracja/1.jpg", href: "administracja" },
+                        { title: "Gabinety terapeutyczne ", img: "gabinety/9.jpg", href: "gabinety" },
                         { title: "Główny księgowy ", img: "ksiegowy/1.jpg", href: "ksiegowy" },
-                        { title: "Ksiegowosc", img: "ksiegowosc/1.jpg", href: "#" },
-                        { title: "Sekretariat", img: "wice_prezes_zarzadu/1.jpg", href: "#" },
-                        { title: "Zarząd", img: "zarzad/1.jpg", href: "#" }
+                        { title: "Księgowość", img: "ksiegowosc/1.jpg", href: "ksiegowosc" },
+                        { title: "Sekretariat", img: "wice_prezes_zarzadu/1.jpg", href: "sekretariat" },
+                        { title: "Zarząd", img: "zarzad/1.jpg", href: "zarzad" }
                     ],
                     href: "/o-nas/budowa-cert/pietro-drugie",
                     imagesPrefix: "/images/about/cert/drugie/"

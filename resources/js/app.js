@@ -67,8 +67,9 @@ Vue.component("news-index", require("./components/news/NewsIndex.vue").default);
 Vue.component("about-logo", require("./components/about/Logo.vue").default);
 //Index
 Vue.component("about-index", require("./components/about/index/IndexMain.vue").default);
-//WITAMY
-Vue.component("welcome", require("./components/welcome/WelcomeWrapper.vue").default);
+//STRONA GŁÓWNA STARA
+// Vue.component("welcome", require("./components/welcome/WelcomeWrapper.vue").default);
+Vue.component("landing-page", require("./components/landing_page/Main.vue").default);
 //STOPKA
 Vue.component("ds-footer", require("./components/Footer.vue").default);
 //Budowa CERT- index

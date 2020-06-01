@@ -1,0 +1,200 @@
+section.ds-landing-news
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin-top: 100px
+    @media screen and ( max-width: 1000px )
+        margin-top: 50px
+    div.content
+        margin-top: 20px
+        width: 100%
+        justify-content: space-evenly
+        display: flex
+        div.single-news
+            width: 23%
+            display: flex
+            flex-direction: column
+            align-items: center
+            font-family: 'Lato', sans-serif
+            div.img
+                width: 18vw
+                height: 18vw
+                border: 4px solid $deafultGreen
+                border-radius: 20px
+                background-size: cover
+                background-repeat: no-repeat
+                background-position: center
+                position: relative
+                &::after
+                    content: ''
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    width: calc(100% + 10px)
+                    height: calc(100% + 10px)
+                    background-color: #f8fafc
+                    transform: translate(-50%,-50%)
+                
+                
+            h1.title
+                font-size: 1.8rem
+                padding-bottom: 10px
+                margin: 10px 0
+                font-weight: 900
+                position: relative
+                text-align: center
+                &::after
+                    content: ''
+                    position: absolute
+                    bottom: 0px
+                    left: 50%
+                    height: 3px
+                    width: 75%
+                    transform: translateX(-50%)
+                    background-color: $dsPink
+            p
+                font-size: 1.2rem
+                text-align: center
+            a.read-more
+                background-color: $dsPink
+                color: white
+                padding: 0px 35px
+                font-size: 1.2rem
+                text-transform: uppercase
+                text-decoration: none
+                border: 3px solid $dsPink
+                position: relative
+                overflow: hidden
+                &::after
+                    content: ''
+                    position: absolute
+                    top: -100%
+                    left: 0
+                    background-color: #fff
+                    height: 100%
+                    width: 100%
+                    transition: top .3s 
+                &:hover
+                    &::after
+                        top: 0 !important
+                    span
+                        color: $dsPink
+                span
+                    position: relative
+                    z-index: 5
+                    color: #fff
+                    transition: color .3s
+            &:nth-of-type(odd)
+                a.read-more
+                    &::after
+                        top: 100%
+
+    a.show-all
+        color: white
+        background-color: $dsPink
+        padding: 0 45px
+        font-size: 1.7rem
+        text-transform: uppercase
+        text-decoration: none
+        font-weight: 900
+        letter-spacing: 2px
+        position: relative
+        margin-top: 50px
+        border: 3px solid $dsPink
+        overflow: hidden
+        &::after
+            content: ''
+            position: absolute
+            top: 50%
+            left: 102%
+            width: 100%
+            height: 10%
+            overflow: hidden
+            transform: translateY(-50%)
+            background-color: #fff
+            transition: left .3s, height .2s .3s
+        &:hover
+            &::after
+                left: 0
+                height: 100%
+            span
+                color: $dsPink
+        span
+            position: relative
+            z-index: 5
+            color: white
+            transition: color .2s .2s
+        @media screen and ( max-width: 400px )
+            font-size: 1.4rem
+
+@media screen and ( max-width: 1000px )
+    section.ds-landing-news
+        div.content
+            flex-direction: column
+            div.single-news
+                width: 100%
+                margin-top: 70px
+                &:first-of-type
+                    margin-top: 0
+                div.img
+                    width: 90%
+                    height: 60vh
+                    @media screen and ( max-width: 730px )
+                        height: 50vh
+                    @media screen and ( max-width: 470px )
+                        height: 40vh
+                        width: 95%
+                        border-radius: 0
+                @media screen and ( max-width: 600px )
+                    p
+                        padding: 0 20px
+
+
+//ANIMATIONS
+section.ds-landing-news.active
+    div.content
+        div.single-news
+            div.img
+                &::after
+                    animation: lp-news-img .7s .2s both
+                    @keyframes lp-news-img
+                        0%  
+                            transform: scaleY(1) translate(-50%,-50%)
+                        100%
+                            transform: scaleY(0) translate(-50%,-50%)
+            h1.title,
+            p
+                position: relative
+                &::before
+                    content: ''
+                    position: absolute
+                    top: 0
+                    width: 100%
+                    height: 100%
+                    background-color: #f8fafc
+            h1.title
+                &::before
+                    animation: lp-tasks-spans 1s .7s both
+                    left: 0
+                &::after
+                    animation: lp-tasks-spans2 .6s 1s both reverse
+
+            p
+                &::before
+                    right: 0
+                    animation: lp-tasks-spans 1.2s 1.2s both
+            a.read-more
+                animation: lp-tasks-a 1s .7s both
+
+    a.show-all
+        animation: lp-news-a-all 1s 1.2s both
+        @keyframes lp-news-a-all
+            0%
+                opacity: 0
+                transform: translateY(-200%)
+            75%
+                transform: translateY(0%)
+            100%
+                opacity: 1
+                transform: translateY(0%)
+                    

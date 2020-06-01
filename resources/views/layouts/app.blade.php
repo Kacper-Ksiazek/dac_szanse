@@ -28,16 +28,16 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm p-1 ds-menu-wrapper" id='main-menu'>
-            <div class="container">
+            <div class="main-menu-wrapper">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{-- {{ config('app.name', 'Laravel') }} --}}
-                    <img src="{{ Storage::url('logo.png') }}">
+                    <img class='main-logo' src="{{ Storage::url('logo.png') }}">
                 </a>
                 <menu-navs></menu-navs>
             </div>
         </nav>
         {{--  --}}
-        <main class="w-100" style='margin-top: 80px'>
+        <main class="w-100" style='margin-top: 100px'>
             @yield('content')
         </main>
         {{--  --}}

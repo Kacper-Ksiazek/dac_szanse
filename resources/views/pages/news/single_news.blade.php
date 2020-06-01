@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    <title>Dać Szansę | Aktualności</title>
+    <title>{{$data->title}}</title>
 @endsection
 @section('content')
 <div class="w-100">

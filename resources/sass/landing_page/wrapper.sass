@@ -1,0 +1,67 @@
+@import activites
+@import news
+@import help
+@import support
+
+//
+section.ds-landing-page
+    width: 100%
+    display: flex
+    flex-direction: column
+    h1.header
+        font-family: 'Lato', sans-serif
+        font-weight: 900
+        color: $dsBlue
+        font-size: 3rem
+        text-transform: uppercase
+        user-select: none
+        @media screen and ( max-width: 390px )
+            font-size: 2.5rem
+    div.main-logo
+        height: 680px
+        background-image: url('/images/welcome/main_logo.jpg')
+        background-position-x: 60%
+        position: relative
+        @media screen and(max-width: 1500px)
+            background-position-sx: 50%
+        @media screen and(max-width: 1200px)
+            background-position-x: 40%
+        @media screen and ( max-width: 870px )
+            background-image: url('/images/welcome/mini_main.jpg')
+            background-position-x: center
+            background-size: cover
+        div.text
+            position: absolute
+            bottom: 50px
+            right: 50px
+            @media screen and ( max-width: 850px )
+                right: 10px
+            color: white
+            text-transform: uppercase
+            h1
+                font-weight: 900
+                font-family: 'Lato', sans-serif
+                font-size: 3rem
+                text-align: right
+                display: flex
+                justify-content: flex-end
+                cursor: default
+                letter-spacing: 2px
+                //
+                @media screen and ( max-width: 1000px )
+                    font-size: 2.5rem
+                    margin-bottom: 20px
+
+                //
+                @media screen and ( max-width: 850px )
+                    font-size: 2rem
+                //
+                @media screen and ( max-width: 450px )
+                    font-size: 1.5rem
+                //
+                div.heart
+                    width: 50px
+                    background-position: center
+                    background-size: contain
+                    background-image: url('/images/welcome/heart.png')
+                    background-repeat: no-repeat

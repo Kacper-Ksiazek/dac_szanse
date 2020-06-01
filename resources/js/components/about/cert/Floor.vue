@@ -5,7 +5,7 @@
             <h1 v-text="title"></h1>
         </div>
         <!--  -->
-        <div class="cert-floor-place" v-for="place in structure" :key="place.title">
+        <div class="cert-floor-place" v-for="place in structure" :key="place.title" :class="place.id">
             <h2 v-text="place.title"></h2>
             <gallery :images="setImages(place.images)" :header="false" :prefix="setPrefix(place.path)"></gallery>
         </div>
@@ -26,6 +26,19 @@ export default {
         setPrefix(directory) {
             return `/images/about/cert/${this.folder}/${directory}/`;
         }
+    },
+    mounted() {
+        const expression = /[^#]*$/g,
+            eClass = location.href.match(expression)[0],
+            element = document.querySelector(`div.${eClass}`);
+        if (!element) return;
+        setTimeout(() => {
+            window.scrollTo({
+                top: element.offsetTop - 50,
+                left: 0,
+                behavior: "smooth"
+            });
+        }, 500);
     }
 };
 </script>

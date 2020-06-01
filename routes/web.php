@@ -17,8 +17,7 @@ Route::get('/home',function(){
 
 Route::get('/', function () {
     return view('welcome',[
-        'projects' => App\Project::all()->reverse()->values()->take(2),
-        'news' => App\News::all()->reverse()->values()->take(2)
+        'news' => App\News::all()->reverse()->values()->take(4)
 
     ]);
 });

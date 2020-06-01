@@ -4,6 +4,6 @@
 @endsection
 @section('content')
 <div class="w-100">
-    <welcome projects='{{$projects}}' news='{{$news}}'></welcome>
+    <landing-page news='{{$news}}'></landing-page>
 </div>
 @endsection

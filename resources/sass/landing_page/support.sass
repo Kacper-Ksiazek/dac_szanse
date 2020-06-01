@@ -1,0 +1,55 @@
+section.ds-landing-page
+    section.ds-landing-support
+        margin-top: 100px
+        display: flex
+        flex-direction: column
+        align-items: center
+        div.content
+            width: 100%
+            display: flex
+            justify-content: space-evenly
+            height: 150px
+            margin-top: 50px
+            
+            div.single-supporter
+                width: 14%
+                height: 100%
+                background-size: contain
+                background-position: center
+                background-repeat: no-repeat
+                position: relative
+                opacity: 0
+
+            @media screen and ( max-width: 1000px )
+                flex-wrap: wrap
+                height: auto
+                div.single-supporter
+                    width: 30%
+                    height: 100px
+                    margin-bottom: 30px
+                    @media screen and ( max-width: 700px )
+                        width: 45%
+                    
+// ANIMATIONS
+section.ds-landing-page
+    section.ds-landing-support.active
+        div.content
+            div.single-supporter
+                opacity: 1
+                &:nth-of-type(1)
+                    animation: lp-tasks-a 1s .4s both
+                &:nth-of-type(2)
+                    animation: lp-tasks-a 1s .6s both
+                &:nth-of-type(3)
+                    animation: lp-tasks-a 1s .8s both
+                &:nth-of-type(4)
+                    animation: lp-tasks-a 1s 1s both
+                &:nth-of-type(5)
+                    animation: lp-tasks-a 1s 1.2s both
+                &:nth-of-type(6)
+                    animation: lp-tasks-a 1s 1.4s both
+
+                    
+                        
+            
+                

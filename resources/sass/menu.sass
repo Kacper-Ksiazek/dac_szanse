@@ -1,5 +1,21 @@
 $menuAnimationDuration: 0.2s
 //
+div.main-menu-wrapper
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 100%
+    margin: 0 5vw
+    height: 100%
+    @media screen and ( max-width: 1300px )
+        margin: 0 1vw
+
+//
+img.main-logo
+    width: auto
+    height: 120px
+    position: relative
+    z-index: 10000
 nav.ds-menu-wrapper
     position: fixed
     z-index: 1500
@@ -9,31 +25,24 @@ nav.ds-menu-wrapper
     // if You wanna change height property, you have to 
     //go to the app.blade.php file and right there 
     //change margin-top property on main element
-    height: 80px
+    height: 100px
 //BIG MENU
 li.ds-menu-item
     position: relative
     margin-right: 5px
     height: 30px
     overflow: hidden
-
     &:hover
         overflow: visible
-
         span.ds-menu-header
-            border-radius: 10px
-            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75)
-
             a.content
-                color: white
-
+                color: $dsPink
             &::before
                 width: 100%
                 height: 100%
                 bottom: 0px
                 right: 0px
                 transform: rotate(0deg)
-
         div.ds-menu-dropdown
             box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75)
             
@@ -44,27 +53,22 @@ li.ds-menu-item
         justify-content: center
         align-items: center
         overflow: hidden
-        padding: 10px 20px
-        font-family: Comic Sans MS
+        font-family: 'Lato', sans-serif
         cursor: pointer
         height: 30px
         z-index: 1
-        font-size: 1.1rem
-        @media screen and ( max-width: 1200px )
-            font-size: .9rem
-            font-weight: bold
-        &::before
-            content: ''
-            position: absolute
-            bottom: -9px
-            right: -9px
-            width: 20px
-            height: 20px
-            background-color: $deafultGreen
-            transform: rotate(45deg)
-            transition: all linear $menuAnimationDuration
-            z-index: 1
+        font-size: 1.7rem
+        margin-left: 30px
+        &:first-of-typce
+            margin-left: 0px !important
 
+
+        @media screen and ( max-width: 1500px )
+            font-size: 1.4rem
+            margin-left: 20px
+
+        @media screen and ( max-width: 1100px )
+            font-size: 1.3rem
         a.content
             position: relative
             z-index: 2
@@ -90,7 +94,7 @@ li.ds-menu-item
             left: 0
             width: 7px
             height: 100%
-            background: $deafultGreen
+            background: $dsPink
             box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75)
         div
             position: relative
@@ -98,13 +102,13 @@ li.ds-menu-item
             padding: 5px
             transition: all $menuAnimationDuration linear
             cursor: default
-            font-family: Comic Sans MS
+            font-family: 'Lato', sans-serif
             z-index: 1
             
             a
                 position: relative
                 z-index: 2
-                transition: all linear $menuAnimationDuration
+                transition: all linear .2s
                 padding-left: 20px
                 color: black
                 text-decoration: none
@@ -117,7 +121,7 @@ li.ds-menu-item
                 left: 0
                 width: 100%
                 height: 100%
-                background-color: $deafultGreen
+                background-color: $dsPink
                 transform: translateX(-100%)
                 transition: all linear $menuAnimationDuration
 
@@ -174,78 +178,80 @@ div.ds-menu-small
         flex-grow: 1
         padding: 20px
         margin: 0 10%
-        transition: transform .5s
-        @media screen and ( max-width: 450px )
-            margin: 0 10px
-            padding: 0
-        div.small-nav-item.active
-            overflow: visible !important
-            max-height: 500px !important
-            span.ds-menu-small-nav-header
-                i
-                    transform: rotate(180deg)
-            div
-                &::before
-                    transform-origin: bottom
-                    transform: scaleY(0)
-                    transition: transform .35s linear
-        div.small-nav-item
-            max-height: 60px
+        padding-top: 20vh
+        @media screen and (max-width: 450px)
+            margin: 0 3%
+        div.navs-wrapper
+            height: 100%
             overflow: hidden
-            border-bottom: 10px solid white
-            position: relative
-            transition: max-height .3s linear
-            span.ds-menu-small-nav-header
-                height: 45px
-                display: flex
-                font-size: 1.3rem
-                display: flex
-                align-items: center
-                background-color: $deafultGreen
-                border-radius: 10px
-                padding: 0 20px
-
-                i
-                    margin-right: 20px
-                    color: white
-                    padding: 5px
-                    transition: transform .2s .1s linear
-                    width: 30px
-                span.indent
-                    width: 50px
-                    display: block
-                a
-                    text-decoration: none
-                    color: white
-                    font-weight: bold
-            div
-                display: flex
-                flex-direction: column
-                padding: 0 5vw
+            div.small-nav-item.active
+                overflow: visible !important
+                max-height: 500px !important
+                span.ds-menu-small-nav-header
+                    i
+                        transform: rotate(180deg)
+                div
+                    &::before
+                        transform-origin: bottom
+                        transform: scaleY(0)
+                        transition: transform .35s linear
+            div.small-nav-item
+                max-height: 60px
+                overflow: hidden
+                border-bottom: 10px solid white
                 position: relative
-                @media screen and ( max-width: 450px )
-                    padding: 0 10px
-                a.ds-menu-small-dropdown-item
-                    font-size: 1rem
-                    color: black
-                    margin-bottom: 10px
-                    background-color: #81ecec
-                    padding: 4px 20px
+                transition: max-height .3s linear,transform .5s 
+                span.ds-menu-small-nav-header
+                    height: 45px
+                    display: flex
+                    font-size: 1.3rem
+                    display: flex
+                    align-items: center
+                    background-color: $deafultGreen
                     border-radius: 10px
-                    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75)
-                    &:nth-of-type(odd)
-                        background-color:#aefcd1
-                &::before
-                    content: ''
-                    position: absolute
-                    top: -1%
-                    left: 0
-                    width: 100%
-                    background-color: white
-                    height: 100%
-                    transform: scaleY(1)
-                    transition: transform .3s linear
-                    transform-origin: bottom
+                    padding: 0 20px
+
+                    i
+                        margin-right: 20px
+                        color: white
+                        padding: 5px
+                        transition: transform .2s .1s linear
+                        width: 30px
+                    span.indent
+                        width: 50px
+                        display: block
+                    a
+                        text-decoration: none
+                        color: white
+                        font-weight: bold
+                div
+                    display: flex
+                    flex-direction: column
+                    padding: 0 5vw
+                    position: relative
+                    @media screen and ( max-width: 450px )
+                        padding: 0 10px
+                    a.ds-menu-small-dropdown-item
+                        font-size: 1rem
+                        color: black
+                        margin-bottom: 10px
+                        background-color: #81ecec
+                        padding: 4px 20px
+                        border-radius: 10px
+                        box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75)
+                        &:nth-of-type(odd)
+                            background-color:#aefcd1
+                    &::before
+                        content: ''
+                        position: absolute
+                        top: -1%
+                        left: 0
+                        width: 100%
+                        background-color: white
+                        height: 100%
+                        transform: scaleY(1)
+                        transition: transform .3s linear
+                        transform-origin: bottom
 
                         
            
@@ -253,17 +259,41 @@ div.ds-menu-small
 //END SMALL MENU
 
 //RWD
-@media screen and (max-width: 991px)
-    button.ds-menu-navbar-toggler
-        dispaly: block
-        padding: 5px
-        color: $deafultGreen
-        background: transparent
-        border: none
+@media screen and (max-width: 1000px)
+    span.open-mobile-menu
+        position: relative
+        z-index: 10000
+        color: $dsPink
         font-size: 2rem
+        height: 50px
+        width: 50px
+        border: 3px solid
+        display: flex
+        justify-content: space-evenly
+        align-items: center
+        border-radius: 10px
+        flex-direction: column
+        padding: 0 5px
+        box-sizing: border-box
+        span.line
+            width: 100%
+            height: 4px
+            background-color: $dsPink
+            display: block
+            border-radius: 20px
+            transform-origin: left
+            transition: all .3s
+    span.open-mobile-menu.active
+        span.line
+            &:nth-of-type(1)
+                transform: rotate(36.5deg) scaleX(1.2)
+            &:nth-of-type(2)
+                opacity: 0
+            &:nth-of-type(3)
+                transform: rotate(-36.5deg) scaleX(1.2)
     ul.ds-menu-big
         display: none
-@media screen and (min-width: 992px)
+@media screen and (min-width: 1001px)
     div.ds-menu-small
         display: none
     button.ds-menu-navbar-toggler

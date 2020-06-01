@@ -1,0 +1,187 @@
+section.ds-landing-page
+    section.ds-landing-activities
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin-top: 50px
+        div.content
+            width: 100%
+            display: flex
+            margin-top: 50px
+            padding: 0 1vw
+            @media screen and ( max-width: 1000px )
+                flex-direction: column
+                div.tasks,
+                div.projects
+                    width: 100% !important
+                div.tasks
+                    margin-bottom: 50px
+                    padding: 0 2.5% !important
+                    @media screen and ( max-width: 600px )
+                        span.underline
+                            text-align: left !important
+                            text-indent: 10px
+                            font-size: 1.5rem
+                        span
+                            text-align: justify !important
+                            font-size: 1.3rem
+                div.projects
+                    height: 300px !important
+                    margin-top: 50px
+            div.tasks,
+            div.projects
+                width: 50%
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: center
+                h1.header
+                    color: white
+                    background-color: $dsBlue
+                    padding: 10px 40px
+                    position: relative
+                    
+            div.tasks
+                padding: 0 5%
+                h1.header
+                    transform-origin: left
+                    
+                span
+                    font-size: 1.3rem
+                    color: $dsBlue
+                    text-align: center
+                span.underline
+                    font-size: 1.7rem
+                    padding-bottom: 15px
+                    margin-bottom: 15px
+                    position: relative
+                    &::after
+                        content: ''
+                        position: absolute
+                        bottom: 0
+                        left: 50%
+                        transform: translateX(-50%)
+                        height: 4px
+                        width: 75%
+                        background-color: $dsBlue
+                span.underline,
+                span.info
+                    position: relative
+                a
+                    color: white
+                    background-color: $dsBlue
+                    padding: 0 25px
+                    font-size: 1.2rem
+                    text-transform: uppercase
+                    text-decoration: none
+                    font-weight: 900
+                    letter-spacing: 2px
+                    position: relative
+                    margin-top: 10px
+                    border: 3px solid $dsBlue
+                    overflow: hidden
+                    &::after
+                        content: ''
+                        position: absolute
+                        top: 50%
+                        left: -101%
+                        width: 100%
+                        height: 10%
+                        overflow: hidden
+                        transform: translateY(-50%)
+                        background-color: #fff
+                        transition: left .3s, height .2s .3s
+                    
+                    &:hover
+                        &::after
+                            left: 0
+                            height: 100%
+                        span
+                            color: $dsBlue
+                    span
+                        position: relative
+                        z-index: 5
+                        color: white
+                        transition: color .2s .2s
+
+            div.projects
+                background-image: url('/images/welcome/tasks.jpg')
+                background-size: cover
+                background-position: center
+                height: 600px
+                h1.header
+                    color: $dsBlue
+                    background-color: white
+
+
+//ANIMATIONS
+section.ds-landing-page
+    section.ds-landing-activities.active
+        div.content
+            div.tasks
+                h1.header
+                    animation: lp-tasks-header 1s .2s both
+                    @keyframes lp-tasks-header
+                        0%
+                            transform: scaleX(0)
+                            color: $dsBlue
+                        50%
+                            transform: scaleX(1)
+                            color: $dsBlue
+                        75%
+                            transform: scaleX(1)
+                            color: $dsBlue
+                        100%    
+                            color: #fff
+                span.underline,
+                span.info
+                    &::before
+                        content: ''
+                        position: absolute
+                        top: 0
+                        left: 0
+                        width: 100%
+                        height: 100%
+                        background-color: #f8fafc
+                        animation: lp-tasks-spans 1s .7s both
+                        @keyframes lp-tasks-spans
+                            from
+                                width: 100%
+                            to
+                                width: 0%
+                span.underline
+                    &::after
+                        animation: lp-tasks-spans2 .6s 1s both reverse
+                        @keyframes lp-tasks-spans2
+                            from
+                                width: 75%
+                            to
+                                width: 0%
+                a
+                    animation: lp-tasks-a 1s .7s both
+                    @keyframes lp-tasks-a
+                        0%
+                            opacity: 0
+                            transform: translateY(200%)
+                        75%
+                            transform: translateY(0%)
+                        100%
+                            opacity: 1
+                            transform: translateY(0%)
+            div.projects
+                h1
+                    animation: lp-projects-header 1s .7s both
+                    transform-origin: right
+                    @keyframes lp-projects-header
+                        0%
+                            transform: scaleX(0)
+                            color: #fff
+                        50%
+                            transform: scaleX(1)
+                            color: #fff
+                        75%
+                            transform: scaleX(1)
+                            color: #fff
+                        100%    
+                            color: $dsBlue
+        

@@ -97,8 +97,8 @@ class ProjectController extends Controller
         //
         //Set new project ID sooner
         if(app()->environment()==="testing") $id=Project::all()->count()+1;
-        else if(app()->environment()==='local') $id=DB::select("SHOW TABLE STATUS LIKE 'news'")[0]->Auto_increment;
-        $root="news_{$id}";
+        else if(app()->environment()==='local') $id=DB::select("SHOW TABLE STATUS LIKE 'projects'")[0]->Auto_increment;
+        $root="project_{$id}";
         $validatedData['directory']=$root;
         //
         $file->store("projects/{$root}",'public');
