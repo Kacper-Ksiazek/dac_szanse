@@ -1943,6 +1943,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   //
   data: function data() {
@@ -4397,6 +4399,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     var a = this.$refs.wrapper;
@@ -4529,17 +4533,70 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      list: ["1.jpg", "2.png", "3.png", "4.jpg", "1.jpg", "2.png"]
+      list: ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "10.png", "11.png", "12.png", "13.png", "14.png", "15.png", "16.png", "17.png", "18.png"],
+      currentSection: 0
     };
   },
   mounted: function mounted() {
     var a = this.$refs.wrapper;
     window.addEventListener("scroll", function () {
       if (scrollY > a.offsetTop - a.offsetHeight - 500) a.classList.add("active");
-    });
+    }); //
+  },
+  computed: {
+    sections: function sections() {
+      var list = JSON.parse(JSON.stringify(this.list)); //
+
+      var sections = [],
+          loop = true,
+          a;
+
+      while (loop) {
+        a = list.splice(0, 6);
+        sections.push({
+          elements: a
+        });
+        if (a.length !== 6 || !list.length) loop = false;
+      } //
+
+
+      return sections;
+    }
+  },
+  watch: {
+    currentSection: function currentSection(val) {
+      var sections = this.sections,
+          list = this.list;
+      var len = sections.length;
+      if (val >= len) return;
+      var v,
+          a = list.length % 6;
+      if (val === len - 1 && a !== 0) v = a;else v = 6;
+      this.imagesCountInCurrentSection = v;
+    }
+  },
+  methods: {
+    getTransform: function getTransform() {
+      var sections = this.sections,
+          currentSection = this.currentSection;
+      return "transform: translateX(-".concat(100 / sections.length * currentSection, "%)");
+    }
   }
 });
 
@@ -41792,49 +41849,51 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("section", { staticClass: "ds-footer" }, [
-      _c("div", { staticClass: "image" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "content" }, [
-        _c("h1", [
-          _vm._v(
-            'Stowarzyszenie Rodziców i Opiekunów Dzieci Niepełnosprawnych "Dać Szansę" w Wadowicach'
-          )
-        ]),
+      _c("div", { staticClass: "text" }, [
+        _c("div", { staticClass: "image" }),
         _vm._v(" "),
-        _c("div", { staticClass: "fields" }, [
-          _c("div", { staticClass: "field" }, [
-            _c("span", [_vm._v("ul. Kochanowskiego 42")]),
-            _vm._v(" "),
-            _c("span", [_vm._v("34-100 Wadowice")]),
-            _vm._v(" "),
-            _c("span", [_vm._v("www.dacszanse.pl")])
+        _c("div", { staticClass: "content" }, [
+          _c("h1", [
+            _vm._v(
+              'Stowarzyszenie Rodziców i Opiekunów Dzieci Niepełnosprawnych "Dać Szansę" w Wadowicach'
+            )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "field" }, [
-            _c("span", [_vm._v("tel. (33) 873 18 87")]),
+          _c("div", { staticClass: "fields" }, [
+            _c("div", { staticClass: "field" }, [
+              _c("span", [_vm._v("ul. Kochanowskiego 42")]),
+              _vm._v(" "),
+              _c("span", [_vm._v("34-100 Wadowice")]),
+              _vm._v(" "),
+              _c("span", [_vm._v("www.dacszanse.pl")])
+            ]),
             _vm._v(" "),
-            _c("span", [_vm._v("kom. 697 280 553")]),
+            _c("div", { staticClass: "field" }, [
+              _c("span", [_vm._v("tel. (33) 873 18 87")]),
+              _vm._v(" "),
+              _c("span", [_vm._v("kom. 697 280 553")]),
+              _vm._v(" "),
+              _c("span", [_vm._v("kom. 695 727 833")])
+            ]),
             _vm._v(" "),
-            _c("span", [_vm._v("kom. 695 727 833")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "field" }, [
-            _c("span", [_vm._v("stowarzyszenie@dacszanse.pl")]),
-            _vm._v(" "),
-            _c("span", [_vm._v("KRS 0000146813")]),
-            _vm._v(" "),
-            _c("span", [
-              _vm._v("Bank Pekao SA 89 1240 4197 1111 0000 4692 9350")
+            _c("div", { staticClass: "field" }, [
+              _c("span", [_vm._v("stowarzyszenie@dacszanse.pl")]),
+              _vm._v(" "),
+              _c("span", [_vm._v("KRS 0000146813")]),
+              _vm._v(" "),
+              _c("span", [
+                _vm._v("Bank Pekao SA 89 1240 4197 1111 0000 4692 9350")
+              ])
             ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "bottom" }, [
+            _c("a", { attrs: { href: "" } }, [_vm._v("Regulamin")]),
+            _vm._v(" "),
+            _c("a", { attrs: { href: "" } }, [_vm._v("Polityka prywatności")]),
+            _vm._v(" "),
+            _c("a", { attrs: { href: "" } }, [_vm._v("Kontakt")])
           ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "bottom" }, [
-          _c("a", { attrs: { href: "" } }, [_vm._v("Regulamin")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "" } }, [_vm._v("Polityka prywatności")]),
-          _vm._v(" "),
-          _c("a", { attrs: { href: "" } }, [_vm._v("Kontakt")])
         ])
       ])
     ])
@@ -44685,23 +44744,25 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("section", { ref: "wrapper", staticClass: "ds-landing-help" }, [
     _c("div", { staticClass: "content" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "help-forms" },
-        _vm._l(5, function(item) {
-          return _c("div", {
-            key: item,
-            staticClass: "single-help-form",
-            style:
-              "background-image: url('/images/welcome/help_forms/" +
-              item +
-              ".png')"
-          })
-        }),
-        0
-      ),
+      _c("div", { staticClass: "wrapper" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "help-forms" },
+          _vm._l(5, function(item) {
+            return _c("div", {
+              key: item,
+              staticClass: "single-help-form",
+              style:
+                "background-image: url('/images/welcome/help_forms/" +
+                item +
+                ".png')"
+            })
+          }),
+          0
+        )
+      ]),
       _vm._v(" "),
       _c("div", { staticClass: "tree" })
     ])
@@ -44874,19 +44935,93 @@ var render = function() {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "content" },
-      _vm._l(_vm.list, function(item, index) {
-        return _c("div", {
-          key: index,
-          staticClass: "single-supporter",
-          style: "background-image: url('/images/welcome/support/" + item + "')"
-        })
+      {
+        staticClass: "content",
+        style: "width: " + _vm.sections.length + "00vw; " + _vm.getTransform()
+      },
+      _vm._l(_vm.sections, function(section, sectionIndex) {
+        return _c(
+          "div",
+          {
+            key: sectionIndex,
+            staticClass: "section",
+            class: { active: _vm.currentSection === sectionIndex }
+          },
+          _vm._l(section.elements, function(img, imgIndex) {
+            return _c("div", {
+              key: sectionIndex + "." + imgIndex,
+              staticClass: "single-supporter",
+              style:
+                "background-image: url('/images/welcome/support/" + img + "')"
+            })
+          }),
+          0
+        )
       }),
       0
-    )
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "control" },
+      [
+        _c(
+          "span",
+          {
+            staticClass: "left",
+            on: {
+              click: function($event) {
+                _vm.currentSection === 0 ? null : _vm.currentSection--
+              }
+            }
+          },
+          [_c("i", { staticClass: "fa fa-chevron-left" })]
+        ),
+        _vm._v(" "),
+        _vm._l(_vm.sections, function(_, index) {
+          return _c("span", {
+            key: index,
+            staticClass: "dot",
+            class: { active: index === _vm.currentSection },
+            on: {
+              click: function($event) {
+                _vm.currentSection = index
+              }
+            }
+          })
+        }),
+        _vm._v(" "),
+        _c(
+          "span",
+          {
+            staticClass: "right",
+            on: {
+              click: function($event) {
+                _vm.currentSection === _vm.sections.length - 1
+                  ? null
+                  : _vm.currentSection++
+              }
+            }
+          },
+          [_c("i", { staticClass: "fa fa-chevron-right" })]
+        )
+      ],
+      2
+    ),
+    _vm._v(" "),
+    _vm._m(0)
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "/jak-pomoc/darczyncy" } }, [
+      _c("span", [_vm._v("Zobacz więcej")])
+    ])
+  }
+]
 render._withStripped = true
 
 

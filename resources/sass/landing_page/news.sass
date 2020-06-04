@@ -19,7 +19,7 @@ section.ds-landing-news
             div.img
                 width: 18vw
                 height: 18vw
-                border: 4px solid $deafultGreen
+                border: 4px solid #9eb72b
                 border-radius: 20px
                 background-size: cover
                 background-repeat: no-repeat
@@ -37,9 +37,9 @@ section.ds-landing-news
                 
                 
             h1.title
-                font-size: 1.8rem
+                font-size: 1.5rem
                 padding-bottom: 10px
-                margin: 10px 0
+                margin: 20px 0
                 font-weight: 900
                 position: relative
                 text-align: center
@@ -53,7 +53,7 @@ section.ds-landing-news
                     transform: translateX(-50%)
                     background-color: $dsPink
             p
-                font-size: 1.2rem
+                font-size: 1.1rem
                 text-align: center
             a.read-more
                 background-color: $dsPink
@@ -99,7 +99,7 @@ section.ds-landing-news
         font-weight: 900
         letter-spacing: 2px
         position: relative
-        margin-top: 50px
+        margin-top: 80px
         border: 3px solid $dsPink
         overflow: hidden
         &::after
@@ -139,6 +139,8 @@ section.ds-landing-news
                 div.img
                     width: 90%
                     height: 60vh
+                    max-width: 600px
+                    max-height: 400px
                     @media screen and ( max-width: 730px )
                         height: 50vh
                     @media screen and ( max-width: 470px )
@@ -171,7 +173,7 @@ section.ds-landing-news.active
                     top: 0
                     width: 100%
                     height: 100%
-                    background-color: #f8fafc
+                    background-color: #fff
             h1.title
                 &::before
                     animation: lp-tasks-spans 1s .7s both

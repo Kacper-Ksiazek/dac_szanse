@@ -4,51 +4,125 @@ section.ds-landing-page
         display: flex
         flex-direction: column
         align-items: center
+        overflow-x: hidden
+        overflow-y: visible
         div.content
             width: 100%
             display: flex
-            justify-content: space-evenly
-            height: 150px
+            min-height: 150px
             margin-top: 50px
-            
-            div.single-supporter
-                width: 14%
-                height: 100%
-                background-size: contain
-                background-position: center
-                background-repeat: no-repeat
-                position: relative
-                opacity: 0
-
-            @media screen and ( max-width: 1000px )
-                flex-wrap: wrap
-                height: auto
+            align-self: flex-start
+            transition: transform .5s
+            overflow: hidden
+            div.section
+                width: 100vw
+                min-height: 100%
+                display: flex
+                justify-content: space-evenly
                 div.single-supporter
-                    width: 30%
+                    width: 14%
                     height: 100px
-                    margin-bottom: 30px
-                    @media screen and ( max-width: 700px )
-                        width: 45%
-                    
+                    background-size: contain
+                    background-position: center
+                    background-repeat: no-repeat
+                    position: relative
+                    opacity: 0
+
+                @media screen and ( max-width: 1000px )
+                    flex-wrap: wrap
+                    height: auto
+                    div.single-supporter
+                        width: 30%
+                        height: 100px
+                        margin-bottom: 30px
+                        @media screen and ( max-width: 700px )
+                            width: 45%
+        div.control
+            display: flex
+            align-items: center
+            height: 50px
+            span.dot
+                display: block
+                width: 30px
+                height: 10px
+                background-color: $dsBlue
+                margin-left: 15px
+                transition: height .2s
+                border-radius: 10px
+                cursor: pointer
+            span.dot.active
+                height: 15px
+            span.right,
+            span.left
+                font-size: 1.5rem
+                color: $dsBlue
+                transition: font-size .2s
+                cursor: pointer
+                width: 30px
+                display: flex
+                justify-content: center
+                align-items: center
+                &:hover
+                    font-size: 2.5rem
+            span.right
+                margin-left: 15px
+        a
+            color: white
+            background-color: $dsBlue
+            padding: 0 25px
+            font-size: 1.2rem
+            text-transform: uppercase
+            text-decoration: none
+            font-weight: 900
+            letter-spacing: 2px
+            position: relative
+            margin-top: 10px
+            border: 3px solid $dsBlue
+            overflow: hidden
+            &::after
+                content: ''
+                position: absolute
+                top: 50%
+                left: -101%
+                width: 100%
+                height: 10%
+                overflow: hidden
+                transform: translateY(-50%)
+                background-color: #fff
+                transition: left .3s, height .2s .3s
+            
+            &:hover
+                &::after
+                    left: 0
+                    height: 100%
+                span
+                    color: $dsBlue
+            span
+                position: relative
+                z-index: 5
+                color: white
+                transition: color .2s .2s            
 // ANIMATIONS
 section.ds-landing-page
     section.ds-landing-support.active
         div.content
-            div.single-supporter
-                opacity: 1
-                &:nth-of-type(1)
-                    animation: lp-tasks-a 1s .4s both
-                &:nth-of-type(2)
-                    animation: lp-tasks-a 1s .6s both
-                &:nth-of-type(3)
-                    animation: lp-tasks-a 1s .8s both
-                &:nth-of-type(4)
-                    animation: lp-tasks-a 1s 1s both
-                &:nth-of-type(5)
-                    animation: lp-tasks-a 1s 1.2s both
-                &:nth-of-type(6)
-                    animation: lp-tasks-a 1s 1.4s both
-
+            div.section
+                div.single-supporter
+                    opacity: 1
+                    &:nth-of-type(1)
+                        animation: lp-tasks-a 1s .4s both
+                    &:nth-of-type(2)
+                        animation: lp-tasks-a 1s .6s both
+                    &:nth-of-type(3)
+                        animation: lp-tasks-a 1s .8s both
+                    &:nth-of-type(4)
+                        animation: lp-tasks-a 1s 1s both
+                    &:nth-of-type(5)
+                        animation: lp-tasks-a 1s 1.2s both
+                    &:nth-of-type(6)
+                        animation: lp-tasks-a 1s 1.4s both
+        a
+            animation: lp-news-a-all 1s 1.5s both
                     
                         
             

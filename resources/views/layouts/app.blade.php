@@ -37,7 +37,7 @@
             </div>
         </nav>
         {{--  --}}
-        <main class="w-100" style='margin-top: 100px'>
+        <main class="w-100" style='margin-top: 80px'>
             @yield('content')
         </main>
         {{--  --}}

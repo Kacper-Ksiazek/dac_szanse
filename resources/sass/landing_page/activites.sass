@@ -26,8 +26,11 @@ section.ds-landing-page
                             text-align: justify !important
                             font-size: 1.3rem
                 div.projects
-                    height: 300px !important
+                    height: 400px !important
                     margin-top: 50px
+                    margin-bottom: 50px
+                    @media screen and ( max-width: 500px )
+                        height: 400px !important
             div.tasks,
             div.projects
                 width: 50%
@@ -45,13 +48,13 @@ section.ds-landing-page
                 padding: 0 5%
                 h1.header
                     transform-origin: left
-                    
+                    font-size: 2rem
                 span
-                    font-size: 1.3rem
+                    font-size: 1.2rem
                     color: $dsBlue
                     text-align: center
                 span.underline
-                    font-size: 1.7rem
+                    font-size: 1.4rem
                     padding-bottom: 15px
                     margin-bottom: 15px
                     position: relative
@@ -112,6 +115,9 @@ section.ds-landing-page
                 h1.header
                     color: $dsBlue
                     background-color: white
+                    font-size: 2rem
+                @media screen and ( max-width: 1400px )
+                    height: 500px
 
 
 //ANIMATIONS
@@ -142,7 +148,7 @@ section.ds-landing-page
                         left: 0
                         width: 100%
                         height: 100%
-                        background-color: #f8fafc
+                        background-color: #fff
                         animation: lp-tasks-spans 1s .7s both
                         @keyframes lp-tasks-spans
                             from
