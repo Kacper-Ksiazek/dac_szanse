@@ -4,8 +4,7 @@
 @endsection
 @section('content')
 <div class="w-100">
-    <path-bar path='[{"header":"O nas","href":"/o-nas"}, {"header":"Budowa CERT","href":"/o-nas/budowa-cert"},{"header":"Pierwsze piętro","href":"#"}]'></path-bar>
-    <about-logo content='Budowa CERT'></about-logo>
+    <about-logo content='Budowa CERT' selected='cert'></about-logo>
     {{--  --}}
     <cert-floor title='Pierwsze piętro' folder='pierwsze' :structure="
     [

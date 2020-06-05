@@ -15,7 +15,7 @@ class NewsController extends Controller
         }
         // 
         return view('pages.news.index',[
-            'news'=>json_encode($news)
+            'news'=>News::orderBy('created_at','desc')->paginate(3)
         ]);
     }
     //

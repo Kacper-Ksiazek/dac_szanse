@@ -62,7 +62,7 @@ export default {
                 {
                     header: { content: "O nas", href: "/o-nas" },
                     body: [
-                        { content: "Zarząd", href: "/o-nas" },
+                        { content: "Zarząd", href: "/o-nas/zarzad" },
                         { content: "Historia", href: "/o-nas#historia" },
                         { content: "Nagrody i Wyróżnienia", href: "/o-nas#nagrody" },
                         { content: "Budowa CERT", href: "/o-nas#cert" },

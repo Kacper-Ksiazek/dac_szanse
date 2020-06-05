@@ -1,0 +1,152 @@
+section.ds-about-management
+    display: flex
+    justify-content: center
+    flex-direction: column
+    align-items: center
+    h1
+        margin: 40px 0
+        font-size: 2.5rem
+        font-weight: 900
+        color: $dsBlue
+        text-transform: uppercase
+        letter-spacing: 2px
+        text-align: center
+        span.pink
+            color: $dsPink
+    div.people-list-wrapper
+        width: 85vw
+        max-width: 1100px
+        padding: 50px
+        @media screen and ( max-width: 600px )
+            padding: 0
+            margin-top: 50px
+
+        div.people-list-item.active
+            max-height: 450px
+            @media screen and ( max-width: 1200px )
+                max-height: 700px
+            @media screen and ( max-width: 900px )
+                max-height: 1000px
+            div.header
+                h2
+                    span
+                        color: $dsPink
+                    &::after
+                        transform: translateY(2%)
+
+        div.people-list-item
+            padding-bottom: 20px
+            margin-bottom: 50px
+            border-bottom: 2px solid black
+            max-height: 70px
+            overflow: hidden
+            transition: all .3s linear
+            @media screen and ( max-width: 1000px )
+                transition: all .7s linear
+
+            div.header
+                display: flex
+                justify-content: center
+                align-items: center
+                height: 50px
+                h2
+                    font-size: 2rem
+                    font-weight: bold
+                    margin: 0
+                    background-color: $dsPink
+                    cursor: pointer
+                    padding: 5px 10px
+                    letter-spacing: 1px
+                    position: relative
+                    user-select: none
+                    border: 3px solid $dsPink
+                    
+                    @media screen and ( max-width: 600px )
+                        font-size: 1.7rem
+                    
+                    span
+                        position: relative
+                        z-index: 2
+                        transition: color .2s
+                        color: inherit
+                    &::after
+                        content: ''
+                        position: absolute
+                        top: 0
+                        left: 0
+                        width: 100%
+                        height: 100%
+                        background-color: #fff
+                        transform: translateY(110%)
+                        transition: transform .2s
+            div.peoples
+                display: flex
+                flex-wrap: wrap
+                justify-content: space-between
+                position: relative
+                padding: 0 2.5vw
+                @media screen and ( max-width: 800px )
+                    flex-direction: column
+                    align-items: center
+                div.person
+                    min-width: 250px
+                    display: flex
+                    align-items: center
+                    flex-direction: column
+                    margin-bottom: 20px
+                    border-bottom: 2px solid $dsPink
+                    color: $dsBlue
+                    padding: 20px 0
+                    @media screen and ( max-width: 600px )
+                        min-width: 300px
+                    span.name
+                        font-weight: bold
+                        font-size: 1.5rem
+                        text-align: center
+                        cursor: default
+                    span.position
+                        font-size: 1.2rem
+                        text-align: center
+                        cursor: default
+
+//ANIMATIONS
+section.ds-about-management
+    h1
+        span.pink
+            animation: about-management-pink .3s 1.2s both
+        @keyframes about-management-pink
+            0%
+                color: $dsBlue
+            100%
+                color: $dsPink
+    div.people-list-wrapper
+        div.people-list-item
+            &:nth-of-type(1)
+                div.header
+                    h2
+                        transform-origin: left
+                        animation: about-management-header .7s .2s both
+            &:nth-of-type(2)
+                div.header
+                    h2
+                        transform-origin: right
+                        animation: about-management-header .7s .5s both    
+            &:nth-of-type(3)
+                div.header
+                    h2
+                        transform-origin: left
+                        animation: about-management-header .7s .8s both
+                        
+                    @keyframes about-management-header
+                        0%
+                            color: $dsPink
+                            transform: scaleX(0)
+                        60%
+                            color: $dsPink
+                            transform: scaleX(1)
+                        80%
+                            color: $dsPink
+                            transform: scaleX(1)
+                        100%
+                            color: #fff
+                            transform: scaleX(1)

@@ -1,9 +1,8 @@
 @extends('layouts.app') @section('title')
-<title>Dać Szansę | O nas</title>
+<title>Dać Szansę | RODO</title>
 @endsection @section('content')
 <div class="w-100">
-    <path-bar path='[{"header":"O nas","href":"/o-nas"},  {"header":"Polityka RODO","href":"#"}]'></path-bar>
-    <about-logo></about-logo>
+    <about-logo content='Polityka RODO' selected='rodo'></about-logo>
     <section class="ds-about-wrapper">
         <div class="text align-items-start">
             <h1 class="align-self-center mb-5">Polityka RODO</h1>

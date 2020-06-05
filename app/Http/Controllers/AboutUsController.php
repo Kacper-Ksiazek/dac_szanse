@@ -11,6 +11,10 @@ class AboutUsController extends Controller
         return view('pages.about.index');
     }
     //
+    public function zarzad(){
+        return view('pages.about.zarzad');
+    }
+    //
     public function rodo(){
         return view('pages.about.rodo');
     }

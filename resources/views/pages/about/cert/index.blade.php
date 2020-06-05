@@ -4,8 +4,7 @@
 @endsection
 @section('content')
 <div class="w-100">
-    <path-bar path='[{"header":"O nas","href":"/o-nas"},  {"header":"Budowa CERT","href":"#"}]'></path-bar>
-    <about-logo content='Budowa CERT'></about-logo>
+    <about-logo content='Budowa CERT' selected='cert'></about-logo>
     <cert-index></cert-index>
 </div>
 @endsection

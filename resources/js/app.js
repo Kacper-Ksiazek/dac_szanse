@@ -23,13 +23,25 @@ Vue.component("menu-navs", require("./components/menu/MenuNavs.vue").default);
 Vue.component("dayroom-gallery", require("./components/our_objects/dayroom/gallery/Index.vue").default);
 Vue.component("path-bar", require("./components/PathBar").default);
 Vue.component("scroll-btn", require("./components/ScrollBTN.vue").default);
-//Nasze placówki-index
+//Galeria ze zdjeciami, co robia za a hrefy
+Vue.component("href-gallery", require("./components/GalleryWithHrefImg.vue").default);
+//
+//STRONA GLOWNA
+//
+Vue.component("landing-page", require("./components/landing_page/Main.vue").default);
+//
+//NASZE PLACÓWKI
+//
+//Index
 Vue.component("all-objects", require("./components/our_objects/AllObjects.vue").default);
-//Nasze pracowki-logo
+//Logo
 Vue.component("oo-logo", require("./components/our_objects/OOLogo.vue").default);
 //Świetlica-zajęcia
 Vue.component("dayroom-tasks", require("./components/our_objects/dayroom/TaskList.vue").default);
-//Zajęcia-index
+//
+//DZIAŁALNOŚĆ
+//
+//Zajęcia index
 Vue.component("our-tasks", require("./components/activities/tasks/Index.vue").default);
 //Zajęcia-logo
 Vue.component("tasks-logo", require("./components/activities/tasks/TasksLogo.vue").default);
@@ -39,8 +51,16 @@ Vue.component("gallery", require("./components/activities/tasks/SingleTaskGaller
 Vue.component("activites-logo", require("./components/activities/index/ActivitesLogo.vue").default);
 //Dzialalnosc index
 Vue.component("our-activities", require("./components/activities/index/ActivitiesIndex.vue").default);
-//Jak pomoc logo
+//
+//JAK POMÓC
+//
+//Index
 Vue.component("help-index", require("./components/help/index/HelpIndex.vue").default);
+//Jak pomoc logo
+Vue.component("help-logo", require("./components/help/Logo.vue").default);
+//
+//PROJEKTY
+//
 //Projekty Index
 Vue.component("projects-index", require("./components/activities/projects/index/Index.vue").default);
 //Projekty Logo
@@ -49,10 +69,9 @@ Vue.component("projects-logo", require("./components/activities/projects/Project
 Vue.component("single-project", require("./components/activities/projects/showOneProject/Index.vue").default);
 //Dodaj nowy projekt
 Vue.component("add-project", require("./components/activities/projects/add_project/AddProject.vue").default);
-//Jak pomoc logo
-Vue.component("help-logo", require("./components/help/Logo.vue").default);
-//Galeria ze zdjeciami, co robia za a hrefy
-Vue.component("href-gallery", require("./components/GalleryWithHrefImg.vue").default);
+//
+//AKTUALNOŚCI
+//
 //Dodaniwenie nowej aktualności
 Vue.component("add-news", require("./components/news/add_new/AddNewMain.vue").default);
 //Jeden element na liscie aktualnosci w indexie
@@ -63,21 +82,28 @@ Vue.component("news-logo", require("./components/news/Logo.vue").default);
 Vue.component("single-news", require("./components/news/add_new/preview/view/ViewMain.vue").default);
 //Aktualności wyswietlanie wszystkich aktualnosci
 Vue.component("news-index", require("./components/news/NewsIndex.vue").default);
+//
+//O NAS
+//
 //O nas logo
 Vue.component("about-logo", require("./components/about/Logo.vue").default);
 //Index
 Vue.component("about-index", require("./components/about/index/IndexMain.vue").default);
-//STRONA GŁÓWNA STARA
-// Vue.component("welcome", require("./components/welcome/WelcomeWrapper.vue").default);
-Vue.component("landing-page", require("./components/landing_page/Main.vue").default);
-//STOPKA
-Vue.component("ds-footer", require("./components/Footer.vue").default);
 //Budowa CERT- index
 Vue.component("cert-index", require("./components/about/cert/Index.vue").default);
 //Cert- jedno pietro
 Vue.component("cert-floor", require("./components/about/cert/Floor.vue").default);
+//O nas- zarząd
+Vue.component("about-management", require("./components/about/index/Management.vue").default);
+
+//
 //Kontakt
+//
 Vue.component("contact", require("./components/contact/Main.vue").default);
+//
+//STOPKA
+//
+Vue.component("ds-footer", require("./components/Footer.vue").default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

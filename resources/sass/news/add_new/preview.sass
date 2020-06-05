@@ -54,47 +54,82 @@ section.ds-news-add-new
                             font-size: 1.1rem
                         ul
                             font-size: 1rem
-
+//
+//SINLE NEW
+//
 div.item-on-list
     display: flex
     align-items: flex-end
     justify-content: center
     width: 100vw
     margin-bottom: 50px
-
-    a
-        width: 150px
-        border: none
-        box-shadow: none
-        transition: all .3s linear
-        border: 2px solid
-        font-size: 1.1rem
-        padding: 5px 0
-        border-radius: 10px
-        background-color: $deafultGreen
-        color: white
-        cursor: pointer
-        text-align: center 
-        &:hover
-            color: $deafultGreen
-            background-color: white 
+    font-family: "Lato", sans-serif
+    
     div.body
-        border-bottom: 2px solid $deafultGreen
+        border-bottom: 5px solid $dsPink
         display: flex
-        padding: 30px
+        align-items: center
+        padding: 30px 0
         margin-right: 30px
-        width: 75%
+        width: 100%
+        color: $dsBlue
+        span.date
+            color: $dsPink
+            font-size: 1.2rem
+            font-weight: bold
+            margin-bottom: 10px
+            display: block
         img
-            max-width: 300px
+            max-width: 400px
             object-fit: contain
             margin-right: 30px
+            border: 4px solid $dsGreen
+            border-radius: 20px
         div.content
+            display: flex
+            flex-direction: column
             h3
                 padding-top: 30px
                 font-weight: bold
+                font-size: 2rem
+                letter-spacing: 1px
             p
                 font-size: 1.1rem
-                text-indent: 20px
+                max-height: 250px
+                overflow: hidden
+            a
+                background-color: $dsPink
+                text-decoration: none
+                align-self: flex-end
+                margin-right: 50px
+                padding: 0 20px
+                font-size: 1.2rem
+                letter-spacing: 2px
+                border: 3px solid $dsPink
+                position: relative
+                overflow: hidden
+                text-transform: uppercase
+                font-weight: bold
+                &::after
+                    content: ''
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    background-color: #fff
+                    transition: transform .2s
+                    transform: translateX(101%)
+                &:hover
+                    &::after
+                        transform: translateX(0)
+                    span
+                        color: $dsPink
+                span
+                    position: relative
+                    z-index: 2
+                    color: #fff
+                    transition: color .2s
 
 
 div.ds-news-view
@@ -132,19 +167,25 @@ div.ds-news-view
             div.ds-news-preview
                 // margin-top: 50px
 
-@media screen and ( max-width: 950px )
+@media screen and ( max-width: 1000px )
     div.item-on-list
         width: 100vw
         flex-direction: column
-        a
-            align-self: center
-            width: 300px
+        
         div.body
-            border-bottom: none
-            padding: 30px
             margin-right: 0px
             width: 100%
             flex-direction: column
+            padding: 10px 30px 50px 30px
+            @media screen and ( max-width: 600px )
+                padding: 10px 0 50px 0
+                
             img
                 max-width: 100%
                 margin-right: 0px
+            div.content
+                a
+                    align-self: center
+                    width: 300px
+                    text-align: center
+                    margin-right: 0

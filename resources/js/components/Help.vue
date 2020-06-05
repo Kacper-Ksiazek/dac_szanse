@@ -3,7 +3,7 @@
         <div class="content">
             <!--  -->
             <div class="wrapper">
-                <div class="text">
+                <div class="help-text">
                     <h1 class="you">ty też możesz</h1>
                     <h1 class="dac-szanse">Dać Szansę</h1>
                     <a href="/jak-pomoc" class="how-to-help"><span>Zobacz jak pomóc</span></a>

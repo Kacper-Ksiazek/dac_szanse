@@ -4,10 +4,6 @@
         <!--  -->
         <!--  -->
         <!--  -->
-        <people-list :list="peopleList"></people-list>
-        <!--  -->
-        <!--  -->
-        <!--  -->
         <h1>Historia Stowarzyszenia „Dać Szansę”</h1>
         <!--  -->
         <div class="text">
@@ -52,7 +48,6 @@
 <script>
 //
 //
-import PeopleList from "./PeopleList.vue";
 import OurAwards from "./awards/OurAwards.vue";
 import cert from "./Cert.vue";
 export default {
@@ -60,48 +55,12 @@ export default {
         if (window.location.href.includes("#historia")) this.historyAllText = true;
     },
     components: {
-        "people-list": PeopleList,
         "our-awards": OurAwards,
         cert: cert
     },
     data() {
         return {
             historyAllText: false,
-            peopleList: [
-                {
-                    id: 0,
-                    header: "Zarząd",
-                    list: [
-                        { id: 0, position: "Prezes Zarządu", name: "Bogumiła Jończyk" },
-                        { id: 1, position: "Wiceprezes Zarządu", name: "Joanna Szymańska" },
-                        { id: 2, position: "Członek Zarządu", name: "Jolanta Dziergas" },
-                        { id: 3, position: "Członek Zarządu", name: "Andrzej Palkij" },
-                        { id: 4, position: "Członek Zarządu", name: "Robert Susfał" },
-                        { id: 5, position: "Członek Zarządu", name: "Jarosław Jakubiec" },
-                        { id: 6, position: "Członek Zarządu", name: "Mirosław Śmiech" }
-                    ]
-                },
-                //
-                {
-                    id: 1,
-                    header: "Komisja Rewizyjna",
-                    list: [
-                        { id: 0, position: "Przewodnicząca Komisji Rewizyjnej", name: "Katarzyna Wolanin" },
-                        { id: 1, position: "Członek Komisji Rewizyjnej", name: "Mirosława Drabik" },
-                        { id: 2, position: "Członek Komisji Rewizyjnej", name: "Jadwiga Łojewska" }
-                    ]
-                },
-                //
-                {
-                    id: 2,
-                    header: "Sąd  Koleżeński",
-                    list: [
-                        { id: 0, position: "Przewodnicząca Sądu Koleżeńskiego", name: "Elżbieta Kosik" },
-                        { id: 1, position: "Sekretarz Sądu Koleżeńskiego", name: "Katarzyna Wykręt" },
-                        { id: 2, position: "Członek Sądu Koleżeńskiego", name: "Tomasz Pasternak" }
-                    ]
-                }
-            ],
             awardsList: [
                 {
                     id: 0,

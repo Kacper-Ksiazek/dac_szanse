@@ -119,6 +119,8 @@ Route::post('/admin/dodaj-aktualnosc','NewsController@addNewNews')->middleware('
 //O NAS
 //index
 Route::get('/o-nas','AboutUsController@index');
+//ZARZAD
+Route::get('/o-nas/zarzad','AboutUsController@zarzad');
 //RODO
 Route::get('/o-nas/polityka-rodo','AboutUsController@rodo');
 //CERT index

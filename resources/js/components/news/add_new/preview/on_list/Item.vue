@@ -4,12 +4,14 @@
             <img :src="getLogo()" alt="" />
             <div class="content">
                 <h3 v-text="title"></h3>
-                <span v-text="`Data: ${date}`"></span>
+                <span v-text="`Data: ${date}`" class="date"></span>
                 <p v-text="getText()"></p>
+                <a v-if="showPreviw() && type === 'preview'"><span>Przeczytaj</span></a>
+                <a v-if="showPreviw() && type === 'view'" :href="getHref()"><span>Przeczytaj</span></a>
             </div>
         </div>
-        <a v-if="showPreviw() && type === 'preview'">Zobacz wiecej</a>
-        <a v-if="showPreviw() && type === 'view'" :href="getHref()">Zobacz wiecej</a>
+
+        <!--  -->
         <div class="error" v-if="!showPreviw()">
             <i class="fa fa-bullhorn"></i>
             <h2>Problem mamy!</h2>

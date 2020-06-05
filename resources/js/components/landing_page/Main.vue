@@ -15,15 +15,13 @@
         <!--  -->
         <news :newsList="JSON.parse(news)"></news>
         <!--  -->
-        <help></help>
-        <!--  -->
         <support></support>
+        <!--  -->
     </section>
 </template>
 <script>
 import activities from "./Activities";
 import news from "./News";
-import help from "./Help";
 import support from "./Support";
 //
 export default {
@@ -31,7 +29,6 @@ export default {
     components: {
         activities,
         news,
-        help,
         support
     }
 };

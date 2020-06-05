@@ -12455,114 +12455,6 @@ div.ds-a-logo {
   background-image: url("/images/activities/activities_logo.jpg");
 }
 
-section.ds-about-wrapper div.people-list-wrapper {
-  width: 85vw;
-  max-width: 1100px;
-  padding: 50px;
-}
-@media screen and (max-width: 600px) {
-  section.ds-about-wrapper div.people-list-wrapper {
-    padding: 0;
-    margin-top: 50px;
-  }
-}
-section.ds-about-wrapper div.people-list-wrapper div.people-list-item.active {
-  max-height: 450px;
-}
-@media screen and (max-width: 1200px) {
-  section.ds-about-wrapper div.people-list-wrapper div.people-list-item.active {
-    max-height: 700px;
-  }
-}
-@media screen and (max-width: 900px) {
-  section.ds-about-wrapper div.people-list-wrapper div.people-list-item.active {
-    max-height: 1000px;
-  }
-}
-section.ds-about-wrapper div.people-list-wrapper div.people-list-item.active div.header i {
-  transform: rotate(180deg);
-}
-section.ds-about-wrapper div.people-list-wrapper div.people-list-item {
-  padding-bottom: 20px;
-  margin-bottom: 50px;
-  border-bottom: 2px solid black;
-  max-height: 70px;
-  overflow: hidden;
-  transition: all 0.3s linear;
-}
-@media screen and (max-width: 1000px) {
-  section.ds-about-wrapper div.people-list-wrapper div.people-list-item {
-    transition: all 0.7s linear;
-  }
-}
-section.ds-about-wrapper div.people-list-wrapper div.people-list-item div.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 50px;
-}
-section.ds-about-wrapper div.people-list-wrapper div.people-list-item div.header h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 0;
-}
-@media screen and (max-width: 600px) {
-  section.ds-about-wrapper div.people-list-wrapper div.people-list-item div.header h2 {
-    font-size: 1.7rem;
-  }
-}
-section.ds-about-wrapper div.people-list-wrapper div.people-list-item div.header i {
-  font-size: 2rem;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;
-  background-color: #35C828;
-  padding: 5px;
-  cursor: pointer;
-  transition: transform 0.2s linear;
-  transform: rotate(0deg);
-}
-section.ds-about-wrapper div.people-list-wrapper div.people-list-item div.peoples {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  position: relative;
-  padding: 0 2.5vw;
-}
-@media screen and (max-width: 800px) {
-  section.ds-about-wrapper div.people-list-wrapper div.people-list-item div.peoples {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-section.ds-about-wrapper div.people-list-wrapper div.people-list-item div.peoples div.person {
-  min-width: 250px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #35C828;
-  padding: 20px 0;
-}
-@media screen and (max-width: 600px) {
-  section.ds-about-wrapper div.people-list-wrapper div.people-list-item div.peoples div.person {
-    min-width: 300px;
-  }
-}
-section.ds-about-wrapper div.people-list-wrapper div.people-list-item div.peoples div.person span.name {
-  font-weight: bold;
-  font-size: 1.5rem;
-  text-align: center;
-  cursor: default;
-}
-section.ds-about-wrapper div.people-list-wrapper div.people-list-item div.peoples div.person span.position {
-  font-size: 1.2rem;
-  text-align: center;
-  cursor: default;
-}
-
 section.ds-about-wrapper div.text {
   margin: 30px 10%;
   display: flex;
@@ -13282,22 +13174,300 @@ section.ds-cert-single-floor div.cert-floor-place div.images-wrapper div.single-
   width: 100%;
 }
 
-div.ds-about-logo {
-  background-image: url("/images/about/logo.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 30vh;
+section.ds-about-management {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+section.ds-about-management h1 {
+  margin: 40px 0;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #2c245a;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+section.ds-about-management h1 span.pink {
+  color: #e61a63;
+}
+section.ds-about-management div.people-list-wrapper {
+  width: 85vw;
+  max-width: 1100px;
+  padding: 50px;
+}
+@media screen and (max-width: 600px) {
+  section.ds-about-management div.people-list-wrapper {
+    padding: 0;
+    margin-top: 50px;
+  }
+}
+section.ds-about-management div.people-list-wrapper div.people-list-item.active {
+  max-height: 450px;
+}
+@media screen and (max-width: 1200px) {
+  section.ds-about-management div.people-list-wrapper div.people-list-item.active {
+    max-height: 700px;
+  }
+}
+@media screen and (max-width: 900px) {
+  section.ds-about-management div.people-list-wrapper div.people-list-item.active {
+    max-height: 1000px;
+  }
+}
+section.ds-about-management div.people-list-wrapper div.people-list-item.active div.header h2 span {
+  color: #e61a63;
+}
+section.ds-about-management div.people-list-wrapper div.people-list-item.active div.header h2::after {
+  transform: translateY(2%);
+}
+section.ds-about-management div.people-list-wrapper div.people-list-item {
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+  border-bottom: 2px solid black;
+  max-height: 70px;
+  overflow: hidden;
+  transition: all 0.3s linear;
+}
+@media screen and (max-width: 1000px) {
+  section.ds-about-management div.people-list-wrapper div.people-list-item {
+    transition: all 0.7s linear;
+  }
+}
+section.ds-about-management div.people-list-wrapper div.people-list-item div.header {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 50px;
+}
+section.ds-about-management div.people-list-wrapper div.people-list-item div.header h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  background-color: #e61a63;
+  cursor: pointer;
+  padding: 5px 10px;
+  letter-spacing: 1px;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 3px solid #e61a63;
+}
+@media screen and (max-width: 600px) {
+  section.ds-about-management div.people-list-wrapper div.people-list-item div.header h2 {
+    font-size: 1.7rem;
+  }
+}
+section.ds-about-management div.people-list-wrapper div.people-list-item div.header h2 span {
+  position: relative;
+  z-index: 2;
+  transition: color 0.2s;
+  color: inherit;
+}
+section.ds-about-management div.people-list-wrapper div.people-list-item div.header h2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transform: translateY(110%);
+  transition: transform 0.2s;
+}
+section.ds-about-management div.people-list-wrapper div.people-list-item div.peoples {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 2.5vw;
+}
+@media screen and (max-width: 800px) {
+  section.ds-about-management div.people-list-wrapper div.people-list-item div.peoples {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+section.ds-about-management div.people-list-wrapper div.people-list-item div.peoples div.person {
+  min-width: 250px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e61a63;
+  color: #2c245a;
+  padding: 20px 0;
+}
+@media screen and (max-width: 600px) {
+  section.ds-about-management div.people-list-wrapper div.people-list-item div.peoples div.person {
+    min-width: 300px;
+  }
+}
+section.ds-about-management div.people-list-wrapper div.people-list-item div.peoples div.person span.name {
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  cursor: default;
+}
+section.ds-about-management div.people-list-wrapper div.people-list-item div.peoples div.person span.position {
+  font-size: 1.2rem;
+  text-align: center;
+  cursor: default;
+}
+
+section.ds-about-management h1 span.pink {
+  -webkit-animation: about-management-pink 0.3s 1.2s both;
+          animation: about-management-pink 0.3s 1.2s both;
+}
+@-webkit-keyframes about-management-pink {
+  0% {
+    color: #2c245a;
+  }
+  100% {
+    color: #e61a63;
+  }
+}
+@keyframes about-management-pink {
+  0% {
+    color: #2c245a;
+  }
+  100% {
+    color: #e61a63;
+  }
+}
+section.ds-about-management div.people-list-wrapper div.people-list-item:nth-of-type(1) div.header h2 {
+  transform-origin: left;
+  -webkit-animation: about-management-header 0.7s 0.2s both;
+          animation: about-management-header 0.7s 0.2s both;
+}
+section.ds-about-management div.people-list-wrapper div.people-list-item:nth-of-type(2) div.header h2 {
+  transform-origin: right;
+  -webkit-animation: about-management-header 0.7s 0.5s both;
+          animation: about-management-header 0.7s 0.5s both;
+}
+section.ds-about-management div.people-list-wrapper div.people-list-item:nth-of-type(3) div.header h2 {
+  transform-origin: left;
+  -webkit-animation: about-management-header 0.7s 0.8s both;
+          animation: about-management-header 0.7s 0.8s both;
+}
+@-webkit-keyframes about-management-header {
+  0% {
+    color: #e61a63;
+    transform: scaleX(0);
+  }
+  60% {
+    color: #e61a63;
+    transform: scaleX(1);
+  }
+  80% {
+    color: #e61a63;
+    transform: scaleX(1);
+  }
+  100% {
+    color: #fff;
+    transform: scaleX(1);
+  }
+}
+@keyframes about-management-header {
+  0% {
+    color: #e61a63;
+    transform: scaleX(0);
+  }
+  60% {
+    color: #e61a63;
+    transform: scaleX(1);
+  }
+  80% {
+    color: #e61a63;
+    transform: scaleX(1);
+  }
+  100% {
+    color: #fff;
+    transform: scaleX(1);
+  }
+}
+
+div.ds-about-logo {
+  background-color: #9eb72b;
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+@media screen and (max-width: 500px) {
+  div.ds-about-logo {
+    justify-content: flex-end !important;
+  }
+}
+div.ds-about-logo::after {
+  content: "";
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20%;
+  height: 120%;
+  width: 100%;
+  opacity: 0.6;
+  background-image: url(/images/heart.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  position: absolute;
+}
+@media screen and (max-width: 450px) {
+  div.ds-about-logo::after {
+    right: 0%;
+  }
 }
 div.ds-about-logo h1 {
-  color: #35C828;
+  color: #fff;
   font-size: 4rem;
   font-weight: bold;
-  font-family: "Open Sans";
+  letter-spacing: 2px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding-left: 15vw;
+}
+div.ds-about-logo nav.ds-about-elements {
+  position: relative;
+  z-index: 10;
+  padding-left: 15vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+div.ds-about-logo nav.ds-about-elements a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.3rem;
+  padding: 0px 15px;
+  margin-bottom: 15px;
+}
+div.ds-about-logo nav.ds-about-elements a.active {
+  color: #9eb72b;
+  background-color: #fff;
+}
+@media screen and (max-width: 1000px) {
+  div.ds-about-logo {
+    justify-content: center;
+  }
+  div.ds-about-logo h1 {
+    font-size: 3rem;
+    padding-left: 10px;
+  }
+  div.ds-about-logo nav.ds-about-elements {
+    padding-left: 10px;
+  }
+}
+@media screen and (max-width: 1000px) and (max-width: 500px) {
+  div.ds-about-logo nav.ds-about-elements a {
+    font-size: 1rem;
+  }
 }
 
 section.ds-help-wrapper {
@@ -13582,22 +13752,11 @@ section.ds-news-list-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 15vw;
-  min-height: 90vh;
+  padding: 0 10vw;
 }
-@media screen and (max-width: 1350px) {
-  section.ds-news-list-wrapper {
-    padding: 0 10vw;
-  }
-}
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1600px) {
   section.ds-news-list-wrapper {
     padding: 0 5vw;
-  }
-}
-@media screen and (max-width: 1000px) {
-  section.ds-news-list-wrapper {
-    padding: 0;
   }
 }
 section.ds-news-list-wrapper div.item-on-list {
@@ -13605,65 +13764,33 @@ section.ds-news-list-wrapper div.item-on-list {
   -webkit-animation: fadeIn 0.3s linear;
           animation: fadeIn 0.3s linear;
 }
-section.ds-news-list-wrapper div.search {
+section.ds-news-list-wrapper div.pagination-links {
   display: flex;
-  margin-top: 30px;
 }
-section.ds-news-list-wrapper div.search i {
-  padding: 5px 10px;
-  border: none;
-  background-color: #35C828;
-  border-radius: 0 10px 10px 0;
-  transition: all 0.3s linear;
-  border-right: 2px solid #35C828;
-  border-top: 2px solid #35C828;
-  border-bottom: 2px solid #35C828;
-  color: white;
+section.ds-news-list-wrapper div.pagination-links a {
+  margin-left: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: #9eb72b;
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.2s;
+  font-size: 1.5rem;
+  font-weight: 900;
 }
-section.ds-news-list-wrapper div.search input {
-  padding: 5px 10px;
-  border: none;
-  background-color: #35C828;
-  border-radius: 10px 0 0 10px;
-  transition: all 0.3s linear;
-  border-left: 2px solid #35C828;
-  border-top: 2px solid #35C828;
-  border-bottom: 2px solid #35C828;
-  color: white;
-  font-size: 1.1rem;
-  font-weight: bold;
+section.ds-news-list-wrapper div.pagination-links a:first-of-type {
+  margin-left: 0;
 }
-section.ds-news-list-wrapper div.search input::-webkit-input-placeholder {
-  color: white;
-  letter-spacing: 2px;
+section.ds-news-list-wrapper div.pagination-links a:hover {
+  transform: scale(1.3);
+  background-color: #e61a63;
 }
-section.ds-news-list-wrapper div.search input::-moz-placeholder {
-  color: white;
-  letter-spacing: 2px;
-}
-section.ds-news-list-wrapper div.search input:-ms-input-placeholder {
-  color: white;
-  letter-spacing: 2px;
-}
-section.ds-news-list-wrapper div.search input::-ms-input-placeholder {
-  color: white;
-  letter-spacing: 2px;
-}
-section.ds-news-list-wrapper div.search input::placeholder {
-  color: white;
-  letter-spacing: 2px;
-}
-section.ds-news-list-wrapper div.search input:focus, section.ds-news-list-wrapper div.search input:focus + i {
-  background-color: white;
-  color: #35C828;
-  box-shadow: none;
-  outline: 0px !important;
-  -webkit-appearance: none;
-  box-shadow: none !important;
+section.ds-news-list-wrapper div.pagination-links a.current {
+  transform: scale(1.3);
+  background-color: #e61a63;
 }
 
 section.ds-news-add-new div.ds-news-edit-content-wrapper {
@@ -14182,45 +14309,83 @@ div.item-on-list {
   justify-content: center;
   width: 100vw;
   margin-bottom: 50px;
-}
-div.item-on-list a {
-  width: 150px;
-  border: none;
-  box-shadow: none;
-  transition: all 0.3s linear;
-  border: 2px solid;
-  font-size: 1.1rem;
-  padding: 5px 0;
-  border-radius: 10px;
-  background-color: #35C828;
-  color: white;
-  cursor: pointer;
-  text-align: center;
-}
-div.item-on-list a:hover {
-  color: #35C828;
-  background-color: white;
+  font-family: "Lato", sans-serif;
 }
 div.item-on-list div.body {
-  border-bottom: 2px solid #35C828;
+  border-bottom: 5px solid #e61a63;
   display: flex;
-  padding: 30px;
+  align-items: center;
+  padding: 30px 0;
   margin-right: 30px;
-  width: 75%;
+  width: 100%;
+  color: #2c245a;
+}
+div.item-on-list div.body span.date {
+  color: #e61a63;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
 }
 div.item-on-list div.body img {
-  max-width: 300px;
+  max-width: 400px;
   -o-object-fit: contain;
      object-fit: contain;
   margin-right: 30px;
+  border: 4px solid #9eb72b;
+  border-radius: 20px;
+}
+div.item-on-list div.body div.content {
+  display: flex;
+  flex-direction: column;
 }
 div.item-on-list div.body div.content h3 {
   padding-top: 30px;
   font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: 1px;
 }
 div.item-on-list div.body div.content p {
   font-size: 1.1rem;
-  text-indent: 20px;
+  max-height: 250px;
+  overflow: hidden;
+}
+div.item-on-list div.body div.content a {
+  background-color: #e61a63;
+  text-decoration: none;
+  align-self: flex-end;
+  margin-right: 50px;
+  padding: 0 20px;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  border: 3px solid #e61a63;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+div.item-on-list div.body div.content a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transition: transform 0.2s;
+  transform: translateX(101%);
+}
+div.item-on-list div.body div.content a:hover::after {
+  transform: translateX(0);
+}
+div.item-on-list div.body div.content a:hover span {
+  color: #e61a63;
+}
+div.item-on-list div.body div.content a span {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  transition: color 0.2s;
 }
 
 div.ds-news-view {
@@ -14273,25 +14438,35 @@ div.ds-news-view section.ds-single-task-gallery {
     right: calc(100vw + 5px);
   }
 }
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1000px) {
   div.item-on-list {
     width: 100vw;
     flex-direction: column;
   }
-  div.item-on-list a {
-    align-self: center;
-    width: 300px;
-  }
   div.item-on-list div.body {
-    border-bottom: none;
-    padding: 30px;
     margin-right: 0px;
     width: 100%;
     flex-direction: column;
+    padding: 10px 30px 50px 30px;
   }
+}
+@media screen and (max-width: 1000px) and (max-width: 600px) {
+  div.item-on-list div.body {
+    padding: 10px 0 50px 0;
+  }
+}
+@media screen and (max-width: 1000px) {
   div.item-on-list div.body img {
     max-width: 100%;
     margin-right: 0px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  div.item-on-list div.body div.content a {
+    align-self: center;
+    width: 300px;
+    text-align: center;
+    margin-right: 0;
   }
 }
 section.ds-news-add-new div.main-content-wrapper div.continue-wrapper.active div.content div.text span.hr {
@@ -14658,21 +14833,51 @@ section.ds-news-list-wrapper.on-single-element h1::before {
 }
 
 div.ds-news-logo {
-  background-image: url("/images/news/logo.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #9eb72b;
   width: 100%;
   height: 30vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  position: relative;
+}
+div.ds-news-logo::after {
+  content: "";
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20%;
+  height: 120%;
+  width: 100%;
+  opacity: 0.6;
+  background-image: url(/images/heart.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  position: absolute;
+}
+@media screen and (max-width: 450px) {
+  div.ds-news-logo::after {
+    right: 0%;
+  }
 }
 div.ds-news-logo h1 {
-  color: #35C828;
+  color: #fff;
   font-size: 4rem;
   font-weight: bold;
-  font-family: "Open Sans";
+  letter-spacing: 2px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding-left: 15vw;
+}
+@media screen and (max-width: 1000px) {
+  div.ds-news-logo {
+    justify-content: center;
+  }
+  div.ds-news-logo h1 {
+    font-size: 3rem;
+    padding-left: 0;
+  }
 }
 
 section.ds-landing-page section.ds-landing-activities {
@@ -15022,7 +15227,7 @@ section.ds-landing-news div.content div.single-news div.img::after {
   left: 50%;
   width: calc(100% + 10px);
   height: calc(100% + 10px);
-  background-color: #f8fafc;
+  background-color: #fff;
   transform: translate(-50%, -50%);
 }
 section.ds-landing-news div.content div.single-news h1.title {
@@ -15259,7 +15464,7 @@ section.ds-landing-help div.content {
 section.ds-landing-help div.content div.wrapper {
   width: 60%;
 }
-section.ds-landing-help div.content div.wrapper div.text {
+section.ds-landing-help div.content div.wrapper div.help-text {
   padding: 5% 0 0 10%;
   opacity: 0;
   font-family: "Lato", sans-serif;
@@ -15272,21 +15477,21 @@ section.ds-landing-help div.content div.wrapper div.text {
       -ms-user-select: none;
           user-select: none;
 }
-section.ds-landing-help div.content div.wrapper div.text h1.you {
+section.ds-landing-help div.content div.wrapper div.help-text h1.you {
   text-transform: uppercase;
   font-size: 3.5rem;
   margin: 0;
   font-weight: bold;
   color: #2c245a;
 }
-section.ds-landing-help div.content div.wrapper div.text h1.dac-szanse {
+section.ds-landing-help div.content div.wrapper div.help-text h1.dac-szanse {
   font-size: 8rem;
   font-weight: bold;
   margin-top: -20px;
   margin-left: 10px;
   color: #e61a63;
 }
-section.ds-landing-help div.content div.wrapper div.text a.how-to-help {
+section.ds-landing-help div.content div.wrapper div.help-text a.how-to-help {
   font-size: 2rem;
   text-transform: uppercase;
   text-decoration: none;
@@ -15301,7 +15506,7 @@ section.ds-landing-help div.content div.wrapper div.text a.how-to-help {
   overflow: hidden;
   letter-spacing: 1px;
 }
-section.ds-landing-help div.content div.wrapper div.text a.how-to-help::after {
+section.ds-landing-help div.content div.wrapper div.help-text a.how-to-help::after {
   content: "";
   position: absolute;
   top: -102%;
@@ -15311,16 +15516,16 @@ section.ds-landing-help div.content div.wrapper div.text a.how-to-help::after {
   background-color: white;
   transition: top 0.3s, width 0.3s 0.3s;
 }
-section.ds-landing-help div.content div.wrapper div.text a.how-to-help span {
+section.ds-landing-help div.content div.wrapper div.help-text a.how-to-help span {
   position: relative;
   z-index: 5;
   transition: color 0.3s 0.1s;
 }
-section.ds-landing-help div.content div.wrapper div.text a.how-to-help:hover::after {
+section.ds-landing-help div.content div.wrapper div.help-text a.how-to-help:hover::after {
   top: 0;
   width: 100%;
 }
-section.ds-landing-help div.content div.wrapper div.text a.how-to-help:hover span {
+section.ds-landing-help div.content div.wrapper div.help-text a.how-to-help:hover span {
   color: #2c245a;
 }
 section.ds-landing-help div.content div.tree {
@@ -15364,22 +15569,22 @@ section.ds-landing-help div.content div.help-forms div.single-help-form {
   }
 }
 @media screen and (max-width: 1000px) {
-  section.ds-landing-help div.content div.wrapper div.text {
+  section.ds-landing-help div.content div.wrapper div.help-text {
     padding: 5% 0 0 5%;
   }
 }
 @media screen and (max-width: 1000px) and (max-width: 730px) {
-  section.ds-landing-help div.content div.wrapper div.text {
+  section.ds-landing-help div.content div.wrapper div.help-text {
     padding: 5% 0 0 10%;
   }
-  section.ds-landing-help div.content div.wrapper div.text h1.you {
+  section.ds-landing-help div.content div.wrapper div.help-text h1.you {
     font-size: 2.5rem;
   }
-  section.ds-landing-help div.content div.wrapper div.text h1.dac-szanse {
+  section.ds-landing-help div.content div.wrapper div.help-text h1.dac-szanse {
     font-size: 6rem;
     margin-left: 10px;
   }
-  section.ds-landing-help div.content div.wrapper div.text a.how-to-help {
+  section.ds-landing-help div.content div.wrapper div.help-text a.how-to-help {
     font-size: 2rem;
     padding: 0 25px;
     font-weight: bold;
@@ -15387,17 +15592,17 @@ section.ds-landing-help div.content div.help-forms div.single-help-form {
   }
 }
 @media screen and (max-width: 1000px) and (max-width: 650px) {
-  section.ds-landing-help div.content div.wrapper div.text {
+  section.ds-landing-help div.content div.wrapper div.help-text {
     padding: 5% 0 0 8%;
   }
 }
 @media screen and (max-width: 1000px) and (max-width: 600px) {
-  section.ds-landing-help div.content div.wrapper div.text {
+  section.ds-landing-help div.content div.wrapper div.help-text {
     padding: 5% 0 0 3%;
   }
 }
 @media screen and (max-width: 1000px) and (max-width: 580px) {
-  section.ds-landing-help div.content div.wrapper div.text a.how-to-help {
+  section.ds-landing-help div.content div.wrapper div.help-text a.how-to-help {
     font-size: 1.5rem;
     margin-left: 0;
     align-self: flex-end;
@@ -15405,37 +15610,37 @@ section.ds-landing-help div.content div.help-forms div.single-help-form {
   }
 }
 @media screen and (max-width: 1000px) and (max-width: 530px) {
-  section.ds-landing-help div.content div.wrapper div.text h1.you {
+  section.ds-landing-help div.content div.wrapper div.help-text h1.you {
     font-size: 2rem;
   }
-  section.ds-landing-help div.content div.wrapper div.text h1.dac-szanse {
+  section.ds-landing-help div.content div.wrapper div.help-text h1.dac-szanse {
     font-size: 5rem;
   }
 }
 @media screen and (max-width: 1000px) and (max-width: 500px) {
-  section.ds-landing-help div.content div.wrapper div.text {
+  section.ds-landing-help div.content div.wrapper div.help-text {
     padding: 0;
   }
-  section.ds-landing-help div.content div.wrapper div.text h1.you {
+  section.ds-landing-help div.content div.wrapper div.help-text h1.you {
     font-size: 2rem;
     padding-left: 10px;
   }
-  section.ds-landing-help div.content div.wrapper div.text h1.dac-szanse {
+  section.ds-landing-help div.content div.wrapper div.help-text h1.dac-szanse {
     font-size: 5rem;
     padding-left: 10px;
   }
-  section.ds-landing-help div.content div.wrapper div.text a.how-to-help {
+  section.ds-landing-help div.content div.wrapper div.help-text a.how-to-help {
     align-self: center;
     margin: 0;
   }
 }
 @media screen and (max-width: 1000px) and (max-width: 430px) {
-  section.ds-landing-help div.content div.wrapper div.text h1.dac-szanse {
+  section.ds-landing-help div.content div.wrapper div.help-text h1.dac-szanse {
     font-size: 4rem;
   }
 }
 @media screen and (max-width: 1000px) and (max-width: 360px) {
-  section.ds-landing-help div.content div.wrapper div.text h1.dac-szanse {
+  section.ds-landing-help div.content div.wrapper div.help-text h1.dac-szanse {
     font-size: 3.5rem;
   }
 }
@@ -15462,11 +15667,11 @@ section.ds-landing-help div.content div.wrapper div.help-forms {
   }
 }
 
-section.ds-landing-help.active div.text {
+section.ds-landing-help.active div.help-text {
   overflow: hidden;
   opacity: 1 !important;
 }
-section.ds-landing-help.active div.text h1.you {
+section.ds-landing-help.active div.help-text h1.you {
   background-color: red;
   -webkit-animation: lp-help-you 1.5s 1.1s both;
           animation: lp-help-you 1.5s 1.1s both;
@@ -15508,7 +15713,7 @@ section.ds-landing-help.active div.text h1.you {
     background-color: transparent;
   }
 }
-section.ds-landing-help.active div.text h1.dac-szanse {
+section.ds-landing-help.active div.help-text h1.dac-szanse {
   position: relative;
   overflow: hidden;
   -webkit-animation: lp-help-dac-szanse1 0.1s 0.9s both;
@@ -15532,7 +15737,7 @@ section.ds-landing-help.active div.text h1.dac-szanse {
     color: #e61a63;
   }
 }
-section.ds-landing-help.active div.text h1.dac-szanse::after {
+section.ds-landing-help.active div.help-text h1.dac-szanse::after {
   content: "";
   position: absolute;
   top: 0;
@@ -15571,7 +15776,7 @@ section.ds-landing-help.active div.text h1.dac-szanse::after {
     transform: translate(101%, 0);
   }
 }
-section.ds-landing-help.active div.text a.how-to-help {
+section.ds-landing-help.active div.help-text a.how-to-help {
   position: relative;
   z-index: 1;
   -webkit-animation: lp-help-dac-a-how 1.3s 1.3s both;
@@ -16216,19 +16421,23 @@ section.ds-gallery-with-hrefs div.gallery-item a:hover span.wrap span {
 }
 
 section.ds-footer {
-  margin-top: 50px;
-  background-color: #9eb72b;
   display: flex;
-  padding: 20px;
+  flex-direction: column;
+  width: 100%;
+  cursor: default;
+}
+section.ds-footer div.text-wrapper {
+  width: 100%;
+  background-color: #9eb72b;
   display: flex;
   justify-content: center;
 }
-section.ds-footer div.text {
+section.ds-footer div.text-wrapper div.text {
   width: 100%;
   max-width: 900px;
   display: flex;
 }
-section.ds-footer div.text div.image {
+section.ds-footer div.text-wrapper div.text div.image {
   width: 200px;
   background-image: url("/images/footer_logo.png");
   background-position: center;
@@ -16237,48 +16446,50 @@ section.ds-footer div.text div.image {
   margin-right: 20px;
   box-sizing: border-box;
 }
-section.ds-footer div.text div.content {
+section.ds-footer div.text-wrapper div.text div.content {
   color: #fff;
   font-family: "Lato", sans-serif;
   display: flex;
   flex-direction: column;
 }
-section.ds-footer div.text div.content h1 {
+section.ds-footer div.text-wrapper div.text div.content h1 {
   font-size: 1.5rem;
   font-weight: 900;
   margin-bottom: 20px;
   text-align: center;
 }
-section.ds-footer div.text div.content div.fields {
+section.ds-footer div.text-wrapper div.text div.content div.fields {
   display: flex;
   justify-content: space-between;
+  padding: 0 10px;
 }
-section.ds-footer div.text div.content div.fields div.field {
+section.ds-footer div.text-wrapper div.text div.content div.fields div.field {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
 }
-section.ds-footer div.text div.content div.bottom {
+section.ds-footer div.text-wrapper div.text div.content div.bottom {
   align-self: flex-end;
+  padding-bottom: 10px;
 }
-section.ds-footer div.text div.content div.bottom a {
+section.ds-footer div.text-wrapper div.text div.content div.bottom a {
   color: #fff;
   font-weight: bold;
   text-decoration: none;
 }
-section.ds-footer div.text div.content div.bottom a:nth-of-type(2) {
+section.ds-footer div.text-wrapper div.text div.content div.bottom a:nth-of-type(2) {
   margin: 0 15px;
   padding: 0 15px;
   border-right: 2px solid;
   border-left: 2px solid;
 }
 @media screen and (max-width: 400px) {
-  section.ds-footer div.text div.content div.bottom {
+  section.ds-footer div.text-wrapper div.text div.content div.bottom {
     display: flex;
     width: 100%;
     justify-content: center;
   }
-  section.ds-footer div.text div.content div.bottom a:nth-of-type(2) {
+  section.ds-footer div.text-wrapper div.text div.content div.bottom a:nth-of-type(2) {
     margin: 0 15px;
     padding: 0;
     border-right: none;
@@ -16288,6 +16499,7 @@ section.ds-footer div.text div.content div.bottom a:nth-of-type(2) {
 @media screen and (max-width: 900px) {
   section.ds-footer div.text {
     flex-direction: column-reverse;
+    align-items: center;
   }
   section.ds-footer div.text div.image {
     width: 100%;
@@ -16424,6 +16636,7 @@ section.ds-contact div.ds-content-items div.big-map img {
 body {
   max-width: 100vw;
   background-color: #fff !important;
+  font-family: "Lato", sans-serif !important;
 }
 
 .logo {
