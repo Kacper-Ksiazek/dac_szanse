@@ -1,26 +1,62 @@
 section.ds-cert-single-floor
     padding: 0 10vw
-    h1
-        font-size: 2.5rem
-        padding-bottom: 10px
-        position: relative
-        font-weight: bold
-        margin-top: 20px
-        &::after
-            content: ''
-            position: absolute
-            bottom: 0
-            left: 50%
-            transform: translate(-50%)
-            width: 120%
-            height: 3px
-            background-color: #000            
+    div.header
+        display: flex
+        justify-content: center
+        align-items: flex-end
+        margin: 40px 0
+        a
+            color: #fff
+            background-color: $dsPink
+            text-decoration: none
+            text-transform: uppercase
+            font-size: 1.2rem
+            padding: 5px 20px
+            border: 3px solid $dsPink
+            width: 250px
+            text-align: center
+            animation: about-management-header .7s .2s both
+            &:nth-of-type(1)
+                transform-origin: left
+            &:nth-of-type(2)
+                transform-origin: right 
+        h1
+            width: 500px
+            font-size: 2.5rem
+            text-align: center
+            margin: 0 50px
+            font-weight: 900
+            color: $dsBlue
+            text-transform: uppercase
+            letter-spacing: 2px
+            text-align: center
+            animation: about-management-pink .3s .7s both
+            cursor: default
+            user-select: none
+        @media screen and ( max-width: 600px )
+            flex-wrap: wrap
+            *
+                margin-bottom: 20px !important
+                width: 100% !important
+            a
+                font-size: 1rem
+                padding: 5px 10px
+                transform-origin: center !important
+
+                &:nth-of-type(1)
+                    order: 2
+                &:nth-of-type(2)
+                    order: 3
+            h1
+                font-size: 2.1rem
+                margin: 0
+                
     div.cert-floor-place
         margin: 20px 0
-        border-bottom: 3px solid $deafultGreen
+        border-bottom: 3px solid $dsPink
         padding: 30px 0
         h2
-            font-size: 2.5rem
+            font-size: 2rem
             font-weight: bold
         div.images-wrapper
             display: flex
@@ -30,3 +66,6 @@ section.ds-cert-single-floor
                 width: 300px
                 img
                     width: 100%
+        section.ds-single-task-gallery
+            button.ds-show-more-green
+                background-color: $dsPink !important

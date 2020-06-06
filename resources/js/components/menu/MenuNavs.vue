@@ -15,7 +15,8 @@
             <ul class="navbar-nav ml-auto ds-menu-big">
                 <li class="ds-menu-item" v-for="nav in navs" :key="nav.header.content">
                     <span class="ds-menu-header">
-                        <a :href="nav.header.href" class="content" v-text="nav.header.content"></a>
+                        <a v-if="nav.header.href" :href="nav.header.href" class="content" v-text="nav.header.content"></a>
+                        <a v-else class="content" v-text="nav.header.content"></a>
                     </span>
                     <div class="ds-menu-dropdown p-1" v-if="nav.body">
                         <div v-for="task in nav.body" :key="task.content"><a v-text="task.content" :href="task.href" :target="task.href.includes('http') ? '_blank' : ''"></a></div>
@@ -60,12 +61,12 @@ export default {
             mobileMenu: false,
             navs: [
                 {
-                    header: { content: "O nas", href: "/o-nas" },
+                    header: { content: "O nas", href: "" },
                     body: [
                         { content: "Zarząd", href: "/o-nas/zarzad" },
-                        { content: "Historia", href: "/o-nas#historia" },
-                        { content: "Nagrody i Wyróżnienia", href: "/o-nas#nagrody" },
-                        { content: "Budowa CERT", href: "/o-nas#cert" },
+                        { content: "Historia", href: "/o-nas/historia" },
+                        { content: "Nagrody i Wyróżnienia", href: "/o-nas/nagrody-i-wyroznienia" },
+                        { content: "Budowa CERT", href: "/o-nas/budowa-cert" },
                         { content: "RODO", href: "/o-nas/polityka-rodo" }
                     ]
                 },

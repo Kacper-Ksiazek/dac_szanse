@@ -1,0 +1,51 @@
+section.ds-about-awards
+    padding: 0 15vw
+    @media screen and ( max-width: 1600px )
+        padding: 0 5vw
+    h1
+        margin: 40px 0
+        font-size: 2.5rem
+        font-weight: 900
+        color: $dsBlue
+        text-transform: uppercase
+        letter-spacing: 2px
+        text-align: center
+        @media screen and ( max-width: 600px )
+            font-size: 2.1rem
+        span.pink
+            color: $dsPink
+            animation: about-management-pink .3s .7s both
+    div.items
+        div.single-award
+            display: flex
+            margin-bottom: 50px
+            padding-bottom: 50px
+            border-bottom: 3px solid $dsPink
+            @media screen and ( max-width: 750px )
+                flex-direction: column
+                align-items: center
+                div.image
+                    margin-bottom: 30px
+            div.image
+                width: 400px
+                height: 400px
+                background-size: cover
+                background-position: center
+                background-repeat: no-repeat
+                border-radius: 20px
+                border: 4px solid $dsGreen
+                @media screen and ( max-width: 500px )
+                    width: 95vw
+            div.content
+                width: 100%
+                display: flex
+                justify-content: center
+                align-items: center
+                color: $dsBlue
+                font-size: 1.5rem
+                padding: 0 10%
+                font-weight: bold
+                cursor: default
+                @media screen and ( max-width: 500px )
+                    font-size: 1.2rem
+                    padding: 0

@@ -8,11 +8,19 @@ class AboutUsController extends Controller
 {
     //
     public function index(){
-        return view('pages.about.index');
+        return redirect('/');
     }
     //
     public function zarzad(){
         return view('pages.about.zarzad');
+    }
+    //
+    public function nagrody(){
+        return view('pages.about.nagrody');
+    }
+    //
+    public function historia(){
+        return view('pages.about.historia');
     }
     //
     public function rodo(){

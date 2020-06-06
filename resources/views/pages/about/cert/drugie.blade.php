@@ -6,7 +6,7 @@
 <div class="w-100">
     <about-logo content='Budowa CERT' selected='cert'></about-logo>
     {{--  --}}
-    <cert-floor title='Parter' folder='drugie' :structure="
+    <cert-floor title='Drugie piętro' folder='drugie' :structure="
     [
         {title: 'Administracja', 'images': 3, path: 'administracja',id: 'administracja'},
         {title: 'Gabinety', 'images': 16, path: 'gabinety',id: 'gabinety'},

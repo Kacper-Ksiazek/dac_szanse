@@ -13043,7 +13043,7 @@ section.ds-cert-main div.ds-cert-floor div.ds-floor-header h1 {
           user-select: none;
 }
 section.ds-cert-main div.ds-cert-floor div.ds-floor-header a {
-  background-color: #35C828;
+  background-color: #e61a63;
   margin-right: 20px;
   padding: 5px 10px;
   font-size: 1rem;
@@ -13051,16 +13051,16 @@ section.ds-cert-main div.ds-cert-floor div.ds-floor-header a {
   color: white;
   text-decoration: none;
   transition: all 0.3s;
-  border: 2px solid #35C828;
+  border: 2px solid #e61a63;
 }
 section.ds-cert-main div.ds-cert-floor div.ds-floor-header a:hover {
   background-color: white;
-  color: #35C828;
+  color: #e61a63;
 }
 section.ds-cert-main div.ds-cert-floor div.ds-floor-header button {
   background-color: white;
-  color: #35C828;
-  border: 2px solid #35C828;
+  color: #e61a63;
+  border: 2px solid #e61a63;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -13068,7 +13068,7 @@ section.ds-cert-main div.ds-cert-floor div.ds-floor-header button {
   transition: all 0.3s;
 }
 section.ds-cert-main div.ds-cert-floor div.ds-floor-header button:hover {
-  background-color: #35C828;
+  background-color: #e61a63;
   color: white;
 }
 section.ds-cert-main div.ds-cert-floor div.ds-floor-header button:focus {
@@ -13099,7 +13099,7 @@ section.ds-cert-main div.ds-cert-floor div.ds-floor-features div.feature div.img
 }
 section.ds-cert-main div.ds-cert-floor div.ds-floor-features div.feature div.img-wrapper a {
   z-index: 4;
-  color: #35C828;
+  color: #e61a63;
   text-decoration: none;
   font-size: 2rem;
   border: 3px solid;
@@ -13136,30 +13136,80 @@ section.ds-cert-main div.ds-cert-floor div.ds-floor-features div.feature div.img
 section.ds-cert-single-floor {
   padding: 0 10vw;
 }
-section.ds-cert-single-floor h1 {
-  font-size: 2.5rem;
-  padding-bottom: 10px;
-  position: relative;
-  font-weight: bold;
-  margin-top: 20px;
+section.ds-cert-single-floor div.header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 40px 0;
 }
-section.ds-cert-single-floor h1::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%);
-  width: 120%;
-  height: 3px;
-  background-color: #000;
+section.ds-cert-single-floor div.header a {
+  color: #fff;
+  background-color: #e61a63;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  padding: 5px 20px;
+  border: 3px solid #e61a63;
+  width: 250px;
+  text-align: center;
+  -webkit-animation: about-management-header 0.7s 0.2s both;
+          animation: about-management-header 0.7s 0.2s both;
+}
+section.ds-cert-single-floor div.header a:nth-of-type(1) {
+  transform-origin: left;
+}
+section.ds-cert-single-floor div.header a:nth-of-type(2) {
+  transform-origin: right;
+}
+section.ds-cert-single-floor div.header h1 {
+  width: 500px;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0 50px;
+  font-weight: 900;
+  color: #2c245a;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  -webkit-animation: about-management-pink 0.3s 0.7s both;
+          animation: about-management-pink 0.3s 0.7s both;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+@media screen and (max-width: 600px) {
+  section.ds-cert-single-floor div.header {
+    flex-wrap: wrap;
+  }
+  section.ds-cert-single-floor div.header * {
+    margin-bottom: 20px !important;
+    width: 100% !important;
+  }
+  section.ds-cert-single-floor div.header a {
+    font-size: 1rem;
+    padding: 5px 10px;
+    transform-origin: center !important;
+  }
+  section.ds-cert-single-floor div.header a:nth-of-type(1) {
+    order: 2;
+  }
+  section.ds-cert-single-floor div.header a:nth-of-type(2) {
+    order: 3;
+  }
+  section.ds-cert-single-floor div.header h1 {
+    font-size: 2.1rem;
+    margin: 0;
+  }
 }
 section.ds-cert-single-floor div.cert-floor-place {
   margin: 20px 0;
-  border-bottom: 3px solid #35C828;
+  border-bottom: 3px solid #e61a63;
   padding: 30px 0;
 }
 section.ds-cert-single-floor div.cert-floor-place h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 section.ds-cert-single-floor div.cert-floor-place div.images-wrapper {
@@ -13172,6 +13222,9 @@ section.ds-cert-single-floor div.cert-floor-place div.images-wrapper div.single-
 }
 section.ds-cert-single-floor div.cert-floor-place div.images-wrapper div.single-image img {
   width: 100%;
+}
+section.ds-cert-single-floor div.cert-floor-place section.ds-single-task-gallery button.ds-show-more-green {
+  background-color: #e61a63 !important;
 }
 
 section.ds-about-management {
@@ -13225,7 +13278,7 @@ section.ds-about-management div.people-list-wrapper div.people-list-item.active 
 section.ds-about-management div.people-list-wrapper div.people-list-item {
   padding-bottom: 20px;
   margin-bottom: 50px;
-  border-bottom: 2px solid black;
+  border-bottom: 4px solid #9eb72b;
   max-height: 70px;
   overflow: hidden;
   transition: all 0.3s linear;
@@ -13387,6 +13440,119 @@ section.ds-about-management div.people-list-wrapper div.people-list-item:nth-of-
   100% {
     color: #fff;
     transform: scaleX(1);
+  }
+}
+
+section.ds-about-history {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15vw;
+}
+@media screen and (max-width: 1600px) {
+  section.ds-about-history {
+    padding: 0 5vw;
+  }
+}
+section.ds-about-history h1,
+section.ds-about-history p {
+  color: #2c245a;
+}
+section.ds-about-history h1 {
+  margin: 40px 0;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #2c245a;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+@media screen and (max-width: 600px) {
+  section.ds-about-history h1 {
+    font-size: 1.8rem;
+  }
+}
+section.ds-about-history h1 span.pink {
+  color: #e61a63;
+  -webkit-animation: about-management-pink 0.3s 0.7s both;
+          animation: about-management-pink 0.3s 0.7s both;
+}
+section.ds-about-history p {
+  font-size: 1.2rem;
+}
+
+section.ds-about-awards {
+  padding: 0 15vw;
+}
+@media screen and (max-width: 1600px) {
+  section.ds-about-awards {
+    padding: 0 5vw;
+  }
+}
+section.ds-about-awards h1 {
+  margin: 40px 0;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #2c245a;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+@media screen and (max-width: 600px) {
+  section.ds-about-awards h1 {
+    font-size: 2.1rem;
+  }
+}
+section.ds-about-awards h1 span.pink {
+  color: #e61a63;
+  -webkit-animation: about-management-pink 0.3s 0.7s both;
+          animation: about-management-pink 0.3s 0.7s both;
+}
+section.ds-about-awards div.items div.single-award {
+  display: flex;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+  border-bottom: 3px solid #e61a63;
+}
+@media screen and (max-width: 750px) {
+  section.ds-about-awards div.items div.single-award {
+    flex-direction: column;
+    align-items: center;
+  }
+  section.ds-about-awards div.items div.single-award div.image {
+    margin-bottom: 30px;
+  }
+}
+section.ds-about-awards div.items div.single-award div.image {
+  width: 400px;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  border: 4px solid #9eb72b;
+}
+@media screen and (max-width: 500px) {
+  section.ds-about-awards div.items div.single-award div.image {
+    width: 95vw;
+  }
+}
+section.ds-about-awards div.items div.single-award div.content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2c245a;
+  font-size: 1.5rem;
+  padding: 0 10%;
+  font-weight: bold;
+  cursor: default;
+}
+@media screen and (max-width: 500px) {
+  section.ds-about-awards div.items div.single-award div.content {
+    font-size: 1.2rem;
+    padding: 0;
   }
 }
 
@@ -13752,7 +13918,7 @@ section.ds-news-list-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 10vw;
+  padding: 0 15vw;
 }
 @media screen and (max-width: 1600px) {
   section.ds-news-list-wrapper {

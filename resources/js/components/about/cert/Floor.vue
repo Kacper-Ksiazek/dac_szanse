@@ -1,9 +1,30 @@
 <template>
     <section class="ds-cert-single-floor">
         <!--  -->
-        <div class="d-flex justify-content-center">
-            <h1 v-text="title"></h1>
-        </div>
+        <template v-if="title.toLowerCase() == 'parter'">
+            <div class="header">
+                <a href="/o-nas/budowa-cert/pietro-pierwsze">Pierwsze pietro</a>
+                <h1 v-text="title"></h1>
+                <a href="/o-nas/budowa-cert/pietro-drugie">Drugie pietro</a>
+            </div>
+        </template>
+        <!--  -->
+        <template v-if="title.toLowerCase() == 'pierwsze piętro'">
+            <div class="header">
+                <a href="/o-nas/budowa-cert/parter">Parter</a>
+                <h1 v-text="title"></h1>
+                <a href="/o-nas/budowa-cert/pietro-drugie">Drugie pietro</a>
+            </div>
+        </template>
+        <!--  -->
+        <template v-if="title.toLowerCase() == 'drugie piętro'">
+            <div class="header">
+                <a href="/o-nas/budowa-cert/pietro-pierwsze">Pierwsze pietro</a>
+                <h1 v-text="title"></h1>
+                <a href="/o-nas/budowa-cert/parter">Parter</a>
+            </div>
+        </template>
+        <!--  -->
         <!--  -->
         <div class="cert-floor-place" v-for="place in structure" :key="place.title" :class="place.id">
             <h2 v-text="place.title"></h2>
@@ -29,9 +50,9 @@ export default {
     },
     mounted() {
         const expression = /[^#]*$/g,
-            eClass = location.href.match(expression)[0],
-            element = document.querySelector(`div.${eClass}`);
-        if (!element) return;
+            eClass = location.href.match(expression)[0];
+        if (eClass == location.href) return;
+        const element = document.querySelector(`div.${eClass}`);
         setTimeout(() => {
             window.scrollTo({
                 top: element.offsetTop - 50,

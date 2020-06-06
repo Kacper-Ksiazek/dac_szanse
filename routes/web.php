@@ -132,6 +132,10 @@ Route::get('/o-nas/budowa-cert/pietro-pierwsze','AboutUsController@certFirstFloo
 //CERT- pietro 2
 Route::get('/o-nas/budowa-cert/pietro-drugie','AboutUsController@certSecondFloor');
 //
+Route::get('/o-nas/nagrody-i-wyroznienia','AboutUsController@nagrody');
+//
+Route::get('/o-nas/historia','AboutUsController@historia');
+//
 //
 //
 //KONTAKT

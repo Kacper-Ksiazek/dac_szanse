@@ -87,14 +87,14 @@ Vue.component("news-index", require("./components/news/NewsIndex.vue").default);
 //
 //O nas logo
 Vue.component("about-logo", require("./components/about/Logo.vue").default);
-//Index
-Vue.component("about-index", require("./components/about/index/IndexMain.vue").default);
 //Budowa CERT- index
 Vue.component("cert-index", require("./components/about/cert/Index.vue").default);
 //Cert- jedno pietro
 Vue.component("cert-floor", require("./components/about/cert/Floor.vue").default);
 //O nas- zarząd
-Vue.component("about-management", require("./components/about/index/Management.vue").default);
+Vue.component("about-management", require("./components/about/Management.vue").default);
+//Nagrody i wyróżnienia
+Vue.component("about-awards", require("./components/about/Awards.vue").default);
 
 //
 //Kontakt
