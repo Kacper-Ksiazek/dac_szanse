@@ -1,30 +1,27 @@
 <template>
     <section class="ds-a-tasks-wrapper">
-        <tasks-logo></tasks-logo>
-        <task-nav :data="taskList1.concat([hydroData], taskList2)"></task-nav>
+        <activites-logo content="Zajęcia" selected="zajecia"></activites-logo>
+        <!--  -->
+        <task-nav :data="taskList"></task-nav>
+        <!--  -->
         <div class="ds-a-tasks-tasks-wrapper">
-            <task v-for="item in taskList1" :key="item.header" :data="item"></task>
+            <task v-for="item in taskList" :key="item.header" :data="item"></task>
         </div>
-        <hydrotherapy :href="hydroData.href"></hydrotherapy>
-        <div class="ds-a-tasks-tasks-wrapper">
-            <task v-for="item in taskList2" :key="item.header" :data="item"></task>
-        </div>
+        <!--  -->
     </section>
 </template>
 <script>
 import Task from "./Task";
 import TaskNav from "./TaskNav";
-import Hydro from "./Hydro";
 export default {
     components: {
         task: Task,
-        "task-nav": TaskNav,
-        hydrotherapy: Hydro
+        "task-nav": TaskNav
     },
     data() {
         return {
             hydroData: { header: "Hydroterapia", href: "/dzialalnosc/zajecia/hydroterapia" },
-            taskList1: [
+            taskList: [
                 {
                     header: "Zajecia rehabilitacyjne",
                     description: "Kinezyterapia, fizykoterapia i masaż.",
@@ -41,11 +38,15 @@ export default {
                 {
                     header: "Sala doświadczania świata",
                     description: "Terapia w Sali Doświadczania Świata wpływa na wszechstronny rozwój stymulując bodźce.",
-                    href: "/dzialalnosc/zajecia/sala-doswiadczania-swiatla",
+                    href: "/dzialalnosc/zajecia/sala-doswiadczania-swiata",
                     img: "swiatlo.jpg"
-                }
-            ],
-            taskList2: [
+                },
+                {
+                    header: "Hydroterapia",
+                    description: "Rehabilitacja prowadzona w basenie pozwala wykorzystać właściwości fizyko - chemiczne wody do zwiększenia efektywności terapii.",
+                    href: "/dzialalnosc/zajecia/hydroterapia",
+                    img: "hydro.jpg"
+                },
                 {
                     header: "Terapia Biofeedback",
                     description:

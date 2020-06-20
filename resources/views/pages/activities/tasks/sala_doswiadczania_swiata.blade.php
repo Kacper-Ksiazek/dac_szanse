@@ -2,10 +2,7 @@
 <title>Zajęcia w Sali Doświadczania Świata</title>
 @endsection @section('content')
 <div class="w-100">
-    <path-bar
-        path='[{"header":"Działalność","href":"/dzialalnosc"}, {"header":"Zajęcia","href":"/dzialalnosc/zajecia"},{"header":"Zajęcia w Sali Doświadczania Świata","href":"#"}]'
-    ></path-bar>
-    <tasks-logo></tasks-logo>
+    <activites-logo selected='zajecia' content='Zajęcia w Sali Doświadczania Świata'></activites-logo>
     {{--  --}}
     <section class="ds-single-task-wrapper">
         {{--  --}}

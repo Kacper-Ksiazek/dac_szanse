@@ -1,5 +1,6 @@
 section.ds-help-single-help-form.tax
     padding: 50px 5vw
+        
     div.ds-redirect-tax-wrapper
         display: flex
         div.img
@@ -21,10 +22,12 @@ section.ds-help-single-help-form.tax
                 margin-top: 10px
             a
                 font-size: 1.1rem
-                color: $deafultGreen
+                color: $dsGreen
                 font-weight: bold
 section.ds-help-single-help-form  
     padding: 50px 15vw
+    @media screen and ( max-width: 1600px )
+        padding: 5vw
     *
         cursor: default
     h1
@@ -34,7 +37,7 @@ section.ds-help-single-help-form
     p
         font-size: 1.5rem
         padding-left: 30px
-        border-left: 4px solid $deafultGreen
+        border-left: 4px solid $dsGreen
         text-indent: 20px
         margin-left: 2rem
     p.b-none
@@ -48,7 +51,7 @@ section.ds-help-single-help-form
         li
             &::before 
                 content: "\2022"
-                color: $deafultGreen
+                color: $dsGreen
                 font-weight: bold
                 display: inline-block
                 width: 1em
@@ -97,7 +100,7 @@ section.ds-help-single-help-form
         p
             font-size: 1.5rem
             padding-left: 10px
-            border-left: 4px solid $deafultGreen
+            border-left: 4px solid $dsGreen
             text-indent: 10px
             margin-left: 1rem
         ul

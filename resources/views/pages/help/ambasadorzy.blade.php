@@ -2,8 +2,7 @@
 <title>Ambasadorzy</title>
 @endsection @section('content')
 <div class="w-100">
-    <path-bar path='[{"header":"Jak pomóc","href":"/jak-pomoc"},  {"header":"Ambasadorzy","href":"#"}]'></path-bar>
-    <help-logo content='Ambasadorzy'></help-logo>
+    <help-logo content='Ambasadorzy' selected='ambasadorzy'></help-logo>
     <!--  -->
     <!--  -->
     <!--  -->

@@ -34,8 +34,8 @@ class loadPagesTest extends TestCase
     }
 
     /** @test */
-    public function load_zajecia_sala_swiatla(){
-        $this->get('/dzialalnosc/zajecia/sala-doswiadczania-swiatla')->assertSee(view('pages.activities.tasks.sala_doswiadczania_swiata'));
+    public function load_zajecia_sala_swiata(){
+        $this->get('/dzialalnosc/zajecia/sala-doswiadczania-swiata')->assertSee(view('pages.activities.tasks.sala_doswiadczania_swiata'));
     }
     /** @test */
     public function load_zajecia_sala_sensory(){

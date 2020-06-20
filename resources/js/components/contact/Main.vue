@@ -1,102 +1,143 @@
 <template>
     <section class="ds-contact">
         <!-- Logo -->
-        <div class="ds-contact-logo logo">
+        <div class="ds-section-logo">
             <h1>Kontakt</h1>
         </div>
         <!-- Formy -->
-        <div class="ds-contact-form">
-            <div class="single-form" v-for="(item, index) in contactForms" :key="index">
-                <div class="line">
-                    <span v-text="item.firstLine.title"></span>
-                    <strong v-text="item.firstLine.strong"></strong>
-                </div>
-                <!--  -->
-                <div v-if="item.secondLine" class="line">
-                    <span v-text="item.secondLine.title"></span>
-                    <strong v-text="item.secondLine.strong"></strong>
-                </div>
-            </div>
-        </div>
-        <!-- Mapy -->
-        <div class="ds-content-items">
+        <div class="content">
+            <h1 class="about-intro">Stowarzyszenie Rodziców i Opiekunów Dzieci Niepełnosprawnych <span class="pink">"Dać Szansę"</span> w Wadowicach</h1>
             <!--  -->
             <div class="wrapper">
+                <c-forms></c-forms>
                 <!--  -->
-                <!-- First -->
+                <!-- FORMULARZ -->
                 <!--  -->
-                <div class="single-map">
-                    <div class="info">
-                        <div class="d-flex">
-                            <i class="fa fa-location-arrow"></i>
-                            <h1>Stowarzyszenie+ Poradnia+ NOREW</h1>
+                <div class="contact-us-form" :class='{sending: sendingMail}'>
+                    <h1>Formularz kontaktowy</h1>
+                    <div class="form-wrapper">
+                        <div class="form">
+                            <!--  -->
+                            <span class="error" v-text='errors.content'></span>
+                            <textarea cols="30" rows="10" placeholder="Treść" v-model='content'></textarea>
+                            <!--  -->
+                            <span class="error" v-text='errors.name'></span>
+                            <input type="text" placeholder="Imię i nazwisko" v-model='name'>
+                            <!--  -->
+                            <span class="error" v-text='errors.email'></span>
+                            <input type="email" placeholder="Adres email" v-model='email'>
+                            <!--  -->
+                            <div class="send" :class="{confirm:confirmSending}">
+                                <div class="first">
+                                    <button class='confirm' @click='confirmSending=true'><span>Wyślij</span></button>
+                                </div>
+                                <div class='second'>
+                                    <h3>Na pewno?</h3>
+                                    <div class="buttons">
+                                        <button class="send" @click='sendEmail'><span>WYŚLIJ</span></button>
+                                        <button class="pas" @click="confirmSending=false"><span>Anuluj</span></button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <span>34-100 Wadowice ul. Kochanowskiego 42</span>
-                    </div>
-                    <a href="https://www.google.com/maps/place/Jana+Kochanowskiego+42,+34-100+Wadowice" target="_blank">
-                        <img src="/images/contact/maps/poradnia.jpg" alt="" />
-                    </a>
-                </div>
-                <!--  -->
-                <!-- Seconds -->
-                <!--  -->
-                <div class="single-map">
-                    <div class="info">
-                        <div class="d-flex">
-                            <i class="fa fa-location-arrow"></i>
-                            <h1>Spółdzielnia</h1>
+                        <div class="sent" :class='{success:mailSuccess}'>
+                            <div class="loading">
+                                <span class="successInfo">
+                                    <i class="fa fa-check"></i>
+                                    <span class="message">Wiadomość została wysłana!</span>
+                                </span>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
                         </div>
-                        <span>34-100 Wadowice Os. XX-lecia Konstytucji RP 19/1</span>
                     </div>
-                    <a href="https://www.google.com/maps/search/34-100+Wadowice+Os.+XX-lecia+Konstytucji+RP+19%2F1" target="_blank">
-                        <img src="/images/contact/maps/spoldzielnia.jpg" alt="" />
-                    </a>
                 </div>
+                <!--  -->
             </div>
-            <!--  -->
-            <!-- Single big map -->
-            <div class="big-map">
-                <div class="info">
-                    <div class="d-flex">
-                        <i class="fa fa-location-arrow"></i>
-                        <h1>Stowarzyszenie+ Poradnia+ NOREW</h1>
-                    </div>
-                    <span>34-100 Wadowice ul. Kochanowskiego 42</span>
-                </div>
-                <a href="https://www.google.com/maps/place/Ko%C5%9Bcielna+3,+34-123+Chocznia" target="_blank">
-                    <img src="/images/contact/maps/przedszkole.jpg" alt="" />
-                </a>
             </div>
-            <!--  -->
         </div>
         <!--  -->
     </section>
 </template>
 <script>
+import ContactForms from "./ContactForms";
 export default {
     //
-    data() {
-        return {
-            contactForms: [
-                {
-                    firstLine: { title: "Godziny pracy: ", strong: "poniedziałek-piątek 7:30-15:30" }
-                },
-                {
-                    firstLine: { title: "Recepcja: ", strong: "(33)873-18-87" }
-                },
-                {
-                    firstLine: { title: "Administracja: ", strong: "697-280-553" },
-                    secondLine: { title: "lub", strong: "697-280-553" }
-                },
-                {
-                    firstLine: { title: "email: ", strong: "stowarzyszenie@dacszanse.pl" }
-                },
-                {
-                    firstLine: { title: "Bank Pekao SA o/Wadowice: ", strong: "89 1240 4197 1111 0000 46 92 9350" },
-                    secondLine: { title: "Bank Alior Bank o/Wadowice", strong: "60 2490 0005 0000 4530 8455 3611" }
-                }
-            ]
-        };
+    components: {
+        'c-forms': ContactForms
+    },
+    data(){
+        return{
+            content: null,
+            email:null,
+            name:null,
+            confirmSending: false,
+            sendingMail: false,
+            mailSuccess: false,
+            errors: {
+                content: '',
+                email: '',
+                name: ''
+            }
+        }
+    },
+    methods: {
+        sendEmail(){
+            if (this.sendingMail || this.mailSuccess || !this.validateData()) return
+            this.sendingMail=true
+            const {content,email,name}=this
+             axios.post('/kontakt/wyslij-wiadomosc-email',{
+                 content,email,name
+            }).then(r=>{
+                this.mailSuccess=true
+            }).catch(e=>{
+                console.log(e);
+            })
+        },
+        validateData(){
+            let result=true
+            const {content,email,name,errors}=this;
+            for(const item in errors) errors[item]=''
+            //Content
+            if(!content) {
+                errors.content='Pole treść jest wymagane!'
+                result=false
+            }else if(content.length<20){
+                errors.content='Minimalna długość wiadomości to 20znaków!'
+                result=false
+            }else if(content.length>1000){
+                errors.content='Maksymalna długość wiadomości to 1000znaków!'
+                result=false
+            }
+            //Email
+            if(!email) {
+                errors.email='Pole email jest wymagane!'
+                result=false
+            }else if(!email.includes('@')){
+                errors.email='Adres email musi zawierać @!'
+                result=false
+            }else if(email.length<6){
+                errors.email='Minimalna długość adresu email to 6znaków!'
+                result=false
+            }else if(email.length>100){
+                errors.email='Maksymalna długość adresu email to 100znaków!'
+                result=false
+            }
+            //Name
+            if(!name) {
+                errors.name='Pole imie jest wymagane!'
+                result=false
+            }else if(name.length<6){
+                errors.name='Minimalna długość wiadomości to 6znaków!'
+                result=false
+            }else if(name.length>100){
+                errors.name='Maksymalna długość wiadomości to 100znaków!'
+                result=false
+            }
+            if (!result) this.confirmSending=false
+            return result
+        }
     }
 };
 </script>

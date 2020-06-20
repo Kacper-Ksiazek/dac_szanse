@@ -5,7 +5,6 @@
 @section('content')
     <div class="w-100">
 
-        <path-bar path='[{"header":"Nasze Placówki","href":"/nasze-placowki"},  {"header":"Niepubliczny Ośrodek Rewalidacyjno-Wychowawczy","href":"#"}]'></path-bar>
         <oo-logo></oo-logo>
 
         <section class="ds-rw-content">

@@ -4,7 +4,6 @@
 @endsection
 @section('content')
 <div class="w-100">
-    <path-bar path='[{"header":"Nasze Placówki","href":"/nasze-placowki"},  {"header":"Świetlica Terapeutyczno-Integracyjna Szansa","href":"#"}]'></path-bar>
     <oo-logo></oo-logo>
 
     {{-- TEXT --}}

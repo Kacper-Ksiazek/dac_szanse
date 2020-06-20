@@ -2,10 +2,7 @@
 <title>Zajęcia psychologiczno-pedaogiczno-logopedyczne</title>
 @endsection @section('content')
 <div class="w-100">
-    <path-bar
-        path='[{"header":"Działalność","href":"/dzialalnosc"}, {"header":"Zajęcia","href":"/dzialalnosc/zajecia"},{"header":"Psychologiczno Pedaogiczno Logopedyczne","href":"#"}]'
-    ></path-bar>
-    <tasks-logo></tasks-logo>
+    <activites-logo selected='zajecia' content='Zajęcia psychologiczno pedaogiczno logopedyczne'></activites-logo>
     {{--  --}}
     <section class="ds-single-task-wrapper">
         {{--  --}}

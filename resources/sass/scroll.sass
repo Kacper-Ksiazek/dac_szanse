@@ -8,7 +8,6 @@ button.ds-scroll
     width: 50px
     height: 50px
     font-size: 2rem
-    color: white
     border: none
     display: flex
     justify-content: center
@@ -17,6 +16,8 @@ button.ds-scroll
     z-index: 1000
     background: transparent
     overflow: hidden
+    transition: transform .7s, border .3s
+    border: 3px solid #fff
     &::before
         content: ''
         position: absolute
@@ -24,12 +25,52 @@ button.ds-scroll
         left: 0
         width: 100%
         height: 100%
-        background-color: $deafultGreen
-        opacity: .85
+        background-color: $dsPink
         z-index: 1000
+        transition: background-color .5s 
     i
         position: relative
         z-index: 1001
+        color: #fff
+        transition: color .5s
+        animation: scrollPulse .3s infinite both alternate
+        @keyframes scrollPulse
+            0%
+                transform: translateY(5%)
+            100%
+                transform: translateY(-5%)
+                
+    &:hover
+        transform: rotate(360deg)
+        border: 3px solid $dsPink
+        &::before
+            background-color: #fff
+        i
+            color: $dsPink
+    &:focus
+        outline: none
 button.ds-scroll.active 
     visibility: visible
     opacity: 1
+    animation: scrollBtnIn 1s both
+    @keyframes scrollBtnIn
+        0%
+            opacity: 0
+            // transform: translateY(-100%)
+            bottom: 75px
+        100%
+            opacity: 1
+            bottom: 25px
+            // transform: translateY(0%)
+    @keyframes scrollBtnExit
+        0%
+            opacity: 1
+            bottom: 25px
+            // transform: translateY(0%)
+        100%
+            opacity: 0
+            bottom: 75px
+            // transform: translateY(-100%)
+button.ds-scroll.active.exit
+    animation: scrollBtnExit 1s both
+

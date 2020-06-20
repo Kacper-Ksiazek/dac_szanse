@@ -66,7 +66,7 @@ export default {
                         { content: "Zarząd", href: "/o-nas/zarzad" },
                         { content: "Historia", href: "/o-nas/historia" },
                         { content: "Nagrody i Wyróżnienia", href: "/o-nas/nagrody-i-wyroznienia" },
-                        { content: "Budowa CERT", href: "/o-nas/budowa-cert" },
+                        { content: "CERT", href: "/o-nas/cert" },
                         { content: "RODO", href: "/o-nas/polityka-rodo" }
                     ]
                 },
@@ -74,7 +74,7 @@ export default {
                     header: { content: "Aktualności", href: "/aktualnosci" }
                 },
                 {
-                    header: { content: "Działalność", href: "/dzialalnosc" },
+                    header: { content: "Działalność", href: "" },
                     body: [
                         { content: "Zajęcia", href: "/dzialalnosc/zajecia" },
                         { content: "Projekty", href: "/dzialalnosc/projekty" }

@@ -54,7 +54,7 @@ section.ds-a-project-view-wrapper
             background-color: #fff
             color: $admin-color
     a
-        background-color: $deafultGreen
+        background-color: $dsGreen
         font-size: 1.1rem
         color: white
         border-radius: 15px
@@ -62,9 +62,10 @@ section.ds-a-project-view-wrapper
         text-decoration: none
         padding: 5px 20px
         transition: all .2s linear
+        border: 3px solid $dsGreen
         &:hover
             background-color: #fff
-            color: $deafultGreen
+            color: $dsGreen
     h4
         font-weight: bold
     div.wrapper
@@ -89,7 +90,7 @@ section.ds-a-project-view-wrapper
                     width: 75%
                     height: 3px
                     left: 0%
-                    background-color: $deafultGreen
+                    background-color: $dsGreen
             div.ds-a-add-project-view-item
                 margin-bottom: 20px
             div.header
@@ -103,7 +104,7 @@ section.ds-a-project-view-wrapper
                 p
                     font-size: 1.3rem
                     text-indent: 20px
-                    border-left: 4px solid $deafultGreen
+                    border-left: 4px solid $dsGreen
                     padding-left: 20px
                     margin-left: 20px
             div.list
@@ -114,7 +115,7 @@ section.ds-a-project-view-wrapper
                         font-size: 1.1rem
                         &::before
                             content: "\2022"
-                            color: $deafultGreen
+                            color: $dsGreen
                             font-weight: bold
                             display: inline-block
                             width: 1em
@@ -157,7 +158,7 @@ div.ds-a-add-project-preview.exit
             display: flex
             justify-content: space-evenly
             a
-                width: 25%
+                max-width: 150px
                 text-align: center    
         div.wrapper
             display: flex

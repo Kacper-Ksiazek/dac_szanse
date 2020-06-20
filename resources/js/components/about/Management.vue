@@ -1,6 +1,6 @@
 <template>
     <section class="ds-about-management">
-        <h1>Zarząd- z potrzeby <span class="pink">SERCA</span></h1>
+        <h1 class="about-intro">Zarząd- z potrzeby <span class="pink">SERCA</span></h1>
         <!--  -->
         <div class="people-list-wrapper">
             <div class="people-list-item" v-for="item in list" :key="item.id" :class="activeId == item.id ? 'active' : ''">

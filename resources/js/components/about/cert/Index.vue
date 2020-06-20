@@ -1,5 +1,8 @@
 <template>
     <section class="ds-cert-main">
+        <!--  -->
+        <h1 class="about-intro">Centrum Edukacji Rehabilitacji i Terapii- <span class="pink">CERT</span></h1>
+        <!--  -->
         <div class="ds-cert-floor" v-for="(floor, index) in floorsList" :key="floor.header" :class="index === currentActiveFloor ? 'active' : ''">
             <div class="ds-floor-header">
                 <h1 v-text="floor.header"></h1>
@@ -12,7 +15,6 @@
             <div class="ds-floor-features">
                 <div class="feature" v-for="feature in floor.features" :key="feature.title">
                     <h2 v-text="feature.title"></h2>
-                    <!--  -->
                     <div class="img-wrapper">
                         <span class="black"></span>
                         <a :href="`${floor.href}#${feature.href}`">Zobacz</a>

@@ -2,8 +2,7 @@
 <title>Zrzutka.pl</title>
 @endsection @section('content')
 <div class="w-100">
-    <path-bar path='[{"header":"Jak pomóc","href":"/jak-pomoc"},  {"header":"Zrzutka.pl","href":"#"}]'></path-bar>
-    <help-logo content="Zrzutka.pl"></help-logo>
+    <help-logo content="Zrzutka.pl" selected='zrzutka'></help-logo>
     <!--  -->
     <!--  -->
     <!--  -->

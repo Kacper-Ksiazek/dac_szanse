@@ -6,16 +6,40 @@
 //START PLACE
 div.ds-oo-single-item-wrapper
     &:nth-of-type(odd)
-        section.ds-oo-place
+        div.ds-oo-place
             flex-direction: row-reverse
-            background-color: #FBF1F1
-    section.ds-oo-place
+            div.img-wrapper
+                &::after
+                    left: 0
+                    transform: translate(-50%,-50%) rotate(45deg)
+                    
+    &:nth-of-type(even)
+        div.ds-oo-place
+            div.img-wrapper
+                &::after
+                    right: 0
+                    transform: translate(50%,-50%) rotate(45deg)
+    div.ds-oo-place
         width: 100%
         display: flex
         visibility: hidden
-        img
+        div.img-wrapper
             width: 50%
-            height: 60vh
+            height: 600px
+            position: relative
+            overflow: hidden
+            background-position: center
+            background-size: cover
+            background-repeat: no-repeat
+            @media screen and ( max-width: 1600px )
+                height: 500px
+            &::after
+                content: ''
+                position: absolute
+                top: 50%
+                width: 70px
+                height: 70px
+                background-color: #fff
         div.content
             width: 50%
             display: flex
@@ -23,26 +47,26 @@ div.ds-oo-single-item-wrapper
             align-items: center
             flex-direction: column
             cursor: default
+            padding: 20px 0
+
             h1
                 position: relative
-                font-size: 1.5rem
-                font-weight: bold
-                &::before,
-                &::after
+                margin-bottom: 50px
+                text-align: center
+                &::before
                     content: ''
                     position: absolute
                     bottom: -20px
-                    background-color: #FF693A
-                    height: 5px
-                &::before
+                    width: 75%
+                    height: 3px
+                    background-color: $dsGreen
                     left: 50%
-                &::after
-                    right: 50%
+                    transform: translateX(-50%)
 
             div.ds-oo-place-content-wrapper
                 display: flex
                 margin-top: 30px
-
+                margin-bottom: 30px
                 div.ds-oo-border
                     margin-right: 20px
                     padding-left: 10%
@@ -66,45 +90,16 @@ div.ds-oo-single-item-wrapper
                         margin-bottom: 10px
                         font-size: 1.1rem
 
-            a.ds-oo-see-more
-                background-color: #FF693A
-                border: none
-                margin: 25px 0
-                padding: 10px 20px
-                font-size: 2rem
-                font-size: 'Arial'
-                color: white
-                border-radius: 30px
-                font-weight: bold
-                transition: background-color .2s linear
-                text-decoration: none
-                &:hover
-                    background-color: #ff9f43
     //PLACE ANIMATIONS
-    section.ds-oo-place.active
+    div.ds-oo-place.active
         visibility: visible
-        img
+        div.img-wrapper
             animation: fadeIn .5s 1.5s linear both
         div.content
             h1
-                position: relative
-                font-size: 1.5rem
-                font-weight: bold
-                &::before,
-                &::after
-                    content: ''
-                    position: absolute
-                    bottom: -20px
-                    background-color: #FF693A
-                    height: 5px
+                animation: fadeInTop .7s  .1s linear both
                 &::before
-                    left: 50%
-                    animation: oo-lineAnimationIn .5s linear both
-                &::after
-                    right: 50%
-                    animation: oo-lineAnimationIn .5s linear both
-                span
-                    animation: fadeIn .2s .8s both linear
+                    animation: width0To75 .7s 1s both
 
             div.ds-oo-place-content-wrapper
                 div.ds-oo-border
@@ -118,32 +113,39 @@ div.ds-oo-single-item-wrapper
                     @media screen and (max-width: 767px)
                         animation: fadeIn .5s 1s both linear
 
-            a.ds-oo-see-more
+            a.ds-show-more-green
                 animation: fadeIn .2s 2s both linear
     //RWD PLACE
     @media screen and (max-width: 1000px)
-        div.ds-oo-logo
-            h1
-                font-size: 2rem
-        section.ds-oo-place
+        div.ds-oo-place
             margin-top: 30px
             flex-direction: column
             margin-bottom: 30px
-            &:nth-of-type(even)
-                flex-direction: column
             &:nth-of-type(odd)
                 flex-direction: column
-            background-color: #FBF1F1
-            img
+                div.img-wrapper
+                    &::after
+                        transform: translate(-50%,-50%) rotate(45deg)
+                        left: 50%
+                        top: 0
+            &:nth-of-type(even)
+                flex-direction: column
+                div.img-wrapper
+                    &::after
+                        right: 50%
+                        top: 0
+            div.img-wrapper
                 width: 100%
                 object-fit: cover
                 margin-bottom: 10px
                 max-height: 50vh
+                @media screen and ( max-width: 600px )
+                    height: 400px
             div.content
                 width: 100%
                 h1
                     text-align: center
-                    font-size: 1.2rem
+                    font-size: 2rem
                 div.ds-oo-place-content-wrapper
                     flex-direction: column
                     margin-bottom: 20px
@@ -159,14 +161,6 @@ div.ds-oo-single-item-wrapper
                         padding-left: 20px
                         span
                             font-size: 1rem
-    @media screen and (max-width: 500px)
-        a.ds-oo-see-more
-            margin-top: 0px !important
-            width: 100%
-            border-radius: 0 !important
-            text-align: center
-            padding: 5px 0
-            font-size: 1.6rem
     //END PLACE
 
     span.ds-oo-break-line

@@ -3,11 +3,8 @@
         <!--  -->
         <!--LOGO  -->
         <!--  -->
-        <help-logo :message="logo_message"></help-logo>
-        <!--  -->
-        <!--PROJEKTY  -->
-        <!--  -->
-        <project v-for="item in projectsToShow" :key="item.id" :data="item"></project>
+        <activites-logo content="Projekty" selected="projekty"></activites-logo>
+
         <!--  -->
         <!--ARCHIWUM  -->
         <!--  -->
@@ -20,23 +17,38 @@
         <span v-else class="ds-a-help-archives-control">
             <a class="control-header" href="/dzialalnosc/projekty">Wszystkie projekty</a>
         </span>
+        <!--  -->
+        <!--PROJEKTY  -->
+        <!--  -->
+        <project v-for="item in projectsToShow" :key="item.id" :data="item"></project>
+        <!--  -->
+        <!-- PAGINACJA -->
+        <!--  -->
+        <div class="pagination-links">
+            <a :href="`${projects.path}?page=${item}`" v-for="item in projects.last_page" :key="item" v-text="item" :class="{ current: item == projects.current_page }"></a>
+        </div>
     </section>
 </template>
 <script>
-import Project from "./Project.vue";
-import HelpLogo from "../ProjectsLogo.vue";
+import project from "./Project.vue";
 export default {
-    components: { project: Project, "help-logo": HelpLogo },
+    components: { project },
     props: ["projects", "archives", "logo_message"],
     data() {
         return {
-            showArchives: false,
-            projectsToShow: this.projects.reverse()
+            showArchives: false
         };
     },
     filters: {
         setArchivesHref(val) {
             return `/dzialalnosc/projekty/archiwum/${val}`;
+        }
+    },
+    computed: {
+        projectsToShow() {
+            if (this.projects.hasOwnProperty("current_page")) {
+                return this.projects.data;
+            } else return this.projects.reverse();
         }
     }
 };

@@ -1,6 +1,6 @@
 <template>
     <div class="ds-a-tasks-task-item" ref="item">
-        <img :src="data.img | setImgPath" />
+        <div class="img-wrapper" :style="data.img | setImgPath"></div>
         <div class="ds-a-task-item-content">
             <h1 v-text="data.header"></h1>
             <h4 v-text="data.description"></h4>
@@ -13,14 +13,17 @@ export default {
     props: ["data"],
     filters: {
         setImgPath(val) {
-            return `/images/activities/tasks/${val}`;
+            return `background-image: url('/images/activities/tasks/${val}')`;
         }
     },
     mounted() {
         const prevNode = this.$refs.item.previousSibling;
-        let prevElement = prevNode ? prevNode : this.$refs.item.parentNode.previousElementSibling;
+        const addClass = () => this.$refs.item.classList.add("active");
+
+        if (!prevNode) return addClass();
+
         window.addEventListener("scroll", () => {
-            if (scrollY >= prevElement.offsetTop - 200) this.$refs.item.classList.add("active");
+            if (scrollY >= prevNode.offsetTop + 100) addClass();
         });
     }
 };

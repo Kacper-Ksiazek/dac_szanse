@@ -48,9 +48,8 @@ Vue.component("tasks-logo", require("./components/activities/tasks/TasksLogo.vue
 //Galeria do pojedynczego zajęcia, ta na dole
 Vue.component("gallery", require("./components/activities/tasks/SingleTaskGallery.vue").default);
 //Dzialalność-logo
-Vue.component("activites-logo", require("./components/activities/index/ActivitesLogo.vue").default);
+Vue.component("activites-logo", require("./components/activities/ActivitesLogo.vue").default);
 //Dzialalnosc index
-Vue.component("our-activities", require("./components/activities/index/ActivitiesIndex.vue").default);
 //
 //JAK POMÓC
 //

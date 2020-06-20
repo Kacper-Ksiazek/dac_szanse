@@ -29,9 +29,9 @@
                     </div>
                     <!--  -->
                     <div class="bottom">
-                        <a href="">Regulamin</a>
-                        <a href="">Polityka prywatności</a>
-                        <a href="">Kontakt</a>
+                        <a href="/o-nas/polityka-rodo">Regulamin</a>
+                        <a href="/o-nas/polityka-rodo">Polityka prywatności</a>
+                        <a href="/kontakt">Kontakt</a>
                     </div>
                 </div>
             </div>

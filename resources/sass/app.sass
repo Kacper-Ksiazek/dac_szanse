@@ -26,6 +26,7 @@ html
 @import 'gallery_with_href'
 @import 'footer'
 @import 'contact'
+@import 'single_section_logo'
 body
     max-width: 100vw
     background-color: #fff !important
@@ -50,20 +51,23 @@ body
             text-align: center
             font-size: 3rem !important
 .ds-show-more-green
-    background-color: $deafultGreen
+    background-color: $dsGreen
     border: none
     padding: 5px 20px
     font-size: 1.5rem
-    font-size: 'Arial'
     color: white
-    border-radius: 30px
     font-weight: bold
-    transition: background-color .2s linear
     text-align: center
     cursor: pointer !important
+    border: $dsGreen 3px solid
+    position: relative
+    overflow: hidden
+    text-decoration: none
+    transition: all .3s
+    letter-spacing: 1px
     &:hover
-        background-color: #7bed9f
-        color: white
+        color: $dsGreen
+        background-color: #fff
         text-decoration: none
     &:focus
         outline: none 

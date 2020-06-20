@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Project;
 use Carbon\Carbon;
+use Exception;
 use Facade\FlareClient\Http\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +16,7 @@ class ProjectController extends Controller
     public function index(){
         return view('pages.activities.projects.index',[
             'archives'=>$this->archives(),
-            'projects'=>Project::all()->toArray()
+            'projects'=>Project::orderBy('created_at','desc')->paginate(3)
         ]);
     }
     //
@@ -30,10 +31,7 @@ class ProjectController extends Controller
         //
         asort($archives);
         $result=[];
-
-        //We want to have items in array in correct order, cuz in a future
-        //JS and json parsing can make us a lot of mistakes, so we're trying 
-        //to avoid it right now and right here via creating now array.
+        //
         foreach($archives as $item) array_push($result,$item);
         
         //
@@ -43,20 +41,21 @@ class ProjectController extends Controller
     //
     //
     public function showSingleProject(Project $project){
-        $id=Project::all()->search(function($item) use($project){
-            return $item->id===$project->id;
-        });
+        $id=false;
+        foreach(Project::all() as $key=>$item){
+            if($project->id===$item->id){
+                $id= $key;
+            }
+        }
         //
-        $previous=$id===Project::all()->count()-1?false:Project::where('id',$id+2)->first()->title;
-        $next=$id===0?false:Project::where('id',$id)->first()->title;
+        $previous=$id===0?false:Project::all()[$id-1]->title;
+        $next=$id===Project::count()-1?false:Project::all()[$id+1]->title;
         //
         return view('pages.activities.projects.single_project',[
             'project' => $project,
             'previous' => $previous,
             'next' => $next
         ]);
-        dd($previous,$project->title,$next);
-        dd(Project::all()[$id]->title);
     }
     //
     //THIS HANDLE SINGLE ARCHIVE VIEW

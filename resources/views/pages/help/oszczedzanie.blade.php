@@ -2,8 +2,7 @@
 <title>Pomóż nam zaoszczędzić</title>
 @endsection @section('content')
 <div class="w-100">
-    <path-bar path='[{"header":"Jak pomóc","href":"/jak-pomoc"},  {"header":"Pomóż nam zaoszczędzić","href":"#"}]'></path-bar>
-    <help-logo content='Pomóż nam zaoszczędzić'></help-logo>
+    <help-logo content='Pomóż nam zaoszczędzić' selected='pomoz-nam-zaoszczedzic'></help-logo>
     <!--  -->
     <!--  -->
     <!--  -->

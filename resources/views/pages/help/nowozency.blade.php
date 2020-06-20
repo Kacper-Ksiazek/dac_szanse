@@ -2,8 +2,7 @@
 <title>Nowożeńcy dają szansę!</title>
 @endsection @section('content')
 <div class="w-100">
-    <path-bar path='[{"header":"Jak pomóc","href":"/jak-pomoc"},  {"header":"Nowożeńcy","href":"#"}]'></path-bar>
-    <help-logo content='Nowożeńcy dają szansę!'></help-logo>
+    <help-logo content='Nowożeńcy dają szansę!' selected='nowozency'></help-logo>
     <!--  -->
     <!--  -->
     <!--  -->

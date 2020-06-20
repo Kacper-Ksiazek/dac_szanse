@@ -1,9 +1,9 @@
 <template>
     <div class="ds-oo-single-item-wrapper" ref="wrapper">
-        <section :class="classes" class="ds-oo-place">
-            <img :src="data.img" />
+        <div :class="classes" class="ds-oo-place">
+            <div class="img-wrapper" :style="data.img | setImgPath"></div>
             <div class="content">
-                <h1><span v-text="data.title"></span></h1>
+                <h1 v-text="data.title"></h1>
                 <div class="ds-oo-place-content-wrapper">
                     <!-- {{-- LEFT SIDE --}} -->
                     <div class="ds-oo-border">
@@ -20,9 +20,9 @@
                         </span>
                     </div>
                 </div>
-                <a :href="data.href" class="ds-oo-see-more">Zobacz szczegóły <i class="fa fa-info-circle"></i></a>
+                <a :href="data.href" class="ds-show-more-green">Zobacz szczegóły <i class="fa fa-info-circle"></i></a>
             </div>
-        </section>
+        </div>
     </div>
 </template>
 <script>
@@ -33,10 +33,18 @@ export default {
             classes: ""
         };
     },
-    created() {
-        window.addEventListener("scroll", () => {
-            if (scrollY > this.$refs.wrapper.previousElementSibling.offsetTop) this.classes = "active";
-        });
+    mounted() {
+        if (this.$refs.wrapper.previousElementSibling.classList.contains("ds-section-logo")) this.classes = "active";
+        else {
+            window.addEventListener("scroll", () => {
+                if (scrollY > this.$refs.wrapper.previousElementSibling.offsetTop) this.classes = "active";
+            });
+        }
+    },
+    filters: {
+        setImgPath(val) {
+            return `background-image: url('${val}')`;
+        }
     }
 };
 </script>

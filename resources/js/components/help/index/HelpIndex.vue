@@ -1,7 +1,7 @@
 <template>
     <section class="ds-help-wrapper">
         <logo></logo>
-        <h1>Wspomóż Stowarzyszenie Daj Szansę</h1>
+        <h1 class="intro">Wspomóż Stowarzyszenie Daj Szansę</h1>
         <!--  -->
         <!--  -->
         <div class="ds-help-content">

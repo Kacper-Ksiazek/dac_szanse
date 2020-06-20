@@ -1,12 +1,13 @@
 section.ds-cert-main
-    padding: 50px 10vw 0 10vw
-    @media screen and ( max-width: 1000px )
-        padding: 50px 2vw 0 2vw
+    padding: 0 10vw
+    display: flex
+    flex-direction: column
+    align-items: center
     div.ds-cert-floor.active
         max-height: 1000px
         @media screen and ( max-width: 900px )
             max-height: 2000px
-            
+
     div.ds-cert-floor
         max-height: 70px
         overflow: hidden
@@ -35,15 +36,17 @@ section.ds-cert-main
                 margin-right: 20px
                 padding: 5px 10px
                 font-size: 1rem
-                border-radius: 10px
                 color: white
                 text-decoration: none
-                transition: all .3s
                 border: 2px solid $dsPink
+                transform-origin: top
+                transition: all .3s
+                font-weight: bold
+                letter-spacing: 1px
                 &:hover
                     background-color: white
-                    color: $dsPink
-            
+                    color: $dsPink !important
+                        
             button
                 background-color: white
                 color: $dsPink
@@ -108,3 +111,4 @@ section.ds-cert-main
                             opacity: .4
                         a
                             transform: translate(-50%,-50%) scale(1)
+

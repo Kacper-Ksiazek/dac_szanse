@@ -2,8 +2,7 @@
 <title>Hipoterapia</title>
 @endsection @section('content')
 <div class="w-100">
-    <path-bar path='[{"header":"Działalność","href":"/dzialalnosc"}, {"header":"Zajęcia","href":"/dzialalnosc/zajecia"},{"header":"Hipoterapia","href":"#"}]'></path-bar>
-    <tasks-logo></tasks-logo>
+    <activites-logo selected='zajecia' content='Hipoterapia'></activites-logo>
     {{--  --}}
     <section class="ds-single-task-wrapper">
         {{--  --}}

@@ -4,7 +4,6 @@
 @endsection
 @section('content')
 <div class="w-100">
-    <path-bar path='[{"header":"Aktualności","href":"/aktualnosci"},  {"header":"{{$data->title}}","href":"#"}]'></path-bar>
     <news-logo></news-logo>
 
     <single-news type='view' :modal='true' :gallery="{{json_encode($data->gallery)}}" :content="{{json_encode($data->content)}}" title="{{$data->title}}" directory="{{$data->directory}}"></single-news>

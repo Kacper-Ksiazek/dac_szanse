@@ -1,6 +1,6 @@
 <template>
     <section class="ds-about-awards">
-        <h1>Nasze <span class="pink">wyróżnienia</span></h1>
+        <h1 class="about-intro">Nasze <span class="pink">wyróżnienia</span></h1>
         <div class="items">
             <div class="single-award" v-for="(award, index) in awardsList" :key="index">
                 <!--  -->

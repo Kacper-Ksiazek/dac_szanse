@@ -1,10 +1,18 @@
 <template>
-    <button class="ds-scroll" @click="scroll" :class="access ? 'active' : ''"><i class="fa fa-arrow-up"></i></button>
+    <button class="ds-scroll" @click="scroll" ref="btn"><i class="fa fa-arrow-up"></i></button>
 </template>
 <script>
 export default {
-    created() {
-        window.addEventListener("scroll", () => (this.access = scrollY > 300 ? true : false));
+    mounted() {
+        const { classList } = this.$refs.btn;
+        window.addEventListener("scroll", () => {
+            if (scrollY > 300) {
+                classList.add("active");
+                if (classList.contains("exit")) classList.remove("exit");
+            } else if (scrollY < 300) {
+                if (classList.contains("active")) classList.add("exit");
+            }
+        });
     },
     methods: {
         scroll() {
@@ -13,13 +21,12 @@ export default {
                 left: 0,
                 behavior: "smooth"
             });
+        },
+        data() {
+            return {
+                closing: false
+            };
         }
-    },
-    data() {
-        return {
-            access: false,
-            pendingCreating: false
-        };
     }
 };
 </script>

@@ -6,7 +6,7 @@ section#ds-s-gallery-wrapper
     position: relative
     h1
         position: absolute
-        color: $deafultGreen
+        color: $dsGreen
         top: -100px
         &::before
             content: ''
@@ -14,7 +14,7 @@ section#ds-s-gallery-wrapper
             bottom: -10px
             width: 75%
             height: 3px
-            background-color: $deafultGreen
+            background-color: $dsGreen
             left: 50%
             transform: translateX(-50%)
     //
@@ -24,7 +24,7 @@ section#ds-s-gallery-wrapper
         display: flex
         justify-content: center
         width: 100%
-        background-color: #eb4d4b
+        background-color: $dsPink
         position: relative
         &::before
             content: ''
@@ -80,7 +80,7 @@ section#ds-s-gallery-wrapper
             button
                 margin-top: 20px
                 border: none
-                color: $deafultGreen
+                color: $dsGreen
                 background-color: white
                 font-size: 1.5rem
                 padding: 5px 10px
@@ -88,9 +88,13 @@ section#ds-s-gallery-wrapper
                 transition: all .2s linear
                 position: relative
                 z-index: 50
+                border: 2px solid $dsGreen
                 &:hover
-                    background-color: $deafultGreen
+                    background-color: $dsGreen
                     color: white
+                    border: 2px solid #fff
+                &:focus
+                    outline: none
             div.ds-s-gallery-dots-wrapper-desktop,
             div.ds-s-gallery-dots-wrapper-mobile
                 display: flex
@@ -120,7 +124,7 @@ section#ds-s-gallery-wrapper
                 border: none
                 background: transparent
                 transform: translateY(-50%)
-                background: #eb4d4b
+                background: $dsPink
                 padding: 10px
                 border-radius: 10px
                 user-select: none
@@ -165,7 +169,7 @@ section#ds-s-gallery-wrapper
                     opacity: 0
         footer
             width: 100%
-            background-color: #eb4d4b
+            background-color: $dsPink
             display: flex
             flex-direction: column
             justify-content: center

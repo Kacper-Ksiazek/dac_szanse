@@ -2,8 +2,7 @@
 <title>Allegro Charytatywni</title>
 @endsection @section('content')
 <div class="w-100">
-    <path-bar path='[{"header":"Jak pomóc","href":"/jak-pomoc"},  {"header":"Allegro Charytatywni","href":"#"}]'></path-bar>
-    <help-logo content='Allegro Charytatywni'></help-logo>
+    <help-logo content='Allegro Charytatywni' selected='allegro-charytatywni'></help-logo>
     <!--  -->
     <!--  -->
     <!--  -->

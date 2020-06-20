@@ -1,54 +1,78 @@
 @import 'add_new_project'
-div.ds-a-help-logo
-    background-image: url('/images/activities/projects/logo.png')
-    background-position: center
-    background-repeat: no-repeat
-    background-size: cover
-    width: 100%
-    height: 30vh
-    display: flex
-    justify-content: center
-    align-items: center
-    h1
-        color: $deafultGreen
-        font-size: 4rem
-        font-weight: bold
-        font-family: 'Open Sans'
+
 section.ds-a-projects
     display: flex
     flex-direction: column
     align-items: center
     div.ds-a-projects-single-project
         padding: 0 3%
-        display: flex
-        justify-content: space-between
-        align-items: flex-end
-        width: 100%
         max-width: 1000px
-        a
-            margin-left: 50px
-            background-color: $deafultGreen
-            padding: 3px 7px
-            color: white
-            font-size: 1.1rem
-            border-radius: 10px
-            box-shadow: 0 0 5px 0px black
-            text-decoration: none
-            transition: all .2s linear
-            flex-basis: 26vw
-            max-width: 130px
-            &:hover
-                background-color: white
-                color: $deafultGreen
-        div.content
-            border-bottom: 1px solid black
-            flex-grow: 1
-            padding: 5%
-            *
-                color: #F07716
-                text-decoration: underline
+        width: 100%
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin-bottom: 100px
+        background-position: center
+        background-size: cover
+        background-repeat: no-repeat
+        div.image
+            height: 500px
+            width: 100%
+            border: 4px solid $dsGreen
+            border-radius: 20px
+            margin-bottom: 20px
+            @media screen and ( max-width: 1000px )
+                height: 400px
+        div.text
+            display: flex
+            justify-content: space-between
+            align-items: center
+            width: 100%
+            border-bottom: 3px solid $dsPink
+            padding-bottom: 20px
+            a
+                background-color: $dsPink
+                text-decoration: none
+                align-self: flex-end
+                margin-right: 50px
+                padding: 0 20px
+                font-size: 1.2rem
+                letter-spacing: 2px
+                border: 3px solid $dsPink
+                position: relative
+                overflow: hidden
+                text-transform: uppercase
+                font-weight: bold
+                span
+                    position: relative
+                    z-index: 2
+                    color: #fff
+                    transition: color .2s
+                &::after
+                    content: ''
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    background-color: #fff
+                    transition: transform .2s
+                    transform: translateX(101%)
+                &:hover
+                    &::after
+                        transform: translateX(0)
+                    span
+                        color: $dsPink
+            div.content
+                flex-grow: 1
+                color: $dsBlue
+                span
+                    color: $dsPink
+                    font-weight: bold
+
+            
     span.ds-a-help-archives-control
-        color: $deafultGreen
+        color: $dsGreen
         margin: 50px 0 20px 0
         border: 2px solid
         border-radius: 10px
@@ -60,12 +84,12 @@ section.ds-a-projects
         transition: all .2s linear
         display: flex
         a.control-header
-            color: $deafultGreen
+            color: $dsGreen
             text-decoration: none
             padding: 5px 10px
             transition: all .2s linear
             &:hover
-                background-color: $deafultGreen
+                background-color: $dsGreen
                 color: #fff 
         span.control-header
             display: flex
@@ -82,7 +106,7 @@ section.ds-a-projects
                 border-left: 2px solid
                 padding-left: 10px
                 margin-left: 10px
-                color: $deafultGreen
+                color: $dsGreen
                 text-decoration: none
                 padding-top: 5px
                 padding-top: 5px
@@ -93,25 +117,24 @@ section.ds-a-projects
     span.ds-a-help-archives-control.active
         div.ds-a-help-archives
             display: flex
-@media screen and ( max-width: 767px)
+@media screen and ( max-width: 1000px)
     section.ds-a-projects
         div.ds-a-projects-single-project
-            align-items: center
-            flex-direction: column
-            margin-bottom: 25px
-            padding-bottom: 25px
-            border-bottom: 1px solid black
-            a
-                margin-left: 0px
-                padding: 5px 15px
-                font-size: 1.3rem
-                flex-basis: 0
-                text-align: center
-                min-width: 200px
-                width: 200px
-            div.content
-                border-bottom: 0
-                text-align: center
+            div.text
+                align-items: center
+                flex-direction: column
+                margin-bottom: 25px
+                padding-bottom: 25px
+                border-bottom: 1px solid black
+                a
+                    align-self: center
+                    width: 300px
+                    text-align: center
+                    margin-right: 0
+                div.content
+                    border-bottom: 0
+                    text-align: center
+                    
         span.ds-a-help-archives-control
             width: 100%
             flex-direction: column

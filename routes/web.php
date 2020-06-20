@@ -44,28 +44,18 @@ Route::get('/nasze-placowki/swietlica-terapeutyczno-integracyjna-szansa','OurObj
 //TASKS
 //
 //DZIALALNOSC
-Route::get('/dzialalnosc','TasksController@index');
 //ZAJECIA
 Route::get('/dzialalnosc/zajecia','TasksController@getTasksIndex');
 //ZAJECIA START
 Route::get('/dzialalnosc/zajecia/psychologiczno-pedaogiczno-logopedyczne','TasksController@getItemPsychologicznoPedagogiczne');
-//
-Route::get('/dzialalnosc/zajecia/sala-doswiadczania-swiatla','TasksController@getItemSalaDoswiadczaniaSwiatla');
-//
+Route::get('/dzialalnosc/zajecia/sala-doswiadczania-swiata','TasksController@getItemSalaDoswiadczaniaSwiatla');
 Route::get('/dzialalnosc/zajecia/sala-ingegracji-sensorycznej','TasksController@getItemSalaIntegracjiSensorycznej');
-//
 Route::get('/dzialalnosc/zajecia/zajecia-rehabilitacyjne','TasksController@getItemRehabilitacyjne');
-//
 Route::get('/dzialalnosc/zajecia/hydroterapia','TasksController@getItemHydroterapia');
-//
 Route::get('/dzialalnosc/zajecia/hipoterapia','TasksController@getItemHipoterapia');
-//
 Route::get('/dzialalnosc/zajecia/dogoterapia','TasksController@getItemDogoterapia');
-//
 Route::get('/dzialalnosc/zajecia/muzykoterapia','TasksController@getItemMuzykoterapia');
-//
 Route::get('/dzialalnosc/zajecia/biofeedback','TasksController@getItemBiofeedback');
-//
 Route::get('/dzialalnosc/zajecia/arteterapia','TasksController@getItemArteterapia');
 //ZAJECIA STOP
 //
@@ -124,7 +114,7 @@ Route::get('/o-nas/zarzad','AboutUsController@zarzad');
 //RODO
 Route::get('/o-nas/polityka-rodo','AboutUsController@rodo');
 //CERT index
-Route::get('/o-nas/budowa-cert','AboutUsController@certIndex');
+Route::get('/o-nas/cert','AboutUsController@certIndex');
 //CERT-parter
 Route::get('/o-nas/budowa-cert/parter','AboutUsController@certParter');
 //CERT- pietro 1
@@ -139,6 +129,5 @@ Route::get('/o-nas/historia','AboutUsController@historia');
 //
 //
 //KONTAKT
-Route::get('/kontakt',function(){
-    return view('pages.contact');
-});
+Route::get('/kontakt','ContactController@index');
+Route::post('/kontakt/wyslij-wiadomosc-email','ContactController@sendEmail');
