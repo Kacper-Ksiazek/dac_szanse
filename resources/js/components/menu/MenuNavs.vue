@@ -38,7 +38,8 @@
                             <span class="ds-menu-small-nav-header">
                                 <i v-if="nav.body" class="fa fa-chevron-down" @click="developItemIndex = developItemIndex === index ? -1 : index"></i>
                                 <span v-else class="indent"></span>
-                                <a :href="nav.header.href" v-text="nav.header.content"></a>
+                                <a v-if="nav.header.href" :href="nav.header.href" v-text="nav.header.content"></a>
+                                <a v-else v-text="nav.header.content" @click="developItemIndex = developItemIndex === index ? -1 : index"></a>
                             </span>
                             <br />
                             <div>

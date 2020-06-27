@@ -32,9 +32,9 @@ export const tougchSwapping = API => {
         }
         //
         //Right case
-        if (x - init < -120) methodIfRight();
+        if (x - init < -50) methodIfRight();
         //Left case
-        else if (x - init > 120) methodIfLeft();
+        else if (x - init > 50) methodIfLeft();
     };
     //
     //INIT

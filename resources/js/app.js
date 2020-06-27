@@ -108,7 +108,7 @@ Vue.component("ds-footer", require("./components/Footer.vue").default);
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
+Vue.config.devtools = false;
 const app = new Vue({
     el: "#app"
 });

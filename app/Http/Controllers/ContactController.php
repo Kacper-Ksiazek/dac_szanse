@@ -20,7 +20,7 @@ class ContactController extends Controller
             'email'=>'required'
         ]);
         Mail::send('emails.contact-us',$data,function($m){
-            $m->to('jodax95@gmail.com')->subject('Nowa wiadomość z Dać Szansę!');
+            $m->to('stowarzyszenie@dacszanse.pl')->subject('Nowa wiadomość z Dać Szansę!');
         });
         
     }

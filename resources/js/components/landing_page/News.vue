@@ -4,7 +4,7 @@
         <!--  -->
         <div class="content">
             <div class="single-news" v-for="item in newsList" :key="item.id">
-                <div class="img" :style="getNewsImg(item)"></div>
+                <div class="img" :data-bg="getNewsImg(item)" ref="image"></div>
                 <h1 class="title" v-text="item.title"></h1>
                 <p v-text="getNewsContent(item.content)"></p>
                 <a :href="`/aktualnosci/${item.title}`" class="read-more"><span>Przeczytaj</span></a>
@@ -40,6 +40,13 @@ export default {
         window.addEventListener("scroll", () => {
             if (scrollY > a.offsetTop - a.offsetHeight) a.classList.add("active");
         });
+        //
+        setTimeout(() => {
+            this.$refs.image.forEach(item => {
+                item.style = item.dataset.bg;
+                delete item.dataset.bg;
+            });
+        }, 200);
     }
 };
 </script>

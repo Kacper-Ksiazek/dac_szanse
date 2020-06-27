@@ -2,6 +2,7 @@
     <section class="ds-landing-support" ref="wrapper">
         <h1 class="header">wspierają nas</h1>
         <div class="content" :style="`width: ${sections.length}00vw; ${getTransform()}`">
+            <span class="control" ref="control"></span>
             <div class="section" v-for="(section, sectionIndex) in sections" :class="{ active: currentSection === sectionIndex }" :key="sectionIndex">
                 <div
                     class="single-supporter"
@@ -20,6 +21,7 @@
     </section>
 </template>
 <script>
+import { tougchSwapping } from "../../scripts/tougchSwapping";
 export default {
     data() {
         return {
@@ -52,6 +54,21 @@ export default {
             if (scrollY > a.offsetTop - a.offsetHeight - 500) a.classList.add("active");
         });
         //
+        const rightCaseSwap = () => {
+            if (this.currentSection < this.sections.length - 1) this.currentSection++;
+        };
+        //
+        const leftCaseSwap = () => {
+            if (this.currentSection > 0) this.currentSection--;
+        };
+        //
+        tougchSwapping({
+            that: this,
+            methodIfRight: rightCaseSwap,
+            methodIfLeft: leftCaseSwap,
+            initValue: "swapXOnStart",
+            element: this.$refs.control
+        });
     },
     computed: {
         sections() {

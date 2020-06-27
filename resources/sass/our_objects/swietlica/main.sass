@@ -2,13 +2,15 @@
 @import 'gallery'
 section.ds-s-content
     padding: 50px 10vw
+    @media screen and ( max-width: 1000px )
+        padding: 0 10px
+        padding-top: 30px
     span.ds-s-small
         font-weight: bold
     div.ds-s-text-wrapper
         margin-top: 50px
         position: relative
         font-size: 1.2rem
-        padding-left: 20px
         &::before
             content: ''
             position: absolute
@@ -20,3 +22,6 @@ section.ds-s-content
             margin-bottom: 20px
         *
             text-indent: 50px
+            @media screen and ( max-width: 1000px )
+                text-indent: 0px
+
