@@ -79,7 +79,7 @@ Route::get('/jak-pomoc/allegro-charytatywni','HelpController@allegro');
 Route::get('/jak-pomoc/pomoz-nam-zaoszczedzic','HelpController@oszczedzanie');
 Route::get('/jak-pomoc/siepomaga','HelpController@siepomaga');
 Route::get('/jak-pomoc/zrzutka','HelpController@zrzutka');
-Route::get('/jak-pomoc/przekaz-1%-podatku','HelpController@podatek');
+Route::get('/jak-pomoc/podatek','HelpController@podatek');
 //
 Route::get('/files/download-pit','HelpController@downloadPit');
 //

@@ -53,7 +53,7 @@ export default {
                 { header: "Darczyńcy", href: "/darczyncy" },
                 { header: "Współpraca", href: "/wspolpraca" },
                 { header: "Nowożeńcy Dają szanse", href: "/nowozency" },
-                { header: "Przekaż 1% podatku", href: "/przekaz-1%-podatku" },
+                { header: "Przekaż 1% podatku", href: "/podatek" },
                 { header: "Allegro charytatywni", href: "/allegro-charytatywni" },
                 { header: "Pomóż nam zaoszczędzić", href: "/pomoz-nam-zaoszczedzic" },
                 { header: "Siepomaga", href: "/siepomaga" },
