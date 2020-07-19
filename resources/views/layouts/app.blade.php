@@ -44,6 +44,7 @@
         <ds-footer></ds-footer>
         {{--  --}}
         <scroll-btn></scroll-btn>
+        <fb-btn></fb-btn>
     </div>
 </body>
 </html>

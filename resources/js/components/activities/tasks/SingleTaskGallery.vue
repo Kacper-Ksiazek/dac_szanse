@@ -40,8 +40,8 @@ export default {
             }, 100);
         },
         openGallery() {
-            this.showAll = true;
             this.posY = scrollY;
+            this.showAll = true;
         },
         closeGallery() {
             scrollTo({

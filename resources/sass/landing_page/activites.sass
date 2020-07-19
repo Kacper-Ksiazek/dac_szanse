@@ -38,11 +38,15 @@ section.ds-landing-page
                 flex-direction: column
                 align-items: center
                 justify-content: center
-                h1.header
+                h1.header,
+                a
                     color: white
                     background-color: $dsBlue
                     padding: 10px 40px
                     position: relative
+                    font-weight: bold
+                    text-decoration: none
+                    text-transform: uppercase
                     
             div.tasks
                 padding: 0 5%
@@ -112,10 +116,35 @@ section.ds-landing-page
                 background-size: cover
                 background-position: center
                 height: 600px
-                h1.header
+                a.header
                     color: $dsBlue
                     background-color: white
                     font-size: 2rem
+                    position: relative
+                    overflow: hidden
+                    border: 3px solid #fff
+                    box-sizing: border-box
+                    span
+                        position: relative
+                        z-index: 5
+                        color: inherit
+                        transition: color .3s .1s
+
+                    &:hover
+                        color: #fff !important
+                        &::after
+                            height: 100%
+                            left: 0
+                    &::after
+                        content: ''
+                        position: absolute
+                        width: 100%
+                        height: 5px
+                        top: 50%
+                        left: 105%
+                        background-color: $dsBlue
+                        transform: translateY(-50%)
+                        transition: left .3s, height .2s .3s
                 @media screen and ( max-width: 1400px )
                     height: 500px
 
@@ -175,7 +204,7 @@ section.ds-landing-page
                             opacity: 1
                             transform: translateY(0%)
             div.projects
-                h1
+                a
                     animation: lp-projects-header 1s .7s both
                     transform-origin: right
                     @keyframes lp-projects-header

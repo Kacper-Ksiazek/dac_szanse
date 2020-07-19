@@ -21,8 +21,8 @@ window.Vue = require("vue");
 
 Vue.component("menu-navs", require("./components/menu/MenuNavs.vue").default);
 Vue.component("dayroom-gallery", require("./components/our_objects/dayroom/gallery/Index.vue").default);
-Vue.component("path-bar", require("./components/PathBar").default);
 Vue.component("scroll-btn", require("./components/ScrollBTN.vue").default);
+Vue.component("fb-btn", require("./components/FacebookBtn.vue").default);
 //Galeria ze zdjeciami, co robia za a hrefy
 Vue.component("href-gallery", require("./components/GalleryWithHrefImg.vue").default);
 //
@@ -103,6 +103,7 @@ Vue.component("contact", require("./components/contact/Main.vue").default);
 //STOPKA
 //
 Vue.component("ds-footer", require("./components/Footer.vue").default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

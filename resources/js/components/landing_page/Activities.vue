@@ -18,7 +18,7 @@
             </div>
             <!--  -->
             <div class="projects">
-                <h1 class="header">PROJEKTY</h1>
+                <a class="header" href="./dzialalnosc/projekty"><span>Projekty</span></a>
             </div>
         </div>
     </section>

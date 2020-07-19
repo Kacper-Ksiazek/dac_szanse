@@ -25,21 +25,29 @@ section.ds-help-single-help-form.tax
                 color: $dsGreen
                 font-weight: bold
 section.ds-help-single-help-form  
-    padding: 50px 15vw
+    padding: 50px 20vw
     @media screen and ( max-width: 1600px )
-        padding: 5vw
+        padding: 50px 15vw
+    @media screen and ( max-width: 1300px )
+        padding: 50px 10vw
+    @media screen and ( max-width: 1000px )
+        padding: 50px 5vw
     *
         cursor: default
     h1
         font-size: 2.3rem
         font-weight: bold
         margin-bottom: 2rem
+        @media screen and ( max-width: 1500px )
+            font-size: 2rem
     p
         font-size: 1.5rem
         padding-left: 30px
         border-left: 4px solid $dsGreen
         text-indent: 20px
         margin-left: 2rem
+        @media screen and ( max-width: 1500px )
+            font-size: 1.3rem
         @media screen and ( max-width: 1000px )
             text-indent: 0px
             padding-left: 10px
@@ -107,11 +115,9 @@ section.ds-help-single-help-form
 @media screen and (max-width: 767px)
     section.ds-help-single-help-form  
         h1
-            font-size: 2.3rem
             font-weight: bold
             margin-bottom: 2rem
         p
-            font-size: 1.5rem
             border-left: 4px solid $dsGreen
         ul
             font-size: 1.2rem

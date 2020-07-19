@@ -55,14 +55,6 @@ export default {
                     img: "/images/ourObjects/item4.jpg",
                     left: [],
                     right: []
-                },
-                {
-                    type: "item",
-                    title: `Spółdzielnia Socjalna "AMICUS"`,
-                    href: "http://spoldzielniaamicus.pl/",
-                    img: "/images/ourObjects/item5.jpg",
-                    left: [],
-                    right: []
                 }
             ]
         };

@@ -1,6 +1,5 @@
 <template>
     <div class="ds-a-projects-single-project">
-        <div :style="setBgPath()" class="image"></div>
         <div class="text">
             <div class="content">
                 <h1 v-text="data.title"></h1>
@@ -19,10 +18,6 @@ export default {
         }
     },
     methods: {
-        setBgPath() {
-            const { directory, image } = this.data;
-            return `background-image: url('/storage/projects/${directory}/${image}')`;
-        },
         setDurationTime() {
             const getTranslatedDate = date => {
                 const months = ["styczeń", "luty", "marzec", "kwiecień", "maj", "czerwiec", "lipiec", "sierpień", "wrzesień", "październik", "listopad", "grudzień"];
