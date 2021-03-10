@@ -78,7 +78,8 @@ export default {
                     header: { content: "Działalność", href: "" },
                     body: [
                         { content: "Zajęcia", href: "/dzialalnosc/zajecia" },
-                        { content: "Projekty", href: "/dzialalnosc/projekty" }
+                        { content: "Projekty", href: "/dzialalnosc/projekty" },
+                        { content: "Cennik", href: "/dzialalnosc/cennik" }
                     ]
                 },
                 {

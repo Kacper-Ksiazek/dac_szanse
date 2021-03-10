@@ -18,6 +18,10 @@ class TasksController extends Controller
         return view('pages.activities.tasks.psychologiczno_pedagogiczne');
     }
     //
+    public function getPrices(){
+        return view('pages.activities.tasks.prices');
+    }
+    //
     public function getItemSalaDoswiadczaniaSwiatla(){
         return view('pages.activities.tasks.sala_doswiadczania_swiata');
     }

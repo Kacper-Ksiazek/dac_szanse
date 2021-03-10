@@ -1,0 +1,32 @@
+section.ds-prices
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding: 0 15vw
+    @media screen and ( max-width: 1300px )
+        padding: 0 10vw
+    @media screen and ( max-width: 1000px )
+        padding: 0 5vw
+    table
+        border-collapse: collapse
+        width: 100%
+        thead
+            background-color: $pink
+            color: #fff
+            th
+                font-size: 1.2rem
+        td,th
+            border: 1px solid #ddd
+            padding: 8px
+            &.small
+                text-align: center
+                min-width: 130px
+                @media screen and ( max-width: 500px )
+                    min-width: 0px
+        tr
+            font-size: 1rem
+            &.seperator
+                background-color: #f2f2f2
+            td
+                font-size: 1rem

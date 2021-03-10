@@ -44,6 +44,8 @@ Route::get('/nasze-placowki/swietlica-terapeutyczno-integracyjna-szansa','OurObj
 //TASKS
 //
 //DZIALALNOSC
+// CENNIK
+Route::get('/dzialalnosc/cennik','TasksController@getPrices');
 //ZAJECIA
 Route::get('/dzialalnosc/zajecia','TasksController@getTasksIndex');
 //ZAJECIA START
