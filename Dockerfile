@@ -33,6 +33,12 @@ COPY . .
 # Run Composer autoload
 RUN composer dump-autoload
 
+# Create the symbolic link for the storage directory
+RUN php artisan storage:link
+
+# Set proper permissions for the storage and cache directories
+RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
+
 # Expose the port your app runs on
 EXPOSE 8000
 
