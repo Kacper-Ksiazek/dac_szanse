@@ -16,11 +16,11 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    
+
     {{-- Icons --}}
     <link rel="shortcut icon" href="{{Storage::url('favicon.png')}}">
     <link rel="icon" href="{{Storage::url('favicon.png')}}">
-    
+
     <!-- Styles -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -31,7 +31,7 @@
             <div class="main-menu-wrapper">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{-- {{ config('app.name', 'Laravel') }} --}}
-                    <img class='main-logo' src="{{ Storage::url('logo.png') }}">
+                    <img class='main-logo' src="{{ Storage::disk('images')->url('logo.png') }}">
                 </a>
                 <menu-navs></menu-navs>
             </div>
